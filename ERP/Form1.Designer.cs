@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
+            this.lblMARTIN = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -41,11 +42,21 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Proyecto sincronizado :D";
             // 
+            // lblMARTIN
+            // 
+            this.lblMARTIN.AutoSize = true;
+            this.lblMARTIN.Location = new System.Drawing.Point(230, 155);
+            this.lblMARTIN.Name = "lblMARTIN";
+            this.lblMARTIN.Size = new System.Drawing.Size(93, 13);
+            this.lblMARTIN.TabIndex = 1;
+            this.lblMARTIN.Text = "Editado por Martin";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(525, 219);
+            this.Controls.Add(this.lblMARTIN);
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -57,6 +68,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblMARTIN;
     }
 }
 
