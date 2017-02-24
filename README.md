@@ -20,22 +20,43 @@
 
 ### MateriaPrima:
 
-Id_Materia | Descripcion | Proveedor
---- | --- | ---
-mat1 | Materia 1 | Proveedor 1
-mat2 | Materia 2 | Proveedor 1
+:key: Id_Materia | Descripcion | Proveedor | _Campos adicionales_
+--- | --- | --- | ---
+mat1 | Materia 1 | Proveedor 1 | etc...
+mat2 | Materia 2 | Proveedor 1 | etc...
 
 ### Productos:
 
-Id_Producto | Descripción | _Campos adicionales_
+:key: Id_Producto | Descripción | _Campos adicionales_
 --- | --- | ---
 prod1 | Producto 1 | etc...
 
 ### BillMateriales
-Id_Producto | Id_Materia | Cantidad
+:link: Id_Producto | :link: Id_Materia | Cantidad
 --- | --- | ---
 prod1 | mat1 | 2
 prod1 | mat2 | 4
+
+# Módulo de compras
+- Martín Galván (Jefe) / Programador
+- Javier Velazquez / Base de datos
+- Juan Carlos Delfín / Diseñador
+- Ritian Zhou / IBM
+
+### Locaciones
+:key: Id_Locacion | Descripcion | _Campos adicionales_
+--- | --- | ---
+loc1 | Locación 1 | etc...
+
+### StockPrima
+:link: Id_Materia | :link: Id_Locacion | Cantidad
+--- | --- | ---
+mat1 | loc1 | 420
+
+### StockProducto
+:link: Id_Producto | :link: Id_Locacion | Cantidad
+--- | --- | ---
+prod1 | loc1 | 3
 
 
 # Módulo de Ventas
@@ -44,17 +65,26 @@ prod1 | mat2 | 4
 - Alejandro Fierro /Base de datos
 - David Rios / Diseñador
 
+### Clientes
+:key: Id_Cliente | Nombre | Teléfono | _Campos adicionales_
+--- | --- | --- | ---
+cli1 | Cliente 1 | 123 | etc...
+
+### Pedidos
+:key: Id_Pedido | :link: Id_Producto | :link: Id_Cliente | Cantidad | _Campos adicionales_
+--- | --- | --- | --- | ---
+ped1 | prod1 | cli1 | 4 | etc...
+
+### :construction: Pagos
+:key: Id_Pago | :link: Id_Cliente | :link: Id_Pedido | Total | Fecha
+--- | --- | --- | --- | ---
+pag1 | cli1 | ped| 1483 | 10/10/17
+
 # Módulo de Planeación
 - Filiberto Martinez (Jefe) / Base de datos
 - Adriana Medina / Diseñador
 - Mercedes Villegas / Diseñador
 - Hugo Moroyoqui / Programadpr
-
-# Módulo de compras
-- Martín Galván (Jefe) / Programador
-- Javier Velazquez / Base de datos
-- Juan Carlos Delfín / Diseñador
-- Ritian Zhou / IBM
 
 # Módulo de producción
 - Alex Rios (Jefe) / BD
