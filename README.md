@@ -1,5 +1,17 @@
 # ERP / C Sharp
 
+| | Gama baja | Gama media | Gama Alta |
+| --- | --- | --- | --- |
+| **Procesador** | Intel Core i3 | Intel Core i5 | Intel Core i7 |
+| **Memoria RAM** | 4GB DDR3 | 8GB DDR3 | 8GB DDR4 |
+| **Disco duro** | 320GB 5400RPM | 500GB 7200RPM | 1TB 7200RPM + 128GB SSD |
+| **Fuente de poder** | 300W | 550W | 800W 80+ |
+| **Tarjeta madre** | Mini-ATX | ATX | Full ATX |
+| **Case** | Mini-ATX Color negro | ATX * Color | Gamer |
+| **Tarjeta gráfica** | N/A | 750Ti | GTX 1080 |
+| **Disipador** | N/A | HeatSink + Aluminum | Water Cooling double fan |
+| **FAN** | 1 | 2 | 3 |
+
 # Módulo de Ingeniería
 - Jose Ángel (Jefe)
 - Yohan
