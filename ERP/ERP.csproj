@@ -58,6 +58,12 @@
     <Compile Include="Ingenieria\Ingenieria.Designer.cs">
       <DependentUpon>Ingenieria.cs</DependentUpon>
     </Compile>
+    <Compile Include="Planeacion\Planeacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Planeacion\Planeacion.Designer.cs">
+      <DependentUpon>Planeacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Produccion\Produccion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,6 +77,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Ingenieria\Ingenieria.resx">
       <DependentUpon>Ingenieria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Planeacion\Planeacion.resx">
+      <DependentUpon>Planeacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Produccion\Produccion.resx">
       <DependentUpon>Produccion.cs</DependentUpon>
