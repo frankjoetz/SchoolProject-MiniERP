@@ -18,22 +18,22 @@
 - Roberto Migdalel / Programador
 
 # Módulo de Ventas
-- Horacio (Jefe)
-- Oscar Gamez
-- Alejandro Fierro
+- Horacio (Jefe) / IBM
+- Oscar Gamez / Programador
+- Alejandro Fierro /Base de datos
 - David Rios / Diseñador
 
 # Módulo de Planeación
-- Filiberto Martinez (Jefe)
+- Filiberto Martinez (Jefe) / Base de datos
 - Adriana Medina / Diseñador
-- Mercedes Villegas
-- Hugo Moroyoqui
+- Mercedes Villegas / Diseñador
+- Hugo Moroyoqui / Programadpr
 
 # Módulo de compras
 - Martín Galván (Jefe) / Programador
-- Javier Velazquez
+- Javier Velazquez / Base de datos
 - Juan Carlos Delfín / Diseñador
-- Ritian Zhou
+- Ritian Zhou / IBM
 
 # Módulo de producción
 - Alex Rios (Jefe) / BD
