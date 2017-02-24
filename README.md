@@ -13,9 +13,30 @@
 | **FAN** | 1 | 2 | 3 |
 
 # Módulo de Ingeniería
+
 - Jose Ángel (Jefe) / Base de datos
 - Yohan / Diseñador
 - Roberto Migdalel / Programador
+
+### MateriaPrima:
+
+Id_Materia | Descripcion | Proveedor
+--- | --- | ---
+mat1 | Materia 1 | Proveedor 1
+mat2 | Materia 2 | Proveedor 1
+
+### Productos:
+
+Id_Producto | Descripción | _Campos adicionales_
+--- | --- | ---
+prod1 | Producto 1 | etc...
+
+### BillMateriales
+Id_Producto | Id_Materia | Cantidad
+--- | --- | ---
+prod1 | mat1 | 2
+prod1 | mat2 | 4
+
 
 # Módulo de Ventas
 - Horacio (Jefe) / IBM
