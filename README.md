@@ -13,15 +13,15 @@
 | **FAN** | 1 | 2 | 3 |
 
 # Módulo de Ingeniería
-- Jose Ángel (Jefe)
-- Yohan
-- Roberto Migdalel
+- Jose Ángel (Jefe) / Base de datos
+- Yohan / Diseñador
+- Roberto Migdalel / Programador
 
 # Módulo de Ventas
 - Horacio (Jefe)
 - Oscar Gamez
 - Alejandro Fierro
-- David Rios
+- David Rios / Diseñador
 
 # Módulo de Planeación
 - Filiberto Martinez (Jefe)
