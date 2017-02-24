@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace ERP
 {
-    public partial class Form1 : Form
+    public partial class Hola : Form
     {
-        public Form1()
+        public Hola()
         {
             InitializeComponent();
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -31,6 +31,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lblMARTIN = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -55,6 +56,21 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(329, 143);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(186, 13);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Agregue uno profe, ahora soy el mejor";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(112, 153);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "ESA Maadre";
+            this.button1.UseVisualStyleBackColor = true;
             this.label2.Location = new System.Drawing.Point(78, 54);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(64, 13);
@@ -66,6 +82,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(525, 219);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblMARTIN);
             this.Controls.Add(this.label1);
@@ -81,6 +98,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblMARTIN;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button1;
     }
 }
 
