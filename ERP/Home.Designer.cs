@@ -31,12 +31,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.producciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ingenieríaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ingenieríaToolStripMenuItem,
             this.producciónToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -50,6 +52,13 @@
             this.producciónToolStripMenuItem.Size = new System.Drawing.Size(80, 20);
             this.producciónToolStripMenuItem.Text = "Producción";
             this.producciónToolStripMenuItem.Click += new System.EventHandler(this.producciónToolStripMenuItem_Click);
+            // 
+            // ingenieríaToolStripMenuItem
+            // 
+            this.ingenieríaToolStripMenuItem.Name = "ingenieríaToolStripMenuItem";
+            this.ingenieríaToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
+            this.ingenieríaToolStripMenuItem.Text = "Ingeniería";
+            this.ingenieríaToolStripMenuItem.Click += new System.EventHandler(this.ingenieríaToolStripMenuItem_Click);
             // 
             // Home
             // 
@@ -73,6 +82,7 @@
         #endregion
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem producciónToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ingenieríaToolStripMenuItem;
     }
 }
 
