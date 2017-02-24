@@ -53,6 +53,7 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Compile Include="Ingenieria\Ingenieria.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +67,8 @@
       <DependentUpon>Hola.cs</DependentUpon>
 >>>>>>> origin/master
     </Compile>
+=======
+>>>>>>> parent of ced35fa... agregue carpeta y un windows form de ingenieria
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -97,12 +100,15 @@
     <None Include="App.config" />
   </ItemGroup>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <ItemGroup />
 =======
   <ItemGroup>
     <Folder Include="Ventas\" />
   </ItemGroup>
 >>>>>>> origin/master
+=======
+>>>>>>> parent of ced35fa... agregue carpeta y un windows form de ingenieria
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
