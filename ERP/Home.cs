@@ -12,13 +12,16 @@ namespace ERP
 {
     public partial class Home : Form
     {
-        public static Produccion.Produccion frmP = new Produccion.Produccion();
-        public static Ingenieria.Ingenieria frmI = new Ingenieria.Ingenieria();
+        public static Produccion.Produccion frmPr = new Produccion.Produccion();
+        public static Ingenieria.Ingenieria frmIn = new Ingenieria.Ingenieria();
+        public static Planeacion.Planeacion frmPl = new Planeacion.Planeacion();
+
 
         public void esconderForms()
         {
-            frmI.Hide();
-            frmP.Hide();
+            frmIn.Hide();
+            frmPl.Hide();
+            frmPr.Hide();
         }
 
         public Home()
@@ -26,15 +29,16 @@ namespace ERP
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
 
-            frmI.MdiParent = this;
-            frmP.MdiParent = this;
+            frmIn.MdiParent = this;
+            frmPl.MdiParent = this;
+            frmPr.MdiParent = this;
             
         }
 
         private void producciónToolStripMenuItem_Click(object sender, EventArgs e)
         {
             esconderForms();
-            frmP.Show();
+            frmPr.Show();
         }
 
         private void Home_Load(object sender, EventArgs e)
@@ -45,7 +49,18 @@ namespace ERP
         private void ingenieríaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             esconderForms();
-            frmI.Show();
+            frmIn.Show();
+        }
+
+        private void planeaciónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            esconderForms();
+            frmPl.Show();
+        }
+
+        private void inicioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            esconderForms();
         }
     }
 }

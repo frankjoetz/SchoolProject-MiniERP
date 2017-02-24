@@ -15,6 +15,12 @@ namespace ERP.Produccion
         public Produccion()
         {
             InitializeComponent();
+            this.WindowState = FormWindowState.Maximized;
+        }
+
+        private void Produccion_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }
