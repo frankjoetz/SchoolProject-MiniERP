@@ -52,6 +52,12 @@
     <Compile Include="Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ingenieria\Ingenieria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ingenieria\Ingenieria.Designer.cs">
+      <DependentUpon>Ingenieria.cs</DependentUpon>
+    </Compile>
     <Compile Include="Produccion\Produccion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,6 +68,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ingenieria\Ingenieria.resx">
+      <DependentUpon>Ingenieria.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Produccion\Produccion.resx">
       <DependentUpon>Produccion.cs</DependentUpon>
@@ -89,7 +98,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Ingenieria\" />
     <Folder Include="Ventas\" />
   </ItemGroup>
   <ItemGroup />
