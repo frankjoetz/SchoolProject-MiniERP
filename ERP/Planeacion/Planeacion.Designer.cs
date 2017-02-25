@@ -44,11 +44,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(103, 51);
+            this.label2.Location = new System.Drawing.Point(247, 46);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(88, 13);
+            this.label2.Size = new System.Drawing.Size(35, 13);
             this.label2.TabIndex = 1;
-            this.label2.Text = "puto el que lo lea";
+            this.label2.Text = "label2";
             // 
             // Planeacion
             // 
