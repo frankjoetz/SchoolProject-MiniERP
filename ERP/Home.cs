@@ -15,6 +15,7 @@ namespace ERP
         public static Produccion.Produccion frmPr = new Produccion.Produccion();
         public static Ingenieria.Ingenieria frmIn = new Ingenieria.Ingenieria();
         public static Planeacion.Planeacion frmPl = new Planeacion.Planeacion();
+        public static Ventas.Ventas frmVe = new Ventas.Ventas();
 
 
         public void esconderForms()
@@ -22,6 +23,7 @@ namespace ERP
             frmIn.Hide();
             frmPl.Hide();
             frmPr.Hide();
+            frmVe.Hide();
         }
 
         public Home()
@@ -32,6 +34,7 @@ namespace ERP
             frmIn.MdiParent = this;
             frmPl.MdiParent = this;
             frmPr.MdiParent = this;
+            frmVe.MdiParent = this;
             
         }
 
@@ -61,6 +64,12 @@ namespace ERP
         private void inicioToolStripMenuItem_Click(object sender, EventArgs e)
         {
             esconderForms();
+        }
+
+        private void ventasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            esconderForms();
+            frmVe.Show();
         }
     }
 }
