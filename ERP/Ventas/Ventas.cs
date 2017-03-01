@@ -12,7 +12,7 @@ namespace ERP.Ventas
 {
     public partial class Ventas : Form
     {
-        public static ACliente agc = new ACliente();
+        
         public Ventas()
         {
             InitializeComponent();
@@ -20,11 +20,12 @@ namespace ERP.Ventas
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            lblFH.Text = DateTime.Now.ToString("dd/mm/yyyy HH:mm:ss");
+            lblFH.Text = DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss");
         }
 
         private void btnAddC_Click(object sender, EventArgs e)
         {
+            ACliente agc = new ACliente();
             agc.Show();
         }
 
