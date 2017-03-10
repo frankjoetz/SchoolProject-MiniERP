@@ -16,5 +16,20 @@ namespace ERP.Dashboard
         {
             InitializeComponent();
         }
+
+        private void chartcomputadora_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void chart2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Dashboard_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
