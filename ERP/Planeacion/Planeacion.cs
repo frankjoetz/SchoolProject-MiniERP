@@ -15,6 +15,7 @@ namespace ERP.Planeacion
         public Planeacion()
         {
             InitializeComponent();
+            this.WindowState = FormWindowState.Maximized;
         }
 
         private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
@@ -43,6 +44,11 @@ namespace ERP.Planeacion
         }
 
         private void Planeacion_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
         {
 
         }
