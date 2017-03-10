@@ -117,7 +117,7 @@
             // 
             this.dtpFec_Entr.Location = new System.Drawing.Point(124, 127);
             this.dtpFec_Entr.Name = "dtpFec_Entr";
-            this.dtpFec_Entr.Size = new System.Drawing.Size(525, 20);
+            this.dtpFec_Entr.Size = new System.Drawing.Size(212, 20);
             this.dtpFec_Entr.TabIndex = 10;
             this.dtpFec_Entr.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
             // 
@@ -125,21 +125,21 @@
             // 
             this.dtpFec_Ini.Location = new System.Drawing.Point(123, 101);
             this.dtpFec_Ini.Name = "dtpFec_Ini";
-            this.dtpFec_Ini.Size = new System.Drawing.Size(526, 20);
+            this.dtpFec_Ini.Size = new System.Drawing.Size(213, 20);
             this.dtpFec_Ini.TabIndex = 9;
             // 
             // txtbId_Ped
             // 
             this.txtbId_Ped.Location = new System.Drawing.Point(122, 70);
             this.txtbId_Ped.Name = "txtbId_Ped";
-            this.txtbId_Ped.Size = new System.Drawing.Size(527, 20);
+            this.txtbId_Ped.Size = new System.Drawing.Size(145, 20);
             this.txtbId_Ped.TabIndex = 8;
             // 
             // txtbId_Plan
             // 
             this.txtbId_Plan.Location = new System.Drawing.Point(123, 41);
             this.txtbId_Plan.Name = "txtbId_Plan";
-            this.txtbId_Plan.Size = new System.Drawing.Size(526, 20);
+            this.txtbId_Plan.Size = new System.Drawing.Size(144, 20);
             this.txtbId_Plan.TabIndex = 7;
             // 
             // txtbObser
@@ -197,9 +197,13 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(17, 73);
             this.label2.Name = "label2";
+<<<<<<< HEAD
             this.label2.Size = new System.Drawing.Size(68, 13);
+=======
+            this.label2.Size = new System.Drawing.Size(75, 13);
+>>>>>>> origin/master
             this.label2.TabIndex = 1;
-            this.label2.Text = "ID_PEDIDO:";
+            this.label2.Text = "ID PEDIDO:";
             // 
             // label1
             // 
@@ -207,9 +211,13 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(16, 48);
             this.label1.Name = "label1";
+<<<<<<< HEAD
             this.label1.Size = new System.Drawing.Size(95, 13);
+=======
+            this.label1.Size = new System.Drawing.Size(106, 13);
+>>>>>>> origin/master
             this.label1.TabIndex = 0;
-            this.label1.Text = "ID_PLANEACION:";
+            this.label1.Text = "ID PLANEACION:";
             // 
             // tabPage2
             // 

@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title4 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.chartcomputadora = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.button1 = new System.Windows.Forms.Button();
@@ -58,43 +58,45 @@
             // 
             // chartcomputadora
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chartcomputadora.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chartcomputadora.Legends.Add(legend1);
+            chartArea3.Name = "ChartArea1";
+            this.chartcomputadora.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.chartcomputadora.Legends.Add(legend3);
             this.chartcomputadora.Location = new System.Drawing.Point(-3, 2);
             this.chartcomputadora.Name = "chartcomputadora";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "PRODUCCION";
-            this.chartcomputadora.Series.Add(series1);
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "PRODUCCION";
+            this.chartcomputadora.Series.Add(series3);
             this.chartcomputadora.Size = new System.Drawing.Size(623, 294);
             this.chartcomputadora.TabIndex = 0;
             this.chartcomputadora.Text = "chart1";
-            title1.Name = "Title1";
-            title1.ShadowColor = System.Drawing.Color.Blue;
-            title1.Text = "GRAFICAS DE PRODUCCION";
-            this.chartcomputadora.Titles.Add(title1);
+            title3.Name = "Title1";
+            title3.ShadowColor = System.Drawing.Color.Blue;
+            title3.Text = "GRAFICAS DE PRODUCCION";
+            this.chartcomputadora.Titles.Add(title3);
+            this.chartcomputadora.Click += new System.EventHandler(this.chartcomputadora_Click);
             // 
             // chart2
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chart2.Legends.Add(legend2);
+            chartArea4.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea4);
+            legend4.Name = "Legend1";
+            this.chart2.Legends.Add(legend4);
             this.chart2.Location = new System.Drawing.Point(-3, 302);
             this.chart2.Name = "chart2";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series2.Legend = "Legend1";
-            series2.Name = "PORCENTAJES";
-            this.chart2.Series.Add(series2);
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series4.Legend = "Legend1";
+            series4.Name = "PORCENTAJES";
+            this.chart2.Series.Add(series4);
             this.chart2.Size = new System.Drawing.Size(390, 189);
             this.chart2.TabIndex = 1;
             this.chart2.Text = "chartgraficaporcientos";
-            title2.Name = "Title1";
-            title2.Text = "GRAFICA PORCIENTOS";
-            this.chart2.Titles.Add(title2);
+            title4.Name = "Title1";
+            title4.Text = "GRAFICA PORCIENTOS";
+            this.chart2.Titles.Add(title4);
+            this.chart2.Click += new System.EventHandler(this.chart2_Click);
             // 
             // button1
             // 
@@ -235,6 +237,7 @@
             this.Controls.Add(this.chartcomputadora);
             this.Name = "Dashboard";
             this.Text = "Dashboard";
+            this.Load += new System.EventHandler(this.Dashboard_Load);
             ((System.ComponentModel.ISupportInitialize)(this.chartcomputadora)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
