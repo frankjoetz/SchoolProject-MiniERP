@@ -47,11 +47,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Almacen\Almacen.cs">
+    <Compile Include="Compras\Compras.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Almacen\Almacen.Designer.cs">
-      <DependentUpon>Almacen.cs</DependentUpon>
+    <Compile Include="Compras\Compras.Designer.cs">
+      <DependentUpon>Compras.cs</DependentUpon>
     </Compile>
     <Compile Include="Dashboard\Dashboard.cs">
       <SubType>Form</SubType>
@@ -103,8 +103,8 @@
     <Compile Include="Ventas\Ventas.Designer.cs">
       <DependentUpon>Ventas.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Almacen\Almacen.resx">
-      <DependentUpon>Almacen.cs</DependentUpon>
+    <EmbeddedResource Include="Compras\Compras.resx">
+      <DependentUpon>Compras.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dashboard\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>

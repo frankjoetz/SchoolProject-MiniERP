@@ -32,7 +32,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.inicioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ingenieríaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.comprasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.almacenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ventasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.planeaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.producciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -47,7 +47,7 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.inicioToolStripMenuItem,
             this.ingenieríaToolStripMenuItem,
-            this.comprasToolStripMenuItem,
+            this.almacenToolStripMenuItem,
             this.ventasToolStripMenuItem,
             this.planeaciónToolStripMenuItem,
             this.producciónToolStripMenuItem,
@@ -73,11 +73,12 @@
             this.ingenieríaToolStripMenuItem.Text = "Ingeniería";
             this.ingenieríaToolStripMenuItem.Click += new System.EventHandler(this.ingenieríaToolStripMenuItem_Click);
             // 
-            // comprasToolStripMenuItem
+            // almacenToolStripMenuItem
             // 
-            this.comprasToolStripMenuItem.Name = "comprasToolStripMenuItem";
-            this.comprasToolStripMenuItem.Size = new System.Drawing.Size(133, 36);
-            this.comprasToolStripMenuItem.Text = "Compras";
+            this.almacenToolStripMenuItem.Name = "almacenToolStripMenuItem";
+            this.almacenToolStripMenuItem.Size = new System.Drawing.Size(133, 36);
+            this.almacenToolStripMenuItem.Text = "Almacen";
+            this.almacenToolStripMenuItem.Click += new System.EventHandler(this.almacenToolStripMenuItem_Click);
             // 
             // ventasToolStripMenuItem
             // 
@@ -131,7 +132,7 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem producciónToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ingenieríaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem comprasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem almacenToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ventasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem planeaciónToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem inicioToolStripMenuItem;
