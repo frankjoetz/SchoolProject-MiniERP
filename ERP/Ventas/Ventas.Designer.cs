@@ -76,7 +76,7 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.BackColor = System.Drawing.Color.DimGray;
+            this.tabPage1.BackColor = System.Drawing.SystemColors.Control;
             this.tabPage1.Controls.Add(this.btnBuscar);
             this.tabPage1.Controls.Add(this.txtNom);
             this.tabPage1.Controls.Add(this.label5);
@@ -93,7 +93,7 @@
             this.tabPage1.Controls.Add(this.pictureBox1);
             this.tabPage1.Cursor = System.Windows.Forms.Cursors.Default;
             this.tabPage1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPage1.ForeColor = System.Drawing.Color.Lime;
+            this.tabPage1.ForeColor = System.Drawing.Color.Black;
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -121,6 +121,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.Black;
             this.label5.Location = new System.Drawing.Point(26, 135);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(138, 15);
@@ -130,6 +131,7 @@
             // lblFH
             // 
             this.lblFH.AutoSize = true;
+            this.lblFH.ForeColor = System.Drawing.Color.Black;
             this.lblFH.Location = new System.Drawing.Point(380, 198);
             this.lblFH.Name = "lblFH";
             this.lblFH.Size = new System.Drawing.Size(141, 15);
@@ -139,6 +141,7 @@
             // btnAceptar
             // 
             this.btnAceptar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAceptar.ForeColor = System.Drawing.Color.Black;
             this.btnAceptar.Location = new System.Drawing.Point(212, 198);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
@@ -149,7 +152,7 @@
             // cmbGamas
             // 
             this.cmbGamas.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cmbGamas.ForeColor = System.Drawing.Color.LimeGreen;
+            this.cmbGamas.ForeColor = System.Drawing.Color.Black;
             this.cmbGamas.FormattingEnabled = true;
             this.cmbGamas.Items.AddRange(new object[] {
             "Gama Baja",
@@ -163,6 +166,7 @@
             // btnAddC
             // 
             this.btnAddC.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddC.ForeColor = System.Drawing.Color.Black;
             this.btnAddC.Location = new System.Drawing.Point(72, 198);
             this.btnAddC.Name = "btnAddC";
             this.btnAddC.Size = new System.Drawing.Size(101, 23);
@@ -190,6 +194,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(199, 135);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(64, 15);
@@ -199,6 +204,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Location = new System.Drawing.Point(6, 101);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(64, 15);
@@ -208,6 +214,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(189, 26);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(64, 15);
@@ -217,6 +224,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(20, 26);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(80, 15);
@@ -234,14 +242,14 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.BackColor = System.Drawing.Color.DimGray;
+            this.tabPage2.BackColor = System.Drawing.SystemColors.Control;
             this.tabPage2.Controls.Add(this.dataGridView1);
             this.tabPage2.Controls.Add(this.btnBusHis);
             this.tabPage2.Controls.Add(this.txtIDHis);
             this.tabPage2.Controls.Add(this.label6);
             this.tabPage2.Cursor = System.Windows.Forms.Cursors.Default;
             this.tabPage2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPage2.ForeColor = System.Drawing.Color.Lime;
+            this.tabPage2.ForeColor = System.Drawing.Color.Black;
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -251,6 +259,7 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(6, 71);
             this.dataGridView1.Name = "dataGridView1";
@@ -260,6 +269,7 @@
             // btnBusHis
             // 
             this.btnBusHis.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBusHis.ForeColor = System.Drawing.Color.Black;
             this.btnBusHis.Location = new System.Drawing.Point(365, 24);
             this.btnBusHis.Name = "btnBusHis";
             this.btnBusHis.Size = new System.Drawing.Size(75, 23);
@@ -277,6 +287,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.Color.Black;
             this.label6.Location = new System.Drawing.Point(199, 24);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(21, 15);
@@ -290,6 +301,7 @@
             this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(583, 264);
+            this.ControlBox = false;
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MaximizeBox = false;
