@@ -41,5 +41,10 @@ namespace ERP.Planeacion
         {
 
         }
+
+        private void Planeacion_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
