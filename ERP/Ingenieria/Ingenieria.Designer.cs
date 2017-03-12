@@ -59,12 +59,19 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.label12 = new System.Windows.Forms.Label();
+            this.fechaptxt = new System.Windows.Forms.TextBox();
+            this.buscarrtxt = new System.Windows.Forms.Button();
             this.ingenieriatc.SuspendLayout();
             this.ingenieriaform.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.tabPage3.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.SuspendLayout();
             // 
             // ingenieriatc
@@ -72,6 +79,7 @@
             this.ingenieriatc.Controls.Add(this.ingenieriaform);
             this.ingenieriatc.Controls.Add(this.tabPage2);
             this.ingenieriatc.Controls.Add(this.tabPage3);
+            this.ingenieriatc.Controls.Add(this.tabPage1);
             this.ingenieriatc.Location = new System.Drawing.Point(28, 28);
             this.ingenieriatc.Name = "ingenieriatc";
             this.ingenieriatc.SelectedIndex = 0;
@@ -101,7 +109,7 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(268, 16);
+            this.dataGridView1.Location = new System.Drawing.Point(286, 19);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(358, 243);
             this.dataGridView1.TabIndex = 9;
@@ -354,6 +362,53 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "Id linea";
             // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.buscarrtxt);
+            this.tabPage1.Controls.Add(this.fechaptxt);
+            this.tabPage1.Controls.Add(this.label12);
+            this.tabPage1.Controls.Add(this.dataGridView3);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(650, 314);
+            this.tabPage1.TabIndex = 3;
+            this.tabPage1.Text = "Reportes";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Location = new System.Drawing.Point(74, 81);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.Size = new System.Drawing.Size(477, 227);
+            this.dataGridView3.TabIndex = 0;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(198, 61);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(34, 13);
+            this.label12.TabIndex = 1;
+            this.label12.Text = "fecha";
+            // 
+            // fechaptxt
+            // 
+            this.fechaptxt.Location = new System.Drawing.Point(252, 56);
+            this.fechaptxt.Name = "fechaptxt";
+            this.fechaptxt.Size = new System.Drawing.Size(100, 20);
+            this.fechaptxt.TabIndex = 2;
+            // 
+            // buscarrtxt
+            // 
+            this.buscarrtxt.Location = new System.Drawing.Point(386, 56);
+            this.buscarrtxt.Name = "buscarrtxt";
+            this.buscarrtxt.Size = new System.Drawing.Size(75, 23);
+            this.buscarrtxt.TabIndex = 3;
+            this.buscarrtxt.Text = "Buscar";
+            this.buscarrtxt.UseVisualStyleBackColor = true;
+            // 
             // Ingenieria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -372,6 +427,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -409,5 +467,10 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.Button buscarrtxt;
+        private System.Windows.Forms.TextBox fechaptxt;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.DataGridView dataGridView3;
     }
 }
