@@ -49,6 +49,7 @@
       <DependentUpon>ERP-DataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VentasCRUD.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ERP-DataSet.xsc">
