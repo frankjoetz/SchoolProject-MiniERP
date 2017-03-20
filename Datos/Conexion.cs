@@ -16,7 +16,7 @@ namespace Datos
         //
         public Conexion()
         {
-            this.cadenadeconexion = "";
+            this.cadenadeconexion = "server=tics41.ddns.net;User Id=root;database=erpdb";
             conn = new SqlConnection(cadenadeconexion);
         }
         public Boolean conectar() //abrir conexion
