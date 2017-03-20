@@ -15,6 +15,7 @@ namespace ERP.Almacen
         public Almacen()
         {
             InitializeComponent();
+            this.WindowState = FormWindowState.Maximized;
         }
     }
 }

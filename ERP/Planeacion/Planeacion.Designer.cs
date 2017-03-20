@@ -45,14 +45,14 @@
             this.dtpFec_Ini = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.label11 = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txtbStatus_buscar = new System.Windows.Forms.ComboBox();
             this.dtp_Inicio_Buscar = new System.Windows.Forms.DateTimePicker();
-            this.txtbId_ped_buscar = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.txtbId_ped_buscar = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -68,6 +68,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(13, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -79,12 +80,12 @@
             this.tabPage1.Controls.Add(this.groupBox2);
             this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Controls.Add(this.label7);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(726, 380);
+            this.tabPage1.Size = new System.Drawing.Size(726, 377);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "NUEVA";
+            this.tabPage1.Text = "Nueva";
             this.tabPage1.UseVisualStyleBackColor = true;
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
@@ -137,7 +138,7 @@
             // 
             this.txtbId_Plan.Location = new System.Drawing.Point(126, 19);
             this.txtbId_Plan.Name = "txtbId_Plan";
-            this.txtbId_Plan.Size = new System.Drawing.Size(211, 20);
+            this.txtbId_Plan.Size = new System.Drawing.Size(211, 22);
             this.txtbId_Plan.TabIndex = 7;
             // 
             // label1
@@ -160,14 +161,14 @@
             "PRODUCCIÓN"});
             this.cbnStatus.Location = new System.Drawing.Point(125, 160);
             this.cbnStatus.Name = "cbnStatus";
-            this.cbnStatus.Size = new System.Drawing.Size(237, 21);
+            this.cbnStatus.Size = new System.Drawing.Size(237, 24);
             this.cbnStatus.TabIndex = 15;
             // 
             // txtbId_Ped
             // 
             this.txtbId_Ped.Location = new System.Drawing.Point(126, 48);
             this.txtbId_Ped.Name = "txtbId_Ped";
-            this.txtbId_Ped.Size = new System.Drawing.Size(210, 20);
+            this.txtbId_Ped.Size = new System.Drawing.Size(210, 22);
             this.txtbId_Ped.TabIndex = 8;
             // 
             // label3
@@ -204,7 +205,7 @@
             // 
             this.dtpFec_Entr.Location = new System.Drawing.Point(125, 126);
             this.dtpFec_Entr.Name = "dtpFec_Entr";
-            this.dtpFec_Entr.Size = new System.Drawing.Size(237, 20);
+            this.dtpFec_Entr.Size = new System.Drawing.Size(237, 22);
             this.dtpFec_Entr.TabIndex = 10;
             this.dtpFec_Entr.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
             // 
@@ -222,7 +223,7 @@
             // 
             this.dtpFec_Ini.Location = new System.Drawing.Point(124, 87);
             this.dtpFec_Ini.Name = "dtpFec_Ini";
-            this.dtpFec_Ini.Size = new System.Drawing.Size(238, 20);
+            this.dtpFec_Ini.Size = new System.Drawing.Size(238, 22);
             this.dtpFec_Ini.TabIndex = 9;
             // 
             // label7
@@ -242,27 +243,30 @@
             // 
             this.tabPage2.Controls.Add(this.groupBox3);
             this.tabPage2.Controls.Add(this.label11);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(726, 380);
+            this.tabPage2.Size = new System.Drawing.Size(726, 377);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "BUSCAR";
+            this.tabPage2.Text = "Buscar";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // label11
+            // groupBox3
             // 
-            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(246, 9);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(256, 25);
-            this.label11.TabIndex = 17;
-            this.label11.Text = "BUSCAR PLANEACIÓN";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label11.Click += new System.EventHandler(this.label11_Click);
+            this.groupBox3.Controls.Add(this.txtbStatus_buscar);
+            this.groupBox3.Controls.Add(this.dtp_Inicio_Buscar);
+            this.groupBox3.Controls.Add(this.label10);
+            this.groupBox3.Controls.Add(this.txtbId_ped_buscar);
+            this.groupBox3.Controls.Add(this.label9);
+            this.groupBox3.Controls.Add(this.label8);
+            this.groupBox3.Location = new System.Drawing.Point(18, 46);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(678, 306);
+            this.groupBox3.TabIndex = 18;
+            this.groupBox3.TabStop = false;
             // 
             // txtbStatus_buscar
             // 
@@ -276,7 +280,7 @@
             "PRODUCCIÓN"});
             this.txtbStatus_buscar.Location = new System.Drawing.Point(96, 190);
             this.txtbStatus_buscar.Name = "txtbStatus_buscar";
-            this.txtbStatus_buscar.Size = new System.Drawing.Size(458, 21);
+            this.txtbStatus_buscar.Size = new System.Drawing.Size(458, 24);
             this.txtbStatus_buscar.TabIndex = 16;
             // 
             // dtp_Inicio_Buscar
@@ -285,17 +289,8 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dtp_Inicio_Buscar.Location = new System.Drawing.Point(96, 112);
             this.dtp_Inicio_Buscar.Name = "dtp_Inicio_Buscar";
-            this.dtp_Inicio_Buscar.Size = new System.Drawing.Size(458, 20);
+            this.dtp_Inicio_Buscar.Size = new System.Drawing.Size(458, 22);
             this.dtp_Inicio_Buscar.TabIndex = 4;
-            // 
-            // txtbId_ped_buscar
-            // 
-            this.txtbId_ped_buscar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtbId_ped_buscar.Location = new System.Drawing.Point(96, 36);
-            this.txtbId_ped_buscar.Name = "txtbId_ped_buscar";
-            this.txtbId_ped_buscar.Size = new System.Drawing.Size(458, 20);
-            this.txtbId_ped_buscar.TabIndex = 3;
             // 
             // label10
             // 
@@ -306,6 +301,15 @@
             this.label10.Size = new System.Drawing.Size(53, 13);
             this.label10.TabIndex = 2;
             this.label10.Text = "STATUS:";
+            // 
+            // txtbId_ped_buscar
+            // 
+            this.txtbId_ped_buscar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtbId_ped_buscar.Location = new System.Drawing.Point(96, 36);
+            this.txtbId_ped_buscar.Name = "txtbId_ped_buscar";
+            this.txtbId_ped_buscar.Size = new System.Drawing.Size(458, 22);
+            this.txtbId_ped_buscar.TabIndex = 3;
             // 
             // label9
             // 
@@ -329,22 +333,19 @@
             this.label8.TabIndex = 0;
             this.label8.Text = "ID PEDIDO:";
             // 
-            // groupBox3
+            // label11
             // 
-            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox3.Controls.Add(this.txtbStatus_buscar);
-            this.groupBox3.Controls.Add(this.dtp_Inicio_Buscar);
-            this.groupBox3.Controls.Add(this.label10);
-            this.groupBox3.Controls.Add(this.txtbId_ped_buscar);
-            this.groupBox3.Controls.Add(this.label9);
-            this.groupBox3.Controls.Add(this.label8);
-            this.groupBox3.Location = new System.Drawing.Point(18, 46);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(678, 309);
-            this.groupBox3.TabIndex = 18;
-            this.groupBox3.TabStop = false;
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(246, 9);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(256, 25);
+            this.label11.TabIndex = 17;
+            this.label11.Text = "BUSCAR PLANEACIÓN";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // Planeacion
             // 

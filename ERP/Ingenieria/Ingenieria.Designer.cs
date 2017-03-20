@@ -60,10 +60,10 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.label12 = new System.Windows.Forms.Label();
-            this.fechaptxt = new System.Windows.Forms.TextBox();
             this.buscarrtxt = new System.Windows.Forms.Button();
+            this.fechaptxt = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.ingenieriatc.SuspendLayout();
             this.ingenieriaform.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -76,10 +76,14 @@
             // 
             // ingenieriatc
             // 
+            this.ingenieriatc.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ingenieriatc.Controls.Add(this.ingenieriaform);
             this.ingenieriatc.Controls.Add(this.tabPage2);
             this.ingenieriatc.Controls.Add(this.tabPage3);
             this.ingenieriatc.Controls.Add(this.tabPage1);
+            this.ingenieriatc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ingenieriatc.Location = new System.Drawing.Point(28, 28);
             this.ingenieriatc.Name = "ingenieriatc";
             this.ingenieriatc.SelectedIndex = 0;
@@ -98,10 +102,10 @@
             this.ingenieriaform.Controls.Add(this.descripciontxt);
             this.ingenieriaform.Controls.Add(this.idmateriatxt);
             this.ingenieriaform.Controls.Add(this.button1);
-            this.ingenieriaform.Location = new System.Drawing.Point(4, 22);
+            this.ingenieriaform.Location = new System.Drawing.Point(4, 25);
             this.ingenieriaform.Name = "ingenieriaform";
             this.ingenieriaform.Padding = new System.Windows.Forms.Padding(3);
-            this.ingenieriaform.Size = new System.Drawing.Size(650, 314);
+            this.ingenieriaform.Size = new System.Drawing.Size(650, 311);
             this.ingenieriaform.TabIndex = 0;
             this.ingenieriaform.Text = "Captura de materia prima";
             this.ingenieriaform.UseVisualStyleBackColor = true;
@@ -119,7 +123,7 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(6, 109);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(41, 13);
+            this.label9.Size = new System.Drawing.Size(52, 16);
             this.label9.TabIndex = 8;
             this.label9.Text = "Unidad";
             // 
@@ -127,7 +131,7 @@
             // 
             this.unidadtxt.Location = new System.Drawing.Point(123, 102);
             this.unidadtxt.Name = "unidadtxt";
-            this.unidadtxt.Size = new System.Drawing.Size(100, 20);
+            this.unidadtxt.Size = new System.Drawing.Size(100, 22);
             this.unidadtxt.TabIndex = 7;
             // 
             // label3
@@ -135,7 +139,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(3, 75);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(72, 13);
+            this.label3.Size = new System.Drawing.Size(89, 16);
             this.label3.TabIndex = 6;
             this.label3.Text = "Ingrese fecha";
             // 
@@ -144,7 +148,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(3, 48);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(99, 13);
+            this.label2.Size = new System.Drawing.Size(126, 16);
             this.label2.TabIndex = 5;
             this.label2.Text = "Ingrese descripcion";
             // 
@@ -153,7 +157,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(6, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 13);
+            this.label1.Size = new System.Drawing.Size(66, 16);
             this.label1.TabIndex = 4;
             this.label1.Text = "IDMateria";
             // 
@@ -161,21 +165,21 @@
             // 
             this.fechatxt.Location = new System.Drawing.Point(123, 71);
             this.fechatxt.Name = "fechatxt";
-            this.fechatxt.Size = new System.Drawing.Size(100, 20);
+            this.fechatxt.Size = new System.Drawing.Size(100, 22);
             this.fechatxt.TabIndex = 3;
             // 
             // descripciontxt
             // 
             this.descripciontxt.Location = new System.Drawing.Point(123, 45);
             this.descripciontxt.Name = "descripciontxt";
-            this.descripciontxt.Size = new System.Drawing.Size(100, 20);
+            this.descripciontxt.Size = new System.Drawing.Size(100, 22);
             this.descripciontxt.TabIndex = 2;
             // 
             // idmateriatxt
             // 
             this.idmateriatxt.Location = new System.Drawing.Point(123, 16);
             this.idmateriatxt.Name = "idmateriatxt";
-            this.idmateriatxt.Size = new System.Drawing.Size(100, 20);
+            this.idmateriatxt.Size = new System.Drawing.Size(100, 22);
             this.idmateriatxt.TabIndex = 1;
             // 
             // button1
@@ -219,7 +223,7 @@
             // 
             this.cantidadtxt.Location = new System.Drawing.Point(128, 162);
             this.cantidadtxt.Name = "cantidadtxt";
-            this.cantidadtxt.Size = new System.Drawing.Size(100, 20);
+            this.cantidadtxt.Size = new System.Drawing.Size(100, 22);
             this.cantidadtxt.TabIndex = 8;
             // 
             // label11
@@ -227,7 +231,7 @@
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(46, 169);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(49, 13);
+            this.label11.Size = new System.Drawing.Size(62, 16);
             this.label11.TabIndex = 7;
             this.label11.Text = "Cantidad";
             // 
@@ -236,7 +240,7 @@
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(66, 124);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(43, 13);
+            this.label10.Size = new System.Drawing.Size(54, 16);
             this.label10.TabIndex = 6;
             this.label10.Text = "Destino";
             // 
@@ -244,7 +248,7 @@
             // 
             this.destinotxt.Location = new System.Drawing.Point(128, 117);
             this.destinotxt.Name = "destinotxt";
-            this.destinotxt.Size = new System.Drawing.Size(100, 20);
+            this.destinotxt.Size = new System.Drawing.Size(100, 22);
             this.destinotxt.TabIndex = 5;
             // 
             // button4
@@ -260,14 +264,14 @@
             // 
             this.textBox8.Location = new System.Drawing.Point(128, 81);
             this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(100, 20);
+            this.textBox8.Size = new System.Drawing.Size(100, 22);
             this.textBox8.TabIndex = 3;
             // 
             // textBox7
             // 
             this.textBox7.Location = new System.Drawing.Point(128, 38);
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 20);
+            this.textBox7.Size = new System.Drawing.Size(100, 22);
             this.textBox7.TabIndex = 2;
             // 
             // label8
@@ -275,7 +279,7 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(6, 41);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(103, 13);
+            this.label8.Size = new System.Drawing.Size(128, 16);
             this.label8.TabIndex = 1;
             this.label8.Text = "Ingresar Id Producto";
             // 
@@ -284,7 +288,7 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(6, 81);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(116, 13);
+            this.label7.Size = new System.Drawing.Size(146, 16);
             this.label7.TabIndex = 0;
             this.label7.Text = "Ingresar Id Descripcion";
             // 
@@ -318,21 +322,21 @@
             // 
             this.tipoltxt.Location = new System.Drawing.Point(101, 85);
             this.tipoltxt.Name = "tipoltxt";
-            this.tipoltxt.Size = new System.Drawing.Size(100, 20);
+            this.tipoltxt.Size = new System.Drawing.Size(100, 22);
             this.tipoltxt.TabIndex = 5;
             // 
             // descripcionltxt
             // 
             this.descripcionltxt.Location = new System.Drawing.Point(101, 52);
             this.descripcionltxt.Name = "descripcionltxt";
-            this.descripcionltxt.Size = new System.Drawing.Size(100, 20);
+            this.descripcionltxt.Size = new System.Drawing.Size(100, 22);
             this.descripcionltxt.TabIndex = 4;
             // 
             // textBox4
             // 
             this.textBox4.Location = new System.Drawing.Point(101, 18);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
+            this.textBox4.Size = new System.Drawing.Size(100, 22);
             this.textBox4.TabIndex = 3;
             // 
             // label6
@@ -340,7 +344,7 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(35, 92);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(28, 13);
+            this.label6.Size = new System.Drawing.Size(36, 16);
             this.label6.TabIndex = 2;
             this.label6.Text = "Tipo";
             // 
@@ -349,7 +353,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(9, 59);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(63, 13);
+            this.label5.Size = new System.Drawing.Size(80, 16);
             this.label5.TabIndex = 1;
             this.label5.Text = "Descripcion";
             // 
@@ -358,7 +362,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(22, 18);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(41, 13);
+            this.label4.Size = new System.Drawing.Size(51, 16);
             this.label4.TabIndex = 0;
             this.label4.Text = "Id linea";
             // 
@@ -376,30 +380,6 @@
             this.tabPage1.Text = "Reportes";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // dataGridView3
-            // 
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(74, 81);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.Size = new System.Drawing.Size(477, 227);
-            this.dataGridView3.TabIndex = 0;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(198, 61);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(34, 13);
-            this.label12.TabIndex = 1;
-            this.label12.Text = "fecha";
-            // 
-            // fechaptxt
-            // 
-            this.fechaptxt.Location = new System.Drawing.Point(252, 56);
-            this.fechaptxt.Name = "fechaptxt";
-            this.fechaptxt.Size = new System.Drawing.Size(100, 20);
-            this.fechaptxt.TabIndex = 2;
-            // 
             // buscarrtxt
             // 
             this.buscarrtxt.Location = new System.Drawing.Point(386, 56);
@@ -409,13 +389,40 @@
             this.buscarrtxt.Text = "Buscar";
             this.buscarrtxt.UseVisualStyleBackColor = true;
             // 
+            // fechaptxt
+            // 
+            this.fechaptxt.Location = new System.Drawing.Point(252, 56);
+            this.fechaptxt.Name = "fechaptxt";
+            this.fechaptxt.Size = new System.Drawing.Size(100, 22);
+            this.fechaptxt.TabIndex = 2;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(198, 61);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(41, 16);
+            this.label12.TabIndex = 1;
+            this.label12.Text = "fecha";
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Location = new System.Drawing.Point(74, 81);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.Size = new System.Drawing.Size(477, 227);
+            this.dataGridView3.TabIndex = 0;
+            // 
             // Ingenieria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(715, 397);
+            this.ControlBox = false;
             this.Controls.Add(this.ingenieriatc);
             this.Name = "Ingenieria";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ingenieria";
             this.ingenieriatc.ResumeLayout(false);

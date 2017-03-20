@@ -71,11 +71,12 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.ItemSize = new System.Drawing.Size(119, 18);
-            this.tabControl1.Location = new System.Drawing.Point(3, 4);
+            this.tabControl1.Location = new System.Drawing.Point(27, 25);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(579, 258);
+            this.tabControl1.Size = new System.Drawing.Size(730, 375);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -101,9 +102,9 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(571, 232);
+            this.tabPage1.Size = new System.Drawing.Size(722, 349);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "VENTA";
+            this.tabPage1.Text = "Venta";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // btnBuscar
@@ -267,9 +268,9 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(571, 232);
+            this.tabPage2.Size = new System.Drawing.Size(722, 349);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "HISTORIAL";
+            this.tabPage2.Text = "Historial";
             // 
             // dataGridView1
             // 
@@ -316,7 +317,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(583, 264);
+            this.ClientSize = new System.Drawing.Size(758, 402);
             this.ControlBox = false;
             this.Controls.Add(this.tabControl1);
             this.Name = "Ventas";

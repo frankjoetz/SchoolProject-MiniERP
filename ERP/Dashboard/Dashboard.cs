@@ -15,6 +15,8 @@ namespace ERP.Dashboard
         public Dashboard()
         {
             InitializeComponent();
+            this.WindowState = FormWindowState.Maximized;
+
         }
 
         private void chartcomputadora_Click(object sender, EventArgs e)

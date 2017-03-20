@@ -16,6 +16,7 @@ namespace ERP.Ventas
         public Ventas()
         {
             InitializeComponent();
+            this.WindowState = FormWindowState.Maximized;
         }
 
         private void timer1_Tick(object sender, EventArgs e)

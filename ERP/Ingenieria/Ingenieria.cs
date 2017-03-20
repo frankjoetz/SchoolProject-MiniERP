@@ -16,6 +16,7 @@ namespace ERP.Ingenieria
         public Ingenieria()
         {
             InitializeComponent();
+            this.WindowState = FormWindowState.Maximized;
         }
     }
 }
