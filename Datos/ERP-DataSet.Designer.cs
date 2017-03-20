@@ -54,13 +54,19 @@ namespace Datos {
         
         private UsuarioDataTable tableUsuario;
         
-        private global::System.Data.DataRelation relationInventarioMateria_ibfk_2;
-        
         private global::System.Data.DataRelation relationConsumo_ibfk_1;
+        
+        private global::System.Data.DataRelation relationConsumo_ibfk_2;
+        
+        private global::System.Data.DataRelation relationDetallePedido_ibfk_1;
+        
+        private global::System.Data.DataRelation relationDetallePedido_ibfk_2;
         
         private global::System.Data.DataRelation relationInventarioMateria_ibfk_1;
         
-        private global::System.Data.DataRelation relationDetallePedido_ibfk_2;
+        private global::System.Data.DataRelation relationInventarioMateria_ibfk_2;
+        
+        private global::System.Data.DataRelation relationInventarioProducto_ibfk_1;
         
         private global::System.Data.DataRelation relationPedido_ibfk_1;
         
@@ -68,17 +74,11 @@ namespace Datos {
         
         private global::System.Data.DataRelation relationProduccion_ibfk_1;
         
-        private global::System.Data.DataRelation relationConsumo_ibfk_2;
-        
-        private global::System.Data.DataRelation relationDetallePedido_ibfk_1;
-        
-        private global::System.Data.DataRelation relationInventarioProducto_ibfk_1;
+        private global::System.Data.DataRelation relationRegistroMovimiento_ibfk_1;
         
         private global::System.Data.DataRelation relationRegistroMovimiento_ibfk_2;
         
         private global::System.Data.DataRelation relationRegistroMovimiento_ibfk_3;
-        
-        private global::System.Data.DataRelation relationRegistroMovimiento_ibfk_1;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -556,19 +556,19 @@ namespace Datos {
                     this.tableUsuario.InitVars();
                 }
             }
-            this.relationInventarioMateria_ibfk_2 = this.Relations["InventarioMateria_ibfk_2"];
             this.relationConsumo_ibfk_1 = this.Relations["Consumo_ibfk_1"];
-            this.relationInventarioMateria_ibfk_1 = this.Relations["InventarioMateria_ibfk_1"];
+            this.relationConsumo_ibfk_2 = this.Relations["Consumo_ibfk_2"];
+            this.relationDetallePedido_ibfk_1 = this.Relations["DetallePedido_ibfk_1"];
             this.relationDetallePedido_ibfk_2 = this.Relations["DetallePedido_ibfk_2"];
+            this.relationInventarioMateria_ibfk_1 = this.Relations["InventarioMateria_ibfk_1"];
+            this.relationInventarioMateria_ibfk_2 = this.Relations["InventarioMateria_ibfk_2"];
+            this.relationInventarioProducto_ibfk_1 = this.Relations["InventarioProducto_ibfk_1"];
             this.relationPedido_ibfk_1 = this.Relations["Pedido_ibfk_1"];
             this.relationPlaneacion_ibfk_1 = this.Relations["Planeacion_ibfk_1"];
             this.relationProduccion_ibfk_1 = this.Relations["Produccion_ibfk_1"];
-            this.relationConsumo_ibfk_2 = this.Relations["Consumo_ibfk_2"];
-            this.relationDetallePedido_ibfk_1 = this.Relations["DetallePedido_ibfk_1"];
-            this.relationInventarioProducto_ibfk_1 = this.Relations["InventarioProducto_ibfk_1"];
+            this.relationRegistroMovimiento_ibfk_1 = this.Relations["RegistroMovimiento_ibfk_1"];
             this.relationRegistroMovimiento_ibfk_2 = this.Relations["RegistroMovimiento_ibfk_2"];
             this.relationRegistroMovimiento_ibfk_3 = this.Relations["RegistroMovimiento_ibfk_3"];
-            this.relationRegistroMovimiento_ibfk_1 = this.Relations["RegistroMovimiento_ibfk_1"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -609,22 +609,34 @@ namespace Datos {
             base.Tables.Add(this.tableRegistroMovimiento);
             this.tableUsuario = new UsuarioDataTable();
             base.Tables.Add(this.tableUsuario);
-            this.relationInventarioMateria_ibfk_2 = new global::System.Data.DataRelation("InventarioMateria_ibfk_2", new global::System.Data.DataColumn[] {
-                        this.tableLocacion.idLocacionColumn}, new global::System.Data.DataColumn[] {
-                        this.tableInventarioMateria.idLocacionColumn}, false);
-            this.Relations.Add(this.relationInventarioMateria_ibfk_2);
             this.relationConsumo_ibfk_1 = new global::System.Data.DataRelation("Consumo_ibfk_1", new global::System.Data.DataColumn[] {
                         this.tableMateriaPrima.idMateriaColumn}, new global::System.Data.DataColumn[] {
                         this.tableConsumo.idMateriaColumn}, false);
             this.Relations.Add(this.relationConsumo_ibfk_1);
-            this.relationInventarioMateria_ibfk_1 = new global::System.Data.DataRelation("InventarioMateria_ibfk_1", new global::System.Data.DataColumn[] {
-                        this.tableMateriaPrima.idMateriaColumn}, new global::System.Data.DataColumn[] {
-                        this.tableInventarioMateria.idMateriaColumn}, false);
-            this.Relations.Add(this.relationInventarioMateria_ibfk_1);
+            this.relationConsumo_ibfk_2 = new global::System.Data.DataRelation("Consumo_ibfk_2", new global::System.Data.DataColumn[] {
+                        this.tableProducto.idProductoColumn}, new global::System.Data.DataColumn[] {
+                        this.tableConsumo.idproductoColumn}, false);
+            this.Relations.Add(this.relationConsumo_ibfk_2);
+            this.relationDetallePedido_ibfk_1 = new global::System.Data.DataRelation("DetallePedido_ibfk_1", new global::System.Data.DataColumn[] {
+                        this.tableProducto.idProductoColumn}, new global::System.Data.DataColumn[] {
+                        this.tableDetallePedido.idproductoColumn}, false);
+            this.Relations.Add(this.relationDetallePedido_ibfk_1);
             this.relationDetallePedido_ibfk_2 = new global::System.Data.DataRelation("DetallePedido_ibfk_2", new global::System.Data.DataColumn[] {
                         this.tablePedido.idPedidoColumn}, new global::System.Data.DataColumn[] {
                         this.tableDetallePedido.idPedidoColumn}, false);
             this.Relations.Add(this.relationDetallePedido_ibfk_2);
+            this.relationInventarioMateria_ibfk_1 = new global::System.Data.DataRelation("InventarioMateria_ibfk_1", new global::System.Data.DataColumn[] {
+                        this.tableMateriaPrima.idMateriaColumn}, new global::System.Data.DataColumn[] {
+                        this.tableInventarioMateria.idMateriaColumn}, false);
+            this.Relations.Add(this.relationInventarioMateria_ibfk_1);
+            this.relationInventarioMateria_ibfk_2 = new global::System.Data.DataRelation("InventarioMateria_ibfk_2", new global::System.Data.DataColumn[] {
+                        this.tableLocacion.idLocacionColumn}, new global::System.Data.DataColumn[] {
+                        this.tableInventarioMateria.idLocacionColumn}, false);
+            this.Relations.Add(this.relationInventarioMateria_ibfk_2);
+            this.relationInventarioProducto_ibfk_1 = new global::System.Data.DataRelation("InventarioProducto_ibfk_1", new global::System.Data.DataColumn[] {
+                        this.tableProducto.idProductoColumn}, new global::System.Data.DataColumn[] {
+                        this.tableInventarioProducto.idProductoColumn}, false);
+            this.Relations.Add(this.relationInventarioProducto_ibfk_1);
             this.relationPedido_ibfk_1 = new global::System.Data.DataRelation("Pedido_ibfk_1", new global::System.Data.DataColumn[] {
                         this.tableCliente.idClienteColumn}, new global::System.Data.DataColumn[] {
                         this.tablePedido.idClienteColumn}, false);
@@ -637,18 +649,10 @@ namespace Datos {
                         this.tablePlaneacion.idPlaneacionColumn}, new global::System.Data.DataColumn[] {
                         this.tableProduccion.idPlaneacionColumn}, false);
             this.Relations.Add(this.relationProduccion_ibfk_1);
-            this.relationConsumo_ibfk_2 = new global::System.Data.DataRelation("Consumo_ibfk_2", new global::System.Data.DataColumn[] {
-                        this.tableProducto.idProductoColumn}, new global::System.Data.DataColumn[] {
-                        this.tableConsumo.idproductoColumn}, false);
-            this.Relations.Add(this.relationConsumo_ibfk_2);
-            this.relationDetallePedido_ibfk_1 = new global::System.Data.DataRelation("DetallePedido_ibfk_1", new global::System.Data.DataColumn[] {
-                        this.tableProducto.idProductoColumn}, new global::System.Data.DataColumn[] {
-                        this.tableDetallePedido.idproductoColumn}, false);
-            this.Relations.Add(this.relationDetallePedido_ibfk_1);
-            this.relationInventarioProducto_ibfk_1 = new global::System.Data.DataRelation("InventarioProducto_ibfk_1", new global::System.Data.DataColumn[] {
-                        this.tableProducto.idProductoColumn}, new global::System.Data.DataColumn[] {
-                        this.tableInventarioProducto.idProductoColumn}, false);
-            this.Relations.Add(this.relationInventarioProducto_ibfk_1);
+            this.relationRegistroMovimiento_ibfk_1 = new global::System.Data.DataRelation("RegistroMovimiento_ibfk_1", new global::System.Data.DataColumn[] {
+                        this.tableUsuario.idUsuarioColumn}, new global::System.Data.DataColumn[] {
+                        this.tableRegistroMovimiento.idUsuarioColumn}, false);
+            this.Relations.Add(this.relationRegistroMovimiento_ibfk_1);
             this.relationRegistroMovimiento_ibfk_2 = new global::System.Data.DataRelation("RegistroMovimiento_ibfk_2", new global::System.Data.DataColumn[] {
                         this.tableLocacion.idLocacionColumn}, new global::System.Data.DataColumn[] {
                         this.tableRegistroMovimiento.idLocacionColumn}, false);
@@ -657,10 +661,6 @@ namespace Datos {
                         this.tableMateriaPrima.idMateriaColumn}, new global::System.Data.DataColumn[] {
                         this.tableRegistroMovimiento.idMateriaColumn}, false);
             this.Relations.Add(this.relationRegistroMovimiento_ibfk_3);
-            this.relationRegistroMovimiento_ibfk_1 = new global::System.Data.DataRelation("RegistroMovimiento_ibfk_1", new global::System.Data.DataColumn[] {
-                        this.tableUsuario.idUsuarioColumn}, new global::System.Data.DataColumn[] {
-                        this.tableRegistroMovimiento.idUsuarioColumn}, false);
-            this.Relations.Add(this.relationRegistroMovimiento_ibfk_1);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5746,23 +5746,23 @@ namespace Datos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public PedidoRow PedidoRow {
-                get {
-                    return ((PedidoRow)(this.GetParentRow(this.Table.ParentRelations["DetallePedido_ibfk_2"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["DetallePedido_ibfk_2"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public ProductoRow ProductoRow {
                 get {
                     return ((ProductoRow)(this.GetParentRow(this.Table.ParentRelations["DetallePedido_ibfk_1"])));
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["DetallePedido_ibfk_1"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public PedidoRow PedidoRow {
+                get {
+                    return ((PedidoRow)(this.GetParentRow(this.Table.ParentRelations["DetallePedido_ibfk_2"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["DetallePedido_ibfk_2"]);
                 }
             }
         }
@@ -5838,23 +5838,23 @@ namespace Datos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public LocacionRow LocacionRow {
-                get {
-                    return ((LocacionRow)(this.GetParentRow(this.Table.ParentRelations["InventarioMateria_ibfk_2"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["InventarioMateria_ibfk_2"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public MateriaPrimaRow MateriaPrimaRow {
                 get {
                     return ((MateriaPrimaRow)(this.GetParentRow(this.Table.ParentRelations["InventarioMateria_ibfk_1"])));
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["InventarioMateria_ibfk_1"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public LocacionRow LocacionRow {
+                get {
+                    return ((LocacionRow)(this.GetParentRow(this.Table.ParentRelations["InventarioMateria_ibfk_2"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["InventarioMateria_ibfk_2"]);
                 }
             }
         }
@@ -6604,6 +6604,17 @@ namespace Datos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public UsuarioRow UsuarioRow {
+                get {
+                    return ((UsuarioRow)(this.GetParentRow(this.Table.ParentRelations["RegistroMovimiento_ibfk_1"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["RegistroMovimiento_ibfk_1"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public LocacionRow LocacionRow {
                 get {
                     return ((LocacionRow)(this.GetParentRow(this.Table.ParentRelations["RegistroMovimiento_ibfk_2"])));
@@ -6621,17 +6632,6 @@ namespace Datos {
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["RegistroMovimiento_ibfk_3"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public UsuarioRow UsuarioRow {
-                get {
-                    return ((UsuarioRow)(this.GetParentRow(this.Table.ParentRelations["RegistroMovimiento_ibfk_1"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["RegistroMovimiento_ibfk_1"]);
                 }
             }
         }
@@ -7574,7 +7574,7 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
-            this._connection.ConnectionString = global::Datos.Properties.Settings.Default.erpdbConnectionString;
+            this._connection.ConnectionString = "";
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8000,7 +8000,7 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
-            this._connection.ConnectionString = global::Datos.Properties.Settings.Default.erpdbConnectionString;
+            this._connection.ConnectionString = "";
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8257,7 +8257,7 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
-            this._connection.ConnectionString = global::Datos.Properties.Settings.Default.erpdbConnectionString;
+            this._connection.ConnectionString = "";
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8639,7 +8639,7 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
-            this._connection.ConnectionString = global::Datos.Properties.Settings.Default.erpdbConnectionString;
+            this._connection.ConnectionString = "";
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9072,7 +9072,7 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
-            this._connection.ConnectionString = global::Datos.Properties.Settings.Default.erpdbConnectionString;
+            this._connection.ConnectionString = "";
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9411,7 +9411,7 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
-            this._connection.ConnectionString = global::Datos.Properties.Settings.Default.erpdbConnectionString;
+            this._connection.ConnectionString = "";
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9790,7 +9790,7 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
-            this._connection.ConnectionString = global::Datos.Properties.Settings.Default.erpdbConnectionString;
+            this._connection.ConnectionString = "";
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10206,7 +10206,7 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
-            this._connection.ConnectionString = global::Datos.Properties.Settings.Default.erpdbConnectionString;
+            this._connection.ConnectionString = "";
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10612,7 +10612,7 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
-            this._connection.ConnectionString = global::Datos.Properties.Settings.Default.erpdbConnectionString;
+            this._connection.ConnectionString = "";
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -11065,7 +11065,7 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
-            this._connection.ConnectionString = global::Datos.Properties.Settings.Default.erpdbConnectionString;
+            this._connection.ConnectionString = "";
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -11491,7 +11491,7 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
-            this._connection.ConnectionString = global::Datos.Properties.Settings.Default.erpdbConnectionString;
+            this._connection.ConnectionString = "";
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -11891,7 +11891,7 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
-            this._connection.ConnectionString = global::Datos.Properties.Settings.Default.erpdbConnectionString;
+            this._connection.ConnectionString = "";
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -12265,7 +12265,7 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
-            this._connection.ConnectionString = global::Datos.Properties.Settings.Default.erpdbConnectionString;
+            this._connection.ConnectionString = "";
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -12603,7 +12603,7 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
-            this._connection.ConnectionString = global::Datos.Properties.Settings.Default.erpdbConnectionString;
+            this._connection.ConnectionString = "";
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -12893,7 +12893,7 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
-            this._connection.ConnectionString = global::Datos.Properties.Settings.Default.erpdbConnectionString;
+            this._connection.ConnectionString = "";
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
