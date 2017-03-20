@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
+using Datos.Properties;
 
 namespace Datos
 {
@@ -16,7 +17,7 @@ namespace Datos
         //
         public Conexion()
         {
-            this.cadenadeconexion = "server=tics41.ddns.net;User Id=root;database=erpdb";
+            this.cadenadeconexion = Settings.Default.erpdbConnectionString;
             conn = new SqlConnection(cadenadeconexion);
         }
         public Boolean conectar() //abrir conexion
