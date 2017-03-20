@@ -17,5 +17,12 @@ namespace ERP.Almacen
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
         }
+
+        private void Almacen_Load(object sender, EventArgs e)
+        {
+            // TODO: esta línea de código carga datos en la tabla 'erpdbDataSet.Prueba' Puede moverla o quitarla según sea necesario.
+            this.pruebaTableAdapter.Fill(this.erpdbDataSet.Prueba);
+
+        }
     }
 }

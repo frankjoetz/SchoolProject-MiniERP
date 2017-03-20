@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.textBox4 = new System.Windows.Forms.TextBox();
@@ -89,6 +90,9 @@
             this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.erpdbDataSet = new ERP.erpdbDataSet();
+            this.pruebaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pruebaTableAdapter = new ERP.erpdbDataSetTableAdapters.PruebaTableAdapter();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -99,6 +103,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpdbDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pruebaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -254,7 +260,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(595, 339);
+            this.tabPage2.Size = new System.Drawing.Size(615, 501);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Capturar";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -430,7 +436,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(595, 339);
+            this.tabPage3.Size = new System.Drawing.Size(615, 501);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Transacciones";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -528,7 +534,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 25);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(595, 339);
+            this.tabPage4.Size = new System.Drawing.Size(615, 501);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Inventario";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -596,7 +602,7 @@
             this.tabPage5.Location = new System.Drawing.Point(4, 25);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(595, 339);
+            this.tabPage5.Size = new System.Drawing.Size(615, 501);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Consumos";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -675,6 +681,20 @@
             this.dataGridView4.Size = new System.Drawing.Size(439, 156);
             this.dataGridView4.TabIndex = 0;
             // 
+            // erpdbDataSet
+            // 
+            this.erpdbDataSet.DataSetName = "erpdbDataSet";
+            this.erpdbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // pruebaBindingSource
+            // 
+            this.pruebaBindingSource.DataMember = "Prueba";
+            this.pruebaBindingSource.DataSource = this.erpdbDataSet;
+            // 
+            // pruebaTableAdapter
+            // 
+            this.pruebaTableAdapter.ClearBeforeFill = true;
+            // 
             // Almacen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -687,6 +707,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Almacen";
+            this.Load += new System.EventHandler(this.Almacen_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -702,6 +723,8 @@
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpdbDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pruebaBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -769,5 +792,8 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.DataGridView dataGridView4;
+        private erpdbDataSet erpdbDataSet;
+        private System.Windows.Forms.BindingSource pruebaBindingSource;
+        private erpdbDataSetTableAdapters.PruebaTableAdapter pruebaTableAdapter;
     }
 }
