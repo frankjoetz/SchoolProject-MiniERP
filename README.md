@@ -4,6 +4,13 @@
 
 - https://dev.mysql.com/downloads/connector/net/
 
+### Normas de diseño:
+
+Fuente:
+- Fuente normal: Corbel / 12px
+- Tabs: Corbel / 14px 
+- (No mayúsculas, no negritas)
+
 ### Equipos a manejar:
 
 | | Gama baja | Gama media | Gama Alta |
