@@ -177,10 +177,6 @@
     <None Include="Resources\Alienware17R3__1_.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Datos\Datos.csproj">
-      <Project>{0670e448-0cb4-4610-a2c1-54b67d4db997}</Project>
-      <Name>Datos</Name>
-    </ProjectReference>
     <ProjectReference Include="..\LogicaDeNegocios\LogicaDeNegocios.csproj">
       <Project>{9c570ea5-6cb0-45d7-b59e-fbac6bdf58a0}</Project>
       <Name>LogicaDeNegocios</Name>

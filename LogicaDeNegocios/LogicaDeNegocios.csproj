@@ -44,17 +44,17 @@
     <Compile Include="Ventas\metodosVentas.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Datos\Datos.csproj">
-      <Project>{0670e448-0cb4-4610-a2c1-54b67d4db997}</Project>
-      <Name>Datos</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="Compras\" />
     <Folder Include="Dashboard\" />
     <Folder Include="Ingenieria\" />
     <Folder Include="Planeacion\" />
     <Folder Include="Produccion\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Datos\Datos.csproj">
+      <Project>{0670e448-0cb4-4610-a2c1-54b67d4db997}</Project>
+      <Name>Datos</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

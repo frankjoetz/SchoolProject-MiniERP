@@ -9,7 +9,7 @@ using Datos.Properties;
 
 namespace Datos
 {
-    class Conexion
+    public class Conexion
     {
         public SqlConnection conn;
         public string cadenadeconexion;

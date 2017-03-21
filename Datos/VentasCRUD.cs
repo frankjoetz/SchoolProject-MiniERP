@@ -44,19 +44,19 @@ namespace Datos
             get { return cant; }
             set { cant = value; }
         }
-        private string fotoclient;
-
-        public string Fotoclient
-        {
-            get { return fotoclient; }
-            set { fotoclient = value; }
-        }
         private string nombCliente;
 
         public string NombCliente
         {
             get { return nombCliente; }
             set { nombCliente = value; }
+        }
+        private string apeCliente;
+
+        public string ApeCliente
+        {
+            get { return apeCliente; }
+            set { apeCliente = value; }
         }
         private int telClient;
 
@@ -65,13 +65,6 @@ namespace Datos
             get { return telClient; }
             set { telClient = value; }
         }
-        private string empresaClient;
-
-        public string EmpresaClient
-        {
-            get { return empresaClient; }
-            set { empresaClient = value; }
-        }
         private string direClient;
 
         public string DireClient
@@ -79,57 +72,67 @@ namespace Datos
             get { return direClient; }
             set { direClient = value; }
         }
+        private string email;
 
-        public VentasCRUD(int idClient, string Empresa, string equipoCom, int cant, string fotoClient, string NomClient, int telClient, string empresaClient,string direClient)
+        public string Email
+        {
+            get { return email; }
+            set { email = value; }
+        }
+        private int statusClient;
+
+        public int StatusClient
+        {
+            get { return statusClient; }
+            set { statusClient = value; }
+        }
+        public VentasCRUD() { }
+
+        public VentasCRUD(string NomClient, string Empresa, string ApeCliente, int telClient, string direClient, string Email, int StatusClient)
         {
             /* this.idCliente = IdCliente;
             this.empresa = Empresa;
             this.equipoCom = EquipoCom;
             this.cant = Cant;
-            this.fotoclient = Fotoclient;
             this.nombCliente = NombCliente;
             this.telClient = TelClient;
             this.empresaClient = EmpresaClient;
             this.direClient = DireClient; */
 
-            this.IdCliente = idCliente;
-            this.Empresa = Empresa;
-            this.EquipoCom = equipoCom;
-            this.Cant = cant;
-            this.Fotoclient = fotoClient;
-            this.NombCliente = NomClient;
-            this.TelClient = telClient;
-            this.EmpresaClient = empresaClient;
-            this.DireClient = direClient;
+            this.empresa = Empresa;
+            this.nombCliente = NomClient;
+            this.apeCliente = ApeCliente;
+            this.telClient = telClient;
+            this.direClient = direClient;
+            this.email = Email;
+            this.statusClient = StatusClient;
         }
 
-        //public int agregarCliente(VentasCRUD vcrud)
-        //{
-        //    int resultado = 0;
-        //    try
-        //    {
-        //        SqlCommand comandosql;
-        //        Conexion conecta = new Conexion();
-        //        conecta.conectar();
-        //        //conecta.isConnected();
-               
-        //        string query = string.Format("Insert into 
-        //        string query = string.Format("insert into Inventario(Nomb_Producto,Descripcion,Precio_Compra,Precio_Unidad,Stock_Minimo,Stock,Foto) values('{0}','{1}','{2}','{3}','{4}','{5}','{6}')", pinventario.nombreProducto, pinventario.categoria, pinventario.precioVen, pinventario.precioUni, pinventario.cantMin, pinventario.cantExist, pinventario.foto);
-        //        comandosql = new SqlCommand(query, conecta.conn);
-        //        //comandosql = new SqlCommand(query, conecta.cnn);
-        //        resultado = comandosql.ExecuteNonQuery();
-        //        conecta.Desconectar();
-        //        //conecta.notConnected();
-        //        conecta.conn.Close();
-        //        //conecta.cnn.Close();
-        //    }
-        //    catch (Exception ex)
-        //    {
+        public int agregarCliente(VentasCRUD vcli)
+        {
+            int resultado = 0;
+            try
+            {
+                SqlCommand comandosql;
+                Conexion conecta = new Conexion();
+                conecta.conectar();
+                //conecta.isConnected();
+                string query = string.Format("Insert into Cliente(nombre,apellidos,empresa,telefono,direccion,e-mail,statusCliente) values('{0}','{1}','{2}','{3}','{4}','{5}','{6}')", vcli.nombCliente, vcli.apeCliente, vcli.empresa, vcli.telClient, vcli.direClient, vcli.email, vcli.statusClient);
+                comandosql = new SqlCommand(query, conecta.conn);
+                //comandosql = new SqlCommand(query, conecta.cnn);
+                resultado = comandosql.ExecuteNonQuery();
+                conecta.Desconectar();
+                //conecta.notConnected();
+                conecta.conn.Close();
+                //conecta.cnn.Close();
+            }
+            catch (Exception ex)
+            {
 
-        //    }
+            }
 
-        //    return resultado;
-        //}
+            return resultado;
+        }
 
     }
 
