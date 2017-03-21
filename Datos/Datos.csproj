@@ -60,6 +60,7 @@
     <Compile Include="VentasCRUD.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="ERP-DataSet.xsc">
       <DependentUpon>ERP-DataSet.xsd</DependentUpon>
     </None>

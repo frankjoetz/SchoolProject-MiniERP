@@ -3,22 +3,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data.SqlClient;
-using System.Data;
+using MySql.Data.MySqlClient;
+using MySql.Data;
 using Datos.Properties;
+using System.Data;
 
 namespace Datos
 {
     public class Conexion
     {
-        public SqlConnection conn;
+        public MySqlConnection conn;
         public string cadenadeconexion;
-        public SqlCommand cmd;
+        public MySqlCommand cmd;
         //
         public Conexion()
         {
             this.cadenadeconexion = Settings.Default.erpdbConnectionString;
-            conn = new SqlConnection(cadenadeconexion);
+            conn = new MySqlConnection(cadenadeconexion);
         }
         public Boolean conectar() //abrir conexion
         {

@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data.SqlClient;
-using System.Data;
+using MySql.Data.MySqlClient;
+using MySql.Data;
 
 namespace Datos
 {
@@ -12,9 +12,9 @@ namespace Datos
     {
         public String cadenadeconexion;
         protected String sql;
-        public SqlCommand comandosql;
-        public SqlConnection cnn;
-        public SqlDataAdapter da;
+        public MySqlCommand comandosql;
+        public MySqlConnection cnn;
+        public MySqlDataAdapter da;
 
         private int idCliente;
 
@@ -113,12 +113,12 @@ namespace Datos
             int resultado = 0;
             try
             {
-                SqlCommand comandosql;
+                MySqlCommand comandosql;
                 Conexion conecta = new Conexion();
                 conecta.conectar();
                 //conecta.isConnected();
-                string query = string.Format("Insert into Cliente(nombre,apellidos,empresa,telefono,direccion,e-mail,statusCliente) values('{0}','{1}','{2}','{3}','{4}','{5}','{6}')", vcli.nombCliente, vcli.apeCliente, vcli.empresa, vcli.telClient, vcli.direClient, vcli.email, vcli.statusClient);
-                comandosql = new SqlCommand(query, conecta.conn);
+                string query = string.Format("Insert into Cliente(nombre,apellidos,empresa,telefono,direccion,email,statusCliente) values('{0}','{1}','{2}','{3}','{4}','{5}','{6}')", vcli.nombCliente, vcli.apeCliente, vcli.empresa, vcli.telClient, vcli.direClient, vcli.email, vcli.statusClient);
+                comandosql = new MySqlCommand(query, conecta.conn);
                 //comandosql = new SqlCommand(query, conecta.cnn);
                 resultado = comandosql.ExecuteNonQuery();
                 conecta.Desconectar();
