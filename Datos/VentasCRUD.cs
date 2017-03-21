@@ -86,6 +86,13 @@ namespace Datos
             get { return statusClient; }
             set { statusClient = value; }
         }
+        private string detallePedido;
+
+        public string DetallePedido
+        {
+            get { return detallePedido; }
+            set { detallePedido = value; }
+        }
         private int idPedido;
 
         public int IdPedido
@@ -93,6 +100,15 @@ namespace Datos
             get { return idPedido; }
             set { idPedido = value; }
         }
+        private string fecha;
+
+        public string Fecha
+        {
+            get { return fecha; }
+            set { fecha = value; }
+        }
+
+      
         //constructor sin nada
         public VentasCRUD() { }
         //constructor para cliente
@@ -108,11 +124,10 @@ namespace Datos
             this.statusClient = StatusClient;
         }
         //constructor para pedido
-        public VentasCRUD(int detallePedido, int idproducto, int cantidad)
+        public VentasCRUD(int idcliente, string fecha)
         {
-            this.idCliente = detallePedido;
-            this.equipoCom = idproducto;
-            this.cant = cantidad;
+            this.idCliente = idcliente;
+            this.fecha = fecha;
         }
         public int agregarPedido(VentasCRUD vped)
         {
@@ -121,8 +136,8 @@ namespace Datos
             {
                 MySqlCommand comandosql;
                 Conexion conecta = new Conexion();
-                conecta.conectar();
-                string query = string.Format("Insert into DetallePedido(*columna_int*,idproducto,cantidad) values('{0}','{1}','{2}')", vped.idCliente, vped.equipoCom, vped.cant);
+                conecta.conectar();                                                                                  //variable global
+                string query = string.Format("Insert into Pedido(idCliente,fecha) values('{0}','{1}')",vped.idCliente, vped.fecha);
                 comandosql = new MySqlCommand(query, conecta.conn);
                 resultado = comandosql.ExecuteNonQuery();
                 conecta.Desconectar();

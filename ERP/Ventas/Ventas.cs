@@ -38,7 +38,7 @@ namespace ERP.Ventas
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            int result = mV.altaPedido(int.Parse(txtNom.Text),cmbGamas.SelectedIndex ,int.Parse(txtCan.Text));
+            int result = mV.altaPedido(int.Parse(txtNom.Text), lblFH.Text);
             if (result == 1)
             {
                 MessageBox.Show("simona la mona");

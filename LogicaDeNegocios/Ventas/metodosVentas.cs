@@ -15,15 +15,14 @@ namespace LogicaDeNegocios.Ventas
        
         public metodosVentas()
         { }
-        public int altaPedido(int idCliente, int idProducto, int cantidad)
+        public int altaPedido(int idCliente, string fecha)
         {
             int flag = 0;
             VentasCRUD vped = new VentasCRUD();
             try
             {
                 vped.IdCliente = idCliente;
-                vped.EquipoCom = idProducto;
-                vped.Cant = cantidad;
+                vped.Fecha = fecha;
                 int resultado = vped.agregarPedido(vped);
                 if (resultado == 1)
                 {
