@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data;
+using LogicaDeNegocios;
 
 namespace ERP.Ventas
 {
@@ -20,6 +22,19 @@ namespace ERP.Ventas
         private void button2_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void BCliente_Load(object sender, EventArgs e)
+        {
+            cargarClientes();
+        }
+        public void cargarClientes()
+        {
+            LogicaDeNegocios.Ventas.metodosVentas mV = new LogicaDeNegocios.Ventas.metodosVentas();
+            DataSet cargar;
+            cargar = mV.cargarClientes();
+            dgvBuscar.DataSource = cargar;
+            dgvBuscar.DataMember = "Cliente";
         }
     }
 }
