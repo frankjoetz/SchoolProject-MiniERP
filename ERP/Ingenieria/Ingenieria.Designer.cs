@@ -41,6 +41,10 @@
             this.idmateriatxt = new System.Windows.Forms.TextBox();
             this.btnagregarmp = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.txtcantmat = new System.Windows.Forms.TextBox();
+            this.txtidmateria = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.cantidadtxt = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -52,6 +56,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.btncapturarlin = new System.Windows.Forms.Button();
             this.descripcionltxt = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -61,11 +66,6 @@
             this.fechaptxt = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.txtidmateria = new System.Windows.Forms.TextBox();
-            this.txtcantmat = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.ingenieriatc.SuspendLayout();
             this.ingenieriaform.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -192,6 +192,7 @@
             this.btnagregarmp.TabIndex = 0;
             this.btnagregarmp.Text = "agregar";
             this.btnagregarmp.UseVisualStyleBackColor = true;
+            this.btnagregarmp.Click += new System.EventHandler(this.btnagregarmp_Click);
             // 
             // tabPage2
             // 
@@ -216,6 +217,38 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Captura de producto Final";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // txtcantmat
+            // 
+            this.txtcantmat.Location = new System.Drawing.Point(141, 229);
+            this.txtcantmat.Name = "txtcantmat";
+            this.txtcantmat.Size = new System.Drawing.Size(100, 22);
+            this.txtcantmat.TabIndex = 13;
+            // 
+            // txtidmateria
+            // 
+            this.txtidmateria.Location = new System.Drawing.Point(141, 190);
+            this.txtidmateria.Name = "txtidmateria";
+            this.txtidmateria.Size = new System.Drawing.Size(100, 22);
+            this.txtidmateria.TabIndex = 12;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(3, 235);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(129, 16);
+            this.label14.TabIndex = 11;
+            this.label14.Text = "Cantidad de materia";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(3, 205);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(67, 16);
+            this.label13.TabIndex = 10;
+            this.label13.Text = "Id Materia";
             // 
             // dataGridView2
             // 
@@ -313,6 +346,18 @@
             this.tabPage3.Text = "Captura lineas de produccion";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Linea 1",
+            "Linea 2",
+            "Linea 3"});
+            this.comboBox1.Location = new System.Drawing.Point(101, 18);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 24);
+            this.comboBox1.TabIndex = 7;
+            // 
             // btncapturarlin
             // 
             this.btncapturarlin.Location = new System.Drawing.Point(101, 127);
@@ -393,50 +438,6 @@
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.Size = new System.Drawing.Size(477, 227);
             this.dataGridView3.TabIndex = 0;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(3, 205);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(67, 16);
-            this.label13.TabIndex = 10;
-            this.label13.Text = "Id Materia";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(3, 235);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(129, 16);
-            this.label14.TabIndex = 11;
-            this.label14.Text = "Cantidad de materia";
-            // 
-            // txtidmateria
-            // 
-            this.txtidmateria.Location = new System.Drawing.Point(141, 190);
-            this.txtidmateria.Name = "txtidmateria";
-            this.txtidmateria.Size = new System.Drawing.Size(100, 22);
-            this.txtidmateria.TabIndex = 12;
-            // 
-            // txtcantmat
-            // 
-            this.txtcantmat.Location = new System.Drawing.Point(141, 229);
-            this.txtcantmat.Name = "txtcantmat";
-            this.txtcantmat.Size = new System.Drawing.Size(100, 22);
-            this.txtcantmat.TabIndex = 13;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Linea 1",
-            "Linea 2",
-            "Linea 3"});
-            this.comboBox1.Location = new System.Drawing.Point(101, 18);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 7;
             // 
             // Ingenieria
             // 

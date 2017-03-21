@@ -120,6 +120,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Home";
             this.Text = "ERP";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Home_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
