@@ -1,5 +1,9 @@
 # ERP / C Sharp
 
+### Instalar conector para BD
+
+- https://dev.mysql.com/downloads/connector/net/
+
 ### Equipos a manejar:
 
 | | Gama baja | Gama media | Gama Alta |
