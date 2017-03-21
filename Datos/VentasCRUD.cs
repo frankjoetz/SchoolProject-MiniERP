@@ -30,9 +30,9 @@ namespace Datos
             get { return empresa; }
             set { empresa = value; }
         }
-        private string equipoCom;
+        private int equipoCom;
 
-        public string EquipoCom
+        public int EquipoCom
         {
             get { return equipoCom; }
             set { equipoCom = value; }
@@ -86,19 +86,19 @@ namespace Datos
             get { return statusClient; }
             set { statusClient = value; }
         }
-        public VentasCRUD() { }
+        private int idPedido;
 
+        public int IdPedido
+        {
+            get { return idPedido; }
+            set { idPedido = value; }
+        }
+        //constructor sin nada
+        public VentasCRUD() { }
+        //constructor para cliente
         public VentasCRUD(string NomClient, string Empresa, string ApeCliente, int telClient, string direClient, string Email, int StatusClient)
         {
-            /* this.idCliente = IdCliente;
-            this.empresa = Empresa;
-            this.equipoCom = EquipoCom;
-            this.cant = Cant;
-            this.nombCliente = NombCliente;
-            this.telClient = TelClient;
-            this.empresaClient = EmpresaClient;
-            this.direClient = DireClient; */
-
+            //primero va el atributo global privado y despues el local (parametros)
             this.empresa = Empresa;
             this.nombCliente = NomClient;
             this.apeCliente = ApeCliente;
@@ -106,6 +106,34 @@ namespace Datos
             this.direClient = direClient;
             this.email = Email;
             this.statusClient = StatusClient;
+        }
+        //constructor para pedido
+        public VentasCRUD(int detallePedido, int idproducto, int cantidad)
+        {
+            this.idCliente = detallePedido;
+            this.equipoCom = idproducto;
+            this.cant = cantidad;
+        }
+        public int agregarPedido(VentasCRUD vped)
+        {
+            int resultado = 0;
+            try
+            {
+                MySqlCommand comandosql;
+                Conexion conecta = new Conexion();
+                conecta.conectar();
+                string query = string.Format("Insert into DetallePedido(*columna_int*,idproducto,cantidad) values('{0}','{1}','{2}')", vped.idCliente, vped.equipoCom, vped.cant);
+                comandosql = new MySqlCommand(query, conecta.conn);
+                resultado = comandosql.ExecuteNonQuery();
+                conecta.Desconectar();
+                conecta.conn.Close();
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+            return resultado;
         }
 
         public int agregarCliente(VentasCRUD vcli)
@@ -116,15 +144,11 @@ namespace Datos
                 MySqlCommand comandosql;
                 Conexion conecta = new Conexion();
                 conecta.conectar();
-                //conecta.isConnected();
                 string query = string.Format("Insert into Cliente(nombre,apellidos,empresa,telefono,direccion,email,statusCliente) values('{0}','{1}','{2}','{3}','{4}','{5}','{6}')", vcli.nombCliente, vcli.apeCliente, vcli.empresa, vcli.telClient, vcli.direClient, vcli.email, vcli.statusClient);
                 comandosql = new MySqlCommand(query, conecta.conn);
-                //comandosql = new SqlCommand(query, conecta.cnn);
                 resultado = comandosql.ExecuteNonQuery();
                 conecta.Desconectar();
-                //conecta.notConnected();
                 conecta.conn.Close();
-                //conecta.cnn.Close();
             }
             catch (Exception ex)
             {

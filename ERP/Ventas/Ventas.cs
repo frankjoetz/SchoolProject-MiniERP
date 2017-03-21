@@ -12,7 +12,7 @@ namespace ERP.Ventas
 {
     public partial class Ventas : Form
     {
-        
+        LogicaDeNegocios.Ventas.metodosVentas mV = new LogicaDeNegocios.Ventas.metodosVentas();
         public Ventas()
         {
             InitializeComponent();
@@ -34,6 +34,16 @@ namespace ERP.Ventas
         {
             BCliente bsc = new BCliente();
             bsc.Show();
+        }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            int result = mV.altaPedido(int.Parse(txtNom.Text),cmbGamas.SelectedIndex ,int.Parse(txtCan.Text));
+            if (result == 1)
+            {
+                MessageBox.Show("simona la mona");
+                this.Dispose();
+            }
         }
     }
 }

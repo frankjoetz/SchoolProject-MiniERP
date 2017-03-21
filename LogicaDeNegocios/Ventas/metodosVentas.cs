@@ -15,12 +15,34 @@ namespace LogicaDeNegocios.Ventas
        
         public metodosVentas()
         { }
+        public int altaPedido(int idCliente, int idProducto, int cantidad)
+        {
+            int flag = 0;
+            VentasCRUD vped = new VentasCRUD();
+            try
+            {
+                vped.IdCliente = idCliente;
+                vped.EquipoCom = idProducto;
+                vped.Cant = cantidad;
+                int resultado = vped.agregarPedido(vped);
+                if (resultado == 1)
+                {
+                    flag = 1;
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return flag;
+        }
         public int altaCliente(string nombre, string empresa, string apellido, int telefono, string direccion, string email, int status)
         {
             int flag = 0;
-            VentasCRUD vcli = new VentasCRUD();
+            VentasCRUD vcli = new VentasCRUD(); //instanciar el constructor sin nada
             try
             {
+                //ingresar en los get\set los datos locales
                 vcli.NombCliente = nombre;
                 vcli.ApeCliente = apellido;
                 vcli.Empresa = empresa;
@@ -28,7 +50,7 @@ namespace LogicaDeNegocios.Ventas
                 vcli.DireClient = direccion;
                 vcli.Email = email;
                 vcli.StatusClient = status;
-                int resultado = vcli.agregarCliente(vcli);
+                int resultado = vcli.agregarCliente(vcli); //metodo de la clase
                 if (resultado == 1)
                 {
                     flag = 1;
