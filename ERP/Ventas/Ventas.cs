@@ -38,18 +38,10 @@ namespace ERP.Ventas
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            int result = mV.altaPedido(int.Parse(txtNom.Text), lblFH.Text);
-            if (result == 1)
+            bool result = mV.altaPedido(int.Parse(txtNom.Text), lblFH.Text);
+            if (result)
             {
                 MessageBox.Show("simona la mona");
-            }
-        }
-
-        private void timer2_Tick(object sender, EventArgs e)
-        {
-            if (mV.id != 0)
-            {
-                txtNom.Text = mV.id.ToString();
             }
         }
     }

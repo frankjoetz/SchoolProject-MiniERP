@@ -25,12 +25,17 @@ namespace ERP.Ventas
             if (chbStatus.Checked)
             {
                 status = 1;
-                int result = mV.altaCliente(txtNombre.Text, txtEmpresa.Text, txtApe.Text, int.Parse(txtTel.Text), txtDir.Text, txtEmail.Text, status);
-                if (result == 1)
+                bool result = mV.altaCliente(txtNombre.Text, txtApe.Text, txtEmpresa.Text, Int32.Parse(txtTel.Text), txtDir.Text, txtEmail.Text, status);
+                if (result)
                 {
                     MessageBox.Show("Si se pudo!");
                     this.Dispose();
                 }
+            }
+            else
+            {
+                MessageBox.Show("Se pudo, pero el cliente esta muerto");
+                this.Dispose();
             }
             
         }
