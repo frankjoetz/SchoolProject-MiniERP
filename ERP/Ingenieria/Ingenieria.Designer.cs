@@ -36,8 +36,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.fechatxt = new System.Windows.Forms.TextBox();
-            this.descripciontxt = new System.Windows.Forms.TextBox();
+            this.txtDesc = new System.Windows.Forms.TextBox();
             this.idmateriatxt = new System.Windows.Forms.TextBox();
             this.btnagregarmp = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -66,6 +65,7 @@
             this.fechaptxt = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.txtFecha = new System.Windows.Forms.TextBox();
             this.ingenieriatc.SuspendLayout();
             this.ingenieriaform.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -100,8 +100,8 @@
             this.ingenieriaform.Controls.Add(this.label3);
             this.ingenieriaform.Controls.Add(this.label2);
             this.ingenieriaform.Controls.Add(this.label1);
-            this.ingenieriaform.Controls.Add(this.fechatxt);
-            this.ingenieriaform.Controls.Add(this.descripciontxt);
+            this.ingenieriaform.Controls.Add(this.txtFecha);
+            this.ingenieriaform.Controls.Add(this.txtDesc);
             this.ingenieriaform.Controls.Add(this.idmateriatxt);
             this.ingenieriaform.Controls.Add(this.btnagregarmp);
             this.ingenieriaform.Location = new System.Drawing.Point(4, 25);
@@ -111,6 +111,7 @@
             this.ingenieriaform.TabIndex = 0;
             this.ingenieriaform.Text = "Captura de materia prima";
             this.ingenieriaform.UseVisualStyleBackColor = true;
+            this.ingenieriaform.Click += new System.EventHandler(this.ingenieriaform_Click);
             // 
             // dataGridView1
             // 
@@ -163,19 +164,12 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "IDMateria";
             // 
-            // fechatxt
+            // txtDesc
             // 
-            this.fechatxt.Location = new System.Drawing.Point(123, 71);
-            this.fechatxt.Name = "fechatxt";
-            this.fechatxt.Size = new System.Drawing.Size(100, 22);
-            this.fechatxt.TabIndex = 3;
-            // 
-            // descripciontxt
-            // 
-            this.descripciontxt.Location = new System.Drawing.Point(123, 45);
-            this.descripciontxt.Name = "descripciontxt";
-            this.descripciontxt.Size = new System.Drawing.Size(100, 22);
-            this.descripciontxt.TabIndex = 2;
+            this.txtDesc.Location = new System.Drawing.Point(123, 45);
+            this.txtDesc.Name = "txtDesc";
+            this.txtDesc.Size = new System.Drawing.Size(100, 22);
+            this.txtDesc.TabIndex = 2;
             // 
             // idmateriatxt
             // 
@@ -366,6 +360,7 @@
             this.btncapturarlin.TabIndex = 6;
             this.btncapturarlin.Text = "Agregar";
             this.btncapturarlin.UseVisualStyleBackColor = true;
+            this.btncapturarlin.Click += new System.EventHandler(this.btncapturarlin_Click);
             // 
             // descripcionltxt
             // 
@@ -439,6 +434,13 @@
             this.dataGridView3.Size = new System.Drawing.Size(477, 227);
             this.dataGridView3.TabIndex = 0;
             // 
+            // txtFecha
+            // 
+            this.txtFecha.Location = new System.Drawing.Point(123, 71);
+            this.txtFecha.Name = "txtFecha";
+            this.txtFecha.Size = new System.Drawing.Size(100, 22);
+            this.txtFecha.TabIndex = 3;
+            // 
             // Ingenieria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -477,8 +479,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox fechatxt;
-        private System.Windows.Forms.TextBox descripciontxt;
+        private System.Windows.Forms.TextBox txtDesc;
         private System.Windows.Forms.TextBox idmateriatxt;
         private System.Windows.Forms.Button btnagregarmp;
         private System.Windows.Forms.TabPage tabPage2;
@@ -507,5 +508,6 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox txtFecha;
     }
 }

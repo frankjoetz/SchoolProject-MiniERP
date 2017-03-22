@@ -19,22 +19,36 @@ namespace ERP.Ventas
             InitializeComponent();
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            //this.Dispose();
-        }
-
+        LogicaDeNegocios.Ventas.metodosVentas mV = new LogicaDeNegocios.Ventas.metodosVentas();
         private void BCliente_Load(object sender, EventArgs e)
         {
-            cargarClientes();
+            cargarClientes("select * from Cliente");
         }
-        public void cargarClientes()
+        public void cargarClientes(string query)
         {
-            LogicaDeNegocios.Ventas.metodosVentas mV = new LogicaDeNegocios.Ventas.metodosVentas();
             DataSet cargar;
-            cargar = mV.cargarClientes();
+            cargar = mV.cargarClientes(query);
             dgvBuscar.DataSource = cargar;
             dgvBuscar.DataMember = "Cliente";
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            if (txtNom.Text != "")
+            {
+                if (txtEmpresa.Text != "")
+                {
+                    cargarClientes("select * from Cliente where nombre like '"+txtNom.Text+"%' and empresa like '"+txtEmpresa.Text+"%'");
+                }
+                else
+                {
+                    cargarClientes("select * from Cliente where nombre like '" + txtNom.Text + "%'");
+                }
+            }
+            else
+            {
+                cargarClientes("select * from Cliente where empresa like '" + txtEmpresa.Text + "%'");
+            }
         }
     }
 }

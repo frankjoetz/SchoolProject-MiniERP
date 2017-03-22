@@ -44,5 +44,13 @@ namespace ERP.Ventas
                 MessageBox.Show("simona la mona");
             }
         }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            if (mV.id != 0)
+            {
+                txtNom.Text = mV.id.ToString();
+            }
+        }
     }
 }

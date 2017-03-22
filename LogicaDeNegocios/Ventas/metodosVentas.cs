@@ -12,7 +12,7 @@ namespace LogicaDeNegocios.Ventas
     public class metodosVentas
     {
         Conexion conectar = new Conexion();
-       
+        public int id;
         public metodosVentas()
         { }
         public int altaPedido(int idCliente, string fecha)
@@ -61,13 +61,13 @@ namespace LogicaDeNegocios.Ventas
             }
             return flag;
         }
-        public DataSet cargarClientes()
+        public DataSet cargarClientes(string query)
         {
             DataSet erpCli = new DataSet();
             try
             {
                 conectar.conectar();
-                MySqlDataAdapter daCliente = new MySqlDataAdapter("select * from Cliente", conectar.conn);
+                MySqlDataAdapter daCliente = new MySqlDataAdapter(query, conectar.conn);
                 daCliente.Fill(erpCli, "Cliente");
                 conectar.conn.Close();
             }
