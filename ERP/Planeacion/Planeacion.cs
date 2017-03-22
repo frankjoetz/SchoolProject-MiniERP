@@ -12,10 +12,13 @@ namespace ERP.Planeacion
 {
     public partial class Planeacion : Form
     {
+        LogicaDeNegocios.Planeacion.metodosPlaneacion planeacion = new LogicaDeNegocios.Planeacion.metodosPlaneacion();
+
         public Planeacion()
         {
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
+            planeacion.llenarGridViewPlaneacion(DGVPlaneacion);
         }
 
         private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
@@ -76,6 +79,29 @@ namespace ERP.Planeacion
         private void label5_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtbStatus_buscar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnNuevaPlaneacion_Click(object sender, EventArgs e)
+        {
+            if (planeacion.insertarNuevaPlaneacion(cbxPedido.SelectedItem.ToString(), dateFechaInicio.Value.ToString("dd-mm-yyyy"), dateFechaEntrega.Value.ToString("dd-mm-yyyy"), cbxStatus.SelectedItem.ToString(), txtObservaciones.Text.ToString()))
+            {
+                planeacion.llenarGridViewPlaneacion(DGVPlaneacion);
+                MessageBox.Show("El valor se insertó correctamente");
+            }
+            else
+            {
+                MessageBox.Show("Ocurrió un error insertando");
+            }
         }
     }
 }

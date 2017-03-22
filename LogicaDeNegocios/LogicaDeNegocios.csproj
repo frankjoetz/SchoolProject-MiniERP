@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="metodosIngenieria.cs" />
+    <Compile Include="Planeacion\metodosPlaneacion.cs" />
     <Compile Include="Produccion\metodosProduccion.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="Ingenieria\metodosIngenieriaa.cs" />
@@ -52,7 +53,6 @@
   <ItemGroup>
     <Folder Include="Compras\" />
     <Folder Include="Dashboard\" />
-    <Folder Include="Planeacion\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Datos\Datos.csproj">
