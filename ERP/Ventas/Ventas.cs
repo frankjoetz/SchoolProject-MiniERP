@@ -42,7 +42,6 @@ namespace ERP.Ventas
             if (result == 1)
             {
                 MessageBox.Show("simona la mona");
-                this.Dispose();
             }
         }
     }

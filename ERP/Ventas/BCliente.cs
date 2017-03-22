@@ -21,7 +21,7 @@ namespace ERP.Ventas
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Dispose();
+            //this.Dispose();
         }
 
         private void BCliente_Load(object sender, EventArgs e)
