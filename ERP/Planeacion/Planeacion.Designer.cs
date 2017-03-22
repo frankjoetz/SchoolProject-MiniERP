@@ -32,6 +32,7 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.btnNuevaPlaneacion = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtObservaciones = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cbxPedido = new System.Windows.Forms.ComboBox();
             this.cbxStatus = new System.Windows.Forms.ComboBox();
@@ -52,7 +53,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.txtObservaciones = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -116,6 +116,16 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "OBSERVACIONES";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            // 
+            // txtObservaciones
+            // 
+            this.txtObservaciones.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtObservaciones.Location = new System.Drawing.Point(7, 23);
+            this.txtObservaciones.Multiline = true;
+            this.txtObservaciones.Name = "txtObservaciones";
+            this.txtObservaciones.Size = new System.Drawing.Size(707, 83);
+            this.txtObservaciones.TabIndex = 0;
             // 
             // groupBox1
             // 
@@ -363,14 +373,6 @@
             this.label11.Text = "BUSCAR PLANEACIÓN";
             this.label11.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.label11.Click += new System.EventHandler(this.label11_Click);
-            // 
-            // txtObservaciones
-            // 
-            this.txtObservaciones.Location = new System.Drawing.Point(7, 23);
-            this.txtObservaciones.Multiline = true;
-            this.txtObservaciones.Name = "txtObservaciones";
-            this.txtObservaciones.Size = new System.Drawing.Size(707, 83);
-            this.txtObservaciones.TabIndex = 0;
             // 
             // Planeacion
             // 

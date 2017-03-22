@@ -93,7 +93,7 @@ namespace ERP.Planeacion
 
         private void btnNuevaPlaneacion_Click(object sender, EventArgs e)
         {
-            if (planeacion.insertarNuevaPlaneacion(cbxPedido.SelectedItem.ToString(), dateFechaInicio.Value.ToString("dd-mm-yyyy"), dateFechaEntrega.Value.ToString("dd-mm-yyyy"), cbxStatus.SelectedItem.ToString(), txtObservaciones.Text.ToString()))
+            if (planeacion.insertarNuevaPlaneacion(cbxPedido.SelectedItem.ToString(), dateFechaInicio.Value.ToString("yyyy-MM-dd"), dateFechaEntrega.Value.ToString("yyyy-MM-dd"), cbxStatus.SelectedItem.ToString(), txtObservaciones.Text.ToString()))
             {
                 planeacion.llenarGridViewPlaneacion(DGVPlaneacion);
                 MessageBox.Show("El valor se insertó correctamente");
