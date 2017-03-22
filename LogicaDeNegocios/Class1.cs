@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace LogicaDeNegocios
 {
-    class metodosIngenieria
+    class Class1
     {
-
     }
 }

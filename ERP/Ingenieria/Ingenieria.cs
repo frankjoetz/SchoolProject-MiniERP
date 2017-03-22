@@ -24,8 +24,8 @@ namespace ERP.Ingenieria
 
         private void btnagregarmp_Click(object sender, EventArgs e)
         {
-            LogicaDeNegocios.metodosIngenieria mI = new metodosIngenieria();
-            int x = mI.altaMateriaPrima(int.Parse(idmateriatxt.Text), txtDesc.Text, txtFecha.Text);
+            //LogicaDeNegocios.metodosIngenieria mI = new metodosIngenieria();
+            // int x = mI.altaMateriaPrima(int.Parse(idmateriatxt.Text), txtDesc.Text, txtFecha.Text);
         }
 
         private void ingenieriaform_Click(object sender, EventArgs e)

@@ -42,13 +42,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
-    <Compile Include="Ingenieria\metodosIngenieria.cs" />
+    <Compile Include="metodosIngenieria.cs" />
     <Compile Include="Produccion\metodosProduccion.cs" />
-=======
     <Compile Include="Class1.cs" />
-    <Compile Include="Ingenieria\metodosIngenieria.cs" />
->>>>>>> origin/master
+    <Compile Include="Ingenieria\metodosIngenieriaa.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Ventas\metodosVentas.cs" />
   </ItemGroup>
