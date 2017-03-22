@@ -24,5 +24,16 @@ namespace LogicaDeNegocios.Planeacion
         {
             bd.llenarTabla("select * from Planeacion order by idPlaneacion DESC", DGVPlaneacion);
         }
+
+        public void llenarComboBox(ComboBox cbxPlaneacion)
+        {
+            bd.llenarComboBox("select idPedido from Pedido", "idPedido", cbxPlaneacion);
+        }
+
+        public void BuscarPlaneacion(DataGridView DGVPlaneacion, TextBox txtPedido, DateTimePicker dateBuscar)
+        {
+
+            bd.buscarYLlenarTabla("select * from Planeacion where idPedido like '" + txtPedido.Text + "%' or fInicio like '" + dateBuscar.Value.ToString("yyyy-MM-dd") + "%'", DGVPlaneacion);
+        }
     }
 }

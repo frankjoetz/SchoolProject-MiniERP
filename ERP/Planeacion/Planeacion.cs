@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using LogicaDeNegocios;
 
 namespace ERP.Planeacion
 {
@@ -48,7 +49,7 @@ namespace ERP.Planeacion
 
         private void Planeacion_Load(object sender, EventArgs e)
         {
-
+            planeacion.llenarComboBox(cbxPedido);
         }
 
         private void groupBox2_Enter(object sender, EventArgs e)
@@ -102,6 +103,17 @@ namespace ERP.Planeacion
             {
                 MessageBox.Show("Ocurrió un error insertando");
             }
+        }
+
+        private void txtbId_ped_buscar_TextChanged(object sender, EventArgs e)
+        {
+            LogicaDeNegocios.Planeacion.metodosPlaneacion plan = new LogicaDeNegocios.Planeacion.metodosPlaneacion();
+            plan.BuscarPlaneacion(DGVPlaneacion,txtPedido, dateBuscar);
+        }
+
+        private void cbxStatus_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

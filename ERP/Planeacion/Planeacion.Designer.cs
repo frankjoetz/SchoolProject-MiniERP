@@ -46,10 +46,8 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.DGVPlaneacion = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.txtbStatus_buscar = new System.Windows.Forms.ComboBox();
-            this.dtp_Inicio_Buscar = new System.Windows.Forms.DateTimePicker();
-            this.label10 = new System.Windows.Forms.Label();
-            this.txtbId_ped_buscar = new System.Windows.Forms.TextBox();
+            this.dateBuscar = new System.Windows.Forms.DateTimePicker();
+            this.txtPedido = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -152,11 +150,6 @@
             // 
             this.cbxPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxPedido.FormattingEnabled = true;
-            this.cbxPedido.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4"});
             this.cbxPedido.Location = new System.Drawing.Point(159, 28);
             this.cbxPedido.Name = "cbxPedido";
             this.cbxPedido.Size = new System.Drawing.Size(544, 26);
@@ -167,13 +160,14 @@
             this.cbxStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxStatus.FormattingEnabled = true;
             this.cbxStatus.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3"});
+            "Listo para producir",
+            "En proceso",
+            "Falta Material"});
             this.cbxStatus.Location = new System.Drawing.Point(157, 156);
             this.cbxStatus.Name = "cbxStatus";
             this.cbxStatus.Size = new System.Drawing.Size(544, 26);
             this.cbxStatus.TabIndex = 15;
+            this.cbxStatus.SelectedIndexChanged += new System.EventHandler(this.cbxStatus_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -268,10 +262,11 @@
             this.DGVPlaneacion.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.DGVPlaneacion.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DGVPlaneacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGVPlaneacion.Location = new System.Drawing.Point(18, 232);
+            this.DGVPlaneacion.Location = new System.Drawing.Point(18, 196);
             this.DGVPlaneacion.Name = "DGVPlaneacion";
-            this.DGVPlaneacion.Size = new System.Drawing.Size(712, 198);
+            this.DGVPlaneacion.Size = new System.Drawing.Size(712, 234);
             this.DGVPlaneacion.TabIndex = 19;
             // 
             // groupBox3
@@ -279,10 +274,8 @@
             this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox3.Controls.Add(this.txtbStatus_buscar);
-            this.groupBox3.Controls.Add(this.dtp_Inicio_Buscar);
-            this.groupBox3.Controls.Add(this.label10);
-            this.groupBox3.Controls.Add(this.txtbId_ped_buscar);
+            this.groupBox3.Controls.Add(this.dateBuscar);
+            this.groupBox3.Controls.Add(this.txtPedido);
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Controls.Add(this.label8);
             this.groupBox3.Location = new System.Drawing.Point(18, 60);
@@ -291,52 +284,26 @@
             this.groupBox3.TabIndex = 18;
             this.groupBox3.TabStop = false;
             // 
-            // txtbStatus_buscar
+            // dateBuscar
             // 
-            this.txtbStatus_buscar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.dateBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtbStatus_buscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbStatus_buscar.FormattingEnabled = true;
-            this.txtbStatus_buscar.Items.AddRange(new object[] {
-            "PEDIDO (VENTAS)",
-            "PLANEACIÓN",
-            "ALMACÉN",
-            "PRODUCCIÓN"});
-            this.txtbStatus_buscar.Location = new System.Drawing.Point(115, 117);
-            this.txtbStatus_buscar.Name = "txtbStatus_buscar";
-            this.txtbStatus_buscar.Size = new System.Drawing.Size(584, 26);
-            this.txtbStatus_buscar.TabIndex = 16;
-            this.txtbStatus_buscar.SelectedIndexChanged += new System.EventHandler(this.txtbStatus_buscar_SelectedIndexChanged);
+            this.dateBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateBuscar.Location = new System.Drawing.Point(115, 77);
+            this.dateBuscar.Name = "dateBuscar";
+            this.dateBuscar.Size = new System.Drawing.Size(584, 24);
+            this.dateBuscar.TabIndex = 4;
             // 
-            // dtp_Inicio_Buscar
+            // txtPedido
             // 
-            this.dtp_Inicio_Buscar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtPedido.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dtp_Inicio_Buscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtp_Inicio_Buscar.Location = new System.Drawing.Point(115, 77);
-            this.dtp_Inicio_Buscar.Name = "dtp_Inicio_Buscar";
-            this.dtp_Inicio_Buscar.Size = new System.Drawing.Size(584, 24);
-            this.dtp_Inicio_Buscar.TabIndex = 4;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(6, 117);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(54, 18);
-            this.label10.TabIndex = 2;
-            this.label10.Text = "Status:";
-            // 
-            // txtbId_ped_buscar
-            // 
-            this.txtbId_ped_buscar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtbId_ped_buscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbId_ped_buscar.Location = new System.Drawing.Point(115, 33);
-            this.txtbId_ped_buscar.Name = "txtbId_ped_buscar";
-            this.txtbId_ped_buscar.Size = new System.Drawing.Size(584, 24);
-            this.txtbId_ped_buscar.TabIndex = 3;
+            this.txtPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPedido.Location = new System.Drawing.Point(115, 33);
+            this.txtPedido.Name = "txtPedido";
+            this.txtPedido.Size = new System.Drawing.Size(584, 24);
+            this.txtPedido.TabIndex = 3;
+            this.txtPedido.TextChanged += new System.EventHandler(this.txtbId_ped_buscar_TextChanged);
             // 
             // label9
             // 
@@ -414,13 +381,11 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cbxStatus;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DateTimePicker dtp_Inicio_Buscar;
-        private System.Windows.Forms.TextBox txtbId_ped_buscar;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.DateTimePicker dateBuscar;
+        private System.Windows.Forms.TextBox txtPedido;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.ComboBox txtbStatus_buscar;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;

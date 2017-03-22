@@ -98,14 +98,14 @@ namespace Datos
             llenarTabla(sqlQuery, tablaALlenar);
         }
 
-        public void llenarComboBox(string consulta, string campo, ComboBox combo)
+        public void llenarComboBox(string consulta, string columna, ComboBox combo)
         {
             conexion.Open();
             comandoLocal = new MySqlCommand(consulta, conexion);
             MySqlDataReader dr = comandoLocal.ExecuteReader();
             while (dr.Read())
             {
-                combo.Items.Add(dr.GetString(campo));
+                combo.Items.Add(dr.GetString(columna));
             }
             conexion.Close();
         }
