@@ -68,7 +68,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Font = new System.Drawing.Font("Lato", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl1.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(13, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -80,10 +80,10 @@
             this.tabPage1.Controls.Add(this.groupBox2);
             this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Controls.Add(this.label7);
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Location = new System.Drawing.Point(4, 27);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(726, 377);
+            this.tabPage1.Size = new System.Drawing.Size(726, 375);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Nueva";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -94,7 +94,7 @@
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.txtbObser);
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(18, 253);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(686, 112);
@@ -108,6 +108,7 @@
             this.txtbObser.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtbObser.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbObser.Location = new System.Drawing.Point(16, 19);
             this.txtbObser.Multiline = true;
             this.txtbObser.Name = "txtbObser";
@@ -128,7 +129,7 @@
             this.groupBox1.Controls.Add(this.dtpFec_Entr);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.dtpFec_Ini);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(6, 31);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(714, 216);
@@ -138,6 +139,7 @@
             // 
             // txtbId_Plan
             // 
+            this.txtbId_Plan.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbId_Plan.Location = new System.Drawing.Point(159, 30);
             this.txtbId_Plan.Name = "txtbId_Plan";
             this.txtbId_Plan.Size = new System.Drawing.Size(543, 26);
@@ -146,16 +148,17 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(13, 32);
+            this.label1.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(16, 33);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(126, 16);
+            this.label1.Size = new System.Drawing.Size(107, 18);
             this.label1.TabIndex = 0;
-            this.label1.Text = "ID PLANEACION:";
+            this.label1.Text = "ID Planeación:";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // cbnStatus
             // 
+            this.cbnStatus.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbnStatus.FormattingEnabled = true;
             this.cbnStatus.Items.AddRange(new object[] {
             "PEDIDO (VENTAS)",
@@ -164,11 +167,12 @@
             "PRODUCCIÓN"});
             this.cbnStatus.Location = new System.Drawing.Point(158, 171);
             this.cbnStatus.Name = "cbnStatus";
-            this.cbnStatus.Size = new System.Drawing.Size(544, 28);
+            this.cbnStatus.Size = new System.Drawing.Size(544, 26);
             this.cbnStatus.TabIndex = 15;
             // 
             // txtbId_Ped
             // 
+            this.txtbId_Ped.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbId_Ped.Location = new System.Drawing.Point(159, 63);
             this.txtbId_Ped.Name = "txtbId_Ped";
             this.txtbId_Ped.Size = new System.Drawing.Size(543, 26);
@@ -177,38 +181,39 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(16, 105);
+            this.label3.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(16, 104);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(110, 16);
+            this.label3.Size = new System.Drawing.Size(95, 18);
             this.label3.TabIndex = 2;
-            this.label3.Text = "FECHA INICIO:";
+            this.label3.Text = "Fecha Inicio:";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(16, 144);
+            this.label4.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(16, 143);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(139, 16);
+            this.label4.Size = new System.Drawing.Size(109, 18);
             this.label4.TabIndex = 3;
-            this.label4.Text = "FECHA ENTREGA:";
+            this.label4.Text = "Fecha Entrega:";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(16, 176);
+            this.label5.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(16, 174);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(73, 16);
+            this.label5.Size = new System.Drawing.Size(56, 18);
             this.label5.TabIndex = 4;
-            this.label5.Text = "STATUS:";
+            this.label5.Text = "Status:";
             this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // dtpFec_Entr
             // 
+            this.dtpFec_Entr.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFec_Entr.Location = new System.Drawing.Point(158, 137);
             this.dtpFec_Entr.Name = "dtpFec_Entr";
             this.dtpFec_Entr.Size = new System.Drawing.Size(544, 26);
@@ -218,16 +223,17 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(16, 68);
+            this.label2.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(16, 66);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(88, 16);
+            this.label2.Size = new System.Drawing.Size(79, 18);
             this.label2.TabIndex = 1;
-            this.label2.Text = "ID PEDIDO:";
+            this.label2.Text = "ID Pedido:";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // dtpFec_Ini
             // 
+            this.dtpFec_Ini.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFec_Ini.Location = new System.Drawing.Point(157, 98);
             this.dtpFec_Ini.Name = "dtpFec_Ini";
             this.dtpFec_Ini.Size = new System.Drawing.Size(545, 26);
@@ -238,10 +244,10 @@
             this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Franklin Gothic Book", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(263, 9);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(187, 24);
+            this.label7.Size = new System.Drawing.Size(203, 23);
             this.label7.TabIndex = 16;
             this.label7.Text = "NUEVA PLANEACIÓN";
             this.label7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -280,7 +286,7 @@
             // 
             this.txtbStatus_buscar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtbStatus_buscar.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbStatus_buscar.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbStatus_buscar.FormattingEnabled = true;
             this.txtbStatus_buscar.Items.AddRange(new object[] {
             "PEDIDO (VENTAS)",
@@ -289,70 +295,70 @@
             "PRODUCCIÓN"});
             this.txtbStatus_buscar.Location = new System.Drawing.Point(115, 190);
             this.txtbStatus_buscar.Name = "txtbStatus_buscar";
-            this.txtbStatus_buscar.Size = new System.Drawing.Size(550, 24);
+            this.txtbStatus_buscar.Size = new System.Drawing.Size(550, 26);
             this.txtbStatus_buscar.TabIndex = 16;
             // 
             // dtp_Inicio_Buscar
             // 
             this.dtp_Inicio_Buscar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dtp_Inicio_Buscar.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtp_Inicio_Buscar.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtp_Inicio_Buscar.Location = new System.Drawing.Point(118, 113);
             this.dtp_Inicio_Buscar.Name = "dtp_Inicio_Buscar";
-            this.dtp_Inicio_Buscar.Size = new System.Drawing.Size(550, 23);
+            this.dtp_Inicio_Buscar.Size = new System.Drawing.Size(550, 26);
             this.dtp_Inicio_Buscar.TabIndex = 4;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(6, 198);
+            this.label10.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(6, 193);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(57, 16);
+            this.label10.Size = new System.Drawing.Size(56, 18);
             this.label10.TabIndex = 2;
-            this.label10.Text = "STATUS:";
+            this.label10.Text = "Status:";
             // 
             // txtbId_ped_buscar
             // 
             this.txtbId_ped_buscar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtbId_ped_buscar.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbId_ped_buscar.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbId_ped_buscar.Location = new System.Drawing.Point(116, 36);
             this.txtbId_ped_buscar.Name = "txtbId_ped_buscar";
-            this.txtbId_ped_buscar.Size = new System.Drawing.Size(550, 23);
+            this.txtbId_ped_buscar.Size = new System.Drawing.Size(550, 26);
             this.txtbId_ped_buscar.TabIndex = 3;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(6, 120);
+            this.label9.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(6, 119);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(98, 16);
+            this.label9.Size = new System.Drawing.Size(95, 18);
             this.label9.TabIndex = 1;
-            this.label9.Text = "FECHA INICIO:";
+            this.label9.Text = "Fecha Inicio:";
             // 
             // label8
             // 
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(6, 43);
+            this.label8.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(6, 39);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(78, 16);
+            this.label8.Size = new System.Drawing.Size(79, 18);
             this.label8.TabIndex = 0;
-            this.label8.Text = "ID PEDIDO:";
+            this.label8.Text = "ID Pedido:";
             // 
             // label11
             // 
             this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Lato", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(246, 9);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(207, 21);
+            this.label11.Size = new System.Drawing.Size(217, 23);
             this.label11.TabIndex = 17;
             this.label11.Text = "BUSCAR PLANEACIÓN";
             this.label11.TextAlign = System.Drawing.ContentAlignment.TopCenter;
