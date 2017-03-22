@@ -42,7 +42,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="metodosIngenieria.cs" />
     <Compile Include="Planeacion\metodosPlaneacion.cs" />
     <Compile Include="Produccion\metodosProduccion.cs" />
     <Compile Include="Class1.cs" />

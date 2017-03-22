@@ -32,13 +32,13 @@ namespace ERP.Ventas
             dgvBuscar.DataMember = "Cliente";
         }
 
-        private void btnBuscar_Click(object sender, EventArgs e)
+        private void tmBuscar_Tick(object sender, EventArgs e)
         {
             if (txtNom.Text != "")
             {
                 if (txtEmpresa.Text != "")
                 {
-                    cargarClientes("select * from Cliente where nombre like '"+txtNom.Text+"%' and empresa like '"+txtEmpresa.Text+"%'");
+                    cargarClientes("select * from Cliente where nombre like '" + txtNom.Text + "%' and empresa like '" + txtEmpresa.Text + "%'");
                 }
                 else
                 {

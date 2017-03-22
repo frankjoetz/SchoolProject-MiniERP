@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.dgvBuscar = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.txtNom = new System.Windows.Forms.TextBox();
-            this.btnBuscar = new System.Windows.Forms.Button();
             this.txtEmpresa = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.tmBuscar = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBuscar)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,19 +68,6 @@
             this.txtNom.Size = new System.Drawing.Size(100, 24);
             this.txtNom.TabIndex = 0;
             // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.ForeColor = System.Drawing.Color.Black;
-            this.btnBuscar.Location = new System.Drawing.Point(486, 33);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(91, 23);
-            this.btnBuscar.TabIndex = 2;
-            this.btnBuscar.Text = "BUSCAR";
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
-            // 
             // txtEmpresa
             // 
             this.txtEmpresa.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -99,6 +87,11 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "EMPRESA";
             // 
+            // tmBuscar
+            // 
+            this.tmBuscar.Enabled = true;
+            this.tmBuscar.Tick += new System.EventHandler(this.tmBuscar_Tick);
+            // 
             // BCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -107,7 +100,6 @@
             this.ClientSize = new System.Drawing.Size(690, 242);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtEmpresa);
-            this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.txtNom);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvBuscar);
@@ -126,8 +118,8 @@
         private System.Windows.Forms.DataGridView dgvBuscar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtNom;
-        private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.TextBox txtEmpresa;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Timer tmBuscar;
     }
 }
