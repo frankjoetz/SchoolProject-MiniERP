@@ -31,11 +31,8 @@
             this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.btnNuevo = new System.Windows.Forms.Button();
             this.txtFecLoc = new System.Windows.Forms.TextBox();
-            this.txtDescLoc = new System.Windows.Forms.TextBox();
             this.txtIdLocacion = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -89,11 +86,10 @@
             this.erpdbDataSet = new ERP.erpdbDataSet();
             this.pruebaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pruebaTableAdapter = new ERP.erpdbDataSetTableAdapters.PruebaTableAdapter();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.tabPage3.SuspendLayout();
@@ -103,6 +99,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.erpdbDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pruebaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -125,11 +122,10 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.richTextBox1);
             this.tabPage1.Controls.Add(this.dataGridView1);
             this.tabPage1.Controls.Add(this.btnGuardar);
-            this.tabPage1.Controls.Add(this.btnNuevo);
             this.tabPage1.Controls.Add(this.txtFecLoc);
-            this.tabPage1.Controls.Add(this.txtDescLoc);
             this.tabPage1.Controls.Add(this.txtIdLocacion);
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.label3);
@@ -142,48 +138,21 @@
             this.tabPage1.Text = "Localizacion";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Id,
-            this.Descripcion});
-            this.dataGridView1.Location = new System.Drawing.Point(284, 22);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(315, 447);
-            this.dataGridView1.TabIndex = 8;
-            // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(148, 151);
+            this.btnGuardar.Location = new System.Drawing.Point(137, 264);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(106, 27);
             this.btnGuardar.TabIndex = 7;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
             // 
-            // btnNuevo
-            // 
-            this.btnNuevo.Location = new System.Drawing.Point(21, 151);
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(106, 27);
-            this.btnNuevo.TabIndex = 6;
-            this.btnNuevo.Text = "Nuevo";
-            this.btnNuevo.UseVisualStyleBackColor = true;
-            // 
             // txtFecLoc
             // 
-            this.txtFecLoc.Location = new System.Drawing.Point(154, 97);
+            this.txtFecLoc.Location = new System.Drawing.Point(154, 62);
             this.txtFecLoc.Name = "txtFecLoc";
             this.txtFecLoc.Size = new System.Drawing.Size(100, 22);
             this.txtFecLoc.TabIndex = 5;
-            // 
-            // txtDescLoc
-            // 
-            this.txtDescLoc.Location = new System.Drawing.Point(154, 60);
-            this.txtDescLoc.Name = "txtDescLoc";
-            this.txtDescLoc.Size = new System.Drawing.Size(100, 22);
-            this.txtDescLoc.TabIndex = 4;
             // 
             // txtIdLocacion
             // 
@@ -195,16 +164,16 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(29, 97);
+            this.label4.Location = new System.Drawing.Point(29, 62);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(98, 16);
+            this.label4.Size = new System.Drawing.Size(101, 16);
             this.label4.TabIndex = 2;
-            this.label4.Text = "fecha Creacion";
+            this.label4.Text = "Fecha creacion";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(29, 60);
+            this.label3.Location = new System.Drawing.Point(29, 116);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(80, 16);
             this.label3.TabIndex = 1;
@@ -660,18 +629,21 @@
             // 
             this.pruebaTableAdapter.ClearBeforeFill = true;
             // 
-            // Id
+            // dataGridView1
             // 
-            this.Id.Frozen = true;
-            this.Id.HeaderText = "Id";
-            this.Id.Name = "Id";
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(284, 22);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(315, 447);
+            this.dataGridView1.TabIndex = 8;
             // 
-            // Descripcion
+            // richTextBox1
             // 
-            this.Descripcion.Frozen = true;
-            this.Descripcion.HeaderText = "Descripcion";
-            this.Descripcion.Name = "Descripcion";
-            this.Descripcion.Width = 180;
+            this.richTextBox1.Location = new System.Drawing.Point(115, 116);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(139, 126);
+            this.richTextBox1.TabIndex = 9;
+            this.richTextBox1.Text = "";
             // 
             // Almacen
             // 
@@ -689,7 +661,6 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
@@ -703,6 +674,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.erpdbDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pruebaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -711,11 +683,8 @@
 
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.TextBox txtFecLoc;
-        private System.Windows.Forms.TextBox txtDescLoc;
         private System.Windows.Forms.TextBox txtIdLocacion;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -769,7 +738,7 @@
         private erpdbDataSet erpdbDataSet;
         private System.Windows.Forms.BindingSource pruebaBindingSource;
         private erpdbDataSetTableAdapters.PruebaTableAdapter pruebaTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
