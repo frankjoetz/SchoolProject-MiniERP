@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MySql.Data;
 using MySql.Data.MySqlClient; // Incluir cliente MySQL
 using Datos.Properties; // Será utilizado para acceder a la cadena de conexión
 using System.Windows.Forms;
@@ -29,6 +30,24 @@ namespace Datos
             {
                 throw;
             }
+        }
+
+        private string ejecutarConsultaS(string sqlQuery, string columna)
+        {
+            conexion.Open();
+            comandoLocal = new MySqlCommand(sqlQuery, conexion);
+            string campo = "";
+            MySqlDataReader reg = null;
+            if (comandoLocal.ExecuteNonQuery() != 0)
+            {
+                reg = comandoLocal.ExecuteReader();
+                while (reg.Read())
+                {
+                    campo = reg[columna].ToString();
+                };
+            }
+            conexion.Close();
+            return campo;
         }
 
         private bool ejecutarConsulta(string sqlQuery)
@@ -62,6 +81,11 @@ namespace Datos
                 return true;
             else
                 return false;
+        }
+
+        public string buscar(string sqlQuery, string columna)
+        {
+            return ejecutarConsultaS(sqlQuery, columna);
         }
 
         public bool actualizar(string sqlQuery)

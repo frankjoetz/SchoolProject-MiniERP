@@ -27,7 +27,19 @@ namespace LogicaDeNegocios.Ventas
                 return true;
             else
                 return false;
-        }        public DataSet cargarClientes(string query)
+        }
+        public bool altaDetallesPedido(int idPedido,int idProducto, int cantidad, string observacion)
+        {
+            if (bd.insertar("insert into DetallePedido(idpedido,idproducto,cantidad,detallepedido) values("+idPedido+","+ idProducto + ","+cantidad+",'" + observacion + "')"))
+                return true;
+            else
+                return false;
+        }
+        public string buscarUnDato(string columna, string tabla, string complemento)
+        {
+            return bd.buscar("select " + columna + " from " + tabla + " "+complemento,columna);
+        }
+        public DataSet cargarClientes(string query)
         {
             DataSet erpCli = new DataSet();
             try

@@ -39,10 +39,30 @@ namespace ERP.Ventas
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             bool result = mV.altaPedido(int.Parse(txtNom.Text), lblFH.Text);
-            if (result)
-            {
+            bool res = mV.altaDetallesPedido(int.Parse(mV.buscarUnDato("idPedido","Pedido"," order by fecha DESC LIMIT 1")),cmbGamas.SelectedIndex, int.Parse(txtCan.Text), txtaCom.Text);
+            if (result && res)
                 MessageBox.Show("simona la mona");
-            }
+        }
+
+        public void cargarClientes(string query)
+        {
+            DataSet cargar;
+            cargar = mV.cargarClientes(query);
+            dgvPedido.DataSource = cargar;
+            dgvPedido.DataMember = "Cliente";
+        }
+
+        private void txtIDHis_TextChanged(object sender, EventArgs e)
+        {
+            if (txtIDHis.Text != "")
+                cargarClientes("select Pedido.idPedido, Cliente.idCliente, Cliente.nombre, Cliente.apellidos, Cliente.empresa, Cliente.telefono, Cliente.direccion, Cliente.email, Cliente.statusCliente, Pedido.fecha, DetallePedido.idproducto, DetallePedido.cantidad, DetallePedido.detallepedido from Cliente inner join Pedido on Pedido.idCliente = Cliente.idCliente inner join DetallePedido on DetallePedido.idPedido = Pedido.idPedido where Pedido.idPedido = " + int.Parse(txtIDHis.Text));
+            else
+                cargarClientes("select Pedido.idPedido, Cliente.idCliente, Cliente.nombre, Cliente.apellidos, Cliente.empresa, Cliente.telefono, Cliente.direccion, Cliente.email, Cliente.statusCliente, Pedido.fecha, DetallePedido.idproducto, DetallePedido.cantidad, DetallePedido.detallepedido from Cliente inner join Pedido on Pedido.idCliente = Cliente.idCliente inner join DetallePedido on DetallePedido.idPedido = Pedido.idPedido");
+        }
+
+        private void Ventas_Load(object sender, EventArgs e)
+        {
+            cargarClientes("select Pedido.idPedido, Cliente.idCliente, Cliente.nombre, Cliente.apellidos, Cliente.empresa, Cliente.telefono, Cliente.direccion, Cliente.email, Cliente.statusCliente, Pedido.fecha, DetallePedido.idproducto, DetallePedido.cantidad, DetallePedido.detallepedido from Cliente inner join Pedido on Pedido.idCliente = Cliente.idCliente inner join DetallePedido on DetallePedido.idPedido = Pedido.idPedido");
         }
     }
 }

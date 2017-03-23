@@ -34,7 +34,7 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtaCom = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.cmbGamas = new System.Windows.Forms.ComboBox();
             this.btnAceptar = new System.Windows.Forms.Button();
@@ -48,15 +48,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnBusHis = new System.Windows.Forms.Button();
+            this.dgvPedido = new System.Windows.Forms.DataGridView();
             this.txtIDHis = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPedido)).BeginInit();
             this.SuspendLayout();
             // 
             // timer1
@@ -104,7 +103,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtaCom);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.cmbGamas);
             this.groupBox1.Controls.Add(this.btnAceptar);
@@ -130,14 +129,14 @@
             this.label5.TabIndex = 30;
             this.label5.Text = "EQUIPOS DE COMPUTO";
             // 
-            // textBox1
+            // txtaCom
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(26, 121);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(600, 86);
-            this.textBox1.TabIndex = 5;
+            this.txtaCom.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtaCom.Location = new System.Drawing.Point(26, 121);
+            this.txtaCom.Multiline = true;
+            this.txtaCom.Name = "txtaCom";
+            this.txtaCom.Size = new System.Drawing.Size(600, 86);
+            this.txtaCom.TabIndex = 5;
             // 
             // label7
             // 
@@ -274,8 +273,7 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPage2.Controls.Add(this.dataGridView1);
-            this.tabPage2.Controls.Add(this.btnBusHis);
+            this.tabPage2.Controls.Add(this.dgvPedido);
             this.tabPage2.Controls.Add(this.txtIDHis);
             this.tabPage2.Controls.Add(this.label6);
             this.tabPage2.Cursor = System.Windows.Forms.Cursors.Default;
@@ -288,26 +286,14 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Historial";
             // 
-            // dataGridView1
+            // dgvPedido
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlLight;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 71);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(707, 272);
-            this.dataGridView1.TabIndex = 3;
-            // 
-            // btnBusHis
-            // 
-            this.btnBusHis.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBusHis.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBusHis.ForeColor = System.Drawing.Color.Black;
-            this.btnBusHis.Location = new System.Drawing.Point(365, 24);
-            this.btnBusHis.Name = "btnBusHis";
-            this.btnBusHis.Size = new System.Drawing.Size(75, 23);
-            this.btnBusHis.TabIndex = 2;
-            this.btnBusHis.Text = "BUSCAR";
-            this.btnBusHis.UseVisualStyleBackColor = true;
+            this.dgvPedido.BackgroundColor = System.Drawing.SystemColors.ControlLight;
+            this.dgvPedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPedido.Location = new System.Drawing.Point(6, 71);
+            this.dgvPedido.Name = "dgvPedido";
+            this.dgvPedido.Size = new System.Drawing.Size(707, 272);
+            this.dgvPedido.TabIndex = 3;
             // 
             // txtIDHis
             // 
@@ -316,6 +302,7 @@
             this.txtIDHis.Name = "txtIDHis";
             this.txtIDHis.Size = new System.Drawing.Size(100, 23);
             this.txtIDHis.TabIndex = 1;
+            this.txtIDHis.TextChanged += new System.EventHandler(this.txtIDHis_TextChanged);
             // 
             // label6
             // 
@@ -341,6 +328,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "VENTAS";
+            this.Load += new System.EventHandler(this.Ventas_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -348,7 +336,7 @@
             this.groupBox1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPedido)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -368,12 +356,11 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.Button btnBusHis;
         private System.Windows.Forms.TextBox txtIDHis;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvPedido;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtaCom;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtNom;
         private System.Windows.Forms.Button btnBuscar;

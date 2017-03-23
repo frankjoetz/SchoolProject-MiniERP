@@ -22,6 +22,7 @@ namespace ERP.Ventas
         LogicaDeNegocios.Ventas.metodosVentas mV = new LogicaDeNegocios.Ventas.metodosVentas();
         private void BCliente_Load(object sender, EventArgs e)
         {
+            tmBuscar.Enabled = false;
             cargarClientes("select * from Cliente");
         }
         public void cargarClientes(string query)
@@ -32,7 +33,7 @@ namespace ERP.Ventas
             dgvBuscar.DataMember = "Cliente";
         }
 
-        private void tmBuscar_Tick(object sender, EventArgs e)
+        private void txtNom_TextChanged(object sender, EventArgs e)
         {
             if (txtNom.Text != "")
             {
@@ -49,6 +50,11 @@ namespace ERP.Ventas
             {
                 cargarClientes("select * from Cliente where empresa like '" + txtEmpresa.Text + "%'");
             }
+        }
+
+        private void dgvBuscar_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

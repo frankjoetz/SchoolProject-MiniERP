@@ -46,8 +46,9 @@
             this.dgvBuscar.Location = new System.Drawing.Point(12, 80);
             this.dgvBuscar.MultiSelect = false;
             this.dgvBuscar.Name = "dgvBuscar";
-            this.dgvBuscar.Size = new System.Drawing.Size(666, 150);
+            this.dgvBuscar.Size = new System.Drawing.Size(975, 150);
             this.dgvBuscar.TabIndex = 4;
+            this.dgvBuscar.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBuscar_CellClick);
             // 
             // label1
             // 
@@ -67,6 +68,7 @@
             this.txtNom.Name = "txtNom";
             this.txtNom.Size = new System.Drawing.Size(100, 24);
             this.txtNom.TabIndex = 0;
+            this.txtNom.TextChanged += new System.EventHandler(this.txtNom_TextChanged);
             // 
             // txtEmpresa
             // 
@@ -75,6 +77,7 @@
             this.txtEmpresa.Name = "txtEmpresa";
             this.txtEmpresa.Size = new System.Drawing.Size(100, 24);
             this.txtEmpresa.TabIndex = 1;
+            this.txtEmpresa.TextChanged += new System.EventHandler(this.txtNom_TextChanged);
             // 
             // label2
             // 
@@ -87,17 +90,12 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "EMPRESA";
             // 
-            // tmBuscar
-            // 
-            this.tmBuscar.Enabled = true;
-            this.tmBuscar.Tick += new System.EventHandler(this.tmBuscar_Tick);
-            // 
             // BCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(690, 242);
+            this.ClientSize = new System.Drawing.Size(999, 242);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtEmpresa);
             this.Controls.Add(this.txtNom);
