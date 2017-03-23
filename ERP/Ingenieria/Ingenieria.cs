@@ -15,7 +15,7 @@ namespace ERP.Ingenieria
 {
     public partial class Ingenieria : Form
     {
-        
+        LogicaDeNegocios.metodosIngenieriaa MIngenieria = new metodosIngenieriaa();
         public Ingenieria()
         {
             InitializeComponent();
@@ -24,8 +24,24 @@ namespace ERP.Ingenieria
 
         private void btnagregarmp_Click(object sender, EventArgs e)
         {
-            //LogicaDeNegocios.metodosIngenieria mI = new metodosIngenieria();
-            // int x = mI.altaMateriaPrima(int.Parse(idmateriatxt.Text), txtDesc.Text, txtFecha.Text);
+            bool result = MIngenieria.altaMateria(int.Parse(idmateriatxt.Text), txttipo.Text, txtDesc.Text, txtFecha.Text, int.Parse(unidadtxt.Text));
+            if (result)
+            {
+                MessageBox.Show("Si se pudo!");
+                idmateriatxt.Clear();
+                txttipo.Clear();
+                txtDesc.Clear();
+                txtFecha.Clear();
+                unidadtxt.Clear();
+            }
+            try
+            {
+                this.materiaPrimaTableAdapter.FillBy(this.erpdbDataSet1.MateriaPrima);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
         }
 
         private void ingenieriaform_Click(object sender, EventArgs e)
@@ -35,6 +51,27 @@ namespace ERP.Ingenieria
 
         private void btncapturarlin_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void Ingenieria_Load(object sender, EventArgs e)
+        {
+            // TODO: esta línea de código carga datos en la tabla 'erpdbDataSet1.MateriaPrima' Puede moverla o quitarla según sea necesario.
+            this.materiaPrimaTableAdapter.Fill(this.erpdbDataSet1.MateriaPrima);
+            // TODO: esta línea de código carga datos en la tabla 'erpdbDataSet2.MateriaPrima' Puede moverla o quitarla según sea necesario.
+            //this.materiaPrimaTableAdapter.Fill(this.erpdbDataSet1.MateriaPrima);
+
+            //this.reportViewer1.RefreshReport();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void fillByToolStripButton_Click(object sender, EventArgs e)
+        {
+
 
         }
     }
