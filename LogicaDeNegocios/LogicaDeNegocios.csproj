@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Compras\metodosCompras.cs" />
     <Compile Include="Planeacion\metodosPlaneacion.cs" />
     <Compile Include="Produccion\metodosProduccion.cs" />
     <Compile Include="Class1.cs" />
@@ -50,7 +51,6 @@
     <Compile Include="Ventas\metodosVentas.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Compras\" />
     <Folder Include="Dashboard\" />
   </ItemGroup>
   <ItemGroup>

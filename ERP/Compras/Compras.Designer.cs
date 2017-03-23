@@ -28,34 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabControlCompras = new System.Windows.Forms.TabControl();
+            this.tabPageLocalizacion = new System.Windows.Forms.TabPage();
+            this.richTxtDescripcion = new System.Windows.Forms.RichTextBox();
+            this.GridViewLocacion = new System.Windows.Forms.DataGridView();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.txtFecLoc = new System.Windows.Forms.TextBox();
+            this.txtFecCreacion = new System.Windows.Forms.TextBox();
             this.txtIdLocacion = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lblFechaCreacion = new System.Windows.Forms.Label();
+            this.lblDescripcion = new System.Windows.Forms.Label();
+            this.lblIdLocacion = new System.Windows.Forms.Label();
+            this.tabPageCapturar = new System.Windows.Forms.TabPage();
+            this.txtLocPrimaria = new System.Windows.Forms.TextBox();
+            this.txtCantidad = new System.Windows.Forms.TextBox();
+            this.txtNoMaterial = new System.Windows.Forms.TextBox();
+            this.txtFechaHora = new System.Windows.Forms.TextBox();
+            this.txtFolio = new System.Windows.Forms.TextBox();
+            this.lblLocPrimaria = new System.Windows.Forms.Label();
+            this.lblCantidad = new System.Windows.Forms.Label();
+            this.lblNoMaterial = new System.Windows.Forms.Label();
+            this.lblFechaHora = new System.Windows.Forms.Label();
+            this.lblFolio = new System.Windows.Forms.Label();
+            this.txtCantidadMateriales = new System.Windows.Forms.TextBox();
+            this.lblCantidadMateriales = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.GridViewCapturar = new System.Windows.Forms.DataGridView();
+            this.tabPageTransacciones = new System.Windows.Forms.TabPage();
             this.button8 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.textBox15 = new System.Windows.Forms.TextBox();
@@ -66,14 +67,14 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.tabPageInventario = new System.Windows.Forms.TabPage();
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.textBox17 = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.textBox16 = new System.Windows.Forms.TextBox();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.tabPageConsumos = new System.Windows.Forms.TabPage();
             this.button10 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.textBox20 = new System.Windows.Forms.TextBox();
@@ -83,76 +84,85 @@
             this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
-            this.erpdbDataSet = new ERP.erpdbDataSet();
-            this.pruebaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pruebaTableAdapter = new ERP.erpdbDataSetTableAdapters.PruebaTableAdapter();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            this.tabPage3.SuspendLayout();
-            this.tabPage4.SuspendLayout();
+            this.tabControlCompras.SuspendLayout();
+            this.tabPageLocalizacion.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GridViewLocacion)).BeginInit();
+            this.tabPageCapturar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GridViewCapturar)).BeginInit();
+            this.tabPageTransacciones.SuspendLayout();
+            this.tabPageInventario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
-            this.tabPage5.SuspendLayout();
+            this.tabPageConsumos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.erpdbDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pruebaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // tabControl1
+            // tabControlCompras
             // 
-            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.tabControlCompras.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.Controls.Add(this.tabPage5);
-            this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.Location = new System.Drawing.Point(27, 17);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(623, 530);
-            this.tabControl1.TabIndex = 3;
-            this.tabControl1.Tag = "";
+            this.tabControlCompras.Controls.Add(this.tabPageLocalizacion);
+            this.tabControlCompras.Controls.Add(this.tabPageCapturar);
+            this.tabControlCompras.Controls.Add(this.tabPageTransacciones);
+            this.tabControlCompras.Controls.Add(this.tabPageInventario);
+            this.tabControlCompras.Controls.Add(this.tabPageConsumos);
+            this.tabControlCompras.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControlCompras.Location = new System.Drawing.Point(27, 17);
+            this.tabControlCompras.Name = "tabControlCompras";
+            this.tabControlCompras.SelectedIndex = 0;
+            this.tabControlCompras.Size = new System.Drawing.Size(705, 530);
+            this.tabControlCompras.TabIndex = 3;
+            this.tabControlCompras.Tag = "";
             // 
-            // tabPage1
+            // tabPageLocalizacion
             // 
-            this.tabPage1.Controls.Add(this.richTextBox1);
-            this.tabPage1.Controls.Add(this.dataGridView1);
-            this.tabPage1.Controls.Add(this.btnGuardar);
-            this.tabPage1.Controls.Add(this.txtFecLoc);
-            this.tabPage1.Controls.Add(this.txtIdLocacion);
-            this.tabPage1.Controls.Add(this.label4);
-            this.tabPage1.Controls.Add(this.label3);
-            this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(615, 501);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Localizacion";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPageLocalizacion.Controls.Add(this.richTxtDescripcion);
+            this.tabPageLocalizacion.Controls.Add(this.GridViewLocacion);
+            this.tabPageLocalizacion.Controls.Add(this.btnGuardar);
+            this.tabPageLocalizacion.Controls.Add(this.txtFecCreacion);
+            this.tabPageLocalizacion.Controls.Add(this.txtIdLocacion);
+            this.tabPageLocalizacion.Controls.Add(this.lblFechaCreacion);
+            this.tabPageLocalizacion.Controls.Add(this.lblDescripcion);
+            this.tabPageLocalizacion.Controls.Add(this.lblIdLocacion);
+            this.tabPageLocalizacion.Location = new System.Drawing.Point(4, 25);
+            this.tabPageLocalizacion.Name = "tabPageLocalizacion";
+            this.tabPageLocalizacion.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageLocalizacion.Size = new System.Drawing.Size(697, 501);
+            this.tabPageLocalizacion.TabIndex = 0;
+            this.tabPageLocalizacion.Text = "Localizacion";
+            this.tabPageLocalizacion.UseVisualStyleBackColor = true;
+            // 
+            // richTxtDescripcion
+            // 
+            this.richTxtDescripcion.Location = new System.Drawing.Point(115, 116);
+            this.richTxtDescripcion.Name = "richTxtDescripcion";
+            this.richTxtDescripcion.Size = new System.Drawing.Size(139, 126);
+            this.richTxtDescripcion.TabIndex = 9;
+            this.richTxtDescripcion.Text = "";
+            // 
+            // GridViewLocacion
+            // 
+            this.GridViewLocacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridViewLocacion.Location = new System.Drawing.Point(284, 22);
+            this.GridViewLocacion.Name = "GridViewLocacion";
+            this.GridViewLocacion.Size = new System.Drawing.Size(339, 447);
+            this.GridViewLocacion.TabIndex = 8;
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(137, 264);
+            this.btnGuardar.Location = new System.Drawing.Point(86, 269);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(106, 27);
             this.btnGuardar.TabIndex = 7;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
             // 
-            // txtFecLoc
+            // txtFecCreacion
             // 
-            this.txtFecLoc.Location = new System.Drawing.Point(154, 62);
-            this.txtFecLoc.Name = "txtFecLoc";
-            this.txtFecLoc.Size = new System.Drawing.Size(100, 22);
-            this.txtFecLoc.TabIndex = 5;
+            this.txtFecCreacion.Location = new System.Drawing.Point(154, 62);
+            this.txtFecCreacion.Name = "txtFecCreacion";
+            this.txtFecCreacion.Size = new System.Drawing.Size(100, 22);
+            this.txtFecCreacion.TabIndex = 5;
             // 
             // txtIdLocacion
             // 
@@ -161,155 +171,155 @@
             this.txtIdLocacion.Size = new System.Drawing.Size(100, 22);
             this.txtIdLocacion.TabIndex = 3;
             // 
-            // label4
+            // lblFechaCreacion
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(29, 62);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(101, 16);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Fecha creacion";
+            this.lblFechaCreacion.AutoSize = true;
+            this.lblFechaCreacion.Location = new System.Drawing.Point(29, 62);
+            this.lblFechaCreacion.Name = "lblFechaCreacion";
+            this.lblFechaCreacion.Size = new System.Drawing.Size(101, 16);
+            this.lblFechaCreacion.TabIndex = 2;
+            this.lblFechaCreacion.Text = "Fecha creacion";
             // 
-            // label3
+            // lblDescripcion
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(29, 116);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(80, 16);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Descripcion";
+            this.lblDescripcion.AutoSize = true;
+            this.lblDescripcion.Location = new System.Drawing.Point(29, 116);
+            this.lblDescripcion.Name = "lblDescripcion";
+            this.lblDescripcion.Size = new System.Drawing.Size(80, 16);
+            this.lblDescripcion.TabIndex = 1;
+            this.lblDescripcion.Text = "Descripcion";
             // 
-            // label2
+            // lblIdLocacion
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(29, 22);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(77, 16);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Id Locacion";
+            this.lblIdLocacion.AutoSize = true;
+            this.lblIdLocacion.Location = new System.Drawing.Point(29, 22);
+            this.lblIdLocacion.Name = "lblIdLocacion";
+            this.lblIdLocacion.Size = new System.Drawing.Size(77, 16);
+            this.lblIdLocacion.TabIndex = 0;
+            this.lblIdLocacion.Text = "Id Locacion";
             // 
-            // tabPage2
+            // tabPageCapturar
             // 
-            this.tabPage2.Controls.Add(this.textBox11);
-            this.tabPage2.Controls.Add(this.textBox10);
-            this.tabPage2.Controls.Add(this.textBox9);
-            this.tabPage2.Controls.Add(this.textBox8);
-            this.tabPage2.Controls.Add(this.textBox7);
-            this.tabPage2.Controls.Add(this.label11);
-            this.tabPage2.Controls.Add(this.label10);
-            this.tabPage2.Controls.Add(this.label9);
-            this.tabPage2.Controls.Add(this.label8);
-            this.tabPage2.Controls.Add(this.label7);
-            this.tabPage2.Controls.Add(this.textBox6);
-            this.tabPage2.Controls.Add(this.label6);
-            this.tabPage2.Controls.Add(this.button6);
-            this.tabPage2.Controls.Add(this.button5);
-            this.tabPage2.Controls.Add(this.button4);
-            this.tabPage2.Controls.Add(this.button3);
-            this.tabPage2.Controls.Add(this.dataGridView2);
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(615, 501);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Capturar";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabPageCapturar.Controls.Add(this.txtLocPrimaria);
+            this.tabPageCapturar.Controls.Add(this.txtCantidad);
+            this.tabPageCapturar.Controls.Add(this.txtNoMaterial);
+            this.tabPageCapturar.Controls.Add(this.txtFechaHora);
+            this.tabPageCapturar.Controls.Add(this.txtFolio);
+            this.tabPageCapturar.Controls.Add(this.lblLocPrimaria);
+            this.tabPageCapturar.Controls.Add(this.lblCantidad);
+            this.tabPageCapturar.Controls.Add(this.lblNoMaterial);
+            this.tabPageCapturar.Controls.Add(this.lblFechaHora);
+            this.tabPageCapturar.Controls.Add(this.lblFolio);
+            this.tabPageCapturar.Controls.Add(this.txtCantidadMateriales);
+            this.tabPageCapturar.Controls.Add(this.lblCantidadMateriales);
+            this.tabPageCapturar.Controls.Add(this.button6);
+            this.tabPageCapturar.Controls.Add(this.button5);
+            this.tabPageCapturar.Controls.Add(this.button4);
+            this.tabPageCapturar.Controls.Add(this.button3);
+            this.tabPageCapturar.Controls.Add(this.GridViewCapturar);
+            this.tabPageCapturar.Location = new System.Drawing.Point(4, 25);
+            this.tabPageCapturar.Name = "tabPageCapturar";
+            this.tabPageCapturar.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageCapturar.Size = new System.Drawing.Size(615, 501);
+            this.tabPageCapturar.TabIndex = 1;
+            this.tabPageCapturar.Text = "Capturar";
+            this.tabPageCapturar.UseVisualStyleBackColor = true;
             // 
-            // textBox11
+            // txtLocPrimaria
             // 
-            this.textBox11.Location = new System.Drawing.Point(490, 90);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(98, 22);
-            this.textBox11.TabIndex = 18;
+            this.txtLocPrimaria.Location = new System.Drawing.Point(490, 90);
+            this.txtLocPrimaria.Name = "txtLocPrimaria";
+            this.txtLocPrimaria.Size = new System.Drawing.Size(98, 22);
+            this.txtLocPrimaria.TabIndex = 18;
             // 
-            // textBox10
+            // txtCantidad
             // 
-            this.textBox10.Location = new System.Drawing.Point(273, 93);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(98, 22);
-            this.textBox10.TabIndex = 17;
+            this.txtCantidad.Location = new System.Drawing.Point(273, 93);
+            this.txtCantidad.Name = "txtCantidad";
+            this.txtCantidad.Size = new System.Drawing.Size(98, 22);
+            this.txtCantidad.TabIndex = 17;
             // 
-            // textBox9
+            // txtNoMaterial
             // 
-            this.textBox9.Location = new System.Drawing.Point(95, 93);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(98, 22);
-            this.textBox9.TabIndex = 16;
+            this.txtNoMaterial.Location = new System.Drawing.Point(95, 93);
+            this.txtNoMaterial.Name = "txtNoMaterial";
+            this.txtNoMaterial.Size = new System.Drawing.Size(98, 22);
+            this.txtNoMaterial.TabIndex = 16;
             // 
-            // textBox8
+            // txtFechaHora
             // 
-            this.textBox8.Location = new System.Drawing.Point(273, 27);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(98, 22);
-            this.textBox8.TabIndex = 15;
+            this.txtFechaHora.Location = new System.Drawing.Point(273, 27);
+            this.txtFechaHora.Name = "txtFechaHora";
+            this.txtFechaHora.Size = new System.Drawing.Size(98, 22);
+            this.txtFechaHora.TabIndex = 15;
             // 
-            // textBox7
+            // txtFolio
             // 
-            this.textBox7.Location = new System.Drawing.Point(83, 30);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(98, 22);
-            this.textBox7.TabIndex = 14;
+            this.txtFolio.Location = new System.Drawing.Point(83, 30);
+            this.txtFolio.Name = "txtFolio";
+            this.txtFolio.Size = new System.Drawing.Size(98, 22);
+            this.txtFolio.TabIndex = 14;
             // 
-            // label11
+            // lblLocPrimaria
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(398, 96);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(86, 16);
-            this.label11.TabIndex = 13;
-            this.label11.Text = "Loc. Primaria";
+            this.lblLocPrimaria.AutoSize = true;
+            this.lblLocPrimaria.Location = new System.Drawing.Point(398, 96);
+            this.lblLocPrimaria.Name = "lblLocPrimaria";
+            this.lblLocPrimaria.Size = new System.Drawing.Size(86, 16);
+            this.lblLocPrimaria.TabIndex = 13;
+            this.lblLocPrimaria.Text = "Loc. Primaria";
             // 
-            // label10
+            // lblCantidad
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(205, 93);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(62, 16);
-            this.label10.TabIndex = 12;
-            this.label10.Text = "Cantidad";
+            this.lblCantidad.AutoSize = true;
+            this.lblCantidad.Location = new System.Drawing.Point(205, 93);
+            this.lblCantidad.Name = "lblCantidad";
+            this.lblCantidad.Size = new System.Drawing.Size(62, 16);
+            this.lblCantidad.TabIndex = 12;
+            this.lblCantidad.Text = "Cantidad";
             // 
-            // label9
+            // lblNoMaterial
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(12, 93);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(77, 16);
-            this.label9.TabIndex = 11;
-            this.label9.Text = "No Material";
+            this.lblNoMaterial.AutoSize = true;
+            this.lblNoMaterial.Location = new System.Drawing.Point(12, 93);
+            this.lblNoMaterial.Name = "lblNoMaterial";
+            this.lblNoMaterial.Size = new System.Drawing.Size(80, 16);
+            this.lblNoMaterial.TabIndex = 11;
+            this.lblNoMaterial.Text = "No. Material";
             // 
-            // label8
+            // lblFechaHora
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(187, 33);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(80, 16);
-            this.label8.TabIndex = 10;
-            this.label8.Text = "Fecha/Hora";
+            this.lblFechaHora.AutoSize = true;
+            this.lblFechaHora.Location = new System.Drawing.Point(187, 33);
+            this.lblFechaHora.Name = "lblFechaHora";
+            this.lblFechaHora.Size = new System.Drawing.Size(80, 16);
+            this.lblFechaHora.TabIndex = 10;
+            this.lblFechaHora.Text = "Fecha/Hora";
             // 
-            // label7
+            // lblFolio
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(18, 33);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(59, 16);
-            this.label7.TabIndex = 9;
-            this.label7.Text = "No Folio";
+            this.lblFolio.AutoSize = true;
+            this.lblFolio.Location = new System.Drawing.Point(18, 33);
+            this.lblFolio.Name = "lblFolio";
+            this.lblFolio.Size = new System.Drawing.Size(62, 16);
+            this.lblFolio.TabIndex = 9;
+            this.lblFolio.Text = "No. Folio";
             // 
-            // textBox6
+            // txtCantidadMateriales
             // 
-            this.textBox6.Location = new System.Drawing.Point(500, 23);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(89, 22);
-            this.textBox6.TabIndex = 8;
+            this.txtCantidadMateriales.Location = new System.Drawing.Point(500, 23);
+            this.txtCantidadMateriales.Name = "txtCantidadMateriales";
+            this.txtCantidadMateriales.Size = new System.Drawing.Size(89, 22);
+            this.txtCantidadMateriales.TabIndex = 8;
             // 
-            // label6
+            // lblCantidadMateriales
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(380, 29);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(104, 16);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "Cant. Materiales";
+            this.lblCantidadMateriales.AutoSize = true;
+            this.lblCantidadMateriales.Location = new System.Drawing.Point(380, 29);
+            this.lblCantidadMateriales.Name = "lblCantidadMateriales";
+            this.lblCantidadMateriales.Size = new System.Drawing.Size(104, 16);
+            this.lblCantidadMateriales.TabIndex = 6;
+            this.lblCantidadMateriales.Text = "Cant. Materiales";
             // 
             // button6
             // 
@@ -347,33 +357,33 @@
             this.button3.Text = "Nuevo";
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // dataGridView2
+            // GridViewCapturar
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(15, 142);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(573, 264);
-            this.dataGridView2.TabIndex = 0;
+            this.GridViewCapturar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridViewCapturar.Location = new System.Drawing.Point(15, 142);
+            this.GridViewCapturar.Name = "GridViewCapturar";
+            this.GridViewCapturar.Size = new System.Drawing.Size(573, 264);
+            this.GridViewCapturar.TabIndex = 0;
             // 
-            // tabPage3
+            // tabPageTransacciones
             // 
-            this.tabPage3.Controls.Add(this.button8);
-            this.tabPage3.Controls.Add(this.button7);
-            this.tabPage3.Controls.Add(this.textBox15);
-            this.tabPage3.Controls.Add(this.textBox14);
-            this.tabPage3.Controls.Add(this.textBox13);
-            this.tabPage3.Controls.Add(this.textBox12);
-            this.tabPage3.Controls.Add(this.label15);
-            this.tabPage3.Controls.Add(this.label14);
-            this.tabPage3.Controls.Add(this.label13);
-            this.tabPage3.Controls.Add(this.label12);
-            this.tabPage3.Location = new System.Drawing.Point(4, 25);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(615, 501);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Transacciones";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.tabPageTransacciones.Controls.Add(this.button8);
+            this.tabPageTransacciones.Controls.Add(this.button7);
+            this.tabPageTransacciones.Controls.Add(this.textBox15);
+            this.tabPageTransacciones.Controls.Add(this.textBox14);
+            this.tabPageTransacciones.Controls.Add(this.textBox13);
+            this.tabPageTransacciones.Controls.Add(this.textBox12);
+            this.tabPageTransacciones.Controls.Add(this.label15);
+            this.tabPageTransacciones.Controls.Add(this.label14);
+            this.tabPageTransacciones.Controls.Add(this.label13);
+            this.tabPageTransacciones.Controls.Add(this.label12);
+            this.tabPageTransacciones.Location = new System.Drawing.Point(4, 25);
+            this.tabPageTransacciones.Name = "tabPageTransacciones";
+            this.tabPageTransacciones.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageTransacciones.Size = new System.Drawing.Size(615, 501);
+            this.tabPageTransacciones.TabIndex = 2;
+            this.tabPageTransacciones.Text = "Transacciones";
+            this.tabPageTransacciones.UseVisualStyleBackColor = true;
             // 
             // button8
             // 
@@ -457,21 +467,21 @@
             this.label12.TabIndex = 0;
             this.label12.Text = "Localizacion Origen";
             // 
-            // tabPage4
+            // tabPageInventario
             // 
-            this.tabPage4.Controls.Add(this.label18);
-            this.tabPage4.Controls.Add(this.label17);
-            this.tabPage4.Controls.Add(this.textBox17);
-            this.tabPage4.Controls.Add(this.label16);
-            this.tabPage4.Controls.Add(this.textBox16);
-            this.tabPage4.Controls.Add(this.dataGridView3);
-            this.tabPage4.Location = new System.Drawing.Point(4, 25);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(615, 501);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Inventario";
-            this.tabPage4.UseVisualStyleBackColor = true;
+            this.tabPageInventario.Controls.Add(this.label18);
+            this.tabPageInventario.Controls.Add(this.label17);
+            this.tabPageInventario.Controls.Add(this.textBox17);
+            this.tabPageInventario.Controls.Add(this.label16);
+            this.tabPageInventario.Controls.Add(this.textBox16);
+            this.tabPageInventario.Controls.Add(this.dataGridView3);
+            this.tabPageInventario.Location = new System.Drawing.Point(4, 25);
+            this.tabPageInventario.Name = "tabPageInventario";
+            this.tabPageInventario.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageInventario.Size = new System.Drawing.Size(615, 501);
+            this.tabPageInventario.TabIndex = 3;
+            this.tabPageInventario.Text = "Inventario";
+            this.tabPageInventario.UseVisualStyleBackColor = true;
             // 
             // label18
             // 
@@ -522,24 +532,24 @@
             this.dataGridView3.Size = new System.Drawing.Size(421, 142);
             this.dataGridView3.TabIndex = 0;
             // 
-            // tabPage5
+            // tabPageConsumos
             // 
-            this.tabPage5.Controls.Add(this.button10);
-            this.tabPage5.Controls.Add(this.button9);
-            this.tabPage5.Controls.Add(this.textBox20);
-            this.tabPage5.Controls.Add(this.textBox19);
-            this.tabPage5.Controls.Add(this.textBox18);
-            this.tabPage5.Controls.Add(this.label21);
-            this.tabPage5.Controls.Add(this.label20);
-            this.tabPage5.Controls.Add(this.label19);
-            this.tabPage5.Controls.Add(this.dataGridView4);
-            this.tabPage5.Location = new System.Drawing.Point(4, 25);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(615, 501);
-            this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "Consumos";
-            this.tabPage5.UseVisualStyleBackColor = true;
+            this.tabPageConsumos.Controls.Add(this.button10);
+            this.tabPageConsumos.Controls.Add(this.button9);
+            this.tabPageConsumos.Controls.Add(this.textBox20);
+            this.tabPageConsumos.Controls.Add(this.textBox19);
+            this.tabPageConsumos.Controls.Add(this.textBox18);
+            this.tabPageConsumos.Controls.Add(this.label21);
+            this.tabPageConsumos.Controls.Add(this.label20);
+            this.tabPageConsumos.Controls.Add(this.label19);
+            this.tabPageConsumos.Controls.Add(this.dataGridView4);
+            this.tabPageConsumos.Location = new System.Drawing.Point(4, 25);
+            this.tabPageConsumos.Name = "tabPageConsumos";
+            this.tabPageConsumos.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageConsumos.Size = new System.Drawing.Size(615, 501);
+            this.tabPageConsumos.TabIndex = 4;
+            this.tabPageConsumos.Text = "Consumos";
+            this.tabPageConsumos.UseVisualStyleBackColor = true;
             // 
             // button10
             // 
@@ -615,99 +625,67 @@
             this.dataGridView4.Size = new System.Drawing.Size(514, 184);
             this.dataGridView4.TabIndex = 0;
             // 
-            // erpdbDataSet
-            // 
-            this.erpdbDataSet.DataSetName = "erpdbDataSet";
-            this.erpdbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // pruebaBindingSource
-            // 
-            this.pruebaBindingSource.DataMember = "Prueba";
-            this.pruebaBindingSource.DataSource = this.erpdbDataSet;
-            // 
-            // pruebaTableAdapter
-            // 
-            this.pruebaTableAdapter.ClearBeforeFill = true;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(284, 22);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(315, 447);
-            this.dataGridView1.TabIndex = 8;
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Location = new System.Drawing.Point(115, 116);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(139, 126);
-            this.richTextBox1.TabIndex = 9;
-            this.richTextBox1.Text = "";
-            // 
             // Almacen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(662, 559);
+            this.ClientSize = new System.Drawing.Size(744, 559);
             this.ControlBox = false;
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.tabControlCompras);
             this.Name = "Almacen";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Almacen";
             this.Load += new System.EventHandler(this.Almacen_Load);
-            this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            this.tabPage3.ResumeLayout(false);
-            this.tabPage3.PerformLayout();
-            this.tabPage4.ResumeLayout(false);
-            this.tabPage4.PerformLayout();
+            this.tabControlCompras.ResumeLayout(false);
+            this.tabPageLocalizacion.ResumeLayout(false);
+            this.tabPageLocalizacion.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GridViewLocacion)).EndInit();
+            this.tabPageCapturar.ResumeLayout(false);
+            this.tabPageCapturar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GridViewCapturar)).EndInit();
+            this.tabPageTransacciones.ResumeLayout(false);
+            this.tabPageTransacciones.PerformLayout();
+            this.tabPageInventario.ResumeLayout(false);
+            this.tabPageInventario.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            this.tabPage5.ResumeLayout(false);
-            this.tabPage5.PerformLayout();
+            this.tabPageConsumos.ResumeLayout(false);
+            this.tabPageConsumos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.erpdbDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pruebaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabControl tabControlCompras;
+        private System.Windows.Forms.TabPage tabPageLocalizacion;
         private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.TextBox txtFecLoc;
+        private System.Windows.Forms.TextBox txtFecCreacion;
         private System.Windows.Forms.TextBox txtIdLocacion;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblFechaCreacion;
+        private System.Windows.Forms.Label lblDescripcion;
+        private System.Windows.Forms.Label lblIdLocacion;
+        private System.Windows.Forms.TabPage tabPageCapturar;
+        private System.Windows.Forms.TextBox txtLocPrimaria;
+        private System.Windows.Forms.TextBox txtCantidad;
+        private System.Windows.Forms.TextBox txtNoMaterial;
+        private System.Windows.Forms.TextBox txtFechaHora;
+        private System.Windows.Forms.TextBox txtFolio;
+        private System.Windows.Forms.Label lblLocPrimaria;
+        private System.Windows.Forms.Label lblCantidad;
+        private System.Windows.Forms.Label lblNoMaterial;
+        private System.Windows.Forms.Label lblFechaHora;
+        private System.Windows.Forms.Label lblFolio;
+        private System.Windows.Forms.TextBox txtCantidadMateriales;
+        private System.Windows.Forms.Label lblCantidadMateriales;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.DataGridView GridViewCapturar;
+        private System.Windows.Forms.TabPage tabPageTransacciones;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.TextBox textBox15;
@@ -718,14 +696,14 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.TabPage tabPageInventario;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox textBox17;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox textBox16;
         private System.Windows.Forms.DataGridView dataGridView3;
-        private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.TabPage tabPageConsumos;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.TextBox textBox20;
@@ -735,10 +713,7 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.DataGridView dataGridView4;
-        private erpdbDataSet erpdbDataSet;
-        private System.Windows.Forms.BindingSource pruebaBindingSource;
-        private erpdbDataSetTableAdapters.PruebaTableAdapter pruebaTableAdapter;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.RichTextBox richTxtDescripcion;
+        private System.Windows.Forms.DataGridView GridViewLocacion;
     }
 }

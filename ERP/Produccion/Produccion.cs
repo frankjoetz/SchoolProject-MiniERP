@@ -13,7 +13,7 @@ namespace ERP.Produccion
     public partial class Produccion : Form
     {
         LogicaDeNegocios.Produccion.metodosProduccion prod = new LogicaDeNegocios.Produccion.metodosProduccion();
-
+        
         public Produccion()
         {
             InitializeComponent();

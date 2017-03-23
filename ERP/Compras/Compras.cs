@@ -12,14 +12,18 @@ namespace ERP.Almacen
 {
     public partial class Almacen : Form
     {
+        LogicaDeNegocios.Compras.metodosCompras comp = new LogicaDeNegocios.Compras.metodosCompras();
+
         public Almacen()
         {
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
+            comp.llenarGridViewLocacion(GridViewLocacion);
         }
 
         private void Almacen_Load(object sender, EventArgs e)
         {
         }
+
     }
 }
