@@ -41,9 +41,10 @@ namespace ERP.Ingenieria
             catch (System.Exception ex)
             {
                 System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-        }
 
+            }
+
+        }
         private void ingenieriaform_Click(object sender, EventArgs e)
         {
 
@@ -56,6 +57,8 @@ namespace ERP.Ingenieria
 
         private void Ingenieria_Load(object sender, EventArgs e)
         {
+            // TODO: esta línea de código carga datos en la tabla 'erpdbDataSet3.InventarioProducto' Puede moverla o quitarla según sea necesario.
+            this.inventarioProductoTableAdapter.Fill(this.erpdbDataSet3.InventarioProducto);
             // TODO: esta línea de código carga datos en la tabla 'erpdbDataSet1.MateriaPrima' Puede moverla o quitarla según sea necesario.
             this.materiaPrimaTableAdapter.Fill(this.erpdbDataSet1.MateriaPrima);
             // TODO: esta línea de código carga datos en la tabla 'erpdbDataSet2.MateriaPrima' Puede moverla o quitarla según sea necesario.
@@ -74,5 +77,24 @@ namespace ERP.Ingenieria
 
 
         }
+
+        private void btnagregarcomponentes_Click(object sender, EventArgs e)
+        {
+            bool result = MIngenieria.altaProducto(int.Parse(txtidproducto.Text), txtdescripcion.Text, int.Parse(cantidadtxt.Text), int.Parse(txtlocalidad.Text), txtfhora.Text);
+            if (result)
+            {
+                MessageBox.Show("Si se pudo!");
+                try
+                {
+                    this.inventarioProductoTableAdapter.FillBy(this.erpdbDataSet3.InventarioProducto);
+                }
+                catch (System.Exception ex)
+                {
+                    System.Windows.Forms.MessageBox.Show(ex.Message);
+                }
+
+            }
+        }
     }
+
 }

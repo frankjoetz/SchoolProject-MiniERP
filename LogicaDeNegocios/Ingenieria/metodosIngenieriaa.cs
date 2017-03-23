@@ -10,7 +10,6 @@ namespace LogicaDeNegocios
 {
     public class metodosIngenieriaa
     {
-        Conexion conectar = new Conexion();
         BaseDeDatos bd = new BaseDeDatos();
 
         public bool altaMateria(int idmateria,string tipo, string descrip, string fecha, int cantidad)
@@ -20,9 +19,9 @@ namespace LogicaDeNegocios
             else
                 return false;
         }
-        public bool altaProducto(int idCliente, string fecha)
+        public bool altaProducto(int idProducto,string descripcion, int cantidad, int locacion, string fHora)
         {
-            if (bd.insertar("insert into Pedido(idCliente,fecha) values(" + idCliente + ",'" + fecha + "')"))
+            if (bd.insertar("insert into InventarioProducto(idProducto, descripcion, cantidad, locacion, fHora) values(" + idProducto + ",'"+descripcion+"','" + cantidad + "', '"+locacion+"','"+fHora+"')"))
                 return true;
             else
                 return false;
