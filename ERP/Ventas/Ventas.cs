@@ -13,6 +13,20 @@ namespace ERP.Ventas
     public partial class Ventas : Form
     {
         LogicaDeNegocios.Ventas.metodosVentas mV = new LogicaDeNegocios.Ventas.metodosVentas();
+        private string id;
+
+        public string Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+        private string empresa;
+
+        public string Empresa
+        {
+            get { return empresa; }
+            set { empresa = value; }
+        }
         public Ventas()
         {
             InitializeComponent();
@@ -63,6 +77,11 @@ namespace ERP.Ventas
         private void Ventas_Load(object sender, EventArgs e)
         {
             cargarClientes("select Pedido.idPedido, Cliente.idCliente, Cliente.nombre, Cliente.apellidos, Cliente.empresa, Cliente.telefono, Cliente.direccion, Cliente.email, Cliente.statusCliente, Pedido.fecha, DetallePedido.idproducto, DetallePedido.cantidad, DetallePedido.detallepedido from Cliente inner join Pedido on Pedido.idCliente = Cliente.idCliente inner join DetallePedido on DetallePedido.idPedido = Pedido.idPedido");
+        }
+        public void textboxes()
+        {
+            txtNom.Text = id;
+            txtEmpresa.Text = empresa;
         }
     }
 }

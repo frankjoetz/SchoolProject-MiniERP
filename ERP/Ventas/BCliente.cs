@@ -20,6 +20,7 @@ namespace ERP.Ventas
         }
 
         LogicaDeNegocios.Ventas.metodosVentas mV = new LogicaDeNegocios.Ventas.metodosVentas();
+        Ventas ventas = new Ventas();
         private void BCliente_Load(object sender, EventArgs e)
         {
             tmBuscar.Enabled = false;
@@ -54,7 +55,14 @@ namespace ERP.Ventas
 
         private void dgvBuscar_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            ventas.Id = dgvBuscar.Rows[dgvBuscar.CurrentRow.Index].Cells["idCliente"].Value.ToString();
+            ventas.Empresa = dgvBuscar.Rows[dgvBuscar.CurrentRow.Index].Cells["empresa"].Value.ToString();
+            this.Dispose();
+        }
 
+        private void BCliente_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            ventas.textboxes();
         }
     }
 }
