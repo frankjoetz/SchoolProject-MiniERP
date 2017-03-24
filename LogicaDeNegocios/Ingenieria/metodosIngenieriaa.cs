@@ -26,5 +26,12 @@ namespace LogicaDeNegocios
             else
                 return false;
         }
+        public bool EliminaMateria(int idmateria)
+        {
+            if (bd.eliminar("delete from MateriaPrima where idMateria=('"+idmateria+"')"))
+                return true;
+            else
+                return false;
+        }
     }
 }

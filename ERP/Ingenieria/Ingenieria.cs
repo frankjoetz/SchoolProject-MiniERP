@@ -27,7 +27,7 @@ namespace ERP.Ingenieria
             bool result = MIngenieria.altaMateria(int.Parse(idmateriatxt.Text), txttipo.Text, txtDesc.Text, txtFecha.Text, int.Parse(unidadtxt.Text));
             if (result)
             {
-                MessageBox.Show("Si se pudo!");
+                MessageBox.Show("Se inserto con exito");
                 idmateriatxt.Clear();
                 txttipo.Clear();
                 txtDesc.Clear();
@@ -83,7 +83,7 @@ namespace ERP.Ingenieria
             bool result = MIngenieria.altaProducto(int.Parse(txtidproducto.Text), txtdescripcion.Text, int.Parse(cantidadtxt.Text), int.Parse(txtlocalidad.Text), txtfhora.Text);
             if (result)
             {
-                MessageBox.Show("Si se pudo!");
+                MessageBox.Show("Se inserto con exito");
                 try
                 {
                     this.inventarioProductoTableAdapter.FillBy(this.erpdbDataSet3.InventarioProducto);
@@ -92,9 +92,43 @@ namespace ERP.Ingenieria
                 {
                     System.Windows.Forms.MessageBox.Show(ex.Message);
                 }
+                txtidproducto.Clear();
+                txtdescripcion.Clear();
+                cantidadtxt.Clear();
+                txtlocalidad.Clear();
+                txtfhora.Clear();
+
+            }
+        }
+
+        private void rbnelimnar_CheckedChanged(object sender, EventArgs e)
+        {
+            idmateriatxt.Visible = true;
+            txtDesc.Visible = false;
+            txtFecha.Visible = false;
+            unidadtxt.Visible = false;
+            txttipo.Visible = false;
+            btneliminar.Visible = true;
+            btnagregarmp.Visible = false;
+
+        }
+
+        private void btneliminar_Click(object sender, EventArgs e)
+        {
+            bool result = MIngenieria.EliminaMateria(int.Parse(idmateriatxt.Text));
+            if (result)
+            {
+                MessageBox.Show("Se elimino con exito");
+            }
+            try
+            {
+                this.materiaPrimaTableAdapter.FillBy(this.erpdbDataSet1.MateriaPrima);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
 
             }
         }
     }
-
 }

@@ -31,6 +31,10 @@
             this.components = new System.ComponentModel.Container();
             this.ingenieriatc = new System.Windows.Forms.TabControl();
             this.ingenieriaform = new System.Windows.Forms.TabPage();
+            this.btneliminar = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rbdmodificar = new System.Windows.Forms.RadioButton();
+            this.rbnelimnar = new System.Windows.Forms.RadioButton();
             this.txttipo = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -51,7 +55,19 @@
             this.idmateriatxt = new System.Windows.Forms.TextBox();
             this.btnagregarmp = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.txtfhora = new System.Windows.Forms.TextBox();
+            this.txtlocalidad = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.nFolioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fHoraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idProductoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidadDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.locacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcionDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.inventarioProductoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.erpdbDataSet3 = new ERP.erpdbDataSet3();
             this.cantidadtxt = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.btnagregarcomponentes = new System.Windows.Forms.Button();
@@ -71,35 +87,24 @@
             this.label12 = new System.Windows.Forms.Label();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.materiaPrimaTableAdapter = new ERP.erpdbDataSet1TableAdapters.MateriaPrimaTableAdapter();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.txtlocalidad = new System.Windows.Forms.TextBox();
-            this.txtfhora = new System.Windows.Forms.TextBox();
             this.inventarioproducto = new ERP.inventarioproducto();
             this.inventarioproductoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.nFolioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fHoraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idProductoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidadDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.locacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcionDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.inventarioProductoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.erpdbDataSet3 = new ERP.erpdbDataSet3();
             this.inventarioProductoTableAdapter = new ERP.erpdbDataSet3TableAdapters.InventarioProductoTableAdapter();
             this.ingenieriatc.SuspendLayout();
             this.ingenieriaform.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.materiaPrimaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.erpdbDataSet1)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inventarioProductoBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpdbDataSet3)).BeginInit();
             this.tabPage3.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inventarioproducto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inventarioproductoBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inventarioProductoBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.erpdbDataSet3)).BeginInit();
             this.SuspendLayout();
             // 
             // ingenieriatc
@@ -122,6 +127,8 @@
             // ingenieriaform
             // 
             this.ingenieriaform.AutoScroll = true;
+            this.ingenieriaform.Controls.Add(this.btneliminar);
+            this.ingenieriaform.Controls.Add(this.groupBox1);
             this.ingenieriaform.Controls.Add(this.txttipo);
             this.ingenieriaform.Controls.Add(this.label6);
             this.ingenieriaform.Controls.Add(this.dataGridView1);
@@ -144,10 +151,55 @@
             this.ingenieriaform.UseVisualStyleBackColor = true;
             this.ingenieriaform.Click += new System.EventHandler(this.ingenieriaform_Click);
             // 
+            // btneliminar
+            // 
+            this.btneliminar.Location = new System.Drawing.Point(205, 304);
+            this.btneliminar.Name = "btneliminar";
+            this.btneliminar.Size = new System.Drawing.Size(112, 32);
+            this.btneliminar.TabIndex = 12;
+            this.btneliminar.Text = "Eliminar";
+            this.btneliminar.UseVisualStyleBackColor = true;
+            this.btneliminar.Visible = false;
+            this.btneliminar.Click += new System.EventHandler(this.btneliminar_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.rbdmodificar);
+            this.groupBox1.Controls.Add(this.rbnelimnar);
+            this.groupBox1.Location = new System.Drawing.Point(19, 7);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(320, 60);
+            this.groupBox1.TabIndex = 2;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Mas opciones";
+            // 
+            // rbdmodificar
+            // 
+            this.rbdmodificar.AutoSize = true;
+            this.rbdmodificar.Location = new System.Drawing.Point(172, 23);
+            this.rbdmodificar.Name = "rbdmodificar";
+            this.rbdmodificar.Size = new System.Drawing.Size(87, 22);
+            this.rbdmodificar.TabIndex = 1;
+            this.rbdmodificar.TabStop = true;
+            this.rbdmodificar.Text = "Modificar";
+            this.rbdmodificar.UseVisualStyleBackColor = true;
+            // 
+            // rbnelimnar
+            // 
+            this.rbnelimnar.AutoSize = true;
+            this.rbnelimnar.Location = new System.Drawing.Point(25, 23);
+            this.rbnelimnar.Name = "rbnelimnar";
+            this.rbnelimnar.Size = new System.Drawing.Size(79, 22);
+            this.rbnelimnar.TabIndex = 0;
+            this.rbnelimnar.TabStop = true;
+            this.rbnelimnar.Text = "Eliminar";
+            this.rbnelimnar.UseVisualStyleBackColor = true;
+            this.rbnelimnar.CheckedChanged += new System.EventHandler(this.rbnelimnar_CheckedChanged);
+            // 
             // txttipo
             // 
             this.txttipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txttipo.Location = new System.Drawing.Point(184, 180);
+            this.txttipo.Location = new System.Drawing.Point(191, 242);
             this.txttipo.Margin = new System.Windows.Forms.Padding(4);
             this.txttipo.Name = "txttipo";
             this.txttipo.Size = new System.Drawing.Size(148, 24);
@@ -157,7 +209,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(9, 183);
+            this.label6.Location = new System.Drawing.Point(16, 245);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(37, 18);
@@ -188,7 +240,7 @@
             // idMateriaDataGridViewTextBoxColumn
             // 
             this.idMateriaDataGridViewTextBoxColumn.DataPropertyName = "idMateria";
-            this.idMateriaDataGridViewTextBoxColumn.HeaderText = "idMateria";
+            this.idMateriaDataGridViewTextBoxColumn.HeaderText = "ID Materia";
             this.idMateriaDataGridViewTextBoxColumn.Name = "idMateriaDataGridViewTextBoxColumn";
             this.idMateriaDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -202,7 +254,7 @@
             // descripcionDataGridViewTextBoxColumn
             // 
             this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "descripcion";
-            this.descripcionDataGridViewTextBoxColumn.HeaderText = "descripcion";
+            this.descripcionDataGridViewTextBoxColumn.HeaderText = "Descripcion";
             this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
             this.descripcionDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -216,7 +268,7 @@
             // cantidadDataGridViewTextBoxColumn
             // 
             this.cantidadDataGridViewTextBoxColumn.DataPropertyName = "cantidad";
-            this.cantidadDataGridViewTextBoxColumn.HeaderText = "cantidad";
+            this.cantidadDataGridViewTextBoxColumn.HeaderText = "Cantidad";
             this.cantidadDataGridViewTextBoxColumn.Name = "cantidadDataGridViewTextBoxColumn";
             this.cantidadDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -234,7 +286,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(9, 144);
+            this.label9.Location = new System.Drawing.Point(16, 206);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(54, 18);
@@ -244,7 +296,7 @@
             // unidadtxt
             // 
             this.unidadtxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.unidadtxt.Location = new System.Drawing.Point(184, 141);
+            this.unidadtxt.Location = new System.Drawing.Point(191, 203);
             this.unidadtxt.Margin = new System.Windows.Forms.Padding(4);
             this.unidadtxt.Name = "unidadtxt";
             this.unidadtxt.Size = new System.Drawing.Size(148, 24);
@@ -254,7 +306,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(8, 101);
+            this.label3.Location = new System.Drawing.Point(15, 163);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(101, 18);
@@ -265,7 +317,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(8, 65);
+            this.label2.Location = new System.Drawing.Point(15, 127);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(139, 18);
@@ -276,7 +328,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(9, 25);
+            this.label1.Location = new System.Drawing.Point(16, 87);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(75, 18);
@@ -286,7 +338,7 @@
             // txtFecha
             // 
             this.txtFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFecha.Location = new System.Drawing.Point(184, 98);
+            this.txtFecha.Location = new System.Drawing.Point(191, 160);
             this.txtFecha.Margin = new System.Windows.Forms.Padding(4);
             this.txtFecha.Name = "txtFecha";
             this.txtFecha.Size = new System.Drawing.Size(148, 24);
@@ -295,7 +347,7 @@
             // txtDesc
             // 
             this.txtDesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDesc.Location = new System.Drawing.Point(184, 62);
+            this.txtDesc.Location = new System.Drawing.Point(191, 124);
             this.txtDesc.Margin = new System.Windows.Forms.Padding(4);
             this.txtDesc.Name = "txtDesc";
             this.txtDesc.Size = new System.Drawing.Size(148, 24);
@@ -304,7 +356,7 @@
             // idmateriatxt
             // 
             this.idmateriatxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idmateriatxt.Location = new System.Drawing.Point(184, 22);
+            this.idmateriatxt.Location = new System.Drawing.Point(191, 84);
             this.idmateriatxt.Margin = new System.Windows.Forms.Padding(4);
             this.idmateriatxt.Name = "idmateriatxt";
             this.idmateriatxt.Size = new System.Drawing.Size(148, 24);
@@ -313,7 +365,7 @@
             // btnagregarmp
             // 
             this.btnagregarmp.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnagregarmp.Location = new System.Drawing.Point(198, 242);
+            this.btnagregarmp.Location = new System.Drawing.Point(205, 304);
             this.btnagregarmp.Margin = new System.Windows.Forms.Padding(4);
             this.btnagregarmp.Name = "btnagregarmp";
             this.btnagregarmp.Size = new System.Drawing.Size(112, 32);
@@ -345,6 +397,42 @@
             this.tabPage2.Text = "Captura de Producto Final";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // txtfhora
+            // 
+            this.txtfhora.Location = new System.Drawing.Point(212, 232);
+            this.txtfhora.Margin = new System.Windows.Forms.Padding(4);
+            this.txtfhora.Name = "txtfhora";
+            this.txtfhora.Size = new System.Drawing.Size(148, 24);
+            this.txtfhora.TabIndex = 17;
+            // 
+            // txtlocalidad
+            // 
+            this.txtlocalidad.Location = new System.Drawing.Point(212, 194);
+            this.txtlocalidad.Margin = new System.Windows.Forms.Padding(4);
+            this.txtlocalidad.Name = "txtlocalidad";
+            this.txtlocalidad.Size = new System.Drawing.Size(148, 24);
+            this.txtlocalidad.TabIndex = 16;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(9, 197);
+            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(71, 18);
+            this.label16.TabIndex = 15;
+            this.label16.Text = "Localidad";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(9, 235);
+            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(49, 18);
+            this.label15.TabIndex = 14;
+            this.label15.Text = "Fecha";
+            // 
             // dataGridView2
             // 
             this.dataGridView2.AllowUserToAddRows = false;
@@ -365,6 +453,58 @@
             this.dataGridView2.ReadOnly = true;
             this.dataGridView2.Size = new System.Drawing.Size(644, 276);
             this.dataGridView2.TabIndex = 9;
+            // 
+            // nFolioDataGridViewTextBoxColumn
+            // 
+            this.nFolioDataGridViewTextBoxColumn.DataPropertyName = "nFolio";
+            this.nFolioDataGridViewTextBoxColumn.HeaderText = "Folio";
+            this.nFolioDataGridViewTextBoxColumn.Name = "nFolioDataGridViewTextBoxColumn";
+            this.nFolioDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // fHoraDataGridViewTextBoxColumn
+            // 
+            this.fHoraDataGridViewTextBoxColumn.DataPropertyName = "fHora";
+            this.fHoraDataGridViewTextBoxColumn.HeaderText = "Fecha";
+            this.fHoraDataGridViewTextBoxColumn.Name = "fHoraDataGridViewTextBoxColumn";
+            this.fHoraDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // idProductoDataGridViewTextBoxColumn
+            // 
+            this.idProductoDataGridViewTextBoxColumn.DataPropertyName = "idProducto";
+            this.idProductoDataGridViewTextBoxColumn.HeaderText = "Id Producto";
+            this.idProductoDataGridViewTextBoxColumn.Name = "idProductoDataGridViewTextBoxColumn";
+            this.idProductoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // cantidadDataGridViewTextBoxColumn1
+            // 
+            this.cantidadDataGridViewTextBoxColumn1.DataPropertyName = "cantidad";
+            this.cantidadDataGridViewTextBoxColumn1.HeaderText = "Cantidad";
+            this.cantidadDataGridViewTextBoxColumn1.Name = "cantidadDataGridViewTextBoxColumn1";
+            this.cantidadDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // locacionDataGridViewTextBoxColumn
+            // 
+            this.locacionDataGridViewTextBoxColumn.DataPropertyName = "locacion";
+            this.locacionDataGridViewTextBoxColumn.HeaderText = "Locacion";
+            this.locacionDataGridViewTextBoxColumn.Name = "locacionDataGridViewTextBoxColumn";
+            this.locacionDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // descripcionDataGridViewTextBoxColumn1
+            // 
+            this.descripcionDataGridViewTextBoxColumn1.DataPropertyName = "descripcion";
+            this.descripcionDataGridViewTextBoxColumn1.HeaderText = "Descripcion";
+            this.descripcionDataGridViewTextBoxColumn1.Name = "descripcionDataGridViewTextBoxColumn1";
+            this.descripcionDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // inventarioProductoBindingSource1
+            // 
+            this.inventarioProductoBindingSource1.DataMember = "InventarioProducto";
+            this.inventarioProductoBindingSource1.DataSource = this.erpdbDataSet3;
+            // 
+            // erpdbDataSet3
+            // 
+            this.erpdbDataSet3.DataSetName = "erpdbDataSet3";
+            this.erpdbDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // cantidadtxt
             // 
@@ -556,42 +696,6 @@
             // 
             this.materiaPrimaTableAdapter.ClearBeforeFill = true;
             // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(9, 235);
-            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(49, 18);
-            this.label15.TabIndex = 14;
-            this.label15.Text = "Fecha";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(9, 197);
-            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(71, 18);
-            this.label16.TabIndex = 15;
-            this.label16.Text = "Localidad";
-            // 
-            // txtlocalidad
-            // 
-            this.txtlocalidad.Location = new System.Drawing.Point(212, 194);
-            this.txtlocalidad.Margin = new System.Windows.Forms.Padding(4);
-            this.txtlocalidad.Name = "txtlocalidad";
-            this.txtlocalidad.Size = new System.Drawing.Size(148, 24);
-            this.txtlocalidad.TabIndex = 16;
-            // 
-            // txtfhora
-            // 
-            this.txtfhora.Location = new System.Drawing.Point(212, 232);
-            this.txtfhora.Margin = new System.Windows.Forms.Padding(4);
-            this.txtfhora.Name = "txtfhora";
-            this.txtfhora.Size = new System.Drawing.Size(148, 24);
-            this.txtfhora.TabIndex = 17;
-            // 
             // inventarioproducto
             // 
             this.inventarioproducto.DataSetName = "inventarioproducto";
@@ -601,58 +705,6 @@
             // 
             this.inventarioproductoBindingSource.DataSource = this.inventarioproducto;
             this.inventarioproductoBindingSource.Position = 0;
-            // 
-            // nFolioDataGridViewTextBoxColumn
-            // 
-            this.nFolioDataGridViewTextBoxColumn.DataPropertyName = "nFolio";
-            this.nFolioDataGridViewTextBoxColumn.HeaderText = "nFolio";
-            this.nFolioDataGridViewTextBoxColumn.Name = "nFolioDataGridViewTextBoxColumn";
-            this.nFolioDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // fHoraDataGridViewTextBoxColumn
-            // 
-            this.fHoraDataGridViewTextBoxColumn.DataPropertyName = "fHora";
-            this.fHoraDataGridViewTextBoxColumn.HeaderText = "fHora";
-            this.fHoraDataGridViewTextBoxColumn.Name = "fHoraDataGridViewTextBoxColumn";
-            this.fHoraDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // idProductoDataGridViewTextBoxColumn
-            // 
-            this.idProductoDataGridViewTextBoxColumn.DataPropertyName = "idProducto";
-            this.idProductoDataGridViewTextBoxColumn.HeaderText = "idProducto";
-            this.idProductoDataGridViewTextBoxColumn.Name = "idProductoDataGridViewTextBoxColumn";
-            this.idProductoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // cantidadDataGridViewTextBoxColumn1
-            // 
-            this.cantidadDataGridViewTextBoxColumn1.DataPropertyName = "cantidad";
-            this.cantidadDataGridViewTextBoxColumn1.HeaderText = "cantidad";
-            this.cantidadDataGridViewTextBoxColumn1.Name = "cantidadDataGridViewTextBoxColumn1";
-            this.cantidadDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // locacionDataGridViewTextBoxColumn
-            // 
-            this.locacionDataGridViewTextBoxColumn.DataPropertyName = "locacion";
-            this.locacionDataGridViewTextBoxColumn.HeaderText = "locacion";
-            this.locacionDataGridViewTextBoxColumn.Name = "locacionDataGridViewTextBoxColumn";
-            this.locacionDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // descripcionDataGridViewTextBoxColumn1
-            // 
-            this.descripcionDataGridViewTextBoxColumn1.DataPropertyName = "descripcion";
-            this.descripcionDataGridViewTextBoxColumn1.HeaderText = "descripcion";
-            this.descripcionDataGridViewTextBoxColumn1.Name = "descripcionDataGridViewTextBoxColumn1";
-            this.descripcionDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // inventarioProductoBindingSource1
-            // 
-            this.inventarioProductoBindingSource1.DataMember = "InventarioProducto";
-            this.inventarioProductoBindingSource1.DataSource = this.erpdbDataSet3;
-            // 
-            // erpdbDataSet3
-            // 
-            this.erpdbDataSet3.DataSetName = "erpdbDataSet3";
-            this.erpdbDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // inventarioProductoTableAdapter
             // 
@@ -676,12 +728,16 @@
             this.ingenieriatc.ResumeLayout(false);
             this.ingenieriaform.ResumeLayout(false);
             this.ingenieriaform.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.materiaPrimaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.erpdbDataSet1)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inventarioProductoBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpdbDataSet3)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             this.tabPage1.ResumeLayout(false);
@@ -689,8 +745,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.inventarioproducto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.inventarioproductoBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inventarioProductoBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.erpdbDataSet3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -734,11 +788,6 @@
         private erpdbDataSet1 erpdbDataSet1;
         private System.Windows.Forms.BindingSource materiaPrimaBindingSource;
         private erpdbDataSet1TableAdapters.MateriaPrimaTableAdapter materiaPrimaTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idMateriaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tipoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descripcionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fechaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cantidadDataGridViewTextBoxColumn;
         private System.Windows.Forms.TextBox txtfhora;
         private System.Windows.Forms.TextBox txtlocalidad;
         private System.Windows.Forms.Label label16;
@@ -748,11 +797,20 @@
         private erpdbDataSet3 erpdbDataSet3;
         private System.Windows.Forms.BindingSource inventarioProductoBindingSource1;
         private erpdbDataSet3TableAdapters.InventarioProductoTableAdapter inventarioProductoTableAdapter;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton rbdmodificar;
+        private System.Windows.Forms.RadioButton rbnelimnar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idMateriaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descripcionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cantidadDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nFolioDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fHoraDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idProductoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cantidadDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn locacionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcionDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.Button btneliminar;
     }
 }
