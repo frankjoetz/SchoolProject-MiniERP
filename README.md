@@ -1,3 +1,7 @@
+### Mensaje para Alex
+
+- Se vence hasta mayo we, pero sí lo van a seguir pagando. Tienes permiso.
+
 # ERP / C Sharp
 
 ### Instalar conector para BD
