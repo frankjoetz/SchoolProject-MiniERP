@@ -110,6 +110,11 @@ namespace ERP.Ingenieria
             txttipo.Visible = false;
             btneliminar.Visible = true;
             btnagregarmp.Visible = false;
+            label2.Visible = false;
+            label3.Visible = false;
+            label9.Visible = false;
+            label6.Visible = false;
+
 
         }
 
@@ -129,6 +134,36 @@ namespace ERP.Ingenieria
                 System.Windows.Forms.MessageBox.Show(ex.Message);
 
             }
+        }
+
+        private void rbdmodificar_CheckedChanged(object sender, EventArgs e)
+        {
+            idmateriatxt.Visible = true;
+            txtDesc.Visible = true;
+            txtFecha.Visible = true;
+            unidadtxt.Visible = true;
+            txttipo.Visible = true;
+            btneliminar.Visible = false;
+            btnagregarmp.Visible = false;
+            label2.Visible = true;
+            label3.Visible = true;
+            label9.Visible = true;
+            label6.Visible = true;
+            btnmodificar.Visible = true;
+        }
+
+        private void btnmodificar_Click(object sender, EventArgs e)
+        {
+            //bool result = MIngenieria.modificarMateria(int.Parse(idmateriatxt.Text), txttipo.Text, txtDesc.Text, txtFecha.Text, int.Parse(unidadtxt.Text));
+            //if (result)
+            //{
+            //    MessageBox.Show("Se modifico con exito");
+            //    idmateriatxt.Clear();
+            //    txttipo.Clear();
+            //    txtDesc.Clear();
+            //    txtFecha.Clear();
+            //    unidadtxt.Clear();
+            //}
         }
     }
 }

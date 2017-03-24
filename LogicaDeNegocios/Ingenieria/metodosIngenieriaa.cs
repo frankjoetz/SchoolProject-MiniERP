@@ -12,26 +12,33 @@ namespace LogicaDeNegocios
     {
         BaseDeDatos bd = new BaseDeDatos();
 
-        public bool altaMateria(int idmateria,string tipo, string descrip, string fecha, int cantidad)
+        public bool altaMateria(int idmateria, string tipo, string descrip, string fecha, int cantidad)
         {
             if (bd.insertar("insert into MateriaPrima(idMateria, Tipo, descripcion, Fecha, cantidad) values('" + idmateria + "','" + tipo + "', '" + descrip + "', '" + fecha + "', '" + cantidad + "')"))
                 return true;
             else
                 return false;
         }
-        public bool altaProducto(int idProducto,string descripcion, int cantidad, int locacion, string fHora)
+        public bool altaProducto(int idProducto, string descripcion, int cantidad, int locacion, string fHora)
         {
-            if (bd.insertar("insert into InventarioProducto(idProducto, descripcion, cantidad, locacion, fHora) values(" + idProducto + ",'"+descripcion+"','" + cantidad + "', '"+locacion+"','"+fHora+"')"))
+            if (bd.insertar("insert into InventarioProducto(idProducto, descripcion, cantidad, locacion, fHora) values(" + idProducto + ",'" + descripcion + "','" + cantidad + "', '" + locacion + "','" + fHora + "')"))
                 return true;
             else
                 return false;
         }
         public bool EliminaMateria(int idmateria)
         {
-            if (bd.eliminar("delete from MateriaPrima where idMateria=('"+idmateria+"')"))
+            if (bd.eliminar("delete from MateriaPrima where idMateria=('" + idmateria + "')"))
                 return true;
             else
                 return false;
         }
+        //public bool modificarMateria(int idmateria, string tipo, string descrip, string fecha, int cantidad)
+        //{
+        //    if (bd.modificar("UPDATE MateriaPrima SET Tipo='{0}',descripcion='{1}',Fecha='{2}',cantidad='{3}' WHERE idMateria={4}", tipo, descrip, fecha, cantidad, idmateria))
+        //        return true;
+        //    else
+        //        return false;
+        //}
     }
 }

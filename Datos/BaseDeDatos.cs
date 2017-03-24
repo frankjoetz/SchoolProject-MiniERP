@@ -103,6 +103,13 @@ namespace Datos
             else
                 return false;
         }
+        public bool modificar(string sqlQuery)
+        {
+            if (ejecutarConsulta(sqlQuery))
+                return true;
+            else
+                return false;
+        }
 
         public void llenarTabla(string sqlQuery, DataGridView tabla)
         {

@@ -90,6 +90,7 @@
             this.inventarioproducto = new ERP.inventarioproducto();
             this.inventarioproductoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.inventarioProductoTableAdapter = new ERP.erpdbDataSet3TableAdapters.InventarioProductoTableAdapter();
+            this.btnmodificar = new System.Windows.Forms.Button();
             this.ingenieriatc.SuspendLayout();
             this.ingenieriaform.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -127,6 +128,7 @@
             // ingenieriaform
             // 
             this.ingenieriaform.AutoScroll = true;
+            this.ingenieriaform.Controls.Add(this.btnmodificar);
             this.ingenieriaform.Controls.Add(this.btneliminar);
             this.ingenieriaform.Controls.Add(this.groupBox1);
             this.ingenieriaform.Controls.Add(this.txttipo);
@@ -183,6 +185,7 @@
             this.rbdmodificar.TabStop = true;
             this.rbdmodificar.Text = "Modificar";
             this.rbdmodificar.UseVisualStyleBackColor = true;
+            this.rbdmodificar.CheckedChanged += new System.EventHandler(this.rbdmodificar_CheckedChanged);
             // 
             // rbnelimnar
             // 
@@ -710,6 +713,17 @@
             // 
             this.inventarioProductoTableAdapter.ClearBeforeFill = true;
             // 
+            // btnmodificar
+            // 
+            this.btnmodificar.Location = new System.Drawing.Point(205, 342);
+            this.btnmodificar.Name = "btnmodificar";
+            this.btnmodificar.Size = new System.Drawing.Size(112, 32);
+            this.btnmodificar.TabIndex = 13;
+            this.btnmodificar.Text = "Modificar";
+            this.btnmodificar.UseVisualStyleBackColor = true;
+            this.btnmodificar.Visible = false;
+            this.btnmodificar.Click += new System.EventHandler(this.btnmodificar_Click);
+            // 
             // Ingenieria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -812,5 +826,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn locacionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcionDataGridViewTextBoxColumn1;
         private System.Windows.Forms.Button btneliminar;
+        private System.Windows.Forms.Button btnmodificar;
     }
 }
