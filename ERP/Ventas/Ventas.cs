@@ -83,5 +83,24 @@ namespace ERP.Ventas
             txtNom.Text = id;
             txtEmpresa.Text = empresa;
         }
+
+        private void txtNomb_TextChanged(object sender, EventArgs e)
+        {
+            if (txtNomb.Text != "")
+            {
+                if (txtEmp.Text != "")
+                {
+                    cargarClientes("select * from Cliente where nombre like '" + txtNomb.Text + "%' and empresa like '" + txtEmpresa.Text + "%'");
+                }
+                else
+                {
+                    cargarClientes("select * from Cliente where nombre like '" + txtNomb.Text + "%'");
+                }
+            }
+            else
+            {
+                cargarClientes("select * from Cliente where empresa like '" + txtEmp.Text + "%'");
+            }
+        }
     }
 }
