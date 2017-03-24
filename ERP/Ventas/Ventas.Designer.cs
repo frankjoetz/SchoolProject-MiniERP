@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tbcVentas = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.lblFH = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -42,7 +42,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtCan = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.txtNom = new System.Windows.Forms.TextBox();
+            this.txtIDcliente = new System.Windows.Forms.TextBox();
             this.txtEmpresa = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnAddC = new System.Windows.Forms.Button();
@@ -57,7 +57,7 @@
             this.txtNomb = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.dgvBuscar = new System.Windows.Forms.DataGridView();
-            this.tabControl1.SuspendLayout();
+            this.tbcVentas.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -71,22 +71,22 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // tabControl1
+            // tbcVentas
             // 
-            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.tbcVentas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.BClient);
-            this.tabControl1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.ItemSize = new System.Drawing.Size(119, 18);
-            this.tabControl1.Location = new System.Drawing.Point(12, 4);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(765, 586);
-            this.tabControl1.TabIndex = 8;
+            this.tbcVentas.Controls.Add(this.tabPage1);
+            this.tbcVentas.Controls.Add(this.tabPage2);
+            this.tbcVentas.Controls.Add(this.BClient);
+            this.tbcVentas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.tbcVentas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbcVentas.ItemSize = new System.Drawing.Size(119, 18);
+            this.tbcVentas.Location = new System.Drawing.Point(12, 4);
+            this.tbcVentas.Name = "tbcVentas";
+            this.tbcVentas.SelectedIndex = 0;
+            this.tbcVentas.Size = new System.Drawing.Size(765, 586);
+            this.tbcVentas.TabIndex = 8;
             // 
             // tabPage1
             // 
@@ -94,7 +94,7 @@
             this.tabPage1.Controls.Add(this.lblFH);
             this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Controls.Add(this.btnBuscar);
-            this.tabPage1.Controls.Add(this.txtNom);
+            this.tabPage1.Controls.Add(this.txtIDcliente);
             this.tabPage1.Controls.Add(this.txtEmpresa);
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.btnAddC);
@@ -226,13 +226,13 @@
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
-            // txtNom
+            // txtIDcliente
             // 
-            this.txtNom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNom.Location = new System.Drawing.Point(32, 54);
-            this.txtNom.Name = "txtNom";
-            this.txtNom.Size = new System.Drawing.Size(100, 23);
-            this.txtNom.TabIndex = 0;
+            this.txtIDcliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIDcliente.Location = new System.Drawing.Point(32, 54);
+            this.txtIDcliente.Name = "txtIDcliente";
+            this.txtIDcliente.Size = new System.Drawing.Size(100, 23);
+            this.txtIDcliente.TabIndex = 0;
             // 
             // txtEmpresa
             // 
@@ -383,11 +383,12 @@
             this.dgvBuscar.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.dgvBuscar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBuscar.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvBuscar.Location = new System.Drawing.Point(6, 109);
+            this.dgvBuscar.Location = new System.Drawing.Point(6, 105);
             this.dgvBuscar.MultiSelect = false;
             this.dgvBuscar.Name = "dgvBuscar";
             this.dgvBuscar.Size = new System.Drawing.Size(745, 437);
             this.dgvBuscar.TabIndex = 3;
+            this.dgvBuscar.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBuscar_Click);
             // 
             // Ventas
             // 
@@ -396,14 +397,14 @@
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(789, 602);
             this.ControlBox = false;
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.tbcVentas);
             this.Name = "Ventas";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "VENTAS";
             this.Load += new System.EventHandler(this.Ventas_Load);
-            this.tabControl1.ResumeLayout(false);
+            this.tbcVentas.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -420,7 +421,7 @@
 
         #endregion
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl tbcVentas;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnAceptar;
@@ -438,7 +439,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtaCom;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txtNom;
+        private System.Windows.Forms.TextBox txtIDcliente;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.TabPage BClient;
         private System.Windows.Forms.Label label4;

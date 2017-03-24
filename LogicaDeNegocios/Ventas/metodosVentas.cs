@@ -55,5 +55,21 @@ namespace LogicaDeNegocios.Ventas
             }
             return erpCli;
         }
+        public DataSet cargarPedidos(string query)
+        {
+            DataSet erpCli = new DataSet();
+            try
+            {
+                conectar.conectar();
+                MySqlDataAdapter daCliente = new MySqlDataAdapter(query, conectar.conn);
+                daCliente.Fill(erpCli, "Pedido");
+                conectar.conn.Close();
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return erpCli;
+        }
     }
 }

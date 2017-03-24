@@ -59,10 +59,5 @@ namespace ERP.Ventas
             ventas.Empresa = dgvBuscar.Rows[dgvBuscar.CurrentRow.Index].Cells["empresa"].Value.ToString();
             this.Dispose();
         }
-
-        private void BCliente_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            ventas.textboxes();
-        }
     }
 }
