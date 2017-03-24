@@ -32,24 +32,6 @@ namespace Datos
             }
         }
 
-        private string ejecutarConsultaS(string sqlQuery, string columna)
-        {
-            conexion.Open();
-            comandoLocal = new MySqlCommand(sqlQuery, conexion);
-            string campo = "";
-            MySqlDataReader reg = null;
-            if (comandoLocal.ExecuteNonQuery() != 0)
-            {
-                reg = comandoLocal.ExecuteReader();
-                while (reg.Read())
-                {
-                    campo = reg[columna].ToString();
-                };
-            }
-            conexion.Close();
-            return campo;
-        }
-
         private bool ejecutarConsulta(string sqlQuery)
         {
             conexion.Open(); // Se abre la conexión
@@ -85,7 +67,7 @@ namespace Datos
 
         public string buscar(string sqlQuery, string columna)
         {
-            return ejecutarConsultaS(sqlQuery, columna);
+            return retornarValor(sqlQuery, columna);
         }
 
         public bool actualizar(string sqlQuery)
