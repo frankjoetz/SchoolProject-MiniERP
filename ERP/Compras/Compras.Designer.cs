@@ -30,10 +30,10 @@
         {
             this.tabControlCompras = new System.Windows.Forms.TabControl();
             this.tabPageLocalizacion = new System.Windows.Forms.TabPage();
+            this.DTPfechacreado = new System.Windows.Forms.DateTimePicker();
             this.richTxtDescripcion = new System.Windows.Forms.RichTextBox();
             this.GridViewLocacion = new System.Windows.Forms.DataGridView();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.txtFecCreacion = new System.Windows.Forms.TextBox();
             this.txtIdLocacion = new System.Windows.Forms.TextBox();
             this.lblFechaCreacion = new System.Windows.Forms.Label();
             this.lblDescripcion = new System.Windows.Forms.Label();
@@ -110,16 +110,16 @@
             this.tabControlCompras.Location = new System.Drawing.Point(27, 17);
             this.tabControlCompras.Name = "tabControlCompras";
             this.tabControlCompras.SelectedIndex = 0;
-            this.tabControlCompras.Size = new System.Drawing.Size(705, 530);
+            this.tabControlCompras.Size = new System.Drawing.Size(794, 549);
             this.tabControlCompras.TabIndex = 3;
             this.tabControlCompras.Tag = "";
             // 
             // tabPageLocalizacion
             // 
+            this.tabPageLocalizacion.Controls.Add(this.DTPfechacreado);
             this.tabPageLocalizacion.Controls.Add(this.richTxtDescripcion);
             this.tabPageLocalizacion.Controls.Add(this.GridViewLocacion);
             this.tabPageLocalizacion.Controls.Add(this.btnGuardar);
-            this.tabPageLocalizacion.Controls.Add(this.txtFecCreacion);
             this.tabPageLocalizacion.Controls.Add(this.txtIdLocacion);
             this.tabPageLocalizacion.Controls.Add(this.lblFechaCreacion);
             this.tabPageLocalizacion.Controls.Add(this.lblDescripcion);
@@ -127,42 +127,43 @@
             this.tabPageLocalizacion.Location = new System.Drawing.Point(4, 25);
             this.tabPageLocalizacion.Name = "tabPageLocalizacion";
             this.tabPageLocalizacion.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageLocalizacion.Size = new System.Drawing.Size(697, 501);
+            this.tabPageLocalizacion.Size = new System.Drawing.Size(786, 520);
             this.tabPageLocalizacion.TabIndex = 0;
             this.tabPageLocalizacion.Text = "Localizacion";
             this.tabPageLocalizacion.UseVisualStyleBackColor = true;
             // 
+            // DTPfechacreado
+            // 
+            this.DTPfechacreado.Location = new System.Drawing.Point(154, 57);
+            this.DTPfechacreado.Name = "DTPfechacreado";
+            this.DTPfechacreado.Size = new System.Drawing.Size(222, 22);
+            this.DTPfechacreado.TabIndex = 10;
+            // 
             // richTxtDescripcion
             // 
-            this.richTxtDescripcion.Location = new System.Drawing.Point(115, 116);
+            this.richTxtDescripcion.Location = new System.Drawing.Point(32, 135);
             this.richTxtDescripcion.Name = "richTxtDescripcion";
-            this.richTxtDescripcion.Size = new System.Drawing.Size(139, 126);
+            this.richTxtDescripcion.Size = new System.Drawing.Size(344, 121);
             this.richTxtDescripcion.TabIndex = 9;
             this.richTxtDescripcion.Text = "";
             // 
             // GridViewLocacion
             // 
             this.GridViewLocacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GridViewLocacion.Location = new System.Drawing.Point(284, 22);
+            this.GridViewLocacion.Location = new System.Drawing.Point(409, 22);
             this.GridViewLocacion.Name = "GridViewLocacion";
-            this.GridViewLocacion.Size = new System.Drawing.Size(339, 447);
+            this.GridViewLocacion.Size = new System.Drawing.Size(359, 447);
             this.GridViewLocacion.TabIndex = 8;
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(86, 269);
+            this.btnGuardar.Location = new System.Drawing.Point(270, 301);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(106, 27);
             this.btnGuardar.TabIndex = 7;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
-            // 
-            // txtFecCreacion
-            // 
-            this.txtFecCreacion.Location = new System.Drawing.Point(154, 62);
-            this.txtFecCreacion.Name = "txtFecCreacion";
-            this.txtFecCreacion.Size = new System.Drawing.Size(100, 22);
-            this.txtFecCreacion.TabIndex = 5;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // txtIdLocacion
             // 
@@ -183,7 +184,7 @@
             // lblDescripcion
             // 
             this.lblDescripcion.AutoSize = true;
-            this.lblDescripcion.Location = new System.Drawing.Point(29, 116);
+            this.lblDescripcion.Location = new System.Drawing.Point(29, 106);
             this.lblDescripcion.Name = "lblDescripcion";
             this.lblDescripcion.Size = new System.Drawing.Size(80, 16);
             this.lblDescripcion.TabIndex = 1;
@@ -220,7 +221,7 @@
             this.tabPageCapturar.Location = new System.Drawing.Point(4, 25);
             this.tabPageCapturar.Name = "tabPageCapturar";
             this.tabPageCapturar.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageCapturar.Size = new System.Drawing.Size(615, 501);
+            this.tabPageCapturar.Size = new System.Drawing.Size(786, 520);
             this.tabPageCapturar.TabIndex = 1;
             this.tabPageCapturar.Text = "Capturar";
             this.tabPageCapturar.UseVisualStyleBackColor = true;
@@ -380,7 +381,7 @@
             this.tabPageTransacciones.Location = new System.Drawing.Point(4, 25);
             this.tabPageTransacciones.Name = "tabPageTransacciones";
             this.tabPageTransacciones.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageTransacciones.Size = new System.Drawing.Size(615, 501);
+            this.tabPageTransacciones.Size = new System.Drawing.Size(786, 520);
             this.tabPageTransacciones.TabIndex = 2;
             this.tabPageTransacciones.Text = "Transacciones";
             this.tabPageTransacciones.UseVisualStyleBackColor = true;
@@ -478,7 +479,7 @@
             this.tabPageInventario.Location = new System.Drawing.Point(4, 25);
             this.tabPageInventario.Name = "tabPageInventario";
             this.tabPageInventario.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageInventario.Size = new System.Drawing.Size(615, 501);
+            this.tabPageInventario.Size = new System.Drawing.Size(786, 520);
             this.tabPageInventario.TabIndex = 3;
             this.tabPageInventario.Text = "Inventario";
             this.tabPageInventario.UseVisualStyleBackColor = true;
@@ -546,7 +547,7 @@
             this.tabPageConsumos.Location = new System.Drawing.Point(4, 25);
             this.tabPageConsumos.Name = "tabPageConsumos";
             this.tabPageConsumos.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageConsumos.Size = new System.Drawing.Size(615, 501);
+            this.tabPageConsumos.Size = new System.Drawing.Size(786, 520);
             this.tabPageConsumos.TabIndex = 4;
             this.tabPageConsumos.Text = "Consumos";
             this.tabPageConsumos.UseVisualStyleBackColor = true;
@@ -571,7 +572,7 @@
             // 
             // textBox20
             // 
-            this.textBox20.Location = new System.Drawing.Point(351, 42);
+            this.textBox20.Location = new System.Drawing.Point(351, 36);
             this.textBox20.Name = "textBox20";
             this.textBox20.Size = new System.Drawing.Size(211, 22);
             this.textBox20.TabIndex = 6;
@@ -585,7 +586,7 @@
             // 
             // textBox18
             // 
-            this.textBox18.Location = new System.Drawing.Point(139, 39);
+            this.textBox18.Location = new System.Drawing.Point(139, 36);
             this.textBox18.Name = "textBox18";
             this.textBox18.Size = new System.Drawing.Size(120, 22);
             this.textBox18.TabIndex = 4;
@@ -602,7 +603,7 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(265, 42);
+            this.label20.Location = new System.Drawing.Point(265, 39);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(80, 16);
             this.label20.TabIndex = 2;
@@ -629,7 +630,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(744, 559);
+            this.ClientSize = new System.Drawing.Size(833, 578);
             this.ControlBox = false;
             this.Controls.Add(this.tabControlCompras);
             this.Name = "Almacen";
@@ -662,7 +663,6 @@
         private System.Windows.Forms.TabControl tabControlCompras;
         private System.Windows.Forms.TabPage tabPageLocalizacion;
         private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.TextBox txtFecCreacion;
         private System.Windows.Forms.TextBox txtIdLocacion;
         private System.Windows.Forms.Label lblFechaCreacion;
         private System.Windows.Forms.Label lblDescripcion;
@@ -715,5 +715,6 @@
         private System.Windows.Forms.DataGridView dataGridView4;
         private System.Windows.Forms.RichTextBox richTxtDescripcion;
         private System.Windows.Forms.DataGridView GridViewLocacion;
+        private System.Windows.Forms.DateTimePicker DTPfechacreado;
     }
 }
