@@ -174,10 +174,6 @@
             this.cmbGamas.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbGamas.ForeColor = System.Drawing.Color.Black;
             this.cmbGamas.FormattingEnabled = true;
-            this.cmbGamas.Items.AddRange(new object[] {
-            "GAMA BAJA",
-            "GAMA MEDIA",
-            "GAMA ALTA"});
             this.cmbGamas.Location = new System.Drawing.Point(53, 74);
             this.cmbGamas.Name = "cmbGamas";
             this.cmbGamas.Size = new System.Drawing.Size(121, 26);
@@ -388,7 +384,7 @@
             this.dgvBuscar.Name = "dgvBuscar";
             this.dgvBuscar.Size = new System.Drawing.Size(745, 437);
             this.dgvBuscar.TabIndex = 3;
-            this.dgvBuscar.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBuscar_Click);
+            this.dgvBuscar.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBuscar_Click);
             // 
             // Ventas
             // 

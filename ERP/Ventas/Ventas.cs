@@ -84,6 +84,7 @@ namespace ERP.Ventas
         {
             cargarPedido("select Pedido.idPedido, Cliente.idCliente, Cliente.nombre, Cliente.apellidos, Cliente.empresa, Cliente.telefono, Cliente.direccion, Cliente.email, Cliente.statusCliente, Pedido.fecha, DetallePedido.idproducto, DetallePedido.cantidad, DetallePedido.detallepedido from Cliente inner join Pedido on Pedido.idCliente = Cliente.idCliente inner join DetallePedido on DetallePedido.idPedido = Pedido.idPedido");
             cargarClientes("select * from Cliente");
+            mV.llenarOpciones("select descripcion from Producto", "descripcion", cmbGamas);
         }
         //////////////////////////////////////////////////////////////////
         private void txtNomb_TextChanged(object sender, EventArgs e)

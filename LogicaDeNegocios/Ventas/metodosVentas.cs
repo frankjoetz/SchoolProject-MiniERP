@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using Datos;
 using MySql.Data.MySqlClient;
 
@@ -61,8 +62,8 @@ namespace LogicaDeNegocios.Ventas
             try
             {
                 conectar.conectar();
-                MySqlDataAdapter daCliente = new MySqlDataAdapter(query, conectar.conn);
-                daCliente.Fill(erpCli, "Pedido");
+                MySqlDataAdapter daPedido = new MySqlDataAdapter(query, conectar.conn);
+                daPedido.Fill(erpCli, "Pedido");
                 conectar.conn.Close();
             }
             catch (Exception ex)
@@ -70,6 +71,10 @@ namespace LogicaDeNegocios.Ventas
 
             }
             return erpCli;
+        }
+        public void llenarOpciones(string consulta, string columna, ComboBox combo)
+        {
+            bd.llenarComboBox(consulta, columna, combo);
         }
     }
 }
