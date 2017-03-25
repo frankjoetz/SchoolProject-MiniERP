@@ -82,16 +82,15 @@
             this.tbcVentas.Cursor = System.Windows.Forms.Cursors.Hand;
             this.tbcVentas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbcVentas.ItemSize = new System.Drawing.Size(119, 18);
-            this.tbcVentas.Location = new System.Drawing.Point(12, 4);
+            this.tbcVentas.Location = new System.Drawing.Point(12, 7);
             this.tbcVentas.Name = "tbcVentas";
             this.tbcVentas.SelectedIndex = 0;
-            this.tbcVentas.Size = new System.Drawing.Size(765, 586);
+            this.tbcVentas.Size = new System.Drawing.Size(765, 583);
             this.tbcVentas.TabIndex = 8;
             // 
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.Transparent;
-            this.tabPage1.Controls.Add(this.lblFH);
             this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Controls.Add(this.btnBuscar);
             this.tabPage1.Controls.Add(this.txtIDcliente);
@@ -105,7 +104,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(757, 560);
+            this.tabPage1.Size = new System.Drawing.Size(757, 557);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "VENTA";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -113,11 +112,11 @@
             // lblFH
             // 
             this.lblFH.AutoSize = true;
-            this.lblFH.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFH.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFH.ForeColor = System.Drawing.Color.Black;
-            this.lblFH.Location = new System.Drawing.Point(597, 12);
+            this.lblFH.Location = new System.Drawing.Point(627, 6);
             this.lblFH.Name = "lblFH";
-            this.lblFH.Size = new System.Drawing.Size(141, 17);
+            this.lblFH.Size = new System.Drawing.Size(162, 17);
             this.lblFH.TabIndex = 40;
             this.lblFH.Text = "label de hora y fecha";
             // 
@@ -180,7 +179,7 @@
             "GAMA ALTA"});
             this.cmbGamas.Location = new System.Drawing.Point(53, 74);
             this.cmbGamas.Name = "cmbGamas";
-            this.cmbGamas.Size = new System.Drawing.Size(121, 26);
+            this.cmbGamas.Size = new System.Drawing.Size(183, 26);
             this.cmbGamas.TabIndex = 3;
             // 
             // btnAceptar
@@ -388,7 +387,7 @@
             this.dgvBuscar.Name = "dgvBuscar";
             this.dgvBuscar.Size = new System.Drawing.Size(745, 437);
             this.dgvBuscar.TabIndex = 3;
-            this.dgvBuscar.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBuscar_Click);
+            this.dgvBuscar.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBuscar_Click);
             // 
             // Ventas
             // 
@@ -397,6 +396,7 @@
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(789, 602);
             this.ControlBox = false;
+            this.Controls.Add(this.lblFH);
             this.Controls.Add(this.tbcVentas);
             this.Name = "Ventas";
             this.ShowIcon = false;
@@ -416,6 +416,7 @@
             this.BClient.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBuscar)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
