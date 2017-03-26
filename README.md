@@ -15,6 +15,40 @@ Fuente:
 - Tabs: Corbel / 14px 
 - (No mayúsculas, no negritas)
 
+### Proceso de funcionamiento:
+
+1. (Ingenieria) Se dan de alta los productos a manejar (Gama baja, media y alta) y sus respectivos componentes. Permitirá editar las lineas, sus descripciones y etapas (7).
+2. (Ventas) Cliente realiza un pedido
+3. (Ventas) El pedido contiene cantidad de ordenadores de cada gama ya existente
+   - Ejemplo:
+       - 120 Gama baja
+       - 50 Gama media
+       - 0 Gama alta
+4. (Planeación) Se crea una planeación para cada gama (Cada pedido contendrá de 1 a 3 planeaciones).
+5. (Planeación) Se comprueba si la cantidad de componentes necesarios para el total de productos está en el almacen.
+   - Si no es así:
+       - (Planeación / Almacen )Se advierte a el usuario que se necesitan comprar más materiales para poder producir, y se ofrece cantidad de componentes a comprar.
+   - Si si se cuenta, se pasa al siguiente paso.
+6. (Producción) Una vez que el estado de la planeación es "Listo para producir", se permitirá agregar una producción para esa planeación.
+   Cada producción generada contendrá una fecha estimada de finalización basada en la cantidad de productos. 
+   Existirán 3 lineas para producir (Linea 1 - Gama baja, Linea 2 - Gama media, Linea 3 - Gama alta).
+   Cada producción estará en una linea dependiendo de la gama, y así mismo, cada linea se dividirá en 7 etapas.
+   - Etapa 1 - Ensamblado de procesador y disipador en tarjeta madre.
+   - Etapa 2 - Ensamblado de fuente de poder en case.
+   - Etapa 3 - Ensamblado de memorias RAM y atornillado de tarjeta en case.
+   - Etapa 4 - Ensamblado de tarjeta gráfica y conexión de fuente de poder.
+   - Etapa 5 - Atornillado de abanicos en case y ensamblado de disco duro.
+   - Etapa 6 - Conexión de botones/puertos a la tarjeta y atornillado de la tapa.
+   - Etapa 7 - Empaquetado del producto final, cables y manuales.
+   - Producto finalizado.
+7. (Almacen) Una vez que la producción esté finalizada, se descontará la materia prima utilizada y se agregará un producto final al inventario.
+8. (Ventas) Una vez que el estado de la producción cambie a ser "Finalizado", el pedido será editado y entregado a el cliente.
+9. (Dashboard) Supervisará el estado de cada producción, con su respectiva linea, etapa, y el cliente al cual pertenecerá el pedido. Será actualizado en tiempo real. Permitirá avanzar las etapas de las producciones actuales.
+
+* Todos los módulos deben contener un CRUD.
+* Todos los módulos deben ofrecer la posibilidad de generar un reporte.
+* Todos los módulos deben utilizar un diseño uniforme.
+
 ### Equipos a manejar:
 
 | | Gama baja | Gama media | Gama Alta |
