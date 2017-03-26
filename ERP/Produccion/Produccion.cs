@@ -18,7 +18,6 @@ namespace ERP.Produccion
         {
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
-            prod.llenarTablaProduccion(tableProduccion);
         }
 
         private void Produccion_Load(object sender, EventArgs e)
@@ -34,15 +33,17 @@ namespace ERP.Produccion
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            if (prod.insertarProduccion(cboxIdPlaneacion.SelectedItem.ToString(), dateInicio.Value.ToString("yyyy-MM-dd"), cboxEtapa.SelectedItem.ToString(), dateEntrega.Value.ToString("yyyy-MM-dd"), txtObservaciones.Text.ToString()))
-            {
-                prod.llenarTablaProduccion(tableProduccion);
-                MessageBox.Show("El valor se insertó correctamente");
-            }
-            else
-            {
-                MessageBox.Show("Ocurrió un error insertando");
-            }
+            
+        }
+
+        private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void groupBox3_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }
