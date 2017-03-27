@@ -151,19 +151,5 @@ namespace ERP.Ingenieria
             label6.Visible = true;
             btnmodificar.Visible = true;
         }
-
-        private void btnmodificar_Click(object sender, EventArgs e)
-        {
-            //bool result = MIngenieria.modificarMateria(int.Parse(idmateriatxt.Text), txttipo.Text, txtDesc.Text, txtFecha.Text, int.Parse(unidadtxt.Text));
-            //if (result)
-            //{
-            //    MessageBox.Show("Se modifico con exito");
-            //    idmateriatxt.Clear();
-            //    txttipo.Clear();
-            //    txtDesc.Clear();
-            //    txtFecha.Clear();
-            //    unidadtxt.Clear();
-            //}
-        }
     }
 }

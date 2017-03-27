@@ -31,9 +31,9 @@
             this.components = new System.ComponentModel.Container();
             this.ingenieriatc = new System.Windows.Forms.TabControl();
             this.ingenieriaform = new System.Windows.Forms.TabPage();
+            this.btnmodificar = new System.Windows.Forms.Button();
             this.btneliminar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rbdmodificar = new System.Windows.Forms.RadioButton();
             this.rbnelimnar = new System.Windows.Forms.RadioButton();
             this.txttipo = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -90,7 +90,6 @@
             this.inventarioproducto = new ERP.inventarioproducto();
             this.inventarioproductoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.inventarioProductoTableAdapter = new ERP.erpdbDataSet3TableAdapters.InventarioProductoTableAdapter();
-            this.btnmodificar = new System.Windows.Forms.Button();
             this.ingenieriatc.SuspendLayout();
             this.ingenieriaform.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -153,6 +152,17 @@
             this.ingenieriaform.UseVisualStyleBackColor = true;
             this.ingenieriaform.Click += new System.EventHandler(this.ingenieriaform_Click);
             // 
+            // btnmodificar
+            // 
+            this.btnmodificar.Location = new System.Drawing.Point(205, 342);
+            this.btnmodificar.Name = "btnmodificar";
+            this.btnmodificar.Size = new System.Drawing.Size(112, 32);
+            this.btnmodificar.TabIndex = 13;
+            this.btnmodificar.Text = "Modificar";
+            this.btnmodificar.UseVisualStyleBackColor = true;
+            this.btnmodificar.Visible = false;
+            //this.btnmodificar.Click += new System.EventHandler(this.btnmodificar_Click);
+            // 
             // btneliminar
             // 
             this.btneliminar.Location = new System.Drawing.Point(205, 304);
@@ -166,7 +176,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.rbdmodificar);
             this.groupBox1.Controls.Add(this.rbnelimnar);
             this.groupBox1.Location = new System.Drawing.Point(19, 7);
             this.groupBox1.Name = "groupBox1";
@@ -174,18 +183,6 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Mas opciones";
-            // 
-            // rbdmodificar
-            // 
-            this.rbdmodificar.AutoSize = true;
-            this.rbdmodificar.Location = new System.Drawing.Point(172, 23);
-            this.rbdmodificar.Name = "rbdmodificar";
-            this.rbdmodificar.Size = new System.Drawing.Size(87, 22);
-            this.rbdmodificar.TabIndex = 1;
-            this.rbdmodificar.TabStop = true;
-            this.rbdmodificar.Text = "Modificar";
-            this.rbdmodificar.UseVisualStyleBackColor = true;
-            this.rbdmodificar.CheckedChanged += new System.EventHandler(this.rbdmodificar_CheckedChanged);
             // 
             // rbnelimnar
             // 
@@ -713,17 +710,6 @@
             // 
             this.inventarioProductoTableAdapter.ClearBeforeFill = true;
             // 
-            // btnmodificar
-            // 
-            this.btnmodificar.Location = new System.Drawing.Point(205, 342);
-            this.btnmodificar.Name = "btnmodificar";
-            this.btnmodificar.Size = new System.Drawing.Size(112, 32);
-            this.btnmodificar.TabIndex = 13;
-            this.btnmodificar.Text = "Modificar";
-            this.btnmodificar.UseVisualStyleBackColor = true;
-            this.btnmodificar.Visible = false;
-            this.btnmodificar.Click += new System.EventHandler(this.btnmodificar_Click);
-            // 
             // Ingenieria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -812,7 +798,6 @@
         private System.Windows.Forms.BindingSource inventarioProductoBindingSource1;
         private erpdbDataSet3TableAdapters.InventarioProductoTableAdapter inventarioProductoTableAdapter;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton rbdmodificar;
         private System.Windows.Forms.RadioButton rbnelimnar;
         private System.Windows.Forms.DataGridViewTextBoxColumn idMateriaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tipoDataGridViewTextBoxColumn;
