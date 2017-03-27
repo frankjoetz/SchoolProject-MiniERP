@@ -35,7 +35,7 @@ namespace ERP.Ventas
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            lblFH.Text = DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss");
+            lblFH.Text = DateTime.Now.ToString("dd-MM-yyyy");
         }
 
         private void btnAddC_Click(object sender, EventArgs e)
@@ -92,7 +92,7 @@ namespace ERP.Ventas
             {
                 if (txtEmp.Text != "")
                 {
-                    cargarClientes("select * from Cliente where nombre like '" + txtNomb.Text + "%' and empresa like '" + txtEmpresa.Text + "%'");
+                    cargarClientes("select * from Cliente where nombre like '" + txtNomb.Text + "%' and empresa like '" + txtEmp.Text + "%'");
                 }
                 else
                 {
@@ -108,8 +108,28 @@ namespace ERP.Ventas
         private void dgvBuscar_Click(object sender, DataGridViewCellEventArgs e)
         {
             txtIDcliente.Text = dgvBuscar.Rows[dgvBuscar.CurrentRow.Index].Cells["idCliente"].Value.ToString();
+            txtNombre.Text = dgvBuscar.Rows[dgvBuscar.CurrentRow.Index].Cells["nombre"].Value.ToString();
             txtEmpresa.Text = dgvBuscar.Rows[dgvBuscar.CurrentRow.Index].Cells["empresa"].Value.ToString();
             tbcVentas.SelectedIndex = 0;
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            lblH.Text = DateTime.Now.ToString("hh:mm:ss");
+        }
+
+        private void txtIDcliente_TextChanged(object sender, EventArgs e)
+        {
+            if (txtIDcliente.Text != "")
+            {
+                txtNombre.Text = mV.buscarUnDato("nombre", "Cliente", " where idCliente = " + txtIDcliente.Text);
+                txtEmpresa.Text = mV.buscarUnDato("empresa", "Cliente", " where idCliente = " + txtIDcliente.Text);
+            }
+            else
+            {
+                txtNombre.Text = "";
+                txtEmpresa.Text = "";
+            }
         }
 
     }
