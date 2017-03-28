@@ -132,5 +132,15 @@ namespace ERP.Ventas
             }
         }
 
+        private void dgvPedido_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtIDBorrar.Text = dgvPedido.Rows[dgvPedido.CurrentRow.Index].Cells["idPedido"].Value.ToString();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

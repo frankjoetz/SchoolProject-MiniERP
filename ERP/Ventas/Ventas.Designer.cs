@@ -32,6 +32,7 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.tbcVentas = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.txtNombre = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtaCom = new System.Windows.Forms.TextBox();
@@ -47,6 +48,8 @@
             this.btnAddC = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtIDBorrar = new System.Windows.Forms.TextBox();
             this.dgvPedido = new System.Windows.Forms.DataGridView();
             this.txtIDHis = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -59,7 +62,7 @@
             this.lblFH = new System.Windows.Forms.Label();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.lblH = new System.Windows.Forms.Label();
-            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.tbcVentas.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -112,6 +115,14 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "VENTA";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Location = new System.Drawing.Point(23, 53);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.ReadOnly = true;
+            this.txtNombre.Size = new System.Drawing.Size(100, 23);
+            this.txtNombre.TabIndex = 40;
             // 
             // groupBox1
             // 
@@ -275,6 +286,9 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage2.Controls.Add(this.button1);
+            this.tabPage2.Controls.Add(this.label9);
+            this.tabPage2.Controls.Add(this.txtIDBorrar);
             this.tabPage2.Controls.Add(this.dgvPedido);
             this.tabPage2.Controls.Add(this.txtIDHis);
             this.tabPage2.Controls.Add(this.label6);
@@ -288,19 +302,37 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "HISTORIAL";
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(458, 44);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(149, 18);
+            this.label9.TabIndex = 5;
+            this.label9.Text = "ID del pedido a borrar";
+            // 
+            // txtIDBorrar
+            // 
+            this.txtIDBorrar.Location = new System.Drawing.Point(613, 44);
+            this.txtIDBorrar.Name = "txtIDBorrar";
+            this.txtIDBorrar.Size = new System.Drawing.Size(23, 21);
+            this.txtIDBorrar.TabIndex = 4;
+            // 
             // dgvPedido
             // 
             this.dgvPedido.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.dgvPedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPedido.Location = new System.Drawing.Point(6, 71);
             this.dgvPedido.Name = "dgvPedido";
-            this.dgvPedido.Size = new System.Drawing.Size(707, 272);
+            this.dgvPedido.Size = new System.Drawing.Size(745, 480);
             this.dgvPedido.TabIndex = 3;
+            this.dgvPedido.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPedido_CellClick);
             // 
             // txtIDHis
             // 
             this.txtIDHis.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIDHis.Location = new System.Drawing.Point(223, 24);
+            this.txtIDHis.Location = new System.Drawing.Point(43, 10);
             this.txtIDHis.Name = "txtIDHis";
             this.txtIDHis.Size = new System.Drawing.Size(100, 23);
             this.txtIDHis.TabIndex = 1;
@@ -311,7 +343,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(199, 24);
+            this.label6.Location = new System.Drawing.Point(16, 13);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(21, 17);
             this.label6.TabIndex = 0;
@@ -409,13 +441,15 @@
             this.lblH.TabIndex = 40;
             this.lblH.Text = "hora";
             // 
-            // txtNombre
+            // button1
             // 
-            this.txtNombre.Location = new System.Drawing.Point(23, 53);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.ReadOnly = true;
-            this.txtNombre.Size = new System.Drawing.Size(100, 23);
-            this.txtNombre.TabIndex = 40;
+            this.button1.Location = new System.Drawing.Point(647, 42);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Eliminar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Ventas
             // 
@@ -481,5 +515,8 @@
         private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.Label lblH;
         private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtIDBorrar;
+        private System.Windows.Forms.Button button1;
     }
 }
