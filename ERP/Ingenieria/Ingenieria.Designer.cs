@@ -44,7 +44,6 @@
             this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.materiaPrimaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.erpdbDataSet1 = new ERP.erpdbDataSet1();
             this.label9 = new System.Windows.Forms.Label();
             this.unidadtxt = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -67,7 +66,6 @@
             this.locacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcionDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.inventarioProductoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.erpdbDataSet3 = new ERP.erpdbDataSet3();
             this.cantidadtxt = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.btnagregarcomponentes = new System.Windows.Forms.Button();
@@ -86,24 +84,18 @@
             this.fechaptxt = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.materiaPrimaTableAdapter = new ERP.erpdbDataSet1TableAdapters.MateriaPrimaTableAdapter();
-            this.inventarioproducto = new ERP.inventarioproducto();
             this.inventarioproductoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.inventarioProductoTableAdapter = new ERP.erpdbDataSet3TableAdapters.InventarioProductoTableAdapter();
             this.ingenieriatc.SuspendLayout();
             this.ingenieriaform.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.materiaPrimaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.erpdbDataSet1)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inventarioProductoBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.erpdbDataSet3)).BeginInit();
             this.tabPage3.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inventarioproducto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inventarioproductoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -275,12 +267,9 @@
             // materiaPrimaBindingSource
             // 
             this.materiaPrimaBindingSource.DataMember = "MateriaPrima";
-            this.materiaPrimaBindingSource.DataSource = this.erpdbDataSet1;
             // 
             // erpdbDataSet1
             // 
-            this.erpdbDataSet1.DataSetName = "erpdbDataSet1";
-            this.erpdbDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label9
             // 
@@ -499,12 +488,9 @@
             // inventarioProductoBindingSource1
             // 
             this.inventarioProductoBindingSource1.DataMember = "InventarioProducto";
-            this.inventarioProductoBindingSource1.DataSource = this.erpdbDataSet3;
             // 
             // erpdbDataSet3
             // 
-            this.erpdbDataSet3.DataSetName = "erpdbDataSet3";
-            this.erpdbDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // cantidadtxt
             // 
@@ -694,21 +680,16 @@
             // 
             // materiaPrimaTableAdapter
             // 
-            this.materiaPrimaTableAdapter.ClearBeforeFill = true;
             // 
             // inventarioproducto
             // 
-            this.inventarioproducto.DataSetName = "inventarioproducto";
-            this.inventarioproducto.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // inventarioproductoBindingSource
             // 
-            this.inventarioproductoBindingSource.DataSource = this.inventarioproducto;
             this.inventarioproductoBindingSource.Position = 0;
             // 
             // inventarioProductoTableAdapter
             // 
-            this.inventarioProductoTableAdapter.ClearBeforeFill = true;
             // 
             // Ingenieria
             // 
@@ -732,18 +713,15 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.materiaPrimaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.erpdbDataSet1)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.inventarioProductoBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.erpdbDataSet3)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inventarioproducto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.inventarioproductoBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -785,18 +763,13 @@
         private System.Windows.Forms.TextBox txtFecha;
         private System.Windows.Forms.TextBox txttipo;
         private System.Windows.Forms.Label label6;
-        private erpdbDataSet1 erpdbDataSet1;
         private System.Windows.Forms.BindingSource materiaPrimaBindingSource;
-        private erpdbDataSet1TableAdapters.MateriaPrimaTableAdapter materiaPrimaTableAdapter;
         private System.Windows.Forms.TextBox txtfhora;
         private System.Windows.Forms.TextBox txtlocalidad;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
-        private inventarioproducto inventarioproducto;
         private System.Windows.Forms.BindingSource inventarioproductoBindingSource;
-        private erpdbDataSet3 erpdbDataSet3;
         private System.Windows.Forms.BindingSource inventarioProductoBindingSource1;
-        private erpdbDataSet3TableAdapters.InventarioProductoTableAdapter inventarioProductoTableAdapter;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton rbnelimnar;
         private System.Windows.Forms.DataGridViewTextBoxColumn idMateriaDataGridViewTextBoxColumn;
