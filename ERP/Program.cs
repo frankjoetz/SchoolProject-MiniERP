@@ -14,9 +14,18 @@ namespace ERP
         [STAThread]
         static void Main()
         {
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Home());
+            try
+            {
+                Application.Run(new Home());
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("No se puede conectar a la base de datos. \nRevise su conexion a internet paro");     
+            }
+            
         }
     }
 }
