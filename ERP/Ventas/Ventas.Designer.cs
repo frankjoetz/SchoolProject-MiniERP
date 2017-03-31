@@ -48,6 +48,7 @@
             this.btnAddC = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btnEliminar = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.txtIDBorrar = new System.Windows.Forms.TextBox();
             this.dgvPedido = new System.Windows.Forms.DataGridView();
@@ -62,7 +63,7 @@
             this.lblFH = new System.Windows.Forms.Label();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.lblH = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnPedFin = new System.Windows.Forms.Button();
             this.tbcVentas.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -91,7 +92,7 @@
             this.tbcVentas.Location = new System.Drawing.Point(12, 6);
             this.tbcVentas.Name = "tbcVentas";
             this.tbcVentas.SelectedIndex = 0;
-            this.tbcVentas.Size = new System.Drawing.Size(765, 583);
+            this.tbcVentas.Size = new System.Drawing.Size(889, 656);
             this.tbcVentas.TabIndex = 8;
             // 
             // tabPage1
@@ -286,7 +287,8 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPage2.Controls.Add(this.button1);
+            this.tabPage2.Controls.Add(this.btnPedFin);
+            this.tabPage2.Controls.Add(this.btnEliminar);
             this.tabPage2.Controls.Add(this.label9);
             this.tabPage2.Controls.Add(this.txtIDBorrar);
             this.tabPage2.Controls.Add(this.dgvPedido);
@@ -298,9 +300,19 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(757, 557);
+            this.tabPage2.Size = new System.Drawing.Size(881, 630);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "HISTORIAL";
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(647, 42);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminar.TabIndex = 6;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // label9
             // 
@@ -441,22 +453,22 @@
             this.lblH.TabIndex = 40;
             this.lblH.Text = "hora";
             // 
-            // button1
+            // btnPedFin
             // 
-            this.button1.Location = new System.Drawing.Point(647, 42);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Eliminar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnPedFin.Location = new System.Drawing.Point(678, 587);
+            this.btnPedFin.Name = "btnPedFin";
+            this.btnPedFin.Size = new System.Drawing.Size(75, 23);
+            this.btnPedFin.TabIndex = 7;
+            this.btnPedFin.Text = "Pedidos Finalizados";
+            this.btnPedFin.UseVisualStyleBackColor = true;
+            this.btnPedFin.Click += new System.EventHandler(this.btnPedFin_Click);
             // 
             // Ventas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(789, 602);
+            this.ClientSize = new System.Drawing.Size(913, 675);
             this.ControlBox = false;
             this.Controls.Add(this.lblH);
             this.Controls.Add(this.lblFH);
@@ -517,6 +529,7 @@
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtIDBorrar;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnPedFin;
     }
 }

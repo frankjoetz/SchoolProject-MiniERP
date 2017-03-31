@@ -35,6 +35,20 @@ namespace LogicaDeNegocios.Ventas
             else
                 return false;
         }
+        public bool altaPedidoFinal(int idPedido,string fecha)
+        {
+            if (bd.insertar("insert into PedidoFinal(idpedido,fechaT) values(" + idPedido + ",'" + fecha + "')"))
+                return true;
+            else
+                return false;
+        }
+        public bool bajasPedido(string query)
+        {
+            if (bd.eliminar(query))
+                return true;
+            else
+                return false;
+        }
         public string buscarUnDato(string columna, string tabla, string complemento)
         {
             return bd.buscar("select " + columna + " from " + tabla + " "+complemento,columna);

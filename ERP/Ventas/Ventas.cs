@@ -137,9 +137,25 @@ namespace ERP.Ventas
             txtIDBorrar.Text = dgvPedido.Rows[dgvPedido.CurrentRow.Index].Cells["idPedido"].Value.ToString();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnEliminar_Click(object sender, EventArgs e)
         {
+            bool x = mV.altaPedidoFinal(int.Parse(txtIDBorrar.Text), lblFH.Text);
+            if (x)
+            {
+                bool y = mV.bajasPedido(string.Format("delete from DetallePedido where idPedido = "+int.Parse(txtIDBorrar.Text)));
+                if (y)
+                {
+                    mV.bajasPedido(string.Format("delete from Pedido where idPedido = " + int.Parse(txtIDBorrar.Text)));
+                    MessageBox.Show("Ya se borro");
+                    cargarPedido("select Pedido.idPedido, Cliente.idCliente, Cliente.nombre, Cliente.apellidos, Cliente.empresa, Cliente.telefono, Cliente.direccion, Cliente.email, Cliente.statusCliente, Pedido.fecha, DetallePedido.idproducto, DetallePedido.cantidad, DetallePedido.detallepedido from Cliente inner join Pedido on Pedido.idCliente = Cliente.idCliente inner join DetallePedido on DetallePedido.idPedido = Pedido.idPedido");
+                }
+            }
+        }
 
+        private void btnPedFin_Click(object sender, EventArgs e)
+        {
+            PedidosFinal pdF = new PedidosFinal();
+            pdF.Show();
         }
 
     }

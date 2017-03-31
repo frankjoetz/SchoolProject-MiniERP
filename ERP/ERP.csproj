@@ -124,11 +124,11 @@
     <Compile Include="Ventas\ACliente.Designer.cs">
       <DependentUpon>ACliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="Ventas\BCliente.cs">
+    <Compile Include="Ventas\PedidosFinal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Ventas\BCliente.Designer.cs">
-      <DependentUpon>BCliente.cs</DependentUpon>
+    <Compile Include="Ventas\PedidosFinal.Designer.cs">
+      <DependentUpon>PedidosFinal.cs</DependentUpon>
     </Compile>
     <Compile Include="Ventas\Ventas.cs">
       <SubType>Form</SubType>
@@ -169,8 +169,8 @@
     <EmbeddedResource Include="Ventas\ACliente.resx">
       <DependentUpon>ACliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Ventas\BCliente.resx">
-      <DependentUpon>BCliente.cs</DependentUpon>
+    <EmbeddedResource Include="Ventas\PedidosFinal.resx">
+      <DependentUpon>PedidosFinal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventas\Ventas.resx">
       <DependentUpon>Ventas.cs</DependentUpon>
