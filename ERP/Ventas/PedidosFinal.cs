@@ -34,9 +34,9 @@ namespace ERP.Ventas
 
         private void txtNom_TextChanged(object sender, EventArgs e)
         {
-            if (txtNom.Text != "")
+            if (txtIDpedFin.Text != "")
             {
-                cargarTabla("select * from PedidoFinal where idPedido = "+ int.Parse(txtNom.Text));
+                cargarTabla("select * from PedidoFinal where idPedido = "+ int.Parse(txtIDpedFin.Text));
             }
         }
     }

@@ -30,7 +30,7 @@
         {
             this.dgvPedidoFinal = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtNom = new System.Windows.Forms.TextBox();
+            this.txtIDpedFin = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedidoFinal)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,14 +56,14 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "ID del pedido finalizado";
             // 
-            // txtNom
+            // txtIDpedFin
             // 
-            this.txtNom.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNom.Location = new System.Drawing.Point(15, 41);
-            this.txtNom.Name = "txtNom";
-            this.txtNom.Size = new System.Drawing.Size(100, 24);
-            this.txtNom.TabIndex = 0;
-            this.txtNom.TextChanged += new System.EventHandler(this.txtNom_TextChanged);
+            this.txtIDpedFin.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIDpedFin.Location = new System.Drawing.Point(15, 41);
+            this.txtIDpedFin.Name = "txtIDpedFin";
+            this.txtIDpedFin.Size = new System.Drawing.Size(100, 24);
+            this.txtIDpedFin.TabIndex = 0;
+            this.txtIDpedFin.TextChanged += new System.EventHandler(this.txtNom_TextChanged);
             // 
             // PedidosFinal
             // 
@@ -71,7 +71,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(999, 242);
-            this.Controls.Add(this.txtNom);
+            this.Controls.Add(this.txtIDpedFin);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvPedidoFinal);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -88,6 +88,6 @@
 
         private System.Windows.Forms.DataGridView dgvPedidoFinal;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtNom;
+        private System.Windows.Forms.TextBox txtIDpedFin;
     }
 }
