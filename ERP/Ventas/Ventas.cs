@@ -13,20 +13,7 @@ namespace ERP.Ventas
     public partial class Ventas : Form
     {
         LogicaDeNegocios.Ventas.metodosVentas mV = new LogicaDeNegocios.Ventas.metodosVentas();
-        private string id;
-
-        public string Id
-        {
-            get { return id; }
-            set { id = value; }
-        }
-        private string empresa;
-
-        public string Empresa
-        {
-            get { return empresa; }
-            set { empresa = value; }
-        }
+        string desc;
         public Ventas()
         {
             InitializeComponent();
@@ -35,7 +22,7 @@ namespace ERP.Ventas
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            lblFH.Text = DateTime.Now.ToString("dd-MM-yyyy");
+            lblFH.Text = DateTime.Now.ToString("yyyy-MM-dd");
         }
 
         private void btnAddC_Click(object sender, EventArgs e)
@@ -51,39 +38,45 @@ namespace ERP.Ventas
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
+            bool res = false;
             bool result = mV.altaPedido(int.Parse(txtIDcliente.Text), lblFH.Text);
-            bool res = mV.altaDetallesPedido(int.Parse(mV.buscarUnDato("idPedido","Pedido"," order by fecha DESC LIMIT 1")),cmbGamas.SelectedIndex, int.Parse(txtCan.Text), txtaCom.Text);
+            if (cmbGamas.SelectedIndex == 0)
+                res = mV.altaDetallesPedido(int.Parse(mV.buscarUnDato("idPedido", "Pedido", " order by idPedido DESC LIMIT 1")), 1, int.Parse(txtCan.Text), txtaCom.Text);
+            if (cmbGamas.SelectedIndex == 1)
+                res = mV.altaDetallesPedido(int.Parse(mV.buscarUnDato("idPedido", "Pedido", " order by idPedido DESC LIMIT 1")), 2, int.Parse(txtCan.Text), txtaCom.Text);
+            if (cmbGamas.SelectedIndex == 2)
+                res = mV.altaDetallesPedido(int.Parse(mV.buscarUnDato("idPedido", "Pedido", " order by idPedido DESC LIMIT 1")), 3, int.Parse(txtCan.Text), txtaCom.Text);
             if (result && res)
+            {
                 MessageBox.Show("simona la mona");
+                cargarTablas(dgvPedido, "select Pedido.idPedido, Cliente.idCliente, Cliente.nombre, Cliente.apellidos, Cliente.empresa, Cliente.telefono, Cliente.direccion, Cliente.email, Cliente.statusCliente, Pedido.fecha, DetallePedido.idproducto, DetallePedido.cantidad, DetallePedido.detallepedido from Cliente inner join Pedido on Pedido.idCliente = Cliente.idCliente inner join DetallePedido on DetallePedido.idPedido = Pedido.idPedido", "Pedido");
+                txtIDcliente.Text = "";
+                cmbGamas.SelectedIndex = -1;
+                txtCan.Text = "";
+                txtaCom.Text = "";
+            }
         }
-
-        public void cargarPedido(string query)
-        {
-            DataSet cargar2;
-            cargar2 = mV.cargarPedidos(query);
-            dgvPedido.DataSource = cargar2;
-            dgvPedido.DataMember = "Pedido";
-        }
-        public void cargarClientes(string query)
+        public void cargarTablas(DataGridView dgv, string query,string tablas)
         {
             DataSet cargar;
-            cargar = mV.cargarClientes(query);
-            dgvBuscar.DataSource = cargar;
-            dgvBuscar.DataMember = "Cliente";
+            cargar = mV.cargarTablas(query,tablas);
+            dgv.DataSource = cargar;
+            dgv.DataMember = tablas;
         }
 
         private void txtIDHis_TextChanged(object sender, EventArgs e)
         {
             if (txtIDHis.Text != "")
-                cargarPedido("select Pedido.idPedido, Cliente.idCliente, Cliente.nombre, Cliente.apellidos, Cliente.empresa, Cliente.telefono, Cliente.direccion, Cliente.email, Cliente.statusCliente, Pedido.fecha, DetallePedido.idproducto, DetallePedido.cantidad, DetallePedido.detallepedido from Cliente inner join Pedido on Pedido.idCliente = Cliente.idCliente inner join DetallePedido on DetallePedido.idPedido = Pedido.idPedido where Pedido.idPedido >= " + int.Parse(txtIDHis.Text));
+                cargarTablas(dgvPedido,string.Format("select Pedido.idPedido, Cliente.idCliente, Cliente.nombre, Cliente.apellidos, Cliente.empresa, Cliente.telefono, Cliente.direccion, Cliente.email, Cliente.statusCliente, Pedido.fecha, DetallePedido.idproducto, DetallePedido.cantidad, DetallePedido.detallepedido from Cliente inner join Pedido on Pedido.idCliente = Cliente.idCliente inner join DetallePedido on DetallePedido.idPedido = Pedido.idPedido where Pedido.idPedido >= " + int.Parse(txtIDHis.Text)),"Pedido");
             else
-                cargarPedido("select Pedido.idPedido, Cliente.idCliente, Cliente.nombre, Cliente.apellidos, Cliente.empresa, Cliente.telefono, Cliente.direccion, Cliente.email, Cliente.statusCliente, Pedido.fecha, DetallePedido.idproducto, DetallePedido.cantidad, DetallePedido.detallepedido from Cliente inner join Pedido on Pedido.idCliente = Cliente.idCliente inner join DetallePedido on DetallePedido.idPedido = Pedido.idPedido");
+                cargarTablas(dgvPedido,"select Pedido.idPedido, Cliente.idCliente, Cliente.nombre, Cliente.apellidos, Cliente.empresa, Cliente.telefono, Cliente.direccion, Cliente.email, Cliente.statusCliente, Pedido.fecha, DetallePedido.idproducto, DetallePedido.cantidad, DetallePedido.detallepedido from Cliente inner join Pedido on Pedido.idCliente = Cliente.idCliente inner join DetallePedido on DetallePedido.idPedido = Pedido.idPedido","Pedido");
         }
 
         private void Ventas_Load(object sender, EventArgs e)
         {
-            cargarPedido("select Pedido.idPedido, Cliente.idCliente, Cliente.nombre, Cliente.apellidos, Cliente.empresa, Cliente.telefono, Cliente.direccion, Cliente.email, Cliente.statusCliente, Pedido.fecha, DetallePedido.idproducto, DetallePedido.cantidad, DetallePedido.detallepedido from Cliente inner join Pedido on Pedido.idCliente = Cliente.idCliente inner join DetallePedido on DetallePedido.idPedido = Pedido.idPedido");
-            cargarClientes("select * from Cliente");
+            cargarTablas(dgvPedido,"select Pedido.idPedido, Cliente.idCliente, Cliente.nombre, Cliente.apellidos, Cliente.empresa, Cliente.telefono, Cliente.direccion, Cliente.email, Cliente.statusCliente, Pedido.fecha, DetallePedido.idproducto, DetallePedido.cantidad, DetallePedido.detallepedido from Cliente inner join Pedido on Pedido.idCliente = Cliente.idCliente inner join DetallePedido on DetallePedido.idPedido = Pedido.idPedido","Pedido");
+            cargarTablas(dgvBuscar,"select * from Cliente","Cliente");
+            mV.comboBox("select descripcion from Producto", "descripcion", cmbGamas);
         }
         //////////////////////////////////////////////////////////////////
         private void txtNomb_TextChanged(object sender, EventArgs e)
@@ -92,24 +85,22 @@ namespace ERP.Ventas
             {
                 if (txtEmp.Text != "")
                 {
-                    cargarClientes("select * from Cliente where nombre like '" + txtNomb.Text + "%' and empresa like '" + txtEmp.Text + "%'");
+                    cargarTablas(dgvBuscar,string.Format("select * from Cliente where nombre like '" + txtNomb.Text + "%' and empresa like '" + txtEmp.Text + "%'"),"Cliente");
                 }
                 else
                 {
-                    cargarClientes("select * from Cliente where nombre like '" + txtNomb.Text + "%'");
+                    cargarTablas(dgvBuscar,string.Format("select * from Cliente where nombre like '" + txtNomb.Text + "%'"),"Cliente");
                 }
             }
             else
             {
-                cargarClientes("select * from Cliente where empresa like '" + txtEmp.Text + "%'");
+                cargarTablas(dgvBuscar,string.Format("select * from Cliente where empresa like '" + txtEmp.Text + "%'"),"Cliente");
             }
         }
 
         private void dgvBuscar_Click(object sender, DataGridViewCellEventArgs e)
         {
             txtIDcliente.Text = dgvBuscar.Rows[dgvBuscar.CurrentRow.Index].Cells["idCliente"].Value.ToString();
-            txtNombre.Text = dgvBuscar.Rows[dgvBuscar.CurrentRow.Index].Cells["nombre"].Value.ToString();
-            txtEmpresa.Text = dgvBuscar.Rows[dgvBuscar.CurrentRow.Index].Cells["empresa"].Value.ToString();
             tbcVentas.SelectedIndex = 0;
         }
 
@@ -135,11 +126,12 @@ namespace ERP.Ventas
         private void dgvPedido_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             txtIDBorrar.Text = dgvPedido.Rows[dgvPedido.CurrentRow.Index].Cells["idPedido"].Value.ToString();
+            desc = "idCliente|Nombre|Producto|Cantidad|Y si tiene un detallito = "+dgvPedido.Rows[dgvPedido.CurrentRow.Index].Cells["idCliente"].Value.ToString() +"|"+ dgvPedido.Rows[dgvPedido.CurrentRow.Index].Cells["nombre"].Value.ToString() +"|"+ dgvPedido.Rows[dgvPedido.CurrentRow.Index].Cells["idproducto"].Value.ToString() +"|"+ dgvPedido.Rows[dgvPedido.CurrentRow.Index].Cells["cantidad"].Value.ToString() +"|"+ dgvPedido.Rows[dgvPedido.CurrentRow.Index].Cells["detallepedido"].Value.ToString();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            bool x = mV.altaPedidoFinal(int.Parse(txtIDBorrar.Text), lblFH.Text);
+            bool x = mV.altaPedidoFinal(int.Parse(txtIDBorrar.Text), lblFH.Text,desc);
             if (x)
             {
                 bool y = mV.bajasPedido(string.Format("delete from DetallePedido where idPedido = "+int.Parse(txtIDBorrar.Text)));
@@ -147,7 +139,7 @@ namespace ERP.Ventas
                 {
                     mV.bajasPedido(string.Format("delete from Pedido where idPedido = " + int.Parse(txtIDBorrar.Text)));
                     MessageBox.Show("Ya se borro");
-                    cargarPedido("select Pedido.idPedido, Cliente.idCliente, Cliente.nombre, Cliente.apellidos, Cliente.empresa, Cliente.telefono, Cliente.direccion, Cliente.email, Cliente.statusCliente, Pedido.fecha, DetallePedido.idproducto, DetallePedido.cantidad, DetallePedido.detallepedido from Cliente inner join Pedido on Pedido.idCliente = Cliente.idCliente inner join DetallePedido on DetallePedido.idPedido = Pedido.idPedido");
+                    cargarTablas(dgvPedido,"select Pedido.idPedido, Cliente.idCliente, Cliente.nombre, Cliente.apellidos, Cliente.empresa, Cliente.telefono, Cliente.direccion, Cliente.email, Cliente.statusCliente, Pedido.fecha, DetallePedido.idproducto, DetallePedido.cantidad, DetallePedido.detallepedido from Cliente inner join Pedido on Pedido.idCliente = Cliente.idCliente inner join DetallePedido on DetallePedido.idPedido = Pedido.idPedido","Pedido");
                 }
             }
         }

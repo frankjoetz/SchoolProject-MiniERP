@@ -20,23 +20,23 @@ namespace ERP.Ventas
         }
 
         LogicaDeNegocios.Ventas.metodosVentas mV = new LogicaDeNegocios.Ventas.metodosVentas();
-        private void BCliente_Load(object sender, EventArgs e)
+        private void PedidosFinal_Load(object sender, EventArgs e)
         {
-            cargarPedido("select PedidoFinal.idPedido, Cliente.idCliente, Cliente.nombre, Cliente.apellidos, Cliente.empresa, Cliente.telefono, Cliente.direccion, Cliente.email, Cliente.statusCliente, PedidoFinal.fecha, DetallePedido.idproducto, DetallePedido.cantidad, DetallePedido.detallepedido from Cliente inner join Pedido on Pedido.idCliente = Cliente.idCliente inner join DetallePedido on DetallePedido.idPedido = Pedido.idPedido inner join PedidoFinal on Pedido.idPedido = PedidoFinal.idPedido");
+            cargarTabla("select * from PedidoFinal");
         }
-        public void cargarPedido(string query)
+        public void cargarTabla(string query)
         {
             DataSet cargar;
-            cargar = mV.cargarClientes(query);
-            dgvBuscar.DataSource = cargar;
-            dgvBuscar.DataMember = "PedidoFinal";
+            cargar = mV.cargarTablas(query,"PedidoFinal");
+            dgvPedidoFinal.DataSource = cargar;
+            dgvPedidoFinal.DataMember = "PedidoFinal";
         }
 
         private void txtNom_TextChanged(object sender, EventArgs e)
         {
             if (txtNom.Text != "")
             {
-                cargarPedido("select PedidoFinal.idPedido, Cliente.idCliente, Cliente.nombre, Cliente.apellidos, Cliente.empresa, Cliente.telefono, Cliente.direccion, Cliente.email, Cliente.statusCliente, PedidoFinal.fecha, DetallePedido.idproducto, DetallePedido.cantidad, DetallePedido.detallepedido from Cliente inner join Pedido on Pedido.idCliente = Cliente.idCliente inner join DetallePedido on DetallePedido.idPedido = Pedido.idPedido inner join PedidoFinal on Pedido.idPedido = PedidoFinal.idPedido where PedidoFinal.idPedido = "+ int.Parse(txtNom.Text));
+                cargarTabla("select * from PedidoFinal where idPedido = "+ int.Parse(txtNom.Text));
             }
         }
     }

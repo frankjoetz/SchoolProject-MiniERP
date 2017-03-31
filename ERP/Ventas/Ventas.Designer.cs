@@ -48,6 +48,7 @@
             this.btnAddC = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btnPedFin = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.txtIDBorrar = new System.Windows.Forms.TextBox();
@@ -63,7 +64,6 @@
             this.lblFH = new System.Windows.Forms.Label();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.lblH = new System.Windows.Forms.Label();
-            this.btnPedFin = new System.Windows.Forms.Button();
             this.tbcVentas.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -112,7 +112,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(757, 557);
+            this.tabPage1.Size = new System.Drawing.Size(881, 630);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "VENTA";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -178,10 +178,6 @@
             this.cmbGamas.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbGamas.ForeColor = System.Drawing.Color.Black;
             this.cmbGamas.FormattingEnabled = true;
-            this.cmbGamas.Items.AddRange(new object[] {
-            "GAMA BAJA",
-            "GAMA MEDIA",
-            "GAMA ALTA"});
             this.cmbGamas.Location = new System.Drawing.Point(53, 74);
             this.cmbGamas.Name = "cmbGamas";
             this.cmbGamas.Size = new System.Drawing.Size(183, 26);
@@ -304,6 +300,16 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "HISTORIAL";
             // 
+            // btnPedFin
+            // 
+            this.btnPedFin.Location = new System.Drawing.Point(678, 587);
+            this.btnPedFin.Name = "btnPedFin";
+            this.btnPedFin.Size = new System.Drawing.Size(75, 23);
+            this.btnPedFin.TabIndex = 7;
+            this.btnPedFin.Text = "Pedidos Finalizados";
+            this.btnPedFin.UseVisualStyleBackColor = true;
+            this.btnPedFin.Click += new System.EventHandler(this.btnPedFin_Click);
+            // 
             // btnEliminar
             // 
             this.btnEliminar.Location = new System.Drawing.Point(647, 42);
@@ -371,7 +377,7 @@
             this.BClient.Location = new System.Drawing.Point(4, 22);
             this.BClient.Name = "BClient";
             this.BClient.Padding = new System.Windows.Forms.Padding(3);
-            this.BClient.Size = new System.Drawing.Size(757, 557);
+            this.BClient.Size = new System.Drawing.Size(881, 630);
             this.BClient.TabIndex = 2;
             this.BClient.Text = "CLIENTES";
             this.BClient.UseVisualStyleBackColor = true;
@@ -426,6 +432,7 @@
             this.dgvBuscar.Name = "dgvBuscar";
             this.dgvBuscar.Size = new System.Drawing.Size(745, 437);
             this.dgvBuscar.TabIndex = 3;
+            this.dgvBuscar.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBuscar_Click);
             this.dgvBuscar.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBuscar_Click);
             // 
             // lblFH
@@ -452,16 +459,6 @@
             this.lblH.Size = new System.Drawing.Size(28, 13);
             this.lblH.TabIndex = 40;
             this.lblH.Text = "hora";
-            // 
-            // btnPedFin
-            // 
-            this.btnPedFin.Location = new System.Drawing.Point(678, 587);
-            this.btnPedFin.Name = "btnPedFin";
-            this.btnPedFin.Size = new System.Drawing.Size(75, 23);
-            this.btnPedFin.TabIndex = 7;
-            this.btnPedFin.Text = "Pedidos Finalizados";
-            this.btnPedFin.UseVisualStyleBackColor = true;
-            this.btnPedFin.Click += new System.EventHandler(this.btnPedFin_Click);
             // 
             // Ventas
             // 

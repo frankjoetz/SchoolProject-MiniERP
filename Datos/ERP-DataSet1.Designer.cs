@@ -20,9 +20,9 @@ namespace Datos {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("_ERP_DataSet")]
+    [global::System.Xml.Serialization.XmlRootAttribute("_ERP_DataSet1")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class _ERP_DataSet : global::System.Data.DataSet {
+    public partial class _ERP_DataSet1 : global::System.Data.DataSet {
         
         private ClienteDataTable tableCliente;
         
@@ -42,13 +42,13 @@ namespace Datos {
         
         private PedidoDataTable tablePedido;
         
+        private PedidoFinalDataTable tablePedidoFinal;
+        
         private PlaneacionDataTable tablePlaneacion;
         
         private ProduccionDataTable tableProduccion;
         
         private ProductoDataTable tableProducto;
-        
-        private PruebaDataTable tablePrueba;
         
         private RegistroMovimientoDataTable tableRegistroMovimiento;
         
@@ -84,7 +84,7 @@ namespace Datos {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public _ERP_DataSet() {
+        public _ERP_DataSet1() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -95,7 +95,7 @@ namespace Datos {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected _ERP_DataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected _ERP_DataSet1(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -135,6 +135,9 @@ namespace Datos {
                 if ((ds.Tables["Pedido"] != null)) {
                     base.Tables.Add(new PedidoDataTable(ds.Tables["Pedido"]));
                 }
+                if ((ds.Tables["PedidoFinal"] != null)) {
+                    base.Tables.Add(new PedidoFinalDataTable(ds.Tables["PedidoFinal"]));
+                }
                 if ((ds.Tables["Planeacion"] != null)) {
                     base.Tables.Add(new PlaneacionDataTable(ds.Tables["Planeacion"]));
                 }
@@ -143,9 +146,6 @@ namespace Datos {
                 }
                 if ((ds.Tables["Producto"] != null)) {
                     base.Tables.Add(new ProductoDataTable(ds.Tables["Producto"]));
-                }
-                if ((ds.Tables["Prueba"] != null)) {
-                    base.Tables.Add(new PruebaDataTable(ds.Tables["Prueba"]));
                 }
                 if ((ds.Tables["RegistroMovimiento"] != null)) {
                     base.Tables.Add(new RegistroMovimientoDataTable(ds.Tables["RegistroMovimiento"]));
@@ -265,6 +265,16 @@ namespace Datos {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public PedidoFinalDataTable PedidoFinal {
+            get {
+                return this.tablePedidoFinal;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
         public PlaneacionDataTable Planeacion {
             get {
                 return this.tablePlaneacion;
@@ -288,16 +298,6 @@ namespace Datos {
         public ProductoDataTable Producto {
             get {
                 return this.tableProducto;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Browsable(false)]
-        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public PruebaDataTable Prueba {
-            get {
-                return this.tablePrueba;
             }
         }
         
@@ -363,7 +363,7 @@ namespace Datos {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            _ERP_DataSet cln = ((_ERP_DataSet)(base.Clone()));
+            _ERP_DataSet1 cln = ((_ERP_DataSet1)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -415,6 +415,9 @@ namespace Datos {
                 if ((ds.Tables["Pedido"] != null)) {
                     base.Tables.Add(new PedidoDataTable(ds.Tables["Pedido"]));
                 }
+                if ((ds.Tables["PedidoFinal"] != null)) {
+                    base.Tables.Add(new PedidoFinalDataTable(ds.Tables["PedidoFinal"]));
+                }
                 if ((ds.Tables["Planeacion"] != null)) {
                     base.Tables.Add(new PlaneacionDataTable(ds.Tables["Planeacion"]));
                 }
@@ -423,9 +426,6 @@ namespace Datos {
                 }
                 if ((ds.Tables["Producto"] != null)) {
                     base.Tables.Add(new ProductoDataTable(ds.Tables["Producto"]));
-                }
-                if ((ds.Tables["Prueba"] != null)) {
-                    base.Tables.Add(new PruebaDataTable(ds.Tables["Prueba"]));
                 }
                 if ((ds.Tables["RegistroMovimiento"] != null)) {
                     base.Tables.Add(new RegistroMovimientoDataTable(ds.Tables["RegistroMovimiento"]));
@@ -520,6 +520,12 @@ namespace Datos {
                     this.tablePedido.InitVars();
                 }
             }
+            this.tablePedidoFinal = ((PedidoFinalDataTable)(base.Tables["PedidoFinal"]));
+            if ((initTable == true)) {
+                if ((this.tablePedidoFinal != null)) {
+                    this.tablePedidoFinal.InitVars();
+                }
+            }
             this.tablePlaneacion = ((PlaneacionDataTable)(base.Tables["Planeacion"]));
             if ((initTable == true)) {
                 if ((this.tablePlaneacion != null)) {
@@ -536,12 +542,6 @@ namespace Datos {
             if ((initTable == true)) {
                 if ((this.tableProducto != null)) {
                     this.tableProducto.InitVars();
-                }
-            }
-            this.tablePrueba = ((PruebaDataTable)(base.Tables["Prueba"]));
-            if ((initTable == true)) {
-                if ((this.tablePrueba != null)) {
-                    this.tablePrueba.InitVars();
                 }
             }
             this.tableRegistroMovimiento = ((RegistroMovimientoDataTable)(base.Tables["RegistroMovimiento"]));
@@ -574,9 +574,9 @@ namespace Datos {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "ERP-DataSet";
+            this.DataSetName = "ERP-DataSet1";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/ERP-DataSet.xsd";
+            this.Namespace = "http://tempuri.org/ERP-DataSet1.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableCliente = new ClienteDataTable();
@@ -597,14 +597,14 @@ namespace Datos {
             base.Tables.Add(this.tableMateriaPrima);
             this.tablePedido = new PedidoDataTable();
             base.Tables.Add(this.tablePedido);
+            this.tablePedidoFinal = new PedidoFinalDataTable();
+            base.Tables.Add(this.tablePedidoFinal);
             this.tablePlaneacion = new PlaneacionDataTable();
             base.Tables.Add(this.tablePlaneacion);
             this.tableProduccion = new ProduccionDataTable();
             base.Tables.Add(this.tableProduccion);
             this.tableProducto = new ProductoDataTable();
             base.Tables.Add(this.tableProducto);
-            this.tablePrueba = new PruebaDataTable();
-            base.Tables.Add(this.tablePrueba);
             this.tableRegistroMovimiento = new RegistroMovimientoDataTable();
             base.Tables.Add(this.tableRegistroMovimiento);
             this.tableUsuario = new UsuarioDataTable();
@@ -719,6 +719,12 @@ namespace Datos {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializePedidoFinal() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializePlaneacion() {
             return false;
         }
@@ -732,12 +738,6 @@ namespace Datos {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializeProducto() {
-            return false;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializePrueba() {
             return false;
         }
         
@@ -764,7 +764,7 @@ namespace Datos {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            _ERP_DataSet ds = new _ERP_DataSet();
+            _ERP_DataSet1 ds = new _ERP_DataSet1();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -836,6 +836,9 @@ namespace Datos {
         public delegate void PedidoRowChangeEventHandler(object sender, PedidoRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void PedidoFinalRowChangeEventHandler(object sender, PedidoFinalRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void PlaneacionRowChangeEventHandler(object sender, PlaneacionRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -843,9 +846,6 @@ namespace Datos {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void ProductoRowChangeEventHandler(object sender, ProductoRowChangeEvent e);
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void PruebaRowChangeEventHandler(object sender, PruebaRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void RegistroMovimientoRowChangeEventHandler(object sender, RegistroMovimientoRowChangeEvent e);
@@ -872,7 +872,7 @@ namespace Datos {
             
             private global::System.Data.DataColumn columndireccion;
             
-            private global::System.Data.DataColumn _columne_mail;
+            private global::System.Data.DataColumn columnemail;
             
             private global::System.Data.DataColumn columnstatusCliente;
             
@@ -959,9 +959,9 @@ namespace Datos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn _e_mailColumn {
+            public global::System.Data.DataColumn emailColumn {
                 get {
-                    return this._columne_mail;
+                    return this.columnemail;
                 }
             }
             
@@ -1010,7 +1010,7 @@ namespace Datos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ClienteRow AddClienteRow(string nombre, string apellidos, string empresa, int telefono, string direccion, string _e_mail, int statusCliente) {
+            public ClienteRow AddClienteRow(string nombre, string apellidos, string empresa, int telefono, string direccion, string email, int statusCliente) {
                 ClienteRow rowClienteRow = ((ClienteRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -1019,7 +1019,7 @@ namespace Datos {
                         empresa,
                         telefono,
                         direccion,
-                        _e_mail,
+                        email,
                         statusCliente};
                 rowClienteRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowClienteRow);
@@ -1056,7 +1056,7 @@ namespace Datos {
                 this.columnempresa = base.Columns["empresa"];
                 this.columntelefono = base.Columns["telefono"];
                 this.columndireccion = base.Columns["direccion"];
-                this._columne_mail = base.Columns["e-mail"];
+                this.columnemail = base.Columns["email"];
                 this.columnstatusCliente = base.Columns["statusCliente"];
             }
             
@@ -1075,10 +1075,8 @@ namespace Datos {
                 base.Columns.Add(this.columntelefono);
                 this.columndireccion = new global::System.Data.DataColumn("direccion", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columndireccion);
-                this._columne_mail = new global::System.Data.DataColumn("e-mail", typeof(string), null, global::System.Data.MappingType.Element);
-                this._columne_mail.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columne_mail");
-                this._columne_mail.ExtendedProperties.Add("Generator_UserColumnName", "e-mail");
-                base.Columns.Add(this._columne_mail);
+                this.columnemail = new global::System.Data.DataColumn("email", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnemail);
                 this.columnstatusCliente = new global::System.Data.DataColumn("statusCliente", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnstatusCliente);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
@@ -1090,15 +1088,13 @@ namespace Datos {
                 this.columnidCliente.Unique = true;
                 this.columnnombre.AllowDBNull = false;
                 this.columnnombre.MaxLength = 50;
-                this.columnapellidos.AllowDBNull = false;
                 this.columnapellidos.MaxLength = 50;
                 this.columnempresa.AllowDBNull = false;
                 this.columnempresa.MaxLength = 50;
-                this.columntelefono.AllowDBNull = false;
                 this.columndireccion.AllowDBNull = false;
                 this.columndireccion.MaxLength = 50;
-                this._columne_mail.AllowDBNull = false;
-                this._columne_mail.MaxLength = 50;
+                this.columnemail.AllowDBNull = false;
+                this.columnemail.MaxLength = 50;
                 this.columnstatusCliente.AllowDBNull = false;
             }
             
@@ -1167,7 +1163,7 @@ namespace Datos {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                _ERP_DataSet ds = new _ERP_DataSet();
+                _ERP_DataSet1 ds = new _ERP_DataSet1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1466,7 +1462,7 @@ namespace Datos {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                _ERP_DataSet ds = new _ERP_DataSet();
+                _ERP_DataSet1 ds = new _ERP_DataSet1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1532,13 +1528,13 @@ namespace Datos {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class DetallePedidoDataTable : global::System.Data.TypedTableBase<DetallePedidoRow> {
             
-            private global::System.Data.DataColumn columndetallePedido;
-            
             private global::System.Data.DataColumn columnidPedido;
             
             private global::System.Data.DataColumn columnidproducto;
             
             private global::System.Data.DataColumn columncantidad;
+            
+            private global::System.Data.DataColumn columndetallepedido;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -1575,14 +1571,6 @@ namespace Datos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn detallePedidoColumn {
-                get {
-                    return this.columndetallePedido;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn idPedidoColumn {
                 get {
                     return this.columnidPedido;
@@ -1602,6 +1590,14 @@ namespace Datos {
             public global::System.Data.DataColumn cantidadColumn {
                 get {
                     return this.columncantidad;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn detallepedidoColumn {
+                get {
+                    return this.columndetallepedido;
                 }
             }
             
@@ -1642,18 +1638,18 @@ namespace Datos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DetallePedidoRow AddDetallePedidoRow(string detallePedido, PedidoRow parentPedidoRowByDetallePedido_ibfk_2, ProductoRow parentProductoRowByDetallePedido_ibfk_1, int cantidad) {
+            public DetallePedidoRow AddDetallePedidoRow(PedidoRow parentPedidoRowByDetallePedido_ibfk_2, ProductoRow parentProductoRowByDetallePedido_ibfk_1, int cantidad, string detallepedido) {
                 DetallePedidoRow rowDetallePedidoRow = ((DetallePedidoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        detallePedido,
                         null,
                         null,
-                        cantidad};
+                        cantidad,
+                        detallepedido};
                 if ((parentPedidoRowByDetallePedido_ibfk_2 != null)) {
-                    columnValuesArray[1] = parentPedidoRowByDetallePedido_ibfk_2[0];
+                    columnValuesArray[0] = parentPedidoRowByDetallePedido_ibfk_2[0];
                 }
                 if ((parentProductoRowByDetallePedido_ibfk_1 != null)) {
-                    columnValuesArray[2] = parentProductoRowByDetallePedido_ibfk_1[0];
+                    columnValuesArray[1] = parentProductoRowByDetallePedido_ibfk_1[0];
                 }
                 rowDetallePedidoRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDetallePedidoRow);
@@ -1677,28 +1673,24 @@ namespace Datos {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
-                this.columndetallePedido = base.Columns["detallePedido"];
                 this.columnidPedido = base.Columns["idPedido"];
                 this.columnidproducto = base.Columns["idproducto"];
                 this.columncantidad = base.Columns["cantidad"];
+                this.columndetallepedido = base.Columns["detallepedido"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
-                this.columndetallePedido = new global::System.Data.DataColumn("detallePedido", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columndetallePedido);
                 this.columnidPedido = new global::System.Data.DataColumn("idPedido", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnidPedido);
                 this.columnidproducto = new global::System.Data.DataColumn("idproducto", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnidproducto);
                 this.columncantidad = new global::System.Data.DataColumn("cantidad", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncantidad);
-                this.columndetallePedido.AllowDBNull = false;
-                this.columndetallePedido.MaxLength = 100;
-                this.columnidPedido.AllowDBNull = false;
-                this.columnidproducto.AllowDBNull = false;
-                this.columncantidad.AllowDBNull = false;
+                this.columndetallepedido = new global::System.Data.DataColumn("detallepedido", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndetallepedido);
+                this.columndetallepedido.MaxLength = 100;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1766,7 +1758,7 @@ namespace Datos {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                _ERP_DataSet ds = new _ERP_DataSet();
+                _ERP_DataSet1 ds = new _ERP_DataSet1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1838,9 +1830,9 @@ namespace Datos {
             
             private global::System.Data.DataColumn columnidMateria;
             
-            private global::System.Data.DataColumn columncantidad;
-            
             private global::System.Data.DataColumn columnidLocacion;
+            
+            private global::System.Data.DataColumn columncantidad;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -1901,17 +1893,17 @@ namespace Datos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn cantidadColumn {
+            public global::System.Data.DataColumn idLocacionColumn {
                 get {
-                    return this.columncantidad;
+                    return this.columnidLocacion;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn idLocacionColumn {
+            public global::System.Data.DataColumn cantidadColumn {
                 get {
-                    return this.columnidLocacion;
+                    return this.columncantidad;
                 }
             }
             
@@ -1952,19 +1944,19 @@ namespace Datos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public InventarioMateriaRow AddInventarioMateriaRow(System.DateTime fHora, MateriaPrimaRow parentMateriaPrimaRowByInventarioMateria_ibfk_1, int cantidad, LocacionRow parentLocacionRowByInventarioMateria_ibfk_2) {
+            public InventarioMateriaRow AddInventarioMateriaRow(System.DateTime fHora, MateriaPrimaRow parentMateriaPrimaRowByInventarioMateria_ibfk_1, LocacionRow parentLocacionRowByInventarioMateria_ibfk_2, int cantidad) {
                 InventarioMateriaRow rowInventarioMateriaRow = ((InventarioMateriaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         fHora,
                         null,
-                        cantidad,
-                        null};
+                        null,
+                        cantidad};
                 if ((parentMateriaPrimaRowByInventarioMateria_ibfk_1 != null)) {
                     columnValuesArray[2] = parentMateriaPrimaRowByInventarioMateria_ibfk_1[0];
                 }
                 if ((parentLocacionRowByInventarioMateria_ibfk_2 != null)) {
-                    columnValuesArray[4] = parentLocacionRowByInventarioMateria_ibfk_2[0];
+                    columnValuesArray[3] = parentLocacionRowByInventarioMateria_ibfk_2[0];
                 }
                 rowInventarioMateriaRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowInventarioMateriaRow);
@@ -1998,8 +1990,8 @@ namespace Datos {
                 this.columnnFolio = base.Columns["nFolio"];
                 this.columnfHora = base.Columns["fHora"];
                 this.columnidMateria = base.Columns["idMateria"];
-                this.columncantidad = base.Columns["cantidad"];
                 this.columnidLocacion = base.Columns["idLocacion"];
+                this.columncantidad = base.Columns["cantidad"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2011,10 +2003,10 @@ namespace Datos {
                 base.Columns.Add(this.columnfHora);
                 this.columnidMateria = new global::System.Data.DataColumn("idMateria", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnidMateria);
-                this.columncantidad = new global::System.Data.DataColumn("cantidad", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columncantidad);
                 this.columnidLocacion = new global::System.Data.DataColumn("idLocacion", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnidLocacion);
+                this.columncantidad = new global::System.Data.DataColumn("cantidad", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncantidad);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnnFolio}, true));
                 this.columnnFolio.AutoIncrement = true;
@@ -2024,7 +2016,6 @@ namespace Datos {
                 this.columnnFolio.Unique = true;
                 this.columnfHora.AllowDBNull = false;
                 this.columnidMateria.AllowDBNull = false;
-                this.columncantidad.AllowDBNull = false;
                 this.columnidLocacion.AllowDBNull = false;
             }
             
@@ -2093,7 +2084,7 @@ namespace Datos {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                _ERP_DataSet ds = new _ERP_DataSet();
+                _ERP_DataSet1 ds = new _ERP_DataSet1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2168,6 +2159,8 @@ namespace Datos {
             private global::System.Data.DataColumn columncantidad;
             
             private global::System.Data.DataColumn columnlocacion;
+            
+            private global::System.Data.DataColumn columndescripcion;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -2244,6 +2237,14 @@ namespace Datos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn descripcionColumn {
+                get {
+                    return this.columndescripcion;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2279,14 +2280,15 @@ namespace Datos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public InventarioProductoRow AddInventarioProductoRow(System.DateTime fHora, ProductoRow parentProductoRowByInventarioProducto_ibfk_1, int cantidad, int locacion) {
+            public InventarioProductoRow AddInventarioProductoRow(System.DateTime fHora, ProductoRow parentProductoRowByInventarioProducto_ibfk_1, int cantidad, int locacion, string descripcion) {
                 InventarioProductoRow rowInventarioProductoRow = ((InventarioProductoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         fHora,
                         null,
                         cantidad,
-                        locacion};
+                        locacion,
+                        descripcion};
                 if ((parentProductoRowByInventarioProducto_ibfk_1 != null)) {
                     columnValuesArray[2] = parentProductoRowByInventarioProducto_ibfk_1[0];
                 }
@@ -2324,6 +2326,7 @@ namespace Datos {
                 this.columnidProducto = base.Columns["idProducto"];
                 this.columncantidad = base.Columns["cantidad"];
                 this.columnlocacion = base.Columns["locacion"];
+                this.columndescripcion = base.Columns["descripcion"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2339,6 +2342,8 @@ namespace Datos {
                 base.Columns.Add(this.columncantidad);
                 this.columnlocacion = new global::System.Data.DataColumn("locacion", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnlocacion);
+                this.columndescripcion = new global::System.Data.DataColumn("descripcion", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndescripcion);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnnFolio}, true));
                 this.columnnFolio.AutoIncrement = true;
@@ -2350,6 +2355,8 @@ namespace Datos {
                 this.columnidProducto.AllowDBNull = false;
                 this.columncantidad.AllowDBNull = false;
                 this.columnlocacion.AllowDBNull = false;
+                this.columndescripcion.AllowDBNull = false;
+                this.columndescripcion.MaxLength = 21845;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2417,7 +2424,7 @@ namespace Datos {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                _ERP_DataSet ds = new _ERP_DataSet();
+                _ERP_DataSet1 ds = new _ERP_DataSet1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2694,7 +2701,7 @@ namespace Datos {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                _ERP_DataSet ds = new _ERP_DataSet();
+                _ERP_DataSet1 ds = new _ERP_DataSet1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2860,7 +2867,7 @@ namespace Datos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public LocacionRow AddLocacionRow(string descripcion, System.DateTime fCreada) {
+            public LocacionRow AddLocacionRow(string descripcion, string fCreada) {
                 LocacionRow rowLocacionRow = ((LocacionRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -2907,7 +2914,7 @@ namespace Datos {
                 base.Columns.Add(this.columnidLocacion);
                 this.columndescripcion = new global::System.Data.DataColumn("descripcion", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columndescripcion);
-                this.columnfCreada = new global::System.Data.DataColumn("fCreada", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                this.columnfCreada = new global::System.Data.DataColumn("fCreada", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnfCreada);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnidLocacion}, true));
@@ -2919,6 +2926,7 @@ namespace Datos {
                 this.columndescripcion.AllowDBNull = false;
                 this.columndescripcion.MaxLength = 100;
                 this.columnfCreada.AllowDBNull = false;
+                this.columnfCreada.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2986,7 +2994,7 @@ namespace Datos {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                _ERP_DataSet ds = new _ERP_DataSet();
+                _ERP_DataSet1 ds = new _ERP_DataSet1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -3054,11 +3062,13 @@ namespace Datos {
             
             private global::System.Data.DataColumn columnidMateria;
             
+            private global::System.Data.DataColumn columnTipo;
+            
             private global::System.Data.DataColumn columndescripcion;
             
-            private global::System.Data.DataColumn columnfecha;
+            private global::System.Data.DataColumn columnFecha;
             
-            private global::System.Data.DataColumn columnunidad;
+            private global::System.Data.DataColumn columncantidad;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -3103,6 +3113,14 @@ namespace Datos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TipoColumn {
+                get {
+                    return this.columnTipo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn descripcionColumn {
                 get {
                     return this.columndescripcion;
@@ -3111,17 +3129,17 @@ namespace Datos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn fechaColumn {
+            public global::System.Data.DataColumn FechaColumn {
                 get {
-                    return this.columnfecha;
+                    return this.columnFecha;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn unidadColumn {
+            public global::System.Data.DataColumn cantidadColumn {
                 get {
-                    return this.columnunidad;
+                    return this.columncantidad;
                 }
             }
             
@@ -3162,13 +3180,14 @@ namespace Datos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public MateriaPrimaRow AddMateriaPrimaRow(string descripcion, System.DateTime fecha, string unidad) {
+            public MateriaPrimaRow AddMateriaPrimaRow(string Tipo, string descripcion, string Fecha, int cantidad) {
                 MateriaPrimaRow rowMateriaPrimaRow = ((MateriaPrimaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
+                        Tipo,
                         descripcion,
-                        fecha,
-                        unidad};
+                        Fecha,
+                        cantidad};
                 rowMateriaPrimaRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowMateriaPrimaRow);
                 return rowMateriaPrimaRow;
@@ -3199,9 +3218,10 @@ namespace Datos {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
                 this.columnidMateria = base.Columns["idMateria"];
+                this.columnTipo = base.Columns["Tipo"];
                 this.columndescripcion = base.Columns["descripcion"];
-                this.columnfecha = base.Columns["fecha"];
-                this.columnunidad = base.Columns["unidad"];
+                this.columnFecha = base.Columns["Fecha"];
+                this.columncantidad = base.Columns["cantidad"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3209,12 +3229,14 @@ namespace Datos {
             private void InitClass() {
                 this.columnidMateria = new global::System.Data.DataColumn("idMateria", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnidMateria);
+                this.columnTipo = new global::System.Data.DataColumn("Tipo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTipo);
                 this.columndescripcion = new global::System.Data.DataColumn("descripcion", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columndescripcion);
-                this.columnfecha = new global::System.Data.DataColumn("fecha", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnfecha);
-                this.columnunidad = new global::System.Data.DataColumn("unidad", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnunidad);
+                this.columnFecha = new global::System.Data.DataColumn("Fecha", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFecha);
+                this.columncantidad = new global::System.Data.DataColumn("cantidad", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncantidad);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnidMateria}, true));
                 this.columnidMateria.AutoIncrement = true;
@@ -3222,11 +3244,13 @@ namespace Datos {
                 this.columnidMateria.AutoIncrementStep = -1;
                 this.columnidMateria.AllowDBNull = false;
                 this.columnidMateria.Unique = true;
+                this.columnTipo.AllowDBNull = false;
+                this.columnTipo.MaxLength = 30;
                 this.columndescripcion.AllowDBNull = false;
                 this.columndescripcion.MaxLength = 100;
-                this.columnfecha.AllowDBNull = false;
-                this.columnunidad.AllowDBNull = false;
-                this.columnunidad.MaxLength = 20;
+                this.columnFecha.AllowDBNull = false;
+                this.columnFecha.MaxLength = 10;
+                this.columncantidad.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3294,7 +3318,7 @@ namespace Datos {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                _ERP_DataSet ds = new _ERP_DataSet();
+                _ERP_DataSet1 ds = new _ERP_DataSet1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -3460,7 +3484,7 @@ namespace Datos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public PedidoRow AddPedidoRow(ClienteRow parentClienteRowByPedido_ibfk_1, System.DateTime fecha) {
+            public PedidoRow AddPedidoRow(ClienteRow parentClienteRowByPedido_ibfk_1, string fecha) {
                 PedidoRow rowPedidoRow = ((PedidoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -3510,7 +3534,7 @@ namespace Datos {
                 base.Columns.Add(this.columnidPedido);
                 this.columnidCliente = new global::System.Data.DataColumn("idCliente", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnidCliente);
-                this.columnfecha = new global::System.Data.DataColumn("fecha", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                this.columnfecha = new global::System.Data.DataColumn("fecha", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnfecha);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnidPedido}, true));
@@ -3521,6 +3545,7 @@ namespace Datos {
                 this.columnidPedido.Unique = true;
                 this.columnidCliente.AllowDBNull = false;
                 this.columnfecha.AllowDBNull = false;
+                this.columnfecha.MaxLength = 21845;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3588,7 +3613,7 @@ namespace Datos {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                _ERP_DataSet ds = new _ERP_DataSet();
+                _ERP_DataSet1 ds = new _ERP_DataSet1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -3607,6 +3632,286 @@ namespace Datos {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "PedidoDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class PedidoFinalDataTable : global::System.Data.TypedTableBase<PedidoFinalRow> {
+            
+            private global::System.Data.DataColumn columnidPedido;
+            
+            private global::System.Data.DataColumn columnfechaT;
+            
+            private global::System.Data.DataColumn columnestado;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public PedidoFinalDataTable() {
+                this.TableName = "PedidoFinal";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal PedidoFinalDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected PedidoFinalDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn idPedidoColumn {
+                get {
+                    return this.columnidPedido;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn fechaTColumn {
+                get {
+                    return this.columnfechaT;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn estadoColumn {
+                get {
+                    return this.columnestado;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public PedidoFinalRow this[int index] {
+                get {
+                    return ((PedidoFinalRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event PedidoFinalRowChangeEventHandler PedidoFinalRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event PedidoFinalRowChangeEventHandler PedidoFinalRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event PedidoFinalRowChangeEventHandler PedidoFinalRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event PedidoFinalRowChangeEventHandler PedidoFinalRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddPedidoFinalRow(PedidoFinalRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public PedidoFinalRow AddPedidoFinalRow(int idPedido, string fechaT, string estado) {
+                PedidoFinalRow rowPedidoFinalRow = ((PedidoFinalRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        idPedido,
+                        fechaT,
+                        estado};
+                rowPedidoFinalRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowPedidoFinalRow);
+                return rowPedidoFinalRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                PedidoFinalDataTable cln = ((PedidoFinalDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new PedidoFinalDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnidPedido = base.Columns["idPedido"];
+                this.columnfechaT = base.Columns["fechaT"];
+                this.columnestado = base.Columns["estado"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnidPedido = new global::System.Data.DataColumn("idPedido", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnidPedido);
+                this.columnfechaT = new global::System.Data.DataColumn("fechaT", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfechaT);
+                this.columnestado = new global::System.Data.DataColumn("estado", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnestado);
+                this.columnidPedido.AllowDBNull = false;
+                this.columnfechaT.AllowDBNull = false;
+                this.columnfechaT.MaxLength = 11;
+                this.columnestado.AllowDBNull = false;
+                this.columnestado.MaxLength = 10;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public PedidoFinalRow NewPedidoFinalRow() {
+                return ((PedidoFinalRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new PedidoFinalRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(PedidoFinalRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.PedidoFinalRowChanged != null)) {
+                    this.PedidoFinalRowChanged(this, new PedidoFinalRowChangeEvent(((PedidoFinalRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.PedidoFinalRowChanging != null)) {
+                    this.PedidoFinalRowChanging(this, new PedidoFinalRowChangeEvent(((PedidoFinalRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.PedidoFinalRowDeleted != null)) {
+                    this.PedidoFinalRowDeleted(this, new PedidoFinalRowChangeEvent(((PedidoFinalRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.PedidoFinalRowDeleting != null)) {
+                    this.PedidoFinalRowDeleting(this, new PedidoFinalRowChangeEvent(((PedidoFinalRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemovePedidoFinalRow(PedidoFinalRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                _ERP_DataSet1 ds = new _ERP_DataSet1();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "PedidoFinalDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -3784,7 +4089,7 @@ namespace Datos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public PlaneacionRow AddPlaneacionRow(PedidoRow parentPedidoRowByPlaneacion_ibfk_1, System.DateTime fInicio, System.DateTime fEntrega, int status, string observaciones) {
+            public PlaneacionRow AddPlaneacionRow(PedidoRow parentPedidoRowByPlaneacion_ibfk_1, System.DateTime fInicio, System.DateTime fEntrega, string status, string observaciones) {
                 PlaneacionRow rowPlaneacionRow = ((PlaneacionRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -3844,7 +4149,7 @@ namespace Datos {
                 base.Columns.Add(this.columnfInicio);
                 this.columnfEntrega = new global::System.Data.DataColumn("fEntrega", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnfEntrega);
-                this.columnstatus = new global::System.Data.DataColumn("status", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columnstatus = new global::System.Data.DataColumn("status", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnstatus);
                 this.columnobservaciones = new global::System.Data.DataColumn("observaciones", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnobservaciones);
@@ -3859,6 +4164,7 @@ namespace Datos {
                 this.columnfInicio.AllowDBNull = false;
                 this.columnfEntrega.AllowDBNull = false;
                 this.columnstatus.AllowDBNull = false;
+                this.columnstatus.MaxLength = 50;
                 this.columnobservaciones.AllowDBNull = false;
                 this.columnobservaciones.MaxLength = 100;
             }
@@ -3928,7 +4234,7 @@ namespace Datos {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                _ERP_DataSet ds = new _ERP_DataSet();
+                _ERP_DataSet1 ds = new _ERP_DataSet1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -4000,7 +4306,13 @@ namespace Datos {
             
             private global::System.Data.DataColumn columnfInicio;
             
+            private global::System.Data.DataColumn columnLinea;
+            
+            private global::System.Data.DataColumn columnEtapa;
+            
             private global::System.Data.DataColumn columnfFinal;
+            
+            private global::System.Data.DataColumn columnObservaciones;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -4061,9 +4373,33 @@ namespace Datos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn LineaColumn {
+                get {
+                    return this.columnLinea;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn EtapaColumn {
+                get {
+                    return this.columnEtapa;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn fFinalColumn {
                 get {
                     return this.columnfFinal;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ObservacionesColumn {
+                get {
+                    return this.columnObservaciones;
                 }
             }
             
@@ -4104,13 +4440,16 @@ namespace Datos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ProduccionRow AddProduccionRow(PlaneacionRow parentPlaneacionRowByProduccion_ibfk_1, System.DateTime fInicio, System.DateTime fFinal) {
+            public ProduccionRow AddProduccionRow(PlaneacionRow parentPlaneacionRowByProduccion_ibfk_1, System.DateTime fInicio, string Linea, string Etapa, System.DateTime fFinal, string Observaciones) {
                 ProduccionRow rowProduccionRow = ((ProduccionRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         null,
                         fInicio,
-                        fFinal};
+                        Linea,
+                        Etapa,
+                        fFinal,
+                        Observaciones};
                 if ((parentPlaneacionRowByProduccion_ibfk_1 != null)) {
                     columnValuesArray[1] = parentPlaneacionRowByProduccion_ibfk_1[0];
                 }
@@ -4146,7 +4485,10 @@ namespace Datos {
                 this.columnidProduccion = base.Columns["idProduccion"];
                 this.columnidPlaneacion = base.Columns["idPlaneacion"];
                 this.columnfInicio = base.Columns["fInicio"];
+                this.columnLinea = base.Columns["Linea"];
+                this.columnEtapa = base.Columns["Etapa"];
                 this.columnfFinal = base.Columns["fFinal"];
+                this.columnObservaciones = base.Columns["Observaciones"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4158,8 +4500,14 @@ namespace Datos {
                 base.Columns.Add(this.columnidPlaneacion);
                 this.columnfInicio = new global::System.Data.DataColumn("fInicio", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnfInicio);
+                this.columnLinea = new global::System.Data.DataColumn("Linea", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLinea);
+                this.columnEtapa = new global::System.Data.DataColumn("Etapa", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEtapa);
                 this.columnfFinal = new global::System.Data.DataColumn("fFinal", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnfFinal);
+                this.columnObservaciones = new global::System.Data.DataColumn("Observaciones", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnObservaciones);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnidProduccion}, true));
                 this.columnidProduccion.AutoIncrement = true;
@@ -4169,7 +4517,13 @@ namespace Datos {
                 this.columnidProduccion.Unique = true;
                 this.columnidPlaneacion.AllowDBNull = false;
                 this.columnfInicio.AllowDBNull = false;
+                this.columnLinea.AllowDBNull = false;
+                this.columnLinea.MaxLength = 50;
+                this.columnEtapa.AllowDBNull = false;
+                this.columnEtapa.MaxLength = 100;
                 this.columnfFinal.AllowDBNull = false;
+                this.columnObservaciones.AllowDBNull = false;
+                this.columnObservaciones.MaxLength = 200;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4237,7 +4591,7 @@ namespace Datos {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                _ERP_DataSet ds = new _ERP_DataSet();
+                _ERP_DataSet1 ds = new _ERP_DataSet1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -4545,7 +4899,7 @@ namespace Datos {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                _ERP_DataSet ds = new _ERP_DataSet();
+                _ERP_DataSet1 ds = new _ERP_DataSet1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -4564,283 +4918,6 @@ namespace Datos {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "ProductoDataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
-        
-        /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class PruebaDataTable : global::System.Data.TypedTableBase<PruebaRow> {
-            
-            private global::System.Data.DataColumn columnid;
-            
-            private global::System.Data.DataColumn columntexto;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public PruebaDataTable() {
-                this.TableName = "Prueba";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal PruebaDataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected PruebaDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn idColumn {
-                get {
-                    return this.columnid;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn textoColumn {
-                get {
-                    return this.columntexto;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public PruebaRow this[int index] {
-                get {
-                    return ((PruebaRow)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event PruebaRowChangeEventHandler PruebaRowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event PruebaRowChangeEventHandler PruebaRowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event PruebaRowChangeEventHandler PruebaRowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event PruebaRowChangeEventHandler PruebaRowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddPruebaRow(PruebaRow row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public PruebaRow AddPruebaRow(string texto) {
-                PruebaRow rowPruebaRow = ((PruebaRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        null,
-                        texto};
-                rowPruebaRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowPruebaRow);
-                return rowPruebaRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public PruebaRow FindByid(int id) {
-                return ((PruebaRow)(this.Rows.Find(new object[] {
-                            id})));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                PruebaDataTable cln = ((PruebaDataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new PruebaDataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal void InitVars() {
-                this.columnid = base.Columns["id"];
-                this.columntexto = base.Columns["texto"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            private void InitClass() {
-                this.columnid = new global::System.Data.DataColumn("id", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnid);
-                this.columntexto = new global::System.Data.DataColumn("texto", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columntexto);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnid}, true));
-                this.columnid.AutoIncrement = true;
-                this.columnid.AutoIncrementSeed = -1;
-                this.columnid.AutoIncrementStep = -1;
-                this.columnid.AllowDBNull = false;
-                this.columnid.Unique = true;
-                this.columntexto.AllowDBNull = false;
-                this.columntexto.MaxLength = 200;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public PruebaRow NewPruebaRow() {
-                return ((PruebaRow)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new PruebaRow(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(PruebaRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.PruebaRowChanged != null)) {
-                    this.PruebaRowChanged(this, new PruebaRowChangeEvent(((PruebaRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.PruebaRowChanging != null)) {
-                    this.PruebaRowChanging(this, new PruebaRowChangeEvent(((PruebaRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.PruebaRowDeleted != null)) {
-                    this.PruebaRowDeleted(this, new PruebaRowChangeEvent(((PruebaRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.PruebaRowDeleting != null)) {
-                    this.PruebaRowDeleting(this, new PruebaRowChangeEvent(((PruebaRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemovePruebaRow(PruebaRow row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                _ERP_DataSet ds = new _ERP_DataSet();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "PruebaDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -5155,7 +5232,7 @@ namespace Datos {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                _ERP_DataSet ds = new _ERP_DataSet();
+                _ERP_DataSet1 ds = new _ERP_DataSet1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -5432,7 +5509,7 @@ namespace Datos {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                _ERP_DataSet ds = new _ERP_DataSet();
+                _ERP_DataSet1 ds = new _ERP_DataSet1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -5531,7 +5608,12 @@ namespace Datos {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string apellidos {
                 get {
-                    return ((string)(this[this.tableCliente.apellidosColumn]));
+                    try {
+                        return ((string)(this[this.tableCliente.apellidosColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'apellidos\' de la tabla \'Cliente\' es DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableCliente.apellidosColumn] = value;
@@ -5553,7 +5635,12 @@ namespace Datos {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int telefono {
                 get {
-                    return ((int)(this[this.tableCliente.telefonoColumn]));
+                    try {
+                        return ((int)(this[this.tableCliente.telefonoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'telefono\' de la tabla \'Cliente\' es DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableCliente.telefonoColumn] = value;
@@ -5573,12 +5660,12 @@ namespace Datos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string _e_mail {
+            public string email {
                 get {
-                    return ((string)(this[this.tableCliente._e_mailColumn]));
+                    return ((string)(this[this.tableCliente.emailColumn]));
                 }
                 set {
-                    this[this.tableCliente._e_mailColumn] = value;
+                    this[this.tableCliente.emailColumn] = value;
                 }
             }
             
@@ -5591,6 +5678,30 @@ namespace Datos {
                 set {
                     this[this.tableCliente.statusClienteColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsapellidosNull() {
+                return this.IsNull(this.tableCliente.apellidosColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetapellidosNull() {
+                this[this.tableCliente.apellidosColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IstelefonoNull() {
+                return this.IsNull(this.tableCliente.telefonoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SettelefonoNull() {
+                this[this.tableCliente.telefonoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5702,20 +5813,14 @@ namespace Datos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string detallePedido {
-                get {
-                    return ((string)(this[this.tableDetallePedido.detallePedidoColumn]));
-                }
-                set {
-                    this[this.tableDetallePedido.detallePedidoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int idPedido {
                 get {
-                    return ((int)(this[this.tableDetallePedido.idPedidoColumn]));
+                    try {
+                        return ((int)(this[this.tableDetallePedido.idPedidoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'idPedido\' de la tabla \'DetallePedido\' es DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableDetallePedido.idPedidoColumn] = value;
@@ -5726,7 +5831,12 @@ namespace Datos {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int idproducto {
                 get {
-                    return ((int)(this[this.tableDetallePedido.idproductoColumn]));
+                    try {
+                        return ((int)(this[this.tableDetallePedido.idproductoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'idproducto\' de la tabla \'DetallePedido\' es DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableDetallePedido.idproductoColumn] = value;
@@ -5737,10 +5847,31 @@ namespace Datos {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int cantidad {
                 get {
-                    return ((int)(this[this.tableDetallePedido.cantidadColumn]));
+                    try {
+                        return ((int)(this[this.tableDetallePedido.cantidadColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'cantidad\' de la tabla \'DetallePedido\' es DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableDetallePedido.cantidadColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string detallepedido {
+                get {
+                    try {
+                        return ((string)(this[this.tableDetallePedido.detallepedidoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'detallepedido\' de la tabla \'DetallePedido\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDetallePedido.detallepedidoColumn] = value;
                 }
             }
             
@@ -5764,6 +5895,54 @@ namespace Datos {
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["DetallePedido_ibfk_2"]);
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsidPedidoNull() {
+                return this.IsNull(this.tableDetallePedido.idPedidoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetidPedidoNull() {
+                this[this.tableDetallePedido.idPedidoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsidproductoNull() {
+                return this.IsNull(this.tableDetallePedido.idproductoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetidproductoNull() {
+                this[this.tableDetallePedido.idproductoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IscantidadNull() {
+                return this.IsNull(this.tableDetallePedido.cantidadColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetcantidadNull() {
+                this[this.tableDetallePedido.cantidadColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsdetallepedidoNull() {
+                return this.IsNull(this.tableDetallePedido.detallepedidoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetdetallepedidoNull() {
+                this[this.tableDetallePedido.detallepedidoColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -5816,23 +5995,28 @@ namespace Datos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int cantidad {
-                get {
-                    return ((int)(this[this.tableInventarioMateria.cantidadColumn]));
-                }
-                set {
-                    this[this.tableInventarioMateria.cantidadColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int idLocacion {
                 get {
                     return ((int)(this[this.tableInventarioMateria.idLocacionColumn]));
                 }
                 set {
                     this[this.tableInventarioMateria.idLocacionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int cantidad {
+                get {
+                    try {
+                        return ((int)(this[this.tableInventarioMateria.cantidadColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'cantidad\' de la tabla \'InventarioMateria\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableInventarioMateria.cantidadColumn] = value;
                 }
             }
             
@@ -5856,6 +6040,18 @@ namespace Datos {
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["InventarioMateria_ibfk_2"]);
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IscantidadNull() {
+                return this.IsNull(this.tableInventarioMateria.cantidadColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetcantidadNull() {
+                this[this.tableInventarioMateria.cantidadColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -5925,6 +6121,17 @@ namespace Datos {
                 }
                 set {
                     this[this.tableInventarioProducto.locacionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string descripcion {
+                get {
+                    return ((string)(this[this.tableInventarioProducto.descripcionColumn]));
+                }
+                set {
+                    this[this.tableInventarioProducto.descripcionColumn] = value;
                 }
             }
             
@@ -6015,9 +6222,9 @@ namespace Datos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime fCreada {
+            public string fCreada {
                 get {
-                    return ((global::System.DateTime)(this[this.tableLocacion.fCreadaColumn]));
+                    return ((string)(this[this.tableLocacion.fCreadaColumn]));
                 }
                 set {
                     this[this.tableLocacion.fCreadaColumn] = value;
@@ -6074,6 +6281,17 @@ namespace Datos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Tipo {
+                get {
+                    return ((string)(this[this.tableMateriaPrima.TipoColumn]));
+                }
+                set {
+                    this[this.tableMateriaPrima.TipoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string descripcion {
                 get {
                     return ((string)(this[this.tableMateriaPrima.descripcionColumn]));
@@ -6085,23 +6303,23 @@ namespace Datos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime fecha {
+            public string Fecha {
                 get {
-                    return ((global::System.DateTime)(this[this.tableMateriaPrima.fechaColumn]));
+                    return ((string)(this[this.tableMateriaPrima.FechaColumn]));
                 }
                 set {
-                    this[this.tableMateriaPrima.fechaColumn] = value;
+                    this[this.tableMateriaPrima.FechaColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string unidad {
+            public int cantidad {
                 get {
-                    return ((string)(this[this.tableMateriaPrima.unidadColumn]));
+                    return ((int)(this[this.tableMateriaPrima.cantidadColumn]));
                 }
                 set {
-                    this[this.tableMateriaPrima.unidadColumn] = value;
+                    this[this.tableMateriaPrima.cantidadColumn] = value;
                 }
             }
             
@@ -6177,9 +6395,9 @@ namespace Datos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime fecha {
+            public string fecha {
                 get {
-                    return ((global::System.DateTime)(this[this.tablePedido.fechaColumn]));
+                    return ((string)(this[this.tablePedido.fechaColumn]));
                 }
                 set {
                     this[this.tablePedido.fechaColumn] = value;
@@ -6216,6 +6434,54 @@ namespace Datos {
                 }
                 else {
                     return ((PlaneacionRow[])(base.GetChildRows(this.Table.ChildRelations["Planeacion_ibfk_1"])));
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class PedidoFinalRow : global::System.Data.DataRow {
+            
+            private PedidoFinalDataTable tablePedidoFinal;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal PedidoFinalRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tablePedidoFinal = ((PedidoFinalDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int idPedido {
+                get {
+                    return ((int)(this[this.tablePedidoFinal.idPedidoColumn]));
+                }
+                set {
+                    this[this.tablePedidoFinal.idPedidoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string fechaT {
+                get {
+                    return ((string)(this[this.tablePedidoFinal.fechaTColumn]));
+                }
+                set {
+                    this[this.tablePedidoFinal.fechaTColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string estado {
+                get {
+                    return ((string)(this[this.tablePedidoFinal.estadoColumn]));
+                }
+                set {
+                    this[this.tablePedidoFinal.estadoColumn] = value;
                 }
             }
         }
@@ -6280,9 +6546,9 @@ namespace Datos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int status {
+            public string status {
                 get {
-                    return ((int)(this[this.tablePlaneacion.statusColumn]));
+                    return ((string)(this[this.tablePlaneacion.statusColumn]));
                 }
                 set {
                     this[this.tablePlaneacion.statusColumn] = value;
@@ -6372,12 +6638,45 @@ namespace Datos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Linea {
+                get {
+                    return ((string)(this[this.tableProduccion.LineaColumn]));
+                }
+                set {
+                    this[this.tableProduccion.LineaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Etapa {
+                get {
+                    return ((string)(this[this.tableProduccion.EtapaColumn]));
+                }
+                set {
+                    this[this.tableProduccion.EtapaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public System.DateTime fFinal {
                 get {
                     return ((global::System.DateTime)(this[this.tableProduccion.fFinalColumn]));
                 }
                 set {
                     this[this.tableProduccion.fFinalColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Observaciones {
+                get {
+                    return ((string)(this[this.tableProduccion.ObservacionesColumn]));
+                }
+                set {
+                    this[this.tableProduccion.ObservacionesColumn] = value;
                 }
             }
             
@@ -6481,43 +6780,6 @@ namespace Datos {
                 }
                 else {
                     return ((InventarioProductoRow[])(base.GetChildRows(this.Table.ChildRelations["InventarioProducto_ibfk_1"])));
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
-        public partial class PruebaRow : global::System.Data.DataRow {
-            
-            private PruebaDataTable tablePrueba;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal PruebaRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tablePrueba = ((PruebaDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int id {
-                get {
-                    return ((int)(this[this.tablePrueba.idColumn]));
-                }
-                set {
-                    this[this.tablePrueba.idColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string texto {
-                get {
-                    return ((string)(this[this.tablePrueba.textoColumn]));
-                }
-                set {
-                    this[this.tablePrueba.textoColumn] = value;
                 }
             }
         }
@@ -6994,6 +7256,40 @@ namespace Datos {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class PedidoFinalRowChangeEvent : global::System.EventArgs {
+            
+            private PedidoFinalRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public PedidoFinalRowChangeEvent(PedidoFinalRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public PedidoFinalRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public class PlaneacionRowChangeEvent : global::System.EventArgs {
             
             private PlaneacionRow eventRow;
@@ -7096,40 +7392,6 @@ namespace Datos {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class PruebaRowChangeEvent : global::System.EventArgs {
-            
-            private PruebaRow eventRow;
-            
-            private global::System.Data.DataRowAction eventAction;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public PruebaRowChangeEvent(PruebaRow row, global::System.Data.DataRowAction action) {
-                this.eventRow = row;
-                this.eventAction = action;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public PruebaRow Row {
-                get {
-                    return this.eventRow;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataRowAction Action {
-                get {
-                    return this.eventAction;
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Row event argument class
-        ///</summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public class RegistroMovimientoRowChangeEvent : global::System.EventArgs {
             
             private RegistroMovimientoRow eventRow;
@@ -7195,7 +7457,7 @@ namespace Datos {
         }
     }
 }
-namespace Datos._ERP_DataSetTableAdapters {
+namespace Datos._ERP_DataSet1TableAdapters {
     
     
     /// <summary>
@@ -7325,15 +7587,15 @@ namespace Datos._ERP_DataSetTableAdapters {
             tableMapping.ColumnMappings.Add("empresa", "empresa");
             tableMapping.ColumnMappings.Add("telefono", "telefono");
             tableMapping.ColumnMappings.Add("direccion", "direccion");
-            tableMapping.ColumnMappings.Add("e-mail", "e-mail");
+            tableMapping.ColumnMappings.Add("email", "email");
             tableMapping.ColumnMappings.Add("statusCliente", "statusCliente");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `Cliente` WHERE ((`idCliente` = @Original_idCliente) AND (`nombre` = @Original_nombre) AND (`apellidos` = @Original_apellidos) AND (`empresa` = @Original_empresa) AND (`telefono` = @Original_telefono) AND (`direccion` = @Original_direccion) AND (`e-mail` = @p2) AND (`statusCliente` = @Original_statusCliente))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `Cliente` WHERE ((`idCliente` = @p1) AND (`nombre` = @p2) AND ((@p3 = 1 AND `apellidos` IS NULL) OR (`apellidos` = @p4)) AND (`empresa` = @p5) AND ((@p6 = 1 AND `telefono` IS NULL) OR (`telefono` = @p7)) AND (`direccion` = @p8) AND (`email` = @p9) AND (`statusCliente` = @p10))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_idCliente";
+            param.ParameterName = "@p1";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
@@ -7341,7 +7603,7 @@ namespace Datos._ERP_DataSetTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_nombre";
+            param.ParameterName = "@p2";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
@@ -7349,7 +7611,16 @@ namespace Datos._ERP_DataSetTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_apellidos";
+            param.ParameterName = "@p3";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "apellidos";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p4";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
@@ -7357,7 +7628,7 @@ namespace Datos._ERP_DataSetTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_empresa";
+            param.ParameterName = "@p5";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
@@ -7365,7 +7636,16 @@ namespace Datos._ERP_DataSetTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_telefono";
+            param.ParameterName = "@p6";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "telefono";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p7";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
@@ -7373,7 +7653,7 @@ namespace Datos._ERP_DataSetTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_direccion";
+            param.ParameterName = "@p8";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
@@ -7381,15 +7661,15 @@ namespace Datos._ERP_DataSetTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p2";
+            param.ParameterName = "@p9";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "e-mail";
+            param.SourceColumn = "email";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_statusCliente";
+            param.ParameterName = "@p10";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
@@ -7399,53 +7679,52 @@ namespace Datos._ERP_DataSetTableAdapters {
             this._adapter.InsertCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO `Cliente` (`nombre`, `apellidos`, `empresa`, `telefono`, `direccion`," +
-                " `e-mail`, `statusCliente`) VALUES (@nombre, @apellidos, @empresa, @telefono, @d" +
-                "ireccion, @p1, @statusCliente)";
+                " `email`, `statusCliente`) VALUES (@p1, @p2, @p3, @p4, @p5, @p6, @p7)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@nombre";
+            param.ParameterName = "@p1";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "nombre";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@apellidos";
+            param.ParameterName = "@p2";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "apellidos";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@empresa";
+            param.ParameterName = "@p3";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "empresa";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@telefono";
+            param.ParameterName = "@p4";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
             param.SourceColumn = "telefono";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@direccion";
+            param.ParameterName = "@p5";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "direccion";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p1";
+            param.ParameterName = "@p6";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "e-mail";
+            param.SourceColumn = "email";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@statusCliente";
+            param.ParameterName = "@p7";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
@@ -7453,59 +7732,59 @@ namespace Datos._ERP_DataSetTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE `Cliente` SET `nombre` = @nombre, `apellidos` = @apellidos, `empresa` = @empresa, `telefono` = @telefono, `direccion` = @direccion, `e-mail` = @p1, `statusCliente` = @statusCliente WHERE ((`idCliente` = @Original_idCliente) AND (`nombre` = @Original_nombre) AND (`apellidos` = @Original_apellidos) AND (`empresa` = @Original_empresa) AND (`telefono` = @Original_telefono) AND (`direccion` = @Original_direccion) AND (`e-mail` = @p2) AND (`statusCliente` = @Original_statusCliente))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE `Cliente` SET `nombre` = @p1, `apellidos` = @p2, `empresa` = @p3, `telefono` = @p4, `direccion` = @p5, `email` = @p6, `statusCliente` = @p7 WHERE ((`idCliente` = @p8) AND (`nombre` = @p9) AND ((@p10 = 1 AND `apellidos` IS NULL) OR (`apellidos` = @p11)) AND (`empresa` = @p12) AND ((@p13 = 1 AND `telefono` IS NULL) OR (`telefono` = @p14)) AND (`direccion` = @p15) AND (`email` = @p16) AND (`statusCliente` = @p17))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@nombre";
+            param.ParameterName = "@p1";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "nombre";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@apellidos";
+            param.ParameterName = "@p2";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "apellidos";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@empresa";
+            param.ParameterName = "@p3";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "empresa";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@telefono";
+            param.ParameterName = "@p4";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
             param.SourceColumn = "telefono";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@direccion";
+            param.ParameterName = "@p5";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "direccion";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p1";
+            param.ParameterName = "@p6";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "e-mail";
+            param.SourceColumn = "email";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@statusCliente";
+            param.ParameterName = "@p7";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
             param.SourceColumn = "statusCliente";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_idCliente";
+            param.ParameterName = "@p8";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
@@ -7513,7 +7792,7 @@ namespace Datos._ERP_DataSetTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_nombre";
+            param.ParameterName = "@p9";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
@@ -7521,7 +7800,16 @@ namespace Datos._ERP_DataSetTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_apellidos";
+            param.ParameterName = "@p10";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "apellidos";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p11";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
@@ -7529,7 +7817,7 @@ namespace Datos._ERP_DataSetTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_empresa";
+            param.ParameterName = "@p12";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
@@ -7537,7 +7825,16 @@ namespace Datos._ERP_DataSetTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_telefono";
+            param.ParameterName = "@p13";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "telefono";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p14";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
@@ -7545,7 +7842,7 @@ namespace Datos._ERP_DataSetTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_direccion";
+            param.ParameterName = "@p15";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
@@ -7553,15 +7850,15 @@ namespace Datos._ERP_DataSetTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p2";
+            param.ParameterName = "@p16";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "e-mail";
+            param.SourceColumn = "email";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_statusCliente";
+            param.ParameterName = "@p17";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
@@ -7574,7 +7871,7 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
-            this._connection.ConnectionString = "";
+            this._connection.ConnectionString = global::Datos.Properties.Settings.Default.erpdbConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7584,7 +7881,7 @@ namespace Datos._ERP_DataSetTableAdapters {
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT `idCliente`, `nombre`, `apellidos`, `empresa`, `telefono`, `direccion`, `e" +
-                "-mail`, `statusCliente` FROM `Cliente`";
+                "mail`, `statusCliente` FROM `Cliente`";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -7592,7 +7889,7 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(_ERP_DataSet.ClienteDataTable dataTable) {
+        public virtual int Fill(_ERP_DataSet1.ClienteDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -7605,9 +7902,9 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual _ERP_DataSet.ClienteDataTable GetData() {
+        public virtual _ERP_DataSet1.ClienteDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            _ERP_DataSet.ClienteDataTable dataTable = new _ERP_DataSet.ClienteDataTable();
+            _ERP_DataSet1.ClienteDataTable dataTable = new _ERP_DataSet1.ClienteDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -7615,14 +7912,14 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(_ERP_DataSet.ClienteDataTable dataTable) {
+        public virtual int Update(_ERP_DataSet1.ClienteDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(_ERP_DataSet dataSet) {
+        public virtual int Update(_ERP_DataSet1 dataSet) {
             return this.Adapter.Update(dataSet, "Cliente");
         }
         
@@ -7645,40 +7942,49 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_idCliente, string Original_nombre, string Original_apellidos, string Original_empresa, int Original_telefono, string Original_direccion, string p2, int Original_statusCliente) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_idCliente));
-            if ((Original_nombre == null)) {
-                throw new global::System.ArgumentNullException("Original_nombre");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_nombre));
-            }
-            if ((Original_apellidos == null)) {
-                throw new global::System.ArgumentNullException("Original_apellidos");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_apellidos));
-            }
-            if ((Original_empresa == null)) {
-                throw new global::System.ArgumentNullException("Original_empresa");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_empresa));
-            }
-            this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_telefono));
-            if ((Original_direccion == null)) {
-                throw new global::System.ArgumentNullException("Original_direccion");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((string)(Original_direccion));
-            }
+        public virtual int Delete(int p1, string p2, string p4, string p5, global::System.Nullable<int> p7, string p8, string p9, int p10) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(p1));
             if ((p2 == null)) {
                 throw new global::System.ArgumentNullException("p2");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(p2));
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(p2));
             }
-            this.Adapter.DeleteCommand.Parameters[7].Value = ((int)(Original_statusCliente));
+            if ((p4 == null)) {
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(p4));
+            }
+            if ((p5 == null)) {
+                throw new global::System.ArgumentNullException("p5");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(p5));
+            }
+            if ((p7.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((int)(p7.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            if ((p8 == null)) {
+                throw new global::System.ArgumentNullException("p8");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((string)(p8));
+            }
+            if ((p9 == null)) {
+                throw new global::System.ArgumentNullException("p9");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(p9));
+            }
+            this.Adapter.DeleteCommand.Parameters[9].Value = ((int)(p10));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -7699,39 +8005,44 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string nombre, string apellidos, string empresa, int telefono, string direccion, string p1, int statusCliente) {
-            if ((nombre == null)) {
-                throw new global::System.ArgumentNullException("nombre");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(nombre));
-            }
-            if ((apellidos == null)) {
-                throw new global::System.ArgumentNullException("apellidos");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(apellidos));
-            }
-            if ((empresa == null)) {
-                throw new global::System.ArgumentNullException("empresa");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(empresa));
-            }
-            this.Adapter.InsertCommand.Parameters[3].Value = ((int)(telefono));
-            if ((direccion == null)) {
-                throw new global::System.ArgumentNullException("direccion");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(direccion));
-            }
+        public virtual int Insert(string p1, string p2, string p3, global::System.Nullable<int> p4, string p5, string p6, int p7) {
             if ((p1 == null)) {
                 throw new global::System.ArgumentNullException("p1");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(p1));
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(p1));
             }
-            this.Adapter.InsertCommand.Parameters[6].Value = ((int)(statusCliente));
+            if ((p2 == null)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(p2));
+            }
+            if ((p3 == null)) {
+                throw new global::System.ArgumentNullException("p3");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(p3));
+            }
+            if ((p4.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((int)(p4.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((p5 == null)) {
+                throw new global::System.ArgumentNullException("p5");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(p5));
+            }
+            if ((p6 == null)) {
+                throw new global::System.ArgumentNullException("p6");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(p6));
+            }
+            this.Adapter.InsertCommand.Parameters[6].Value = ((int)(p7));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -7752,72 +8063,86 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string nombre, string apellidos, string empresa, int telefono, string direccion, string p1, int statusCliente, int Original_idCliente, string Original_nombre, string Original_apellidos, string Original_empresa, int Original_telefono, string Original_direccion, string p2, int Original_statusCliente) {
-            if ((nombre == null)) {
-                throw new global::System.ArgumentNullException("nombre");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(nombre));
-            }
-            if ((apellidos == null)) {
-                throw new global::System.ArgumentNullException("apellidos");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(apellidos));
-            }
-            if ((empresa == null)) {
-                throw new global::System.ArgumentNullException("empresa");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(empresa));
-            }
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(telefono));
-            if ((direccion == null)) {
-                throw new global::System.ArgumentNullException("direccion");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(direccion));
-            }
+        public virtual int Update(string p1, string p2, string p3, global::System.Nullable<int> p4, string p5, string p6, int p7, int p8, string p9, string p11, string p12, global::System.Nullable<int> p14, string p15, string p16, int p17) {
             if ((p1 == null)) {
                 throw new global::System.ArgumentNullException("p1");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(p1));
-            }
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(statusCliente));
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_idCliente));
-            if ((Original_nombre == null)) {
-                throw new global::System.ArgumentNullException("Original_nombre");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_nombre));
-            }
-            if ((Original_apellidos == null)) {
-                throw new global::System.ArgumentNullException("Original_apellidos");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_apellidos));
-            }
-            if ((Original_empresa == null)) {
-                throw new global::System.ArgumentNullException("Original_empresa");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_empresa));
-            }
-            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_telefono));
-            if ((Original_direccion == null)) {
-                throw new global::System.ArgumentNullException("Original_direccion");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_direccion));
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(p1));
             }
             if ((p2 == null)) {
-                throw new global::System.ArgumentNullException("p2");
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(p2));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(p2));
             }
-            this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(Original_statusCliente));
+            if ((p3 == null)) {
+                throw new global::System.ArgumentNullException("p3");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(p3));
+            }
+            if ((p4.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(p4.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((p5 == null)) {
+                throw new global::System.ArgumentNullException("p5");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(p5));
+            }
+            if ((p6 == null)) {
+                throw new global::System.ArgumentNullException("p6");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(p6));
+            }
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(p7));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(p8));
+            if ((p9 == null)) {
+                throw new global::System.ArgumentNullException("p9");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(p9));
+            }
+            if ((p11 == null)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(p11));
+            }
+            if ((p12 == null)) {
+                throw new global::System.ArgumentNullException("p12");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(p12));
+            }
+            if ((p14.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(p14.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+            }
+            if ((p15 == null)) {
+                throw new global::System.ArgumentNullException("p15");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(p15));
+            }
+            if ((p16 == null)) {
+                throw new global::System.ArgumentNullException("p16");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(p16));
+            }
+            this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(p17));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -7963,32 +8288,32 @@ namespace Datos._ERP_DataSetTableAdapters {
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.InsertCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `Consumo` (`idMateria`, `cantidad`, `linea`, `idproducto`) VALUES (@i" +
-                "dMateria, @cantidad, @linea, @idproducto)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO `Consumo` (`idMateria`, `cantidad`, `linea`, `idproducto`) VALUES (@p" +
+                "1, @p2, @p3, @p4)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@idMateria";
+            param.ParameterName = "@p1";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
             param.SourceColumn = "idMateria";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@cantidad";
+            param.ParameterName = "@p2";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
             param.SourceColumn = "cantidad";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@linea";
+            param.ParameterName = "@p3";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
             param.SourceColumn = "linea";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@idproducto";
+            param.ParameterName = "@p4";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
@@ -8000,7 +8325,7 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
-            this._connection.ConnectionString = "";
+            this._connection.ConnectionString = global::Datos.Properties.Settings.Default.erpdbConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8017,7 +8342,7 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(_ERP_DataSet.ConsumoDataTable dataTable) {
+        public virtual int Fill(_ERP_DataSet1.ConsumoDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -8030,9 +8355,9 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual _ERP_DataSet.ConsumoDataTable GetData() {
+        public virtual _ERP_DataSet1.ConsumoDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            _ERP_DataSet.ConsumoDataTable dataTable = new _ERP_DataSet.ConsumoDataTable();
+            _ERP_DataSet1.ConsumoDataTable dataTable = new _ERP_DataSet1.ConsumoDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -8040,14 +8365,14 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(_ERP_DataSet.ConsumoDataTable dataTable) {
+        public virtual int Update(_ERP_DataSet1.ConsumoDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(_ERP_DataSet dataSet) {
+        public virtual int Update(_ERP_DataSet1 dataSet) {
             return this.Adapter.Update(dataSet, "Consumo");
         }
         
@@ -8070,11 +8395,11 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int idMateria, int cantidad, int linea, int idproducto) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(idMateria));
-            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(cantidad));
-            this.Adapter.InsertCommand.Parameters[2].Value = ((int)(linea));
-            this.Adapter.InsertCommand.Parameters[3].Value = ((int)(idproducto));
+        public virtual int Insert(int p1, int p2, int p3, int p4) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(p1));
+            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(p2));
+            this.Adapter.InsertCommand.Parameters[2].Value = ((int)(p3));
+            this.Adapter.InsertCommand.Parameters[3].Value = ((int)(p4));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -8213,43 +8538,43 @@ namespace Datos._ERP_DataSetTableAdapters {
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "DetallePedido";
-            tableMapping.ColumnMappings.Add("detallePedido", "detallePedido");
             tableMapping.ColumnMappings.Add("idPedido", "idPedido");
             tableMapping.ColumnMappings.Add("idproducto", "idproducto");
             tableMapping.ColumnMappings.Add("cantidad", "cantidad");
+            tableMapping.ColumnMappings.Add("detallepedido", "detallepedido");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.InsertCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `DetallePedido` (`detallePedido`, `idPedido`, `idproducto`, `cantidad" +
-                "`) VALUES (@detallePedido, @idPedido, @idproducto, @cantidad)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO `DetallePedido` (`idPedido`, `idproducto`, `cantidad`, `detallepedido" +
+                "`) VALUES (@p1, @p2, @p3, @p4)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@detallePedido";
-            param.DbType = global::System.Data.DbType.String;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            param.IsNullable = true;
-            param.SourceColumn = "detallePedido";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@idPedido";
+            param.ParameterName = "@p1";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
             param.SourceColumn = "idPedido";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@idproducto";
+            param.ParameterName = "@p2";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
             param.SourceColumn = "idproducto";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@cantidad";
+            param.ParameterName = "@p3";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
             param.SourceColumn = "cantidad";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p4";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.IsNullable = true;
+            param.SourceColumn = "detallepedido";
             this._adapter.InsertCommand.Parameters.Add(param);
         }
         
@@ -8257,7 +8582,7 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
-            this._connection.ConnectionString = "";
+            this._connection.ConnectionString = global::Datos.Properties.Settings.Default.erpdbConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8266,7 +8591,7 @@ namespace Datos._ERP_DataSetTableAdapters {
             this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT `detallePedido`, `idPedido`, `idproducto`, `cantidad` FROM `DetallePedido`" +
+            this._commandCollection[0].CommandText = "SELECT `idPedido`, `idproducto`, `cantidad`, `detallepedido` FROM `DetallePedido`" +
                 "";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
@@ -8275,7 +8600,7 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(_ERP_DataSet.DetallePedidoDataTable dataTable) {
+        public virtual int Fill(_ERP_DataSet1.DetallePedidoDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -8288,9 +8613,9 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual _ERP_DataSet.DetallePedidoDataTable GetData() {
+        public virtual _ERP_DataSet1.DetallePedidoDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            _ERP_DataSet.DetallePedidoDataTable dataTable = new _ERP_DataSet.DetallePedidoDataTable();
+            _ERP_DataSet1.DetallePedidoDataTable dataTable = new _ERP_DataSet1.DetallePedidoDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -8298,14 +8623,14 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(_ERP_DataSet.DetallePedidoDataTable dataTable) {
+        public virtual int Update(_ERP_DataSet1.DetallePedidoDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(_ERP_DataSet dataSet) {
+        public virtual int Update(_ERP_DataSet1 dataSet) {
             return this.Adapter.Update(dataSet, "DetallePedido");
         }
         
@@ -8328,16 +8653,31 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string detallePedido, int idPedido, int idproducto, int cantidad) {
-            if ((detallePedido == null)) {
-                throw new global::System.ArgumentNullException("detallePedido");
+        public virtual int Insert(global::System.Nullable<int> p1, global::System.Nullable<int> p2, global::System.Nullable<int> p3, string p4) {
+            if ((p1.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((int)(p1.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(detallePedido));
+                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
-            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(idPedido));
-            this.Adapter.InsertCommand.Parameters[2].Value = ((int)(idproducto));
-            this.Adapter.InsertCommand.Parameters[3].Value = ((int)(cantidad));
+            if ((p2.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((int)(p2.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((p3.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((int)(p3.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((p4 == null)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(p4));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -8479,17 +8819,17 @@ namespace Datos._ERP_DataSetTableAdapters {
             tableMapping.ColumnMappings.Add("nFolio", "nFolio");
             tableMapping.ColumnMappings.Add("fHora", "fHora");
             tableMapping.ColumnMappings.Add("idMateria", "idMateria");
-            tableMapping.ColumnMappings.Add("cantidad", "cantidad");
             tableMapping.ColumnMappings.Add("idLocacion", "idLocacion");
+            tableMapping.ColumnMappings.Add("cantidad", "cantidad");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM `InventarioMateria` WHERE ((`nFolio` = @Original_nFolio) AND (`fHora`" +
-                " = @Original_fHora) AND (`idMateria` = @Original_idMateria) AND (`cantidad` = @O" +
-                "riginal_cantidad) AND (`idLocacion` = @Original_idLocacion))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM `InventarioMateria` WHERE ((`nFolio` = @p1) AND (`fHora` = @p2) AND (" +
+                "`idMateria` = @p3) AND (`idLocacion` = @p4) AND ((@p5 = 1 AND `cantidad` IS NULL" +
+                ") OR (`cantidad` = @p6)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_nFolio";
+            param.ParameterName = "@p1";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
@@ -8497,15 +8837,15 @@ namespace Datos._ERP_DataSetTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_fHora";
-            param.DbType = global::System.Data.DbType.Date;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
+            param.ParameterName = "@p2";
+            param.DbType = global::System.Data.DbType.DateTime;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.DateTime;
             param.IsNullable = true;
             param.SourceColumn = "fHora";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_idMateria";
+            param.ParameterName = "@p3";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
@@ -8513,88 +8853,97 @@ namespace Datos._ERP_DataSetTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_cantidad";
+            param.ParameterName = "@p4";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "idLocacion";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p5";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
             param.SourceColumn = "cantidad";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_idLocacion";
+            param.ParameterName = "@p6";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "idLocacion";
+            param.SourceColumn = "cantidad";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `InventarioMateria` (`fHora`, `idMateria`, `cantidad`, `idLocacion`) " +
-                "VALUES (@fHora, @idMateria, @cantidad, @idLocacion)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO `InventarioMateria` (`fHora`, `idMateria`, `idLocacion`, `cantidad`) " +
+                "VALUES (@p1, @p2, @p3, @p4)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@fHora";
-            param.DbType = global::System.Data.DbType.Date;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
+            param.ParameterName = "@p1";
+            param.DbType = global::System.Data.DbType.DateTime;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.DateTime;
             param.IsNullable = true;
             param.SourceColumn = "fHora";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@idMateria";
+            param.ParameterName = "@p2";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
             param.SourceColumn = "idMateria";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@cantidad";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "cantidad";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@idLocacion";
+            param.ParameterName = "@p3";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
             param.SourceColumn = "idLocacion";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p4";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "cantidad";
             this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE `InventarioMateria` SET `fHora` = @fHora, `idMateria` = @idMateria, `cantidad` = @cantidad, `idLocacion` = @idLocacion WHERE ((`nFolio` = @Original_nFolio) AND (`fHora` = @Original_fHora) AND (`idMateria` = @Original_idMateria) AND (`cantidad` = @Original_cantidad) AND (`idLocacion` = @Original_idLocacion))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE `InventarioMateria` SET `fHora` = @p1, `idMateria` = @p2, `idLocacion` = @p3, `cantidad` = @p4 WHERE ((`nFolio` = @p5) AND (`fHora` = @p6) AND (`idMateria` = @p7) AND (`idLocacion` = @p8) AND ((@p9 = 1 AND `cantidad` IS NULL) OR (`cantidad` = @p10)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@fHora";
-            param.DbType = global::System.Data.DbType.Date;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
+            param.ParameterName = "@p1";
+            param.DbType = global::System.Data.DbType.DateTime;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.DateTime;
             param.IsNullable = true;
             param.SourceColumn = "fHora";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@idMateria";
+            param.ParameterName = "@p2";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
             param.SourceColumn = "idMateria";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@cantidad";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "cantidad";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@idLocacion";
+            param.ParameterName = "@p3";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
             param.SourceColumn = "idLocacion";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_nFolio";
+            param.ParameterName = "@p4";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "cantidad";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p5";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
@@ -8602,15 +8951,15 @@ namespace Datos._ERP_DataSetTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_fHora";
-            param.DbType = global::System.Data.DbType.Date;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
+            param.ParameterName = "@p6";
+            param.DbType = global::System.Data.DbType.DateTime;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.DateTime;
             param.IsNullable = true;
             param.SourceColumn = "fHora";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_idMateria";
+            param.ParameterName = "@p7";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
@@ -8618,19 +8967,28 @@ namespace Datos._ERP_DataSetTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_cantidad";
+            param.ParameterName = "@p8";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "idLocacion";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p9";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
             param.SourceColumn = "cantidad";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_idLocacion";
+            param.ParameterName = "@p10";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "idLocacion";
+            param.SourceColumn = "cantidad";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
         }
@@ -8639,7 +8997,7 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
-            this._connection.ConnectionString = "";
+            this._connection.ConnectionString = global::Datos.Properties.Settings.Default.erpdbConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8648,7 +9006,7 @@ namespace Datos._ERP_DataSetTableAdapters {
             this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT `nFolio`, `fHora`, `idMateria`, `cantidad`, `idLocacion` FROM `InventarioM" +
+            this._commandCollection[0].CommandText = "SELECT `nFolio`, `fHora`, `idMateria`, `idLocacion`, `cantidad` FROM `InventarioM" +
                 "ateria`";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
@@ -8657,7 +9015,7 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(_ERP_DataSet.InventarioMateriaDataTable dataTable) {
+        public virtual int Fill(_ERP_DataSet1.InventarioMateriaDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -8670,9 +9028,9 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual _ERP_DataSet.InventarioMateriaDataTable GetData() {
+        public virtual _ERP_DataSet1.InventarioMateriaDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            _ERP_DataSet.InventarioMateriaDataTable dataTable = new _ERP_DataSet.InventarioMateriaDataTable();
+            _ERP_DataSet1.InventarioMateriaDataTable dataTable = new _ERP_DataSet1.InventarioMateriaDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -8680,14 +9038,14 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(_ERP_DataSet.InventarioMateriaDataTable dataTable) {
+        public virtual int Update(_ERP_DataSet1.InventarioMateriaDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(_ERP_DataSet dataSet) {
+        public virtual int Update(_ERP_DataSet1 dataSet) {
             return this.Adapter.Update(dataSet, "InventarioMateria");
         }
         
@@ -8710,12 +9068,19 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_nFolio, System.DateTime Original_fHora, int Original_idMateria, int Original_cantidad, int Original_idLocacion) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_nFolio));
-            this.Adapter.DeleteCommand.Parameters[1].Value = ((System.DateTime)(Original_fHora));
-            this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_idMateria));
-            this.Adapter.DeleteCommand.Parameters[3].Value = ((int)(Original_cantidad));
-            this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_idLocacion));
+        public virtual int Delete(int p1, System.DateTime p2, int p3, int p4, global::System.Nullable<int> p6) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(p1));
+            this.Adapter.DeleteCommand.Parameters[1].Value = ((System.DateTime)(p2));
+            this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(p3));
+            this.Adapter.DeleteCommand.Parameters[3].Value = ((int)(p4));
+            if ((p6.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((int)(p6.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -8736,11 +9101,16 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(System.DateTime fHora, int idMateria, int cantidad, int idLocacion) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((System.DateTime)(fHora));
-            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(idMateria));
-            this.Adapter.InsertCommand.Parameters[2].Value = ((int)(cantidad));
-            this.Adapter.InsertCommand.Parameters[3].Value = ((int)(idLocacion));
+        public virtual int Insert(System.DateTime p1, int p2, int p3, global::System.Nullable<int> p4) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((System.DateTime)(p1));
+            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(p2));
+            this.Adapter.InsertCommand.Parameters[2].Value = ((int)(p3));
+            if ((p4.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((int)(p4.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -8761,16 +9131,28 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(System.DateTime fHora, int idMateria, int cantidad, int idLocacion, int Original_nFolio, System.DateTime Original_fHora, int Original_idMateria, int Original_cantidad, int Original_idLocacion) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((System.DateTime)(fHora));
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(idMateria));
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(cantidad));
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(idLocacion));
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_nFolio));
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((System.DateTime)(Original_fHora));
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_idMateria));
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_cantidad));
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_idLocacion));
+        public virtual int Update(System.DateTime p1, int p2, int p3, global::System.Nullable<int> p4, int p5, System.DateTime p6, int p7, int p8, global::System.Nullable<int> p10) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((System.DateTime)(p1));
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(p2));
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(p3));
+            if ((p4.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(p4.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(p5));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((System.DateTime)(p6));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(p7));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(p8));
+            if ((p10.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(p10.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -8914,15 +9296,15 @@ namespace Datos._ERP_DataSetTableAdapters {
             tableMapping.ColumnMappings.Add("idProducto", "idProducto");
             tableMapping.ColumnMappings.Add("cantidad", "cantidad");
             tableMapping.ColumnMappings.Add("locacion", "locacion");
+            tableMapping.ColumnMappings.Add("descripcion", "descripcion");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM `InventarioProducto` WHERE ((`nFolio` = @Original_nFolio) AND (`fHora" +
-                "` = @Original_fHora) AND (`idProducto` = @Original_idProducto) AND (`cantidad` =" +
-                " @Original_cantidad) AND (`locacion` = @Original_locacion))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM `InventarioProducto` WHERE ((`nFolio` = @p1) AND (`fHora` = @p2) AND " +
+                "(`idProducto` = @p3) AND (`cantidad` = @p4) AND (`locacion` = @p5))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_nFolio";
+            param.ParameterName = "@p1";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
@@ -8930,7 +9312,7 @@ namespace Datos._ERP_DataSetTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_fHora";
+            param.ParameterName = "@p2";
             param.DbType = global::System.Data.DbType.Date;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
             param.IsNullable = true;
@@ -8938,7 +9320,7 @@ namespace Datos._ERP_DataSetTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_idProducto";
+            param.ParameterName = "@p3";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
@@ -8946,7 +9328,7 @@ namespace Datos._ERP_DataSetTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_cantidad";
+            param.ParameterName = "@p4";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
@@ -8954,7 +9336,7 @@ namespace Datos._ERP_DataSetTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_locacion";
+            param.ParameterName = "@p5";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
@@ -8963,71 +9345,85 @@ namespace Datos._ERP_DataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `InventarioProducto` (`fHora`, `idProducto`, `cantidad`, `locacion`) " +
-                "VALUES (@fHora, @idProducto, @cantidad, @locacion)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO `InventarioProducto` (`fHora`, `idProducto`, `cantidad`, `locacion`, " +
+                "`descripcion`) VALUES (@p1, @p2, @p3, @p4, @p5)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@fHora";
+            param.ParameterName = "@p1";
             param.DbType = global::System.Data.DbType.Date;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
             param.IsNullable = true;
             param.SourceColumn = "fHora";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@idProducto";
+            param.ParameterName = "@p2";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
             param.SourceColumn = "idProducto";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@cantidad";
+            param.ParameterName = "@p3";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
             param.SourceColumn = "cantidad";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@locacion";
+            param.ParameterName = "@p4";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
             param.SourceColumn = "locacion";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p5";
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
+            param.IsNullable = true;
+            param.SourceColumn = "descripcion";
             this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE `InventarioProducto` SET `fHora` = @fHora, `idProducto` = @idProducto, `cantidad` = @cantidad, `locacion` = @locacion WHERE ((`nFolio` = @Original_nFolio) AND (`fHora` = @Original_fHora) AND (`idProducto` = @Original_idProducto) AND (`cantidad` = @Original_cantidad) AND (`locacion` = @Original_locacion))";
+            this._adapter.UpdateCommand.CommandText = "UPDATE `InventarioProducto` SET `fHora` = @p1, `idProducto` = @p2, `cantidad` = @" +
+                "p3, `locacion` = @p4, `descripcion` = @p5 WHERE ((`nFolio` = @p6) AND (`fHora` =" +
+                " @p7) AND (`idProducto` = @p8) AND (`cantidad` = @p9) AND (`locacion` = @p10))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@fHora";
+            param.ParameterName = "@p1";
             param.DbType = global::System.Data.DbType.Date;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
             param.IsNullable = true;
             param.SourceColumn = "fHora";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@idProducto";
+            param.ParameterName = "@p2";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
             param.SourceColumn = "idProducto";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@cantidad";
+            param.ParameterName = "@p3";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
             param.SourceColumn = "cantidad";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@locacion";
+            param.ParameterName = "@p4";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
             param.SourceColumn = "locacion";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_nFolio";
+            param.ParameterName = "@p5";
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
+            param.IsNullable = true;
+            param.SourceColumn = "descripcion";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p6";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
@@ -9035,7 +9431,7 @@ namespace Datos._ERP_DataSetTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_fHora";
+            param.ParameterName = "@p7";
             param.DbType = global::System.Data.DbType.Date;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
             param.IsNullable = true;
@@ -9043,7 +9439,7 @@ namespace Datos._ERP_DataSetTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_idProducto";
+            param.ParameterName = "@p8";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
@@ -9051,7 +9447,7 @@ namespace Datos._ERP_DataSetTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_cantidad";
+            param.ParameterName = "@p9";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
@@ -9059,7 +9455,7 @@ namespace Datos._ERP_DataSetTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_locacion";
+            param.ParameterName = "@p10";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
@@ -9072,7 +9468,7 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
-            this._connection.ConnectionString = "";
+            this._connection.ConnectionString = global::Datos.Properties.Settings.Default.erpdbConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9081,8 +9477,8 @@ namespace Datos._ERP_DataSetTableAdapters {
             this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT `nFolio`, `fHora`, `idProducto`, `cantidad`, `locacion` FROM `InventarioPr" +
-                "oducto`";
+            this._commandCollection[0].CommandText = "SELECT `nFolio`, `fHora`, `idProducto`, `cantidad`, `locacion`, `descripcion` FRO" +
+                "M `InventarioProducto`";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -9090,7 +9486,7 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(_ERP_DataSet.InventarioProductoDataTable dataTable) {
+        public virtual int Fill(_ERP_DataSet1.InventarioProductoDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -9103,9 +9499,9 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual _ERP_DataSet.InventarioProductoDataTable GetData() {
+        public virtual _ERP_DataSet1.InventarioProductoDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            _ERP_DataSet.InventarioProductoDataTable dataTable = new _ERP_DataSet.InventarioProductoDataTable();
+            _ERP_DataSet1.InventarioProductoDataTable dataTable = new _ERP_DataSet1.InventarioProductoDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -9113,14 +9509,14 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(_ERP_DataSet.InventarioProductoDataTable dataTable) {
+        public virtual int Update(_ERP_DataSet1.InventarioProductoDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(_ERP_DataSet dataSet) {
+        public virtual int Update(_ERP_DataSet1 dataSet) {
             return this.Adapter.Update(dataSet, "InventarioProducto");
         }
         
@@ -9143,12 +9539,12 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_nFolio, System.DateTime Original_fHora, int Original_idProducto, int Original_cantidad, int Original_locacion) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_nFolio));
-            this.Adapter.DeleteCommand.Parameters[1].Value = ((System.DateTime)(Original_fHora));
-            this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_idProducto));
-            this.Adapter.DeleteCommand.Parameters[3].Value = ((int)(Original_cantidad));
-            this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_locacion));
+        public virtual int Delete(int p1, System.DateTime p2, int p3, int p4, int p5) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(p1));
+            this.Adapter.DeleteCommand.Parameters[1].Value = ((System.DateTime)(p2));
+            this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(p3));
+            this.Adapter.DeleteCommand.Parameters[3].Value = ((int)(p4));
+            this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(p5));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -9169,11 +9565,17 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(System.DateTime fHora, int idProducto, int cantidad, int locacion) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((System.DateTime)(fHora));
-            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(idProducto));
-            this.Adapter.InsertCommand.Parameters[2].Value = ((int)(cantidad));
-            this.Adapter.InsertCommand.Parameters[3].Value = ((int)(locacion));
+        public virtual int Insert(System.DateTime p1, int p2, int p3, int p4, string p5) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((System.DateTime)(p1));
+            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(p2));
+            this.Adapter.InsertCommand.Parameters[2].Value = ((int)(p3));
+            this.Adapter.InsertCommand.Parameters[3].Value = ((int)(p4));
+            if ((p5 == null)) {
+                throw new global::System.ArgumentNullException("p5");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(p5));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -9194,16 +9596,22 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(System.DateTime fHora, int idProducto, int cantidad, int locacion, int Original_nFolio, System.DateTime Original_fHora, int Original_idProducto, int Original_cantidad, int Original_locacion) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((System.DateTime)(fHora));
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(idProducto));
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(cantidad));
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(locacion));
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_nFolio));
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((System.DateTime)(Original_fHora));
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_idProducto));
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_cantidad));
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_locacion));
+        public virtual int Update(System.DateTime p1, int p2, int p3, int p4, string p5, int p6, System.DateTime p7, int p8, int p9, int p10) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((System.DateTime)(p1));
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(p2));
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(p3));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(p4));
+            if ((p5 == null)) {
+                throw new global::System.ArgumentNullException("p5");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(p5));
+            }
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(p6));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((System.DateTime)(p7));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(p8));
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(p9));
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(p10));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -9347,11 +9755,10 @@ namespace Datos._ERP_DataSetTableAdapters {
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM `Linea` WHERE ((`idLinea` = @Original_idLinea) AND (`descripcion` = @" +
-                "Original_descripcion))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM `Linea` WHERE ((`idLinea` = @p1) AND (`descripcion` = @p2))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_idLinea";
+            param.ParameterName = "@p1";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
@@ -9359,7 +9766,7 @@ namespace Datos._ERP_DataSetTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_descripcion";
+            param.ParameterName = "@p2";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
@@ -9368,10 +9775,10 @@ namespace Datos._ERP_DataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `Linea` (`descripcion`) VALUES (@descripcion)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO `Linea` (`descripcion`) VALUES (@p1)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@descripcion";
+            param.ParameterName = "@p1";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
@@ -9379,18 +9786,18 @@ namespace Datos._ERP_DataSetTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE `Linea` SET `descripcion` = @descripcion WHERE ((`idLinea` = @Original_idL" +
-                "inea) AND (`descripcion` = @Original_descripcion))";
+            this._adapter.UpdateCommand.CommandText = "UPDATE `Linea` SET `descripcion` = @p1 WHERE ((`idLinea` = @p2) AND (`descripcion" +
+                "` = @p3))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@descripcion";
+            param.ParameterName = "@p1";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "descripcion";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_idLinea";
+            param.ParameterName = "@p2";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
@@ -9398,7 +9805,7 @@ namespace Datos._ERP_DataSetTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_descripcion";
+            param.ParameterName = "@p3";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
@@ -9411,7 +9818,7 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
-            this._connection.ConnectionString = "";
+            this._connection.ConnectionString = global::Datos.Properties.Settings.Default.erpdbConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9428,7 +9835,7 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(_ERP_DataSet.LineaDataTable dataTable) {
+        public virtual int Fill(_ERP_DataSet1.LineaDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -9441,9 +9848,9 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual _ERP_DataSet.LineaDataTable GetData() {
+        public virtual _ERP_DataSet1.LineaDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            _ERP_DataSet.LineaDataTable dataTable = new _ERP_DataSet.LineaDataTable();
+            _ERP_DataSet1.LineaDataTable dataTable = new _ERP_DataSet1.LineaDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -9451,14 +9858,14 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(_ERP_DataSet.LineaDataTable dataTable) {
+        public virtual int Update(_ERP_DataSet1.LineaDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(_ERP_DataSet dataSet) {
+        public virtual int Update(_ERP_DataSet1 dataSet) {
             return this.Adapter.Update(dataSet, "Linea");
         }
         
@@ -9481,13 +9888,13 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_idLinea, string Original_descripcion) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_idLinea));
-            if ((Original_descripcion == null)) {
-                throw new global::System.ArgumentNullException("Original_descripcion");
+        public virtual int Delete(int p1, string p2) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(p1));
+            if ((p2 == null)) {
+                throw new global::System.ArgumentNullException("p2");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_descripcion));
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(p2));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -9509,12 +9916,12 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string descripcion) {
-            if ((descripcion == null)) {
-                throw new global::System.ArgumentNullException("descripcion");
+        public virtual int Insert(string p1) {
+            if ((p1 == null)) {
+                throw new global::System.ArgumentNullException("p1");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(descripcion));
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(p1));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -9536,19 +9943,19 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string descripcion, int Original_idLinea, string Original_descripcion) {
-            if ((descripcion == null)) {
-                throw new global::System.ArgumentNullException("descripcion");
+        public virtual int Update(string p1, int p2, string p3) {
+            if ((p1 == null)) {
+                throw new global::System.ArgumentNullException("p1");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(descripcion));
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(p1));
             }
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Original_idLinea));
-            if ((Original_descripcion == null)) {
-                throw new global::System.ArgumentNullException("Original_descripcion");
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(p2));
+            if ((p3 == null)) {
+                throw new global::System.ArgumentNullException("p3");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Original_descripcion));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(p3));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -9694,11 +10101,11 @@ namespace Datos._ERP_DataSetTableAdapters {
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM `Locacion` WHERE ((`idLocacion` = @Original_idLocacion) AND (`descrip" +
-                "cion` = @Original_descripcion) AND (`fCreada` = @Original_fCreada))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM `Locacion` WHERE ((`idLocacion` = @p1) AND (`descripcion` = @p2) AND " +
+                "(`fCreada` = @p3))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_idLocacion";
+            param.ParameterName = "@p1";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
@@ -9706,7 +10113,7 @@ namespace Datos._ERP_DataSetTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_descripcion";
+            param.ParameterName = "@p2";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
@@ -9714,54 +10121,52 @@ namespace Datos._ERP_DataSetTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_fCreada";
-            param.DbType = global::System.Data.DbType.Date;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
+            param.ParameterName = "@p3";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "fCreada";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `Locacion` (`descripcion`, `fCreada`) VALUES (@descripcion, @fCreada)" +
-                "";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO `Locacion` (`descripcion`, `fCreada`) VALUES (@p1, @p2)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@descripcion";
+            param.ParameterName = "@p1";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "descripcion";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@fCreada";
-            param.DbType = global::System.Data.DbType.Date;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
+            param.ParameterName = "@p2";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "fCreada";
             this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE `Locacion` SET `descripcion` = @descripcion, `fCreada` = @fCreada WHERE ((" +
-                "`idLocacion` = @Original_idLocacion) AND (`descripcion` = @Original_descripcion)" +
-                " AND (`fCreada` = @Original_fCreada))";
+            this._adapter.UpdateCommand.CommandText = "UPDATE `Locacion` SET `descripcion` = @p1, `fCreada` = @p2 WHERE ((`idLocacion` =" +
+                " @p3) AND (`descripcion` = @p4) AND (`fCreada` = @p5))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@descripcion";
+            param.ParameterName = "@p1";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "descripcion";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@fCreada";
-            param.DbType = global::System.Data.DbType.Date;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
+            param.ParameterName = "@p2";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "fCreada";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_idLocacion";
+            param.ParameterName = "@p3";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
@@ -9769,7 +10174,7 @@ namespace Datos._ERP_DataSetTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_descripcion";
+            param.ParameterName = "@p4";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
@@ -9777,9 +10182,9 @@ namespace Datos._ERP_DataSetTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_fCreada";
-            param.DbType = global::System.Data.DbType.Date;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
+            param.ParameterName = "@p5";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "fCreada";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
@@ -9790,7 +10195,7 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
-            this._connection.ConnectionString = "";
+            this._connection.ConnectionString = global::Datos.Properties.Settings.Default.erpdbConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9807,7 +10212,7 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(_ERP_DataSet.LocacionDataTable dataTable) {
+        public virtual int Fill(_ERP_DataSet1.LocacionDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -9820,9 +10225,9 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual _ERP_DataSet.LocacionDataTable GetData() {
+        public virtual _ERP_DataSet1.LocacionDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            _ERP_DataSet.LocacionDataTable dataTable = new _ERP_DataSet.LocacionDataTable();
+            _ERP_DataSet1.LocacionDataTable dataTable = new _ERP_DataSet1.LocacionDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -9830,14 +10235,14 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(_ERP_DataSet.LocacionDataTable dataTable) {
+        public virtual int Update(_ERP_DataSet1.LocacionDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(_ERP_DataSet dataSet) {
+        public virtual int Update(_ERP_DataSet1 dataSet) {
             return this.Adapter.Update(dataSet, "Locacion");
         }
         
@@ -9860,15 +10265,20 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_idLocacion, string Original_descripcion, System.DateTime Original_fCreada) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_idLocacion));
-            if ((Original_descripcion == null)) {
-                throw new global::System.ArgumentNullException("Original_descripcion");
+        public virtual int Delete(int p1, string p2, string p3) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(p1));
+            if ((p2 == null)) {
+                throw new global::System.ArgumentNullException("p2");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_descripcion));
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(p2));
             }
-            this.Adapter.DeleteCommand.Parameters[2].Value = ((System.DateTime)(Original_fCreada));
+            if ((p3 == null)) {
+                throw new global::System.ArgumentNullException("p3");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(p3));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -9889,14 +10299,19 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string descripcion, System.DateTime fCreada) {
-            if ((descripcion == null)) {
-                throw new global::System.ArgumentNullException("descripcion");
+        public virtual int Insert(string p1, string p2) {
+            if ((p1 == null)) {
+                throw new global::System.ArgumentNullException("p1");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(descripcion));
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(p1));
             }
-            this.Adapter.InsertCommand.Parameters[1].Value = ((System.DateTime)(fCreada));
+            if ((p2 == null)) {
+                throw new global::System.ArgumentNullException("p2");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(p2));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -9917,22 +10332,32 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string descripcion, System.DateTime fCreada, int Original_idLocacion, string Original_descripcion, System.DateTime Original_fCreada) {
-            if ((descripcion == null)) {
-                throw new global::System.ArgumentNullException("descripcion");
+        public virtual int Update(string p1, string p2, int p3, string p4, string p5) {
+            if ((p1 == null)) {
+                throw new global::System.ArgumentNullException("p1");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(descripcion));
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(p1));
             }
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((System.DateTime)(fCreada));
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Original_idLocacion));
-            if ((Original_descripcion == null)) {
-                throw new global::System.ArgumentNullException("Original_descripcion");
+            if ((p2 == null)) {
+                throw new global::System.ArgumentNullException("p2");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Original_descripcion));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(p2));
             }
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(Original_fCreada));
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(p3));
+            if ((p4 == null)) {
+                throw new global::System.ArgumentNullException("p4");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(p4));
+            }
+            if ((p5 == null)) {
+                throw new global::System.ArgumentNullException("p5");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(p5));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -10072,18 +10497,18 @@ namespace Datos._ERP_DataSetTableAdapters {
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "MateriaPrima";
             tableMapping.ColumnMappings.Add("idMateria", "idMateria");
+            tableMapping.ColumnMappings.Add("Tipo", "Tipo");
             tableMapping.ColumnMappings.Add("descripcion", "descripcion");
-            tableMapping.ColumnMappings.Add("fecha", "fecha");
-            tableMapping.ColumnMappings.Add("unidad", "unidad");
+            tableMapping.ColumnMappings.Add("Fecha", "Fecha");
+            tableMapping.ColumnMappings.Add("cantidad", "cantidad");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM `MateriaPrima` WHERE ((`idMateria` = @Original_idMateria) AND (`descr" +
-                "ipcion` = @Original_descripcion) AND (`fecha` = @Original_fecha) AND (`unidad` =" +
-                " @Original_unidad))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM `MateriaPrima` WHERE ((`idMateria` = @p1) AND (`Tipo` = @p2) AND (`de" +
+                "scripcion` = @p3) AND (`Fecha` = @p4) AND (`cantidad` = @p5))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_idMateria";
+            param.ParameterName = "@p1";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
@@ -10091,7 +10516,15 @@ namespace Datos._ERP_DataSetTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_descripcion";
+            param.ParameterName = "@p2";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.IsNullable = true;
+            param.SourceColumn = "Tipo";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p3";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
@@ -10099,77 +10532,90 @@ namespace Datos._ERP_DataSetTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_fecha";
-            param.DbType = global::System.Data.DbType.Date;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
-            param.IsNullable = true;
-            param.SourceColumn = "fecha";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_unidad";
+            param.ParameterName = "@p4";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "unidad";
+            param.SourceColumn = "Fecha";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p5";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "cantidad";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `MateriaPrima` (`descripcion`, `fecha`, `unidad`) VALUES (@descripcio" +
-                "n, @fecha, @unidad)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO `MateriaPrima` (`Tipo`, `descripcion`, `Fecha`, `cantidad`) VALUES (@" +
+                "p1, @p2, @p3, @p4)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@descripcion";
+            param.ParameterName = "@p1";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.IsNullable = true;
+            param.SourceColumn = "Tipo";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p2";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "descripcion";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@fecha";
-            param.DbType = global::System.Data.DbType.Date;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
-            param.IsNullable = true;
-            param.SourceColumn = "fecha";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@unidad";
+            param.ParameterName = "@p3";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "unidad";
+            param.SourceColumn = "Fecha";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p4";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "cantidad";
             this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE `MateriaPrima` SET `descripcion` = @descripcion, `fecha` = @fecha, `unidad" +
-                "` = @unidad WHERE ((`idMateria` = @Original_idMateria) AND (`descripcion` = @Ori" +
-                "ginal_descripcion) AND (`fecha` = @Original_fecha) AND (`unidad` = @Original_uni" +
-                "dad))";
+            this._adapter.UpdateCommand.CommandText = "UPDATE `MateriaPrima` SET `Tipo` = @p1, `descripcion` = @p2, `Fecha` = @p3, `cant" +
+                "idad` = @p4 WHERE ((`idMateria` = @p5) AND (`Tipo` = @p6) AND (`descripcion` = @" +
+                "p7) AND (`Fecha` = @p8) AND (`cantidad` = @p9))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@descripcion";
+            param.ParameterName = "@p1";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.IsNullable = true;
+            param.SourceColumn = "Tipo";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p2";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "descripcion";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@fecha";
-            param.DbType = global::System.Data.DbType.Date;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
-            param.IsNullable = true;
-            param.SourceColumn = "fecha";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@unidad";
+            param.ParameterName = "@p3";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "unidad";
+            param.SourceColumn = "Fecha";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_idMateria";
+            param.ParameterName = "@p4";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "cantidad";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p5";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
@@ -10177,7 +10623,15 @@ namespace Datos._ERP_DataSetTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_descripcion";
+            param.ParameterName = "@p6";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.IsNullable = true;
+            param.SourceColumn = "Tipo";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p7";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
@@ -10185,19 +10639,19 @@ namespace Datos._ERP_DataSetTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_fecha";
-            param.DbType = global::System.Data.DbType.Date;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
-            param.IsNullable = true;
-            param.SourceColumn = "fecha";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_unidad";
+            param.ParameterName = "@p8";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "unidad";
+            param.SourceColumn = "Fecha";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p9";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "cantidad";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
         }
@@ -10206,7 +10660,7 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
-            this._connection.ConnectionString = "";
+            this._connection.ConnectionString = global::Datos.Properties.Settings.Default.erpdbConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10215,7 +10669,8 @@ namespace Datos._ERP_DataSetTableAdapters {
             this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT `idMateria`, `descripcion`, `fecha`, `unidad` FROM `MateriaPrima`";
+            this._commandCollection[0].CommandText = "SELECT `idMateria`, `Tipo`, `descripcion`, `Fecha`, `cantidad` FROM `MateriaPrima" +
+                "`";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -10223,7 +10678,7 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(_ERP_DataSet.MateriaPrimaDataTable dataTable) {
+        public virtual int Fill(_ERP_DataSet1.MateriaPrimaDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -10236,9 +10691,9 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual _ERP_DataSet.MateriaPrimaDataTable GetData() {
+        public virtual _ERP_DataSet1.MateriaPrimaDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            _ERP_DataSet.MateriaPrimaDataTable dataTable = new _ERP_DataSet.MateriaPrimaDataTable();
+            _ERP_DataSet1.MateriaPrimaDataTable dataTable = new _ERP_DataSet1.MateriaPrimaDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -10246,14 +10701,14 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(_ERP_DataSet.MateriaPrimaDataTable dataTable) {
+        public virtual int Update(_ERP_DataSet1.MateriaPrimaDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(_ERP_DataSet dataSet) {
+        public virtual int Update(_ERP_DataSet1 dataSet) {
             return this.Adapter.Update(dataSet, "MateriaPrima");
         }
         
@@ -10276,21 +10731,27 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_idMateria, string Original_descripcion, System.DateTime Original_fecha, string Original_unidad) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_idMateria));
-            if ((Original_descripcion == null)) {
-                throw new global::System.ArgumentNullException("Original_descripcion");
+        public virtual int Delete(int p1, string p2, string p3, string p4, int p5) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(p1));
+            if ((p2 == null)) {
+                throw new global::System.ArgumentNullException("p2");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_descripcion));
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(p2));
             }
-            this.Adapter.DeleteCommand.Parameters[2].Value = ((System.DateTime)(Original_fecha));
-            if ((Original_unidad == null)) {
-                throw new global::System.ArgumentNullException("Original_unidad");
+            if ((p3 == null)) {
+                throw new global::System.ArgumentNullException("p3");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_unidad));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(p3));
             }
+            if ((p4 == null)) {
+                throw new global::System.ArgumentNullException("p4");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(p4));
+            }
+            this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(p5));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -10311,20 +10772,26 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string descripcion, System.DateTime fecha, string unidad) {
-            if ((descripcion == null)) {
-                throw new global::System.ArgumentNullException("descripcion");
+        public virtual int Insert(string p1, string p2, string p3, int p4) {
+            if ((p1 == null)) {
+                throw new global::System.ArgumentNullException("p1");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(descripcion));
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(p1));
             }
-            this.Adapter.InsertCommand.Parameters[1].Value = ((System.DateTime)(fecha));
-            if ((unidad == null)) {
-                throw new global::System.ArgumentNullException("unidad");
+            if ((p2 == null)) {
+                throw new global::System.ArgumentNullException("p2");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(unidad));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(p2));
             }
+            if ((p3 == null)) {
+                throw new global::System.ArgumentNullException("p3");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(p3));
+            }
+            this.Adapter.InsertCommand.Parameters[3].Value = ((int)(p4));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -10345,34 +10812,46 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string descripcion, System.DateTime fecha, string unidad, int Original_idMateria, string Original_descripcion, System.DateTime Original_fecha, string Original_unidad) {
-            if ((descripcion == null)) {
-                throw new global::System.ArgumentNullException("descripcion");
+        public virtual int Update(string p1, string p2, string p3, int p4, int p5, string p6, string p7, string p8, int p9) {
+            if ((p1 == null)) {
+                throw new global::System.ArgumentNullException("p1");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(descripcion));
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(p1));
             }
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((System.DateTime)(fecha));
-            if ((unidad == null)) {
-                throw new global::System.ArgumentNullException("unidad");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(unidad));
-            }
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_idMateria));
-            if ((Original_descripcion == null)) {
-                throw new global::System.ArgumentNullException("Original_descripcion");
+            if ((p2 == null)) {
+                throw new global::System.ArgumentNullException("p2");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Original_descripcion));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(p2));
             }
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((System.DateTime)(Original_fecha));
-            if ((Original_unidad == null)) {
-                throw new global::System.ArgumentNullException("Original_unidad");
+            if ((p3 == null)) {
+                throw new global::System.ArgumentNullException("p3");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_unidad));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(p3));
             }
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(p4));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(p5));
+            if ((p6 == null)) {
+                throw new global::System.ArgumentNullException("p6");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(p6));
+            }
+            if ((p7 == null)) {
+                throw new global::System.ArgumentNullException("p7");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(p7));
+            }
+            if ((p8 == null)) {
+                throw new global::System.ArgumentNullException("p8");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(p8));
+            }
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(p9));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -10517,11 +10996,10 @@ namespace Datos._ERP_DataSetTableAdapters {
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM `Pedido` WHERE ((`idPedido` = @Original_idPedido) AND (`idCliente` = " +
-                "@Original_idCliente) AND (`fecha` = @Original_fecha))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM `Pedido` WHERE ((`idPedido` = @p1) AND (`idCliente` = @p2))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_idPedido";
+            param.ParameterName = "@p1";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
@@ -10529,61 +11007,50 @@ namespace Datos._ERP_DataSetTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_idCliente";
+            param.ParameterName = "@p2";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
             param.SourceColumn = "idCliente";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_fecha";
-            param.DbType = global::System.Data.DbType.Date;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
-            param.IsNullable = true;
-            param.SourceColumn = "fecha";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `Pedido` (`idCliente`, `fecha`) VALUES (@idCliente, @fecha)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO `Pedido` (`idCliente`, `fecha`) VALUES (@p1, @p2)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@idCliente";
+            param.ParameterName = "@p1";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
             param.SourceColumn = "idCliente";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@fecha";
-            param.DbType = global::System.Data.DbType.Date;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
+            param.ParameterName = "@p2";
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
             param.IsNullable = true;
             param.SourceColumn = "fecha";
             this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE `Pedido` SET `idCliente` = @idCliente, `fecha` = @fecha WHERE ((`idPedido`" +
-                " = @Original_idPedido) AND (`idCliente` = @Original_idCliente) AND (`fecha` = @O" +
-                "riginal_fecha))";
+            this._adapter.UpdateCommand.CommandText = "UPDATE `Pedido` SET `idCliente` = @p1, `fecha` = @p2 WHERE ((`idPedido` = @p3) AN" +
+                "D (`idCliente` = @p4))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@idCliente";
+            param.ParameterName = "@p1";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
             param.SourceColumn = "idCliente";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@fecha";
-            param.DbType = global::System.Data.DbType.Date;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
+            param.ParameterName = "@p2";
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
             param.IsNullable = true;
             param.SourceColumn = "fecha";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_idPedido";
+            param.ParameterName = "@p3";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
@@ -10591,19 +11058,11 @@ namespace Datos._ERP_DataSetTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_idCliente";
+            param.ParameterName = "@p4";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
             param.SourceColumn = "idCliente";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_fecha";
-            param.DbType = global::System.Data.DbType.Date;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
-            param.IsNullable = true;
-            param.SourceColumn = "fecha";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
         }
@@ -10612,7 +11071,7 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
-            this._connection.ConnectionString = "";
+            this._connection.ConnectionString = global::Datos.Properties.Settings.Default.erpdbConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10629,7 +11088,7 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(_ERP_DataSet.PedidoDataTable dataTable) {
+        public virtual int Fill(_ERP_DataSet1.PedidoDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -10642,9 +11101,9 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual _ERP_DataSet.PedidoDataTable GetData() {
+        public virtual _ERP_DataSet1.PedidoDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            _ERP_DataSet.PedidoDataTable dataTable = new _ERP_DataSet.PedidoDataTable();
+            _ERP_DataSet1.PedidoDataTable dataTable = new _ERP_DataSet1.PedidoDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -10652,14 +11111,14 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(_ERP_DataSet.PedidoDataTable dataTable) {
+        public virtual int Update(_ERP_DataSet1.PedidoDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(_ERP_DataSet dataSet) {
+        public virtual int Update(_ERP_DataSet1 dataSet) {
             return this.Adapter.Update(dataSet, "Pedido");
         }
         
@@ -10682,10 +11141,9 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_idPedido, int Original_idCliente, System.DateTime Original_fecha) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_idPedido));
-            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_idCliente));
-            this.Adapter.DeleteCommand.Parameters[2].Value = ((System.DateTime)(Original_fecha));
+        public virtual int Delete(int p1, int p2) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(p1));
+            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(p2));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -10706,9 +11164,14 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int idCliente, System.DateTime fecha) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(idCliente));
-            this.Adapter.InsertCommand.Parameters[1].Value = ((System.DateTime)(fecha));
+        public virtual int Insert(int p1, string p2) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(p1));
+            if ((p2 == null)) {
+                throw new global::System.ArgumentNullException("p2");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(p2));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -10729,12 +11192,16 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int idCliente, System.DateTime fecha, int Original_idPedido, int Original_idCliente, System.DateTime Original_fecha) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(idCliente));
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((System.DateTime)(fecha));
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Original_idPedido));
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_idCliente));
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(Original_fecha));
+        public virtual int Update(int p1, string p2, int p3, int p4) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(p1));
+            if ((p2 == null)) {
+                throw new global::System.ArgumentNullException("p2");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(p2));
+            }
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(p3));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(p4));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -10747,6 +11214,264 @@ namespace Datos._ERP_DataSetTableAdapters {
             finally {
                 if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
                     this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class PedidoFinalTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::MySql.Data.MySqlClient.MySqlDataAdapter _adapter;
+        
+        private global::MySql.Data.MySqlClient.MySqlConnection _connection;
+        
+        private global::MySql.Data.MySqlClient.MySqlTransaction _transaction;
+        
+        private global::MySql.Data.MySqlClient.MySqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public PedidoFinalTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::MySql.Data.MySqlClient.MySqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::MySql.Data.MySqlClient.MySqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::MySql.Data.MySqlClient.MySqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::MySql.Data.MySqlClient.MySqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::MySql.Data.MySqlClient.MySqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::MySql.Data.MySqlClient.MySqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "PedidoFinal";
+            tableMapping.ColumnMappings.Add("idPedido", "idPedido");
+            tableMapping.ColumnMappings.Add("fechaT", "fechaT");
+            tableMapping.ColumnMappings.Add("estado", "estado");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.InsertCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = "INSERT INTO `PedidoFinal` (`idPedido`, `fechaT`, `estado`) VALUES (@p1, @p2, @p3)" +
+                "";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p1";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "idPedido";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p2";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.IsNullable = true;
+            param.SourceColumn = "fechaT";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p3";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.IsNullable = true;
+            param.SourceColumn = "estado";
+            this._adapter.InsertCommand.Parameters.Add(param);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
+            this._connection.ConnectionString = global::Datos.Properties.Settings.Default.erpdbConnectionString1;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
+            this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT `idPedido`, `fechaT`, `estado` FROM `PedidoFinal`";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(_ERP_DataSet1.PedidoFinalDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual _ERP_DataSet1.PedidoFinalDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            _ERP_DataSet1.PedidoFinalDataTable dataTable = new _ERP_DataSet1.PedidoFinalDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(_ERP_DataSet1.PedidoFinalDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(_ERP_DataSet1 dataSet) {
+            return this.Adapter.Update(dataSet, "PedidoFinal");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(int p1, string p2, string p3) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(p1));
+            if ((p2 == null)) {
+                throw new global::System.ArgumentNullException("p2");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(p2));
+            }
+            if ((p3 == null)) {
+                throw new global::System.ArgumentNullException("p3");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(p3));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
                 }
             }
         }
@@ -10882,10 +11607,12 @@ namespace Datos._ERP_DataSetTableAdapters {
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `Planeacion` WHERE ((`idPlaneacion` = @Original_idPlaneacion) AND (`idPedido` = @Original_idPedido) AND (`fInicio` = @Original_fInicio) AND (`fEntrega` = @Original_fEntrega) AND (`status` = @Original_status) AND (`observaciones` = @Original_observaciones))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM `Planeacion` WHERE ((`idPlaneacion` = @p1) AND (`idPedido` = @p2) AND" +
+                " (`fInicio` = @p3) AND (`fEntrega` = @p4) AND (`status` = @p5) AND (`observacion" +
+                "es` = @p6))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_idPlaneacion";
+            param.ParameterName = "@p1";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
@@ -10893,7 +11620,7 @@ namespace Datos._ERP_DataSetTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_idPedido";
+            param.ParameterName = "@p2";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
@@ -10901,7 +11628,7 @@ namespace Datos._ERP_DataSetTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_fInicio";
+            param.ParameterName = "@p3";
             param.DbType = global::System.Data.DbType.Date;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
             param.IsNullable = true;
@@ -10909,7 +11636,7 @@ namespace Datos._ERP_DataSetTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_fEntrega";
+            param.ParameterName = "@p4";
             param.DbType = global::System.Data.DbType.Date;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
             param.IsNullable = true;
@@ -10917,15 +11644,15 @@ namespace Datos._ERP_DataSetTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_status";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.ParameterName = "@p5";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "status";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_observaciones";
+            param.ParameterName = "@p6";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
@@ -10935,38 +11662,38 @@ namespace Datos._ERP_DataSetTableAdapters {
             this._adapter.InsertCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO `Planeacion` (`idPedido`, `fInicio`, `fEntrega`, `status`, `observaci" +
-                "ones`) VALUES (@idPedido, @fInicio, @fEntrega, @status, @observaciones)";
+                "ones`) VALUES (@p1, @p2, @p3, @p4, @p5)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@idPedido";
+            param.ParameterName = "@p1";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
             param.SourceColumn = "idPedido";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@fInicio";
+            param.ParameterName = "@p2";
             param.DbType = global::System.Data.DbType.Date;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
             param.IsNullable = true;
             param.SourceColumn = "fInicio";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@fEntrega";
+            param.ParameterName = "@p3";
             param.DbType = global::System.Data.DbType.Date;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
             param.IsNullable = true;
             param.SourceColumn = "fEntrega";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@status";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.ParameterName = "@p4";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "status";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@observaciones";
+            param.ParameterName = "@p5";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
@@ -10974,45 +11701,45 @@ namespace Datos._ERP_DataSetTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE `Planeacion` SET `idPedido` = @idPedido, `fInicio` = @fInicio, `fEntrega` = @fEntrega, `status` = @status, `observaciones` = @observaciones WHERE ((`idPlaneacion` = @Original_idPlaneacion) AND (`idPedido` = @Original_idPedido) AND (`fInicio` = @Original_fInicio) AND (`fEntrega` = @Original_fEntrega) AND (`status` = @Original_status) AND (`observaciones` = @Original_observaciones))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE `Planeacion` SET `idPedido` = @p1, `fInicio` = @p2, `fEntrega` = @p3, `status` = @p4, `observaciones` = @p5 WHERE ((`idPlaneacion` = @p6) AND (`idPedido` = @p7) AND (`fInicio` = @p8) AND (`fEntrega` = @p9) AND (`status` = @p10) AND (`observaciones` = @p11))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@idPedido";
+            param.ParameterName = "@p1";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
             param.SourceColumn = "idPedido";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@fInicio";
+            param.ParameterName = "@p2";
             param.DbType = global::System.Data.DbType.Date;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
             param.IsNullable = true;
             param.SourceColumn = "fInicio";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@fEntrega";
+            param.ParameterName = "@p3";
             param.DbType = global::System.Data.DbType.Date;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
             param.IsNullable = true;
             param.SourceColumn = "fEntrega";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@status";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.ParameterName = "@p4";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "status";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@observaciones";
+            param.ParameterName = "@p5";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "observaciones";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_idPlaneacion";
+            param.ParameterName = "@p6";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
@@ -11020,7 +11747,7 @@ namespace Datos._ERP_DataSetTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_idPedido";
+            param.ParameterName = "@p7";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
@@ -11028,7 +11755,7 @@ namespace Datos._ERP_DataSetTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_fInicio";
+            param.ParameterName = "@p8";
             param.DbType = global::System.Data.DbType.Date;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
             param.IsNullable = true;
@@ -11036,7 +11763,7 @@ namespace Datos._ERP_DataSetTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_fEntrega";
+            param.ParameterName = "@p9";
             param.DbType = global::System.Data.DbType.Date;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
             param.IsNullable = true;
@@ -11044,15 +11771,15 @@ namespace Datos._ERP_DataSetTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_status";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.ParameterName = "@p10";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "status";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_observaciones";
+            param.ParameterName = "@p11";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
@@ -11065,7 +11792,7 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
-            this._connection.ConnectionString = "";
+            this._connection.ConnectionString = global::Datos.Properties.Settings.Default.erpdbConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -11083,7 +11810,7 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(_ERP_DataSet.PlaneacionDataTable dataTable) {
+        public virtual int Fill(_ERP_DataSet1.PlaneacionDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -11096,9 +11823,9 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual _ERP_DataSet.PlaneacionDataTable GetData() {
+        public virtual _ERP_DataSet1.PlaneacionDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            _ERP_DataSet.PlaneacionDataTable dataTable = new _ERP_DataSet.PlaneacionDataTable();
+            _ERP_DataSet1.PlaneacionDataTable dataTable = new _ERP_DataSet1.PlaneacionDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -11106,14 +11833,14 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(_ERP_DataSet.PlaneacionDataTable dataTable) {
+        public virtual int Update(_ERP_DataSet1.PlaneacionDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(_ERP_DataSet dataSet) {
+        public virtual int Update(_ERP_DataSet1 dataSet) {
             return this.Adapter.Update(dataSet, "Planeacion");
         }
         
@@ -11136,17 +11863,22 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_idPlaneacion, int Original_idPedido, System.DateTime Original_fInicio, System.DateTime Original_fEntrega, int Original_status, string Original_observaciones) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_idPlaneacion));
-            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_idPedido));
-            this.Adapter.DeleteCommand.Parameters[2].Value = ((System.DateTime)(Original_fInicio));
-            this.Adapter.DeleteCommand.Parameters[3].Value = ((System.DateTime)(Original_fEntrega));
-            this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_status));
-            if ((Original_observaciones == null)) {
-                throw new global::System.ArgumentNullException("Original_observaciones");
+        public virtual int Delete(int p1, int p2, System.DateTime p3, System.DateTime p4, string p5, string p6) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(p1));
+            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(p2));
+            this.Adapter.DeleteCommand.Parameters[2].Value = ((System.DateTime)(p3));
+            this.Adapter.DeleteCommand.Parameters[3].Value = ((System.DateTime)(p4));
+            if ((p5 == null)) {
+                throw new global::System.ArgumentNullException("p5");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((string)(Original_observaciones));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(p5));
+            }
+            if ((p6 == null)) {
+                throw new global::System.ArgumentNullException("p6");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((string)(p6));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -11168,16 +11900,21 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int idPedido, System.DateTime fInicio, System.DateTime fEntrega, int status, string observaciones) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(idPedido));
-            this.Adapter.InsertCommand.Parameters[1].Value = ((System.DateTime)(fInicio));
-            this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(fEntrega));
-            this.Adapter.InsertCommand.Parameters[3].Value = ((int)(status));
-            if ((observaciones == null)) {
-                throw new global::System.ArgumentNullException("observaciones");
+        public virtual int Insert(int p1, System.DateTime p2, System.DateTime p3, string p4, string p5) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(p1));
+            this.Adapter.InsertCommand.Parameters[1].Value = ((System.DateTime)(p2));
+            this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(p3));
+            if ((p4 == null)) {
+                throw new global::System.ArgumentNullException("p4");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(observaciones));
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(p4));
+            }
+            if ((p5 == null)) {
+                throw new global::System.ArgumentNullException("p5");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(p5));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -11199,27 +11936,37 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int idPedido, System.DateTime fInicio, System.DateTime fEntrega, int status, string observaciones, int Original_idPlaneacion, int Original_idPedido, System.DateTime Original_fInicio, System.DateTime Original_fEntrega, int Original_status, string Original_observaciones) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(idPedido));
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((System.DateTime)(fInicio));
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(fEntrega));
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(status));
-            if ((observaciones == null)) {
-                throw new global::System.ArgumentNullException("observaciones");
+        public virtual int Update(int p1, System.DateTime p2, System.DateTime p3, string p4, string p5, int p6, int p7, System.DateTime p8, System.DateTime p9, string p10, string p11) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(p1));
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((System.DateTime)(p2));
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(p3));
+            if ((p4 == null)) {
+                throw new global::System.ArgumentNullException("p4");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(observaciones));
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(p4));
             }
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_idPlaneacion));
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_idPedido));
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((System.DateTime)(Original_fInicio));
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((System.DateTime)(Original_fEntrega));
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_status));
-            if ((Original_observaciones == null)) {
-                throw new global::System.ArgumentNullException("Original_observaciones");
+            if ((p5 == null)) {
+                throw new global::System.ArgumentNullException("p5");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_observaciones));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(p5));
+            }
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(p6));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(p7));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((System.DateTime)(p8));
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((System.DateTime)(p9));
+            if ((p10 == null)) {
+                throw new global::System.ArgumentNullException("p10");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(p10));
+            }
+            if ((p11 == null)) {
+                throw new global::System.ArgumentNullException("p11");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(p11));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -11362,16 +12109,19 @@ namespace Datos._ERP_DataSetTableAdapters {
             tableMapping.ColumnMappings.Add("idProduccion", "idProduccion");
             tableMapping.ColumnMappings.Add("idPlaneacion", "idPlaneacion");
             tableMapping.ColumnMappings.Add("fInicio", "fInicio");
+            tableMapping.ColumnMappings.Add("Linea", "Linea");
+            tableMapping.ColumnMappings.Add("Etapa", "Etapa");
             tableMapping.ColumnMappings.Add("fFinal", "fFinal");
+            tableMapping.ColumnMappings.Add("Observaciones", "Observaciones");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM `Produccion` WHERE ((`idProduccion` = @Original_idProduccion) AND (`i" +
-                "dPlaneacion` = @Original_idPlaneacion) AND (`fInicio` = @Original_fInicio) AND (" +
-                "`fFinal` = @Original_fFinal))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM `Produccion` WHERE ((`idProduccion` = @p1) AND (`idPlaneacion` = @p2)" +
+                " AND (`fInicio` = @p3) AND (`Linea` = @p4) AND (`Etapa` = @p5) AND (`fFinal` = @" +
+                "p6) AND (`Observaciones` = @p7))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_idProduccion";
+            param.ParameterName = "@p1";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
@@ -11379,7 +12129,7 @@ namespace Datos._ERP_DataSetTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_idPlaneacion";
+            param.ParameterName = "@p2";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
@@ -11387,7 +12137,7 @@ namespace Datos._ERP_DataSetTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_fInicio";
+            param.ParameterName = "@p3";
             param.DbType = global::System.Data.DbType.Date;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
             param.IsNullable = true;
@@ -11395,66 +12145,132 @@ namespace Datos._ERP_DataSetTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_fFinal";
+            param.ParameterName = "@p4";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.IsNullable = true;
+            param.SourceColumn = "Linea";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p5";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.IsNullable = true;
+            param.SourceColumn = "Etapa";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p6";
             param.DbType = global::System.Data.DbType.Date;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
             param.IsNullable = true;
             param.SourceColumn = "fFinal";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p7";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.IsNullable = true;
+            param.SourceColumn = "Observaciones";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `Produccion` (`idPlaneacion`, `fInicio`, `fFinal`) VALUES (@idPlaneac" +
-                "ion, @fInicio, @fFinal)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO `Produccion` (`idPlaneacion`, `fInicio`, `Linea`, `Etapa`, `fFinal`, " +
+                "`Observaciones`) VALUES (@p1, @p2, @p3, @p4, @p5, @p6)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@idPlaneacion";
+            param.ParameterName = "@p1";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
             param.SourceColumn = "idPlaneacion";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@fInicio";
+            param.ParameterName = "@p2";
             param.DbType = global::System.Data.DbType.Date;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
             param.IsNullable = true;
             param.SourceColumn = "fInicio";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@fFinal";
+            param.ParameterName = "@p3";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.IsNullable = true;
+            param.SourceColumn = "Linea";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p4";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.IsNullable = true;
+            param.SourceColumn = "Etapa";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p5";
             param.DbType = global::System.Data.DbType.Date;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
             param.IsNullable = true;
             param.SourceColumn = "fFinal";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p6";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.IsNullable = true;
+            param.SourceColumn = "Observaciones";
             this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE `Produccion` SET `idPlaneacion` = @idPlaneacion, `fInicio` = @fInicio, `fFinal` = @fFinal WHERE ((`idProduccion` = @Original_idProduccion) AND (`idPlaneacion` = @Original_idPlaneacion) AND (`fInicio` = @Original_fInicio) AND (`fFinal` = @Original_fFinal))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE `Produccion` SET `idPlaneacion` = @p1, `fInicio` = @p2, `Linea` = @p3, `Etapa` = @p4, `fFinal` = @p5, `Observaciones` = @p6 WHERE ((`idProduccion` = @p7) AND (`idPlaneacion` = @p8) AND (`fInicio` = @p9) AND (`Linea` = @p10) AND (`Etapa` = @p11) AND (`fFinal` = @p12) AND (`Observaciones` = @p13))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@idPlaneacion";
+            param.ParameterName = "@p1";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
             param.SourceColumn = "idPlaneacion";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@fInicio";
+            param.ParameterName = "@p2";
             param.DbType = global::System.Data.DbType.Date;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
             param.IsNullable = true;
             param.SourceColumn = "fInicio";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@fFinal";
+            param.ParameterName = "@p3";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.IsNullable = true;
+            param.SourceColumn = "Linea";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p4";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.IsNullable = true;
+            param.SourceColumn = "Etapa";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p5";
             param.DbType = global::System.Data.DbType.Date;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
             param.IsNullable = true;
             param.SourceColumn = "fFinal";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_idProduccion";
+            param.ParameterName = "@p6";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.IsNullable = true;
+            param.SourceColumn = "Observaciones";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p7";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
@@ -11462,7 +12278,7 @@ namespace Datos._ERP_DataSetTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_idPlaneacion";
+            param.ParameterName = "@p8";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
@@ -11470,7 +12286,7 @@ namespace Datos._ERP_DataSetTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_fInicio";
+            param.ParameterName = "@p9";
             param.DbType = global::System.Data.DbType.Date;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
             param.IsNullable = true;
@@ -11478,11 +12294,35 @@ namespace Datos._ERP_DataSetTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_fFinal";
+            param.ParameterName = "@p10";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.IsNullable = true;
+            param.SourceColumn = "Linea";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p11";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.IsNullable = true;
+            param.SourceColumn = "Etapa";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p12";
             param.DbType = global::System.Data.DbType.Date;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
             param.IsNullable = true;
             param.SourceColumn = "fFinal";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p13";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.IsNullable = true;
+            param.SourceColumn = "Observaciones";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
         }
@@ -11491,7 +12331,7 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
-            this._connection.ConnectionString = "";
+            this._connection.ConnectionString = global::Datos.Properties.Settings.Default.erpdbConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -11500,7 +12340,8 @@ namespace Datos._ERP_DataSetTableAdapters {
             this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT `idProduccion`, `idPlaneacion`, `fInicio`, `fFinal` FROM `Produccion`";
+            this._commandCollection[0].CommandText = "SELECT `idProduccion`, `idPlaneacion`, `fInicio`, `Linea`, `Etapa`, `fFinal`, `Ob" +
+                "servaciones` FROM `Produccion`";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -11508,7 +12349,7 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(_ERP_DataSet.ProduccionDataTable dataTable) {
+        public virtual int Fill(_ERP_DataSet1.ProduccionDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -11521,9 +12362,9 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual _ERP_DataSet.ProduccionDataTable GetData() {
+        public virtual _ERP_DataSet1.ProduccionDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            _ERP_DataSet.ProduccionDataTable dataTable = new _ERP_DataSet.ProduccionDataTable();
+            _ERP_DataSet1.ProduccionDataTable dataTable = new _ERP_DataSet1.ProduccionDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -11531,14 +12372,14 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(_ERP_DataSet.ProduccionDataTable dataTable) {
+        public virtual int Update(_ERP_DataSet1.ProduccionDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(_ERP_DataSet dataSet) {
+        public virtual int Update(_ERP_DataSet1 dataSet) {
             return this.Adapter.Update(dataSet, "Produccion");
         }
         
@@ -11561,11 +12402,29 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_idProduccion, int Original_idPlaneacion, System.DateTime Original_fInicio, System.DateTime Original_fFinal) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_idProduccion));
-            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_idPlaneacion));
-            this.Adapter.DeleteCommand.Parameters[2].Value = ((System.DateTime)(Original_fInicio));
-            this.Adapter.DeleteCommand.Parameters[3].Value = ((System.DateTime)(Original_fFinal));
+        public virtual int Delete(int p1, int p2, System.DateTime p3, string p4, string p5, System.DateTime p6, string p7) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(p1));
+            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(p2));
+            this.Adapter.DeleteCommand.Parameters[2].Value = ((System.DateTime)(p3));
+            if ((p4 == null)) {
+                throw new global::System.ArgumentNullException("p4");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(p4));
+            }
+            if ((p5 == null)) {
+                throw new global::System.ArgumentNullException("p5");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(p5));
+            }
+            this.Adapter.DeleteCommand.Parameters[5].Value = ((System.DateTime)(p6));
+            if ((p7 == null)) {
+                throw new global::System.ArgumentNullException("p7");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(p7));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -11586,10 +12445,28 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int idPlaneacion, System.DateTime fInicio, System.DateTime fFinal) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(idPlaneacion));
-            this.Adapter.InsertCommand.Parameters[1].Value = ((System.DateTime)(fInicio));
-            this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(fFinal));
+        public virtual int Insert(int p1, System.DateTime p2, string p3, string p4, System.DateTime p5, string p6) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(p1));
+            this.Adapter.InsertCommand.Parameters[1].Value = ((System.DateTime)(p2));
+            if ((p3 == null)) {
+                throw new global::System.ArgumentNullException("p3");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(p3));
+            }
+            if ((p4 == null)) {
+                throw new global::System.ArgumentNullException("p4");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(p4));
+            }
+            this.Adapter.InsertCommand.Parameters[4].Value = ((System.DateTime)(p5));
+            if ((p6 == null)) {
+                throw new global::System.ArgumentNullException("p6");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(p6));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -11610,14 +12487,50 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int idPlaneacion, System.DateTime fInicio, System.DateTime fFinal, int Original_idProduccion, int Original_idPlaneacion, System.DateTime Original_fInicio, System.DateTime Original_fFinal) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(idPlaneacion));
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((System.DateTime)(fInicio));
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(fFinal));
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_idProduccion));
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_idPlaneacion));
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((System.DateTime)(Original_fInicio));
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((System.DateTime)(Original_fFinal));
+        public virtual int Update(int p1, System.DateTime p2, string p3, string p4, System.DateTime p5, string p6, int p7, int p8, System.DateTime p9, string p10, string p11, System.DateTime p12, string p13) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(p1));
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((System.DateTime)(p2));
+            if ((p3 == null)) {
+                throw new global::System.ArgumentNullException("p3");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(p3));
+            }
+            if ((p4 == null)) {
+                throw new global::System.ArgumentNullException("p4");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(p4));
+            }
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(p5));
+            if ((p6 == null)) {
+                throw new global::System.ArgumentNullException("p6");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(p6));
+            }
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(p7));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(p8));
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((System.DateTime)(p9));
+            if ((p10 == null)) {
+                throw new global::System.ArgumentNullException("p10");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(p10));
+            }
+            if ((p11 == null)) {
+                throw new global::System.ArgumentNullException("p11");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(p11));
+            }
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((System.DateTime)(p12));
+            if ((p13 == null)) {
+                throw new global::System.ArgumentNullException("p13");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(p13));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -11763,12 +12676,11 @@ namespace Datos._ERP_DataSetTableAdapters {
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM `Producto` WHERE ((`idProducto` = @Original_idProducto) AND (`descrip" +
-                "cion` = @Original_descripcion) AND (`fecha` = @Original_fecha) AND (`destino` = " +
-                "@Original_destino))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM `Producto` WHERE ((`idProducto` = @p1) AND (`descripcion` = @p2) AND " +
+                "(`fecha` = @p3) AND (`destino` = @p4))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_idProducto";
+            param.ParameterName = "@p1";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
@@ -11776,7 +12688,7 @@ namespace Datos._ERP_DataSetTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_descripcion";
+            param.ParameterName = "@p2";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
@@ -11784,7 +12696,7 @@ namespace Datos._ERP_DataSetTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_fecha";
+            param.ParameterName = "@p3";
             param.DbType = global::System.Data.DbType.Date;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
             param.IsNullable = true;
@@ -11792,7 +12704,7 @@ namespace Datos._ERP_DataSetTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_destino";
+            param.ParameterName = "@p4";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
@@ -11801,25 +12713,25 @@ namespace Datos._ERP_DataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `Producto` (`descripcion`, `fecha`, `destino`) VALUES (@descripcion, " +
-                "@fecha, @destino)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO `Producto` (`descripcion`, `fecha`, `destino`) VALUES (@p1, @p2, @p3)" +
+                "";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@descripcion";
+            param.ParameterName = "@p1";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "descripcion";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@fecha";
+            param.ParameterName = "@p2";
             param.DbType = global::System.Data.DbType.Date;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
             param.IsNullable = true;
             param.SourceColumn = "fecha";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@destino";
+            param.ParameterName = "@p3";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
@@ -11827,34 +12739,33 @@ namespace Datos._ERP_DataSetTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE `Producto` SET `descripcion` = @descripcion, `fecha` = @fecha, `destino` =" +
-                " @destino WHERE ((`idProducto` = @Original_idProducto) AND (`descripcion` = @Ori" +
-                "ginal_descripcion) AND (`fecha` = @Original_fecha) AND (`destino` = @Original_de" +
-                "stino))";
+            this._adapter.UpdateCommand.CommandText = "UPDATE `Producto` SET `descripcion` = @p1, `fecha` = @p2, `destino` = @p3 WHERE (" +
+                "(`idProducto` = @p4) AND (`descripcion` = @p5) AND (`fecha` = @p6) AND (`destino" +
+                "` = @p7))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@descripcion";
+            param.ParameterName = "@p1";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "descripcion";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@fecha";
+            param.ParameterName = "@p2";
             param.DbType = global::System.Data.DbType.Date;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
             param.IsNullable = true;
             param.SourceColumn = "fecha";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@destino";
+            param.ParameterName = "@p3";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "destino";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_idProducto";
+            param.ParameterName = "@p4";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
@@ -11862,7 +12773,7 @@ namespace Datos._ERP_DataSetTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_descripcion";
+            param.ParameterName = "@p5";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
@@ -11870,7 +12781,7 @@ namespace Datos._ERP_DataSetTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_fecha";
+            param.ParameterName = "@p6";
             param.DbType = global::System.Data.DbType.Date;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
             param.IsNullable = true;
@@ -11878,7 +12789,7 @@ namespace Datos._ERP_DataSetTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_destino";
+            param.ParameterName = "@p7";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
@@ -11891,7 +12802,7 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
-            this._connection.ConnectionString = "";
+            this._connection.ConnectionString = global::Datos.Properties.Settings.Default.erpdbConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -11908,7 +12819,7 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(_ERP_DataSet.ProductoDataTable dataTable) {
+        public virtual int Fill(_ERP_DataSet1.ProductoDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -11921,9 +12832,9 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual _ERP_DataSet.ProductoDataTable GetData() {
+        public virtual _ERP_DataSet1.ProductoDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            _ERP_DataSet.ProductoDataTable dataTable = new _ERP_DataSet.ProductoDataTable();
+            _ERP_DataSet1.ProductoDataTable dataTable = new _ERP_DataSet1.ProductoDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -11931,14 +12842,14 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(_ERP_DataSet.ProductoDataTable dataTable) {
+        public virtual int Update(_ERP_DataSet1.ProductoDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(_ERP_DataSet dataSet) {
+        public virtual int Update(_ERP_DataSet1 dataSet) {
             return this.Adapter.Update(dataSet, "Producto");
         }
         
@@ -11961,20 +12872,20 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_idProducto, string Original_descripcion, System.DateTime Original_fecha, string Original_destino) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_idProducto));
-            if ((Original_descripcion == null)) {
-                throw new global::System.ArgumentNullException("Original_descripcion");
+        public virtual int Delete(int p1, string p2, System.DateTime p3, string p4) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(p1));
+            if ((p2 == null)) {
+                throw new global::System.ArgumentNullException("p2");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_descripcion));
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(p2));
             }
-            this.Adapter.DeleteCommand.Parameters[2].Value = ((System.DateTime)(Original_fecha));
-            if ((Original_destino == null)) {
-                throw new global::System.ArgumentNullException("Original_destino");
+            this.Adapter.DeleteCommand.Parameters[2].Value = ((System.DateTime)(p3));
+            if ((p4 == null)) {
+                throw new global::System.ArgumentNullException("p4");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_destino));
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(p4));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -11996,19 +12907,19 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string descripcion, System.DateTime fecha, string destino) {
-            if ((descripcion == null)) {
-                throw new global::System.ArgumentNullException("descripcion");
+        public virtual int Insert(string p1, System.DateTime p2, string p3) {
+            if ((p1 == null)) {
+                throw new global::System.ArgumentNullException("p1");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(descripcion));
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(p1));
             }
-            this.Adapter.InsertCommand.Parameters[1].Value = ((System.DateTime)(fecha));
-            if ((destino == null)) {
-                throw new global::System.ArgumentNullException("destino");
+            this.Adapter.InsertCommand.Parameters[1].Value = ((System.DateTime)(p2));
+            if ((p3 == null)) {
+                throw new global::System.ArgumentNullException("p3");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(destino));
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(p3));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -12030,379 +12941,33 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string descripcion, System.DateTime fecha, string destino, int Original_idProducto, string Original_descripcion, System.DateTime Original_fecha, string Original_destino) {
-            if ((descripcion == null)) {
-                throw new global::System.ArgumentNullException("descripcion");
+        public virtual int Update(string p1, System.DateTime p2, string p3, int p4, string p5, System.DateTime p6, string p7) {
+            if ((p1 == null)) {
+                throw new global::System.ArgumentNullException("p1");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(descripcion));
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(p1));
             }
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((System.DateTime)(fecha));
-            if ((destino == null)) {
-                throw new global::System.ArgumentNullException("destino");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(destino));
-            }
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_idProducto));
-            if ((Original_descripcion == null)) {
-                throw new global::System.ArgumentNullException("Original_descripcion");
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((System.DateTime)(p2));
+            if ((p3 == null)) {
+                throw new global::System.ArgumentNullException("p3");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Original_descripcion));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(p3));
             }
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((System.DateTime)(Original_fecha));
-            if ((Original_destino == null)) {
-                throw new global::System.ArgumentNullException("Original_destino");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_destino));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
-            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.UpdateCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.UpdateCommand.Connection.Close();
-                }
-            }
-        }
-    }
-    
-    /// <summary>
-    ///Represents the connection and commands used to retrieve and save data.
-    ///</summary>
-    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
-    [global::System.ComponentModel.ToolboxItem(true)]
-    [global::System.ComponentModel.DataObjectAttribute(true)]
-    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
-    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class PruebaTableAdapter : global::System.ComponentModel.Component {
-        
-        private global::MySql.Data.MySqlClient.MySqlDataAdapter _adapter;
-        
-        private global::MySql.Data.MySqlClient.MySqlConnection _connection;
-        
-        private global::MySql.Data.MySqlClient.MySqlTransaction _transaction;
-        
-        private global::MySql.Data.MySqlClient.MySqlCommand[] _commandCollection;
-        
-        private bool _clearBeforeFill;
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public PruebaTableAdapter() {
-            this.ClearBeforeFill = true;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected internal global::MySql.Data.MySqlClient.MySqlDataAdapter Adapter {
-            get {
-                if ((this._adapter == null)) {
-                    this.InitAdapter();
-                }
-                return this._adapter;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        internal global::MySql.Data.MySqlClient.MySqlConnection Connection {
-            get {
-                if ((this._connection == null)) {
-                    this.InitConnection();
-                }
-                return this._connection;
-            }
-            set {
-                this._connection = value;
-                if ((this.Adapter.InsertCommand != null)) {
-                    this.Adapter.InsertCommand.Connection = value;
-                }
-                if ((this.Adapter.DeleteCommand != null)) {
-                    this.Adapter.DeleteCommand.Connection = value;
-                }
-                if ((this.Adapter.UpdateCommand != null)) {
-                    this.Adapter.UpdateCommand.Connection = value;
-                }
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    if ((this.CommandCollection[i] != null)) {
-                        ((global::MySql.Data.MySqlClient.MySqlCommand)(this.CommandCollection[i])).Connection = value;
-                    }
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        internal global::MySql.Data.MySqlClient.MySqlTransaction Transaction {
-            get {
-                return this._transaction;
-            }
-            set {
-                this._transaction = value;
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    this.CommandCollection[i].Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.DeleteCommand != null))) {
-                    this.Adapter.DeleteCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.InsertCommand != null))) {
-                    this.Adapter.InsertCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.UpdateCommand != null))) {
-                    this.Adapter.UpdateCommand.Transaction = this._transaction;
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected global::MySql.Data.MySqlClient.MySqlCommand[] CommandCollection {
-            get {
-                if ((this._commandCollection == null)) {
-                    this.InitCommandCollection();
-                }
-                return this._commandCollection;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public bool ClearBeforeFill {
-            get {
-                return this._clearBeforeFill;
-            }
-            set {
-                this._clearBeforeFill = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitAdapter() {
-            this._adapter = new global::MySql.Data.MySqlClient.MySqlDataAdapter();
-            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
-            tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "Prueba";
-            tableMapping.ColumnMappings.Add("id", "id");
-            tableMapping.ColumnMappings.Add("texto", "texto");
-            this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.DeleteCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
-            this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM `Prueba` WHERE ((`id` = @Original_id) AND (`texto` = @Original_texto)" +
-                ")";
-            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_id";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "id";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_texto";
-            param.DbType = global::System.Data.DbType.String;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            param.IsNullable = true;
-            param.SourceColumn = "texto";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            this._adapter.InsertCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
-            this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `Prueba` (`texto`) VALUES (@texto)";
-            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@texto";
-            param.DbType = global::System.Data.DbType.String;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            param.IsNullable = true;
-            param.SourceColumn = "texto";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            this._adapter.UpdateCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
-            this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE `Prueba` SET `texto` = @texto WHERE ((`id` = @Original_id) AND (`texto` = " +
-                "@Original_texto))";
-            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@texto";
-            param.DbType = global::System.Data.DbType.String;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            param.IsNullable = true;
-            param.SourceColumn = "texto";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_id";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "id";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_texto";
-            param.DbType = global::System.Data.DbType.String;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            param.IsNullable = true;
-            param.SourceColumn = "texto";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitConnection() {
-            this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
-            this._connection.ConnectionString = "";
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitCommandCollection() {
-            this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
-            this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
-            this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT `id`, `texto` FROM `Prueba`";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(_ERP_DataSet.PruebaDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual _ERP_DataSet.PruebaDataTable GetData() {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            _ERP_DataSet.PruebaDataTable dataTable = new _ERP_DataSet.PruebaDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(_ERP_DataSet.PruebaDataTable dataTable) {
-            return this.Adapter.Update(dataTable);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(_ERP_DataSet dataSet) {
-            return this.Adapter.Update(dataSet, "Prueba");
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow dataRow) {
-            return this.Adapter.Update(new global::System.Data.DataRow[] {
-                        dataRow});
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow[] dataRows) {
-            return this.Adapter.Update(dataRows);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_id, string Original_texto) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_id));
-            if ((Original_texto == null)) {
-                throw new global::System.ArgumentNullException("Original_texto");
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(p4));
+            if ((p5 == null)) {
+                throw new global::System.ArgumentNullException("p5");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_texto));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(p5));
             }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
-            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.DeleteCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.DeleteCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string texto) {
-            if ((texto == null)) {
-                throw new global::System.ArgumentNullException("texto");
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((System.DateTime)(p6));
+            if ((p7 == null)) {
+                throw new global::System.ArgumentNullException("p7");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(texto));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
-            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.InsertCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.InsertCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string texto, int Original_id, string Original_texto) {
-            if ((texto == null)) {
-                throw new global::System.ArgumentNullException("texto");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(texto));
-            }
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Original_id));
-            if ((Original_texto == null)) {
-                throw new global::System.ArgumentNullException("Original_texto");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Original_texto));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(p7));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -12552,46 +13117,45 @@ namespace Datos._ERP_DataSetTableAdapters {
             this._adapter.InsertCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO `RegistroMovimiento` (`fecha`, `idUsuario`, `idMateria`, `idLocacion`" +
-                ", `cantidad`, `tipo`) VALUES (@fecha, @idUsuario, @idMateria, @idLocacion, @cant" +
-                "idad, @tipo)";
+                ", `cantidad`, `tipo`) VALUES (@p1, @p2, @p3, @p4, @p5, @p6)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@fecha";
+            param.ParameterName = "@p1";
             param.DbType = global::System.Data.DbType.Date;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
             param.IsNullable = true;
             param.SourceColumn = "fecha";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@idUsuario";
+            param.ParameterName = "@p2";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
             param.SourceColumn = "idUsuario";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@idMateria";
+            param.ParameterName = "@p3";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
             param.SourceColumn = "idMateria";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@idLocacion";
+            param.ParameterName = "@p4";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
             param.SourceColumn = "idLocacion";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@cantidad";
+            param.ParameterName = "@p5";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
             param.SourceColumn = "cantidad";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@tipo";
+            param.ParameterName = "@p6";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
@@ -12603,7 +13167,7 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
-            this._connection.ConnectionString = "";
+            this._connection.ConnectionString = global::Datos.Properties.Settings.Default.erpdbConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -12621,7 +13185,7 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(_ERP_DataSet.RegistroMovimientoDataTable dataTable) {
+        public virtual int Fill(_ERP_DataSet1.RegistroMovimientoDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -12634,9 +13198,9 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual _ERP_DataSet.RegistroMovimientoDataTable GetData() {
+        public virtual _ERP_DataSet1.RegistroMovimientoDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            _ERP_DataSet.RegistroMovimientoDataTable dataTable = new _ERP_DataSet.RegistroMovimientoDataTable();
+            _ERP_DataSet1.RegistroMovimientoDataTable dataTable = new _ERP_DataSet1.RegistroMovimientoDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -12644,14 +13208,14 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(_ERP_DataSet.RegistroMovimientoDataTable dataTable) {
+        public virtual int Update(_ERP_DataSet1.RegistroMovimientoDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(_ERP_DataSet dataSet) {
+        public virtual int Update(_ERP_DataSet1 dataSet) {
             return this.Adapter.Update(dataSet, "RegistroMovimiento");
         }
         
@@ -12674,17 +13238,17 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(System.DateTime fecha, int idUsuario, int idMateria, int idLocacion, int cantidad, string tipo) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((System.DateTime)(fecha));
-            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(idUsuario));
-            this.Adapter.InsertCommand.Parameters[2].Value = ((int)(idMateria));
-            this.Adapter.InsertCommand.Parameters[3].Value = ((int)(idLocacion));
-            this.Adapter.InsertCommand.Parameters[4].Value = ((int)(cantidad));
-            if ((tipo == null)) {
-                throw new global::System.ArgumentNullException("tipo");
+        public virtual int Insert(System.DateTime p1, int p2, int p3, int p4, int p5, string p6) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((System.DateTime)(p1));
+            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(p2));
+            this.Adapter.InsertCommand.Parameters[2].Value = ((int)(p3));
+            this.Adapter.InsertCommand.Parameters[3].Value = ((int)(p4));
+            this.Adapter.InsertCommand.Parameters[4].Value = ((int)(p5));
+            if ((p6 == null)) {
+                throw new global::System.ArgumentNullException("p6");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(tipo));
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(p6));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -12829,11 +13393,10 @@ namespace Datos._ERP_DataSetTableAdapters {
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM `Usuario` WHERE ((`idUsuario` = @Original_idUsuario) AND (`password` " +
-                "= @Original_password))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM `Usuario` WHERE ((`idUsuario` = @p1) AND (`password` = @p2))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_idUsuario";
+            param.ParameterName = "@p1";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
@@ -12841,7 +13404,7 @@ namespace Datos._ERP_DataSetTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_password";
+            param.ParameterName = "@p2";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
@@ -12850,10 +13413,10 @@ namespace Datos._ERP_DataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `Usuario` (`password`) VALUES (@password)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO `Usuario` (`password`) VALUES (@p1)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@password";
+            param.ParameterName = "@p1";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
@@ -12861,18 +13424,18 @@ namespace Datos._ERP_DataSetTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE `Usuario` SET `password` = @password WHERE ((`idUsuario` = @Original_idUsu" +
-                "ario) AND (`password` = @Original_password))";
+            this._adapter.UpdateCommand.CommandText = "UPDATE `Usuario` SET `password` = @p1 WHERE ((`idUsuario` = @p2) AND (`password` " +
+                "= @p3))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@password";
+            param.ParameterName = "@p1";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "password";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_idUsuario";
+            param.ParameterName = "@p2";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
@@ -12880,7 +13443,7 @@ namespace Datos._ERP_DataSetTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_password";
+            param.ParameterName = "@p3";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
@@ -12893,7 +13456,7 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
-            this._connection.ConnectionString = "";
+            this._connection.ConnectionString = global::Datos.Properties.Settings.Default.erpdbConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -12910,7 +13473,7 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(_ERP_DataSet.UsuarioDataTable dataTable) {
+        public virtual int Fill(_ERP_DataSet1.UsuarioDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -12923,9 +13486,9 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual _ERP_DataSet.UsuarioDataTable GetData() {
+        public virtual _ERP_DataSet1.UsuarioDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            _ERP_DataSet.UsuarioDataTable dataTable = new _ERP_DataSet.UsuarioDataTable();
+            _ERP_DataSet1.UsuarioDataTable dataTable = new _ERP_DataSet1.UsuarioDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -12933,14 +13496,14 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(_ERP_DataSet.UsuarioDataTable dataTable) {
+        public virtual int Update(_ERP_DataSet1.UsuarioDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(_ERP_DataSet dataSet) {
+        public virtual int Update(_ERP_DataSet1 dataSet) {
             return this.Adapter.Update(dataSet, "Usuario");
         }
         
@@ -12963,13 +13526,13 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_idUsuario, string Original_password) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_idUsuario));
-            if ((Original_password == null)) {
-                throw new global::System.ArgumentNullException("Original_password");
+        public virtual int Delete(int p1, string p2) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(p1));
+            if ((p2 == null)) {
+                throw new global::System.ArgumentNullException("p2");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_password));
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(p2));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -12991,12 +13554,12 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string password) {
-            if ((password == null)) {
-                throw new global::System.ArgumentNullException("password");
+        public virtual int Insert(string p1) {
+            if ((p1 == null)) {
+                throw new global::System.ArgumentNullException("p1");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(password));
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(p1));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -13018,19 +13581,19 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string password, int Original_idUsuario, string Original_password) {
-            if ((password == null)) {
-                throw new global::System.ArgumentNullException("password");
+        public virtual int Update(string p1, int p2, string p3) {
+            if ((p1 == null)) {
+                throw new global::System.ArgumentNullException("p1");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(password));
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(p1));
             }
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Original_idUsuario));
-            if ((Original_password == null)) {
-                throw new global::System.ArgumentNullException("Original_password");
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(p2));
+            if ((p3 == null)) {
+                throw new global::System.ArgumentNullException("p3");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Original_password));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(p3));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -13079,13 +13642,13 @@ namespace Datos._ERP_DataSetTableAdapters {
         
         private PedidoTableAdapter _pedidoTableAdapter;
         
+        private PedidoFinalTableAdapter _pedidoFinalTableAdapter;
+        
         private PlaneacionTableAdapter _planeacionTableAdapter;
         
         private ProduccionTableAdapter _produccionTableAdapter;
         
         private ProductoTableAdapter _productoTableAdapter;
-        
-        private PruebaTableAdapter _pruebaTableAdapter;
         
         private RegistroMovimientoTableAdapter _registroMovimientoTableAdapter;
         
@@ -13237,6 +13800,20 @@ namespace Datos._ERP_DataSetTableAdapters {
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
+        public PedidoFinalTableAdapter PedidoFinalTableAdapter {
+            get {
+                return this._pedidoFinalTableAdapter;
+            }
+            set {
+                this._pedidoFinalTableAdapter = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
         public PlaneacionTableAdapter PlaneacionTableAdapter {
             get {
                 return this._planeacionTableAdapter;
@@ -13271,20 +13848,6 @@ namespace Datos._ERP_DataSetTableAdapters {
             }
             set {
                 this._productoTableAdapter = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
-            "a", "System.Drawing.Design.UITypeEditor")]
-        public PruebaTableAdapter PruebaTableAdapter {
-            get {
-                return this._pruebaTableAdapter;
-            }
-            set {
-                this._pruebaTableAdapter = value;
             }
         }
         
@@ -13371,6 +13934,10 @@ namespace Datos._ERP_DataSetTableAdapters {
                             && (this._pedidoTableAdapter.Connection != null))) {
                     return this._pedidoTableAdapter.Connection;
                 }
+                if (((this._pedidoFinalTableAdapter != null) 
+                            && (this._pedidoFinalTableAdapter.Connection != null))) {
+                    return this._pedidoFinalTableAdapter.Connection;
+                }
                 if (((this._planeacionTableAdapter != null) 
                             && (this._planeacionTableAdapter.Connection != null))) {
                     return this._planeacionTableAdapter.Connection;
@@ -13382,10 +13949,6 @@ namespace Datos._ERP_DataSetTableAdapters {
                 if (((this._productoTableAdapter != null) 
                             && (this._productoTableAdapter.Connection != null))) {
                     return this._productoTableAdapter.Connection;
-                }
-                if (((this._pruebaTableAdapter != null) 
-                            && (this._pruebaTableAdapter.Connection != null))) {
-                    return this._pruebaTableAdapter.Connection;
                 }
                 if (((this._registroMovimientoTableAdapter != null) 
                             && (this._registroMovimientoTableAdapter.Connection != null))) {
@@ -13435,6 +13998,9 @@ namespace Datos._ERP_DataSetTableAdapters {
                 if ((this._pedidoTableAdapter != null)) {
                     count = (count + 1);
                 }
+                if ((this._pedidoFinalTableAdapter != null)) {
+                    count = (count + 1);
+                }
                 if ((this._planeacionTableAdapter != null)) {
                     count = (count + 1);
                 }
@@ -13442,9 +14008,6 @@ namespace Datos._ERP_DataSetTableAdapters {
                     count = (count + 1);
                 }
                 if ((this._productoTableAdapter != null)) {
-                    count = (count + 1);
-                }
-                if ((this._pruebaTableAdapter != null)) {
                     count = (count + 1);
                 }
                 if ((this._registroMovimientoTableAdapter != null)) {
@@ -13462,7 +14025,7 @@ namespace Datos._ERP_DataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateUpdatedRows(_ERP_DataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(_ERP_DataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._clienteTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Cliente.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
@@ -13572,21 +14135,21 @@ namespace Datos._ERP_DataSetTableAdapters {
                     allChangedRows.AddRange(updatedRows);
                 }
             }
+            if ((this._pedidoFinalTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.PedidoFinal.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._pedidoFinalTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             if ((this._produccionTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Produccion.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._produccionTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._pruebaTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Prueba.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._pruebaTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -13607,7 +14170,7 @@ namespace Datos._ERP_DataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateInsertedRows(_ERP_DataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(_ERP_DataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._clienteTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Cliente.Select(null, null, global::System.Data.DataViewRowState.Added);
@@ -13705,19 +14268,19 @@ namespace Datos._ERP_DataSetTableAdapters {
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._pedidoFinalTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.PedidoFinal.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._pedidoFinalTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             if ((this._produccionTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Produccion.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._produccionTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._pruebaTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Prueba.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._pruebaTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -13737,7 +14300,7 @@ namespace Datos._ERP_DataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateDeletedRows(_ERP_DataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(_ERP_DataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             if ((this._registroMovimientoTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.RegistroMovimiento.Select(null, null, global::System.Data.DataViewRowState.Deleted);
@@ -13747,19 +14310,19 @@ namespace Datos._ERP_DataSetTableAdapters {
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._pruebaTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Prueba.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._pruebaTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._produccionTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Produccion.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._produccionTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._pedidoFinalTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.PedidoFinal.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._pedidoFinalTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -13891,7 +14454,7 @@ namespace Datos._ERP_DataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public virtual int UpdateAll(_ERP_DataSet dataSet) {
+        public virtual int UpdateAll(_ERP_DataSet1 dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
@@ -13943,6 +14506,11 @@ namespace Datos._ERP_DataSetTableAdapters {
                 throw new global::System.ArgumentException("Todos los TableAdapters administrados por un TableAdapterManager deben usar la mi" +
                         "sma cadena de conexión.");
             }
+            if (((this._pedidoFinalTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._pedidoFinalTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("Todos los TableAdapters administrados por un TableAdapterManager deben usar la mi" +
+                        "sma cadena de conexión.");
+            }
             if (((this._planeacionTableAdapter != null) 
                         && (this.MatchTableAdapterConnection(this._planeacionTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("Todos los TableAdapters administrados por un TableAdapterManager deben usar la mi" +
@@ -13955,11 +14523,6 @@ namespace Datos._ERP_DataSetTableAdapters {
             }
             if (((this._productoTableAdapter != null) 
                         && (this.MatchTableAdapterConnection(this._productoTableAdapter.Connection) == false))) {
-                throw new global::System.ArgumentException("Todos los TableAdapters administrados por un TableAdapterManager deben usar la mi" +
-                        "sma cadena de conexión.");
-            }
-            if (((this._pruebaTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._pruebaTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("Todos los TableAdapters administrados por un TableAdapterManager deben usar la mi" +
                         "sma cadena de conexión.");
             }
@@ -14086,6 +14649,15 @@ namespace Datos._ERP_DataSetTableAdapters {
                         adaptersWithAcceptChangesDuringUpdate.Add(this._pedidoTableAdapter.Adapter);
                     }
                 }
+                if ((this._pedidoFinalTableAdapter != null)) {
+                    revertConnections.Add(this._pedidoFinalTableAdapter, this._pedidoFinalTableAdapter.Connection);
+                    this._pedidoFinalTableAdapter.Connection = ((global::MySql.Data.MySqlClient.MySqlConnection)(workConnection));
+                    this._pedidoFinalTableAdapter.Transaction = ((global::MySql.Data.MySqlClient.MySqlTransaction)(workTransaction));
+                    if (this._pedidoFinalTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._pedidoFinalTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._pedidoFinalTableAdapter.Adapter);
+                    }
+                }
                 if ((this._planeacionTableAdapter != null)) {
                     revertConnections.Add(this._planeacionTableAdapter, this._planeacionTableAdapter.Connection);
                     this._planeacionTableAdapter.Connection = ((global::MySql.Data.MySqlClient.MySqlConnection)(workConnection));
@@ -14111,15 +14683,6 @@ namespace Datos._ERP_DataSetTableAdapters {
                     if (this._productoTableAdapter.Adapter.AcceptChangesDuringUpdate) {
                         this._productoTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
                         adaptersWithAcceptChangesDuringUpdate.Add(this._productoTableAdapter.Adapter);
-                    }
-                }
-                if ((this._pruebaTableAdapter != null)) {
-                    revertConnections.Add(this._pruebaTableAdapter, this._pruebaTableAdapter.Connection);
-                    this._pruebaTableAdapter.Connection = ((global::MySql.Data.MySqlClient.MySqlConnection)(workConnection));
-                    this._pruebaTableAdapter.Transaction = ((global::MySql.Data.MySqlClient.MySqlTransaction)(workTransaction));
-                    if (this._pruebaTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._pruebaTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._pruebaTableAdapter.Adapter);
                     }
                 }
                 if ((this._registroMovimientoTableAdapter != null)) {
@@ -14234,6 +14797,10 @@ namespace Datos._ERP_DataSetTableAdapters {
                     this._pedidoTableAdapter.Connection = ((global::MySql.Data.MySqlClient.MySqlConnection)(revertConnections[this._pedidoTableAdapter]));
                     this._pedidoTableAdapter.Transaction = null;
                 }
+                if ((this._pedidoFinalTableAdapter != null)) {
+                    this._pedidoFinalTableAdapter.Connection = ((global::MySql.Data.MySqlClient.MySqlConnection)(revertConnections[this._pedidoFinalTableAdapter]));
+                    this._pedidoFinalTableAdapter.Transaction = null;
+                }
                 if ((this._planeacionTableAdapter != null)) {
                     this._planeacionTableAdapter.Connection = ((global::MySql.Data.MySqlClient.MySqlConnection)(revertConnections[this._planeacionTableAdapter]));
                     this._planeacionTableAdapter.Transaction = null;
@@ -14245,10 +14812,6 @@ namespace Datos._ERP_DataSetTableAdapters {
                 if ((this._productoTableAdapter != null)) {
                     this._productoTableAdapter.Connection = ((global::MySql.Data.MySqlClient.MySqlConnection)(revertConnections[this._productoTableAdapter]));
                     this._productoTableAdapter.Transaction = null;
-                }
-                if ((this._pruebaTableAdapter != null)) {
-                    this._pruebaTableAdapter.Connection = ((global::MySql.Data.MySqlClient.MySqlConnection)(revertConnections[this._pruebaTableAdapter]));
-                    this._pruebaTableAdapter.Transaction = null;
                 }
                 if ((this._registroMovimientoTableAdapter != null)) {
                     this._registroMovimientoTableAdapter.Connection = ((global::MySql.Data.MySqlClient.MySqlConnection)(revertConnections[this._registroMovimientoTableAdapter]));

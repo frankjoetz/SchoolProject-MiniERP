@@ -18,7 +18,7 @@ namespace Datos
         //
         public Conexion()
         {
-            this.cadenadeconexion = Settings.Default.erpdbConnectionString;
+            this.cadenadeconexion = Settings.Default.erpdbConnectionString1;
             conn = new MySqlConnection(cadenadeconexion);
         }
         public Boolean conectar() //abrir conexion

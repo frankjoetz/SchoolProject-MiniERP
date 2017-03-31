@@ -28,22 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgvBuscar = new System.Windows.Forms.DataGridView();
+            this.dgvPedidoFinal = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.txtNom = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBuscar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPedidoFinal)).BeginInit();
             this.SuspendLayout();
             // 
-            // dgvBuscar
+            // dgvPedidoFinal
             // 
-            this.dgvBuscar.BackgroundColor = System.Drawing.SystemColors.ControlLight;
-            this.dgvBuscar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBuscar.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvBuscar.Location = new System.Drawing.Point(12, 80);
-            this.dgvBuscar.MultiSelect = false;
-            this.dgvBuscar.Name = "dgvBuscar";
-            this.dgvBuscar.Size = new System.Drawing.Size(975, 150);
-            this.dgvBuscar.TabIndex = 4;
+            this.dgvPedidoFinal.BackgroundColor = System.Drawing.SystemColors.ControlLight;
+            this.dgvPedidoFinal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPedidoFinal.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgvPedidoFinal.Location = new System.Drawing.Point(12, 80);
+            this.dgvPedidoFinal.MultiSelect = false;
+            this.dgvPedidoFinal.Name = "dgvPedidoFinal";
+            this.dgvPedidoFinal.Size = new System.Drawing.Size(975, 150);
+            this.dgvPedidoFinal.TabIndex = 4;
             // 
             // label1
             // 
@@ -73,12 +73,12 @@
             this.ClientSize = new System.Drawing.Size(999, 242);
             this.Controls.Add(this.txtNom);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dgvBuscar);
+            this.Controls.Add(this.dgvPedidoFinal);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "PedidosFinal";
             this.Text = "BUSCAR UN CLIENTE";
-            this.Load += new System.EventHandler(this.BCliente_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBuscar)).EndInit();
+            this.Load += new System.EventHandler(this.PedidosFinal_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPedidoFinal)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -86,7 +86,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dgvBuscar;
+        private System.Windows.Forms.DataGridView dgvPedidoFinal;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtNom;
     }

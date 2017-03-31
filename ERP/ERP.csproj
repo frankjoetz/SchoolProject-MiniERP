@@ -67,26 +67,6 @@
     <Compile Include="Dashboard\Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="erpdbDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>erpdbDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="erpdbDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>erpdbDataSet1.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="erpdbDataSet2.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>erpdbDataSet2.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="erpdbDataSet31.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>erpdbDataSet31.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,11 +78,6 @@
     </Compile>
     <Compile Include="Ingenieria\Ingenieria.Designer.cs">
       <DependentUpon>Ingenieria.cs</DependentUpon>
-    </Compile>
-    <Compile Include="inventarioproducto.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>inventarioproducto.xsd</DependentUpon>
     </Compile>
     <Compile Include="Planeacion\Planeacion.cs">
       <SubType>Form</SubType>
@@ -176,61 +151,6 @@
       <DependentUpon>Ventas.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
-    <None Include="erpdbDataSet.xsc">
-      <DependentUpon>erpdbDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="erpdbDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>erpdbDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="erpdbDataSet.xss">
-      <DependentUpon>erpdbDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="erpdbDataSet1.xsc">
-      <DependentUpon>erpdbDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="erpdbDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>erpdbDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="erpdbDataSet1.xss">
-      <DependentUpon>erpdbDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="erpdbDataSet2.xsc">
-      <DependentUpon>erpdbDataSet2.xsd</DependentUpon>
-    </None>
-    <None Include="erpdbDataSet2.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>erpdbDataSet2.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="erpdbDataSet2.xss">
-      <DependentUpon>erpdbDataSet2.xsd</DependentUpon>
-    </None>
-    <None Include="erpdbDataSet31.xsc">
-      <DependentUpon>erpdbDataSet31.xsd</DependentUpon>
-    </None>
-    <None Include="erpdbDataSet31.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>erpdbDataSet31.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="erpdbDataSet31.xss">
-      <DependentUpon>erpdbDataSet31.xsd</DependentUpon>
-    </None>
-    <None Include="inventarioproducto.xsc">
-      <DependentUpon>inventarioproducto.xsd</DependentUpon>
-    </None>
-    <None Include="inventarioproducto.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>inventarioproducto.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="inventarioproducto.xss">
-      <DependentUpon>inventarioproducto.xsd</DependentUpon>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
