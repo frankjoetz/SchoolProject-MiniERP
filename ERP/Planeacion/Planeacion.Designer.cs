@@ -295,7 +295,7 @@
             this.dateBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dateBuscar.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateBuscar.Location = new System.Drawing.Point(115, 77);
+            this.dateBuscar.Location = new System.Drawing.Point(106, 31);
             this.dateBuscar.Name = "dateBuscar";
             this.dateBuscar.Size = new System.Drawing.Size(584, 26);
             this.dateBuscar.TabIndex = 4;
@@ -305,7 +305,7 @@
             this.txtPedido.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPedido.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPedido.Location = new System.Drawing.Point(115, 33);
+            this.txtPedido.Location = new System.Drawing.Point(106, 77);
             this.txtPedido.Name = "txtPedido";
             this.txtPedido.Size = new System.Drawing.Size(584, 26);
             this.txtPedido.TabIndex = 3;
@@ -315,7 +315,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(6, 82);
+            this.label9.Location = new System.Drawing.Point(6, 36);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(94, 21);
             this.label9.TabIndex = 1;
@@ -327,7 +327,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(6, 36);
+            this.label8.Location = new System.Drawing.Point(21, 80);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(79, 21);
             this.label8.TabIndex = 0;
