@@ -21,22 +21,22 @@ namespace ERP.Ventas
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            int status = 0;
-            if (chbStatus.Checked)
-            {
-                status = 1;
-                bool result = mV.altaCliente(txtNombre.Text, txtApe.Text, txtEmpresa.Text, Int32.Parse(txtTel.Text), txtDir.Text, txtEmail.Text, status);
-                if (result)
-                {
-                    MessageBox.Show("Si se pudo!");
-                    this.Dispose();
-                }
-            }
-            else
-            {
-                MessageBox.Show("Se pudo, pero el cliente esta muerto");
-                this.Dispose();
-            }
+            //int status = 0;
+            //if (chbStatus.Checked)
+            //{
+            //    status = 1;
+            //    bool result = mV.altaCliente(txtNombre.Text, txtApe.Text, txtEmpresa.Text, Int32.Parse(txtTel.Text), txtDir.Text, txtEmail.Text, status);
+            //    if (result)
+            //    {
+            //        MessageBox.Show("Si se pudo!");
+            //        this.Dispose();
+            //    }
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Se pudo, pero el cliente esta muerto");
+            //    this.Dispose();
+            //}
             
         }
     }
