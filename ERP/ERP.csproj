@@ -79,6 +79,12 @@
     <Compile Include="Ingenieria\Ingenieria.Designer.cs">
       <DependentUpon>Ingenieria.cs</DependentUpon>
     </Compile>
+    <Compile Include="LogIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LogIn.Designer.cs">
+      <DependentUpon>LogIn.cs</DependentUpon>
+    </Compile>
     <Compile Include="Planeacion\Planeacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +131,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Ingenieria\Report1.rdlc" />
     <EmbeddedResource Include="Ingenieria\Report2.rdlc" />
+    <EmbeddedResource Include="LogIn.resx">
+      <DependentUpon>LogIn.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Planeacion\Planeacion.resx">
       <DependentUpon>Planeacion.cs</DependentUpon>
     </EmbeddedResource>

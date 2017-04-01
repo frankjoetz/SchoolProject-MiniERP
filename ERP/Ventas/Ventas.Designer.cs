@@ -190,7 +190,7 @@
             this.btnAceptar.ForeColor = System.Drawing.Color.Black;
             this.btnAceptar.Location = new System.Drawing.Point(313, 314);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(102, 23);
+            this.btnAceptar.Size = new System.Drawing.Size(102, 26);
             this.btnAceptar.TabIndex = 7;
             this.btnAceptar.Text = "ACEPTAR";
             this.btnAceptar.UseVisualStyleBackColor = true;
