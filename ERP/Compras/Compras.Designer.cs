@@ -1,6 +1,6 @@
-﻿namespace ERP.Almacen
+﻿namespace ERP.Compras
 {
-    partial class Almacen
+    partial class Compras
     {
         /// <summary>
         /// Required designer variable.
