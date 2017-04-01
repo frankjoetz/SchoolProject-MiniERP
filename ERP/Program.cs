@@ -17,14 +17,8 @@ namespace ERP
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            try
-            {
-                Application.Run(new Home());
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("No se puede conectar a la base de datos. \nRevise su conexion a internet paro");     
-            }
+            Application.Run(new Home());
+            
             
         }
     }
