@@ -50,7 +50,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtFecha = new System.Windows.Forms.TextBox();
             this.txtDesc = new System.Windows.Forms.TextBox();
             this.idmateriatxt = new System.Windows.Forms.TextBox();
             this.btnagregarmp = new System.Windows.Forms.Button();
@@ -90,6 +89,7 @@
             this.inventarioproducto = new ERP.inventarioproducto();
             this.inventarioproductoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.inventarioProductoTableAdapter = new ERP.erpdbDataSet3TableAdapters.InventarioProductoTableAdapter();
+            this.txtFecha = new System.Windows.Forms.DateTimePicker();
             this.ingenieriatc.SuspendLayout();
             this.ingenieriaform.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -127,6 +127,7 @@
             // ingenieriaform
             // 
             this.ingenieriaform.AutoScroll = true;
+            this.ingenieriaform.Controls.Add(this.txtFecha);
             this.ingenieriaform.Controls.Add(this.btnmodificar);
             this.ingenieriaform.Controls.Add(this.btneliminar);
             this.ingenieriaform.Controls.Add(this.groupBox1);
@@ -138,7 +139,6 @@
             this.ingenieriaform.Controls.Add(this.label3);
             this.ingenieriaform.Controls.Add(this.label2);
             this.ingenieriaform.Controls.Add(this.label1);
-            this.ingenieriaform.Controls.Add(this.txtFecha);
             this.ingenieriaform.Controls.Add(this.txtDesc);
             this.ingenieriaform.Controls.Add(this.idmateriatxt);
             this.ingenieriaform.Controls.Add(this.btnagregarmp);
@@ -161,7 +161,6 @@
             this.btnmodificar.Text = "Modificar";
             this.btnmodificar.UseVisualStyleBackColor = true;
             this.btnmodificar.Visible = false;
-            //this.btnmodificar.Click += new System.EventHandler(this.btnmodificar_Click);
             // 
             // btneliminar
             // 
@@ -202,7 +201,7 @@
             this.txttipo.Location = new System.Drawing.Point(191, 242);
             this.txttipo.Margin = new System.Windows.Forms.Padding(4);
             this.txttipo.Name = "txttipo";
-            this.txttipo.Size = new System.Drawing.Size(148, 24);
+            this.txttipo.Size = new System.Drawing.Size(200, 24);
             this.txttipo.TabIndex = 11;
             // 
             // label6
@@ -299,7 +298,7 @@
             this.unidadtxt.Location = new System.Drawing.Point(191, 203);
             this.unidadtxt.Margin = new System.Windows.Forms.Padding(4);
             this.unidadtxt.Name = "unidadtxt";
-            this.unidadtxt.Size = new System.Drawing.Size(148, 24);
+            this.unidadtxt.Size = new System.Drawing.Size(200, 24);
             this.unidadtxt.TabIndex = 7;
             // 
             // label3
@@ -335,22 +334,13 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "ID Materia";
             // 
-            // txtFecha
-            // 
-            this.txtFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFecha.Location = new System.Drawing.Point(191, 160);
-            this.txtFecha.Margin = new System.Windows.Forms.Padding(4);
-            this.txtFecha.Name = "txtFecha";
-            this.txtFecha.Size = new System.Drawing.Size(148, 24);
-            this.txtFecha.TabIndex = 3;
-            // 
             // txtDesc
             // 
             this.txtDesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDesc.Location = new System.Drawing.Point(191, 124);
             this.txtDesc.Margin = new System.Windows.Forms.Padding(4);
             this.txtDesc.Name = "txtDesc";
-            this.txtDesc.Size = new System.Drawing.Size(148, 24);
+            this.txtDesc.Size = new System.Drawing.Size(200, 24);
             this.txtDesc.TabIndex = 2;
             // 
             // idmateriatxt
@@ -359,7 +349,7 @@
             this.idmateriatxt.Location = new System.Drawing.Point(191, 84);
             this.idmateriatxt.Margin = new System.Windows.Forms.Padding(4);
             this.idmateriatxt.Name = "idmateriatxt";
-            this.idmateriatxt.Size = new System.Drawing.Size(148, 24);
+            this.idmateriatxt.Size = new System.Drawing.Size(200, 24);
             this.idmateriatxt.TabIndex = 1;
             // 
             // btnagregarmp
@@ -710,6 +700,13 @@
             // 
             this.inventarioProductoTableAdapter.ClearBeforeFill = true;
             // 
+            // txtFecha
+            // 
+            this.txtFecha.Location = new System.Drawing.Point(191, 158);
+            this.txtFecha.Name = "txtFecha";
+            this.txtFecha.Size = new System.Drawing.Size(200, 24);
+            this.txtFecha.TabIndex = 14;
+            // 
             // Ingenieria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -782,7 +779,6 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox txtFecha;
         private System.Windows.Forms.TextBox txttipo;
         private System.Windows.Forms.Label label6;
         private erpdbDataSet1 erpdbDataSet1;
@@ -812,5 +808,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcionDataGridViewTextBoxColumn1;
         private System.Windows.Forms.Button btneliminar;
         private System.Windows.Forms.Button btnmodificar;
+        private System.Windows.Forms.DateTimePicker txtFecha;
     }
 }

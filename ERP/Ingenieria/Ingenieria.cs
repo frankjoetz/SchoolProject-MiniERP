@@ -31,7 +31,7 @@ namespace ERP.Ingenieria
                 idmateriatxt.Clear();
                 txttipo.Clear();
                 txtDesc.Clear();
-                txtFecha.Clear();
+                //txtFecha.Clear();
                 unidadtxt.Clear();
             }
             try
