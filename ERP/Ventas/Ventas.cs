@@ -26,7 +26,7 @@ namespace ERP.Ventas
             cargarTablas(dgvPedido, "select * from Pedido inner join Cliente on Pedido.idCliente = Cliente.idCliente", "Pedido");
         }
 
-        //Load de la ventana////////////////////////////////////////////////////////////
+        //Load de la ventana///////////////////////////////////////////////////////////
         private void timer1_Tick(object sender, EventArgs e)
         {
             lblFH.Text = DateTime.Now.ToString("yyyy-MM-dd");
