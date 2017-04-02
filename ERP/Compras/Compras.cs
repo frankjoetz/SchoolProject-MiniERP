@@ -8,18 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ERP.Compras
+namespace ERP.Almacen
 {
-    public partial class Compras : Form
+    public partial class Almacen : Form
     {
         LogicaDeNegocios.Compras.metodosCompras comp = new LogicaDeNegocios.Compras.metodosCompras();
         
-        public Compras()
+        public Almacen()
         {
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
-            //comp.llenarGridViewLocacion(GridViewLocacion);
-            //comp.llenarGridViewCaptura(GridViewCapturar);
+            comp.llenarGridViewLocacion(GridViewLocacion);
+            comp.llenarGridViewCaptura(GridViewCapturar);
         }
 
         private int idLocacion;
@@ -52,10 +52,10 @@ namespace ERP.Compras
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            //bool loca = comp.altaLocacion(int.Parse(txtIdLocacion.Text), richTxtDescripcion.Text, DTPfechacreado.Value.ToString("yyyy-MM-dd"));
-            //if (loca)
-            //    MessageBox.Show("Locacion agregada correctamente");
-            //comp.llenarGridViewLocacion(GridViewLocacion);
+            bool loca = comp.altaLocacion(int.Parse(txtIdLocacion.Text), richTxtDescripcion.Text, DTPfechacreado.Value.ToString("yyyy-MM-dd"));
+            if (loca)
+                MessageBox.Show("Locacion agregada correctamente");
+            comp.llenarGridViewLocacion(GridViewLocacion);
         }
 
         

@@ -13,55 +13,37 @@ namespace ERP.Ventas
     public partial class Ventas : Form
     {
         LogicaDeNegocios.Ventas.metodosVentas mV = new LogicaDeNegocios.Ventas.metodosVentas();
-        string desc;
+        private string id;
+
+        public string Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+        private string empresa;
+
+        public string Empresa
+        {
+            get { return empresa; }
+            set { empresa = value; }
+        }
+<<<<<<< HEAD
+
+        //Load de la ventana///////////////////////////////////////////////////////////
+        private void timer1_Tick(object sender, EventArgs e)
+=======
         public Ventas()
+>>>>>>> origin/master
         {
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
         }
 
-        private void Ventas_Load(object sender, EventArgs e)
-        {
-            cargarTablas(dgvBuscar, "select * from Cliente", "Cliente");
-            cargarTablas(dgvPedido, "select * from Pedido inner join Cliente on Pedido.idCliente = Cliente.idCliente", "Pedido");
-        }
-
-        //Load de la ventana///////////////////////////////////////////////////////////
         private void timer1_Tick(object sender, EventArgs e)
         {
-            lblFH.Text = DateTime.Now.ToString("yyyy-MM-dd");
-            if (rdbtnID.Checked)
-            {
-                txtIDHis.Enabled = true;
-                txtNomCliHis.Text = "";
-                txtNomCliHis.Enabled = false;
-            }
-            if (rdbtnNC.Checked)
-            {
-                txtNomCliHis.Enabled = true;
-                txtIDHis.Text = "";
-                txtIDHis.Enabled = false;
-            }
+            lblFH.Text = DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss");
         }
 
-        private void timer2_Tick(object sender, EventArgs e)
-        {
-            lblH.Text = DateTime.Now.ToString("hh:mm:ss");
-            if (chkGB.Checked)
-                txtCanGB.Enabled = true;
-            else
-                txtCanGB.Enabled = false;
-            if (chkGM.Checked)
-                txtCanGM.Enabled = true;
-            else
-                txtCanGM.Enabled = false;
-            if (chkGA.Checked)
-                txtCanGA.Enabled = true;
-            else
-                txtCanGA.Enabled = false;
-        }
-
-        //Timers//////////////////////////////////////////////////////////////////////////////////////////
         private void btnAddC_Click(object sender, EventArgs e)
         {
             ACliente agc = new ACliente();
@@ -73,114 +55,68 @@ namespace ERP.Ventas
             tbcVentas.SelectedIndex = 2;
         }
 
-        private void dgvBuscar_Click(object sender, DataGridViewCellEventArgs e)
+        private void btnAceptar_Click(object sender, EventArgs e)
         {
-            txtIDcliente.Text = dgvBuscar.Rows[dgvBuscar.CurrentRow.Index].Cells["idCliente"].Value.ToString();
-            tbcVentas.SelectedIndex = 0;
+            bool result = mV.altaPedido(int.Parse(txtIDcliente.Text), lblFH.Text);
+            bool res = mV.altaDetallesPedido(int.Parse(mV.buscarUnDato("idPedido","Pedido"," order by fecha DESC LIMIT 1")),cmbGamas.SelectedIndex, int.Parse(txtCan.Text), txtaCom.Text);
+            if (result && res)
+                MessageBox.Show("simona la mona");
         }
 
-        //Botones de redireccion/////////////////////////////////////////////////////////////////////////
-        private void txtIDcliente_TextChanged(object sender, EventArgs e)
+        public void cargarPedido(string query)
         {
-            if (txtIDcliente.Text != "")
-            {
-                txtNombre.Text = mV.buscarUnDato("nombre", "Cliente", " where idCliente = " + txtIDcliente.Text);
-                txtEmpresa.Text = mV.buscarUnDato("empresa", "Cliente", " where idCliente = " + txtIDcliente.Text);
-            }
+            DataSet cargar2;
+            cargar2 = mV.cargarPedidos(query);
+            dgvPedido.DataSource = cargar2;
+            dgvPedido.DataMember = "Pedido";
+        }
+        public void cargarClientes(string query)
+        {
+            DataSet cargar;
+            cargar = mV.cargarClientes(query);
+            dgvBuscar.DataSource = cargar;
+            dgvBuscar.DataMember = "Cliente";
+        }
+
+        private void txtIDHis_TextChanged(object sender, EventArgs e)
+        {
+            if (txtIDHis.Text != "")
+                cargarPedido("select Pedido.idPedido, Cliente.idCliente, Cliente.nombre, Cliente.apellidos, Cliente.empresa, Cliente.telefono, Cliente.direccion, Cliente.email, Cliente.statusCliente, Pedido.fecha, DetallePedido.idproducto, DetallePedido.cantidad, DetallePedido.detallepedido from Cliente inner join Pedido on Pedido.idCliente = Cliente.idCliente inner join DetallePedido on DetallePedido.idPedido = Pedido.idPedido where Pedido.idPedido >= " + int.Parse(txtIDHis.Text));
             else
-            {
-                txtNombre.Text = "";
-                txtEmpresa.Text = "";
-            }
+                cargarPedido("select Pedido.idPedido, Cliente.idCliente, Cliente.nombre, Cliente.apellidos, Cliente.empresa, Cliente.telefono, Cliente.direccion, Cliente.email, Cliente.statusCliente, Pedido.fecha, DetallePedido.idproducto, DetallePedido.cantidad, DetallePedido.detallepedido from Cliente inner join Pedido on Pedido.idCliente = Cliente.idCliente inner join DetallePedido on DetallePedido.idPedido = Pedido.idPedido");
         }
 
-        private void txtCliente_TextChanged(object sender, EventArgs e)
+        private void Ventas_Load(object sender, EventArgs e)
+        {
+            cargarPedido("select Pedido.idPedido, Cliente.idCliente, Cliente.nombre, Cliente.apellidos, Cliente.empresa, Cliente.telefono, Cliente.direccion, Cliente.email, Cliente.statusCliente, Pedido.fecha, DetallePedido.idproducto, DetallePedido.cantidad, DetallePedido.detallepedido from Cliente inner join Pedido on Pedido.idCliente = Cliente.idCliente inner join DetallePedido on DetallePedido.idPedido = Pedido.idPedido");
+            cargarClientes("select * from Cliente");
+        }
+        //////////////////////////////////////////////////////////////////
+        private void txtNomb_TextChanged(object sender, EventArgs e)
         {
             if (txtNomb.Text != "")
             {
                 if (txtEmp.Text != "")
                 {
-                    cargarTablas(dgvBuscar, string.Format("select * from Cliente where nombre like '" + txtNomb.Text + "%' and empresa like '" + txtEmp.Text + "%'"), "Cliente");
+                    cargarClientes("select * from Cliente where nombre like '" + txtNomb.Text + "%' and empresa like '" + txtEmpresa.Text + "%'");
                 }
                 else
                 {
-                    cargarTablas(dgvBuscar, string.Format("select * from Cliente where nombre like '" + txtNomb.Text + "%'"), "Cliente");
+                    cargarClientes("select * from Cliente where nombre like '" + txtNomb.Text + "%'");
                 }
             }
             else
             {
-                cargarTablas(dgvBuscar, string.Format("select * from Cliente where empresa like '" + txtEmp.Text + "%'"), "Cliente");
+                cargarClientes("select * from Cliente where empresa like '" + txtEmp.Text + "%'");
             }
         }
 
-        private void dgvPedido_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvBuscar_Click(object sender, DataGridViewCellEventArgs e)
         {
-            txtIDBorrar.Text = dgvPedido.Rows[dgvPedido.CurrentRow.Index].Cells["idPedido"].Value.ToString();
+            txtIDcliente.Text = dgvBuscar.Rows[dgvBuscar.CurrentRow.Index].Cells["idCliente"].Value.ToString();
+            txtEmpresa.Text = dgvBuscar.Rows[dgvBuscar.CurrentRow.Index].Cells["empresa"].Value.ToString();
+            tbcVentas.SelectedIndex = 0;
         }
 
-        private void txtHis_TextChanged(object sender, EventArgs e)
-        {
-            if (txtIDHis.Text != "")
-            {
-                cargarTablas(dgvPedido, "select * from Pedido inner join Cliente on Pedido.idCliente = Cliente.idCliente where Pedido.idPedido >= " + int.Parse(txtIDHis.Text), "Pedido");
-            }
-            if (txtNomCliHis.Text != "")
-            {
-                cargarTablas(dgvPedido, "select * from Pedido inner join Cliente on Pedido.idCliente = Cliente.idCliente where Cliente.nombre like '" + txtNomCliHis.Text + "%'", "Pedido");
-            }
-            else
-                cargarTablas(dgvPedido, "select * from Pedido inner join Cliente on Pedido.idCliente = Cliente.idCliente", "Pedido");
-        }
-
-        //Buscar y/o rellendar campos//////////////////////////////////////////////////////////////////////////////////////
-        private void btnAceptar_Click(object sender, EventArgs e)
-        {
-            string status = "En proceso";
-            int cGB =0,cGM = 0,cGA=0;
-            if (txtCanGB.Text != "")
-                cGB = int.Parse(txtCanGB.Text);
-            if (txtCanGM.Text != "")
-                cGM = int.Parse(txtCanGM.Text);
-            if (txtCanGA.Text != "")
-                cGA = int.Parse(txtCanGA.Text);
-            string values = string.Format(int.Parse(txtIDcliente.Text) + ",'" + lblFH.Text + "','" + status + "'," + cGB + "," + cGM + "," + cGA + ",'" + txtaCom.Text+"'");
-            bool result = mV.altaTabla("Pedido(idCliente,Fecha,Status,CantGamaBaja,CantGamaMedia,CantGamaAlta,Observacion)", values);
-            if (result)
-            {
-                MessageBox.Show("simona la mona");
-                cargarTablas(dgvPedido,"select * from Pedido inner join Cliente on Pedido.idCliente = Cliente.idCliente" ,"Pedido");
-                txtIDcliente.Text = "";
-                txtCanGB.Text = "";
-                txtCanGM.Text = "";
-                txtCanGA.Text = "";
-                chkGB.Checked = false;
-                chkGM.Checked = false;
-                chkGA.Checked = false;
-                txtaCom.Text = "";
-            }
-        }
-
-        //Insercion/////////////////////////////////////////////////////////////////////////////////////
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            bool actu = mV.actuTabla("Pedido", "Status = 'Cancelado'", "where idPedido = " + int.Parse(txtIDBorrar.Text));
-            if (actu)
-                MessageBox.Show("Actualizado");
-            else
-                MessageBox.Show("Error");
-            cargarTablas(dgvPedido, "select * from Pedido inner join Cliente on Pedido.idCliente = Cliente.idCliente", "Pedido");
-
-        }
-
-        //Actualizacion//////////////////////////////////////////////////////////////////////////////////////
-        //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-        public void cargarTablas(DataGridView dgv, string query, string tablas)
-        {
-            DataSet cargar;
-            cargar = mV.cargarTablas(query, tablas);
-            dgv.DataSource = cargar;
-            dgv.DataMember = tablas;
-        }
     }
 }

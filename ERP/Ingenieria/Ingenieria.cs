@@ -31,11 +31,12 @@ namespace ERP.Ingenieria
                 idmateriatxt.Clear();
                 txttipo.Clear();
                 txtDesc.Clear();
-                txtFecha.Clear();
+                //txtFecha.Clear();
                 unidadtxt.Clear();
             }
             try
             {
+                this.materiaPrimaTableAdapter.FillBy(this.erpdbDataSet1.MateriaPrima);
             }
             catch (System.Exception ex)
             {
@@ -57,7 +58,9 @@ namespace ERP.Ingenieria
         private void Ingenieria_Load(object sender, EventArgs e)
         {
             // TODO: esta línea de código carga datos en la tabla 'erpdbDataSet3.InventarioProducto' Puede moverla o quitarla según sea necesario.
+            this.inventarioProductoTableAdapter.Fill(this.erpdbDataSet3.InventarioProducto);
             // TODO: esta línea de código carga datos en la tabla 'erpdbDataSet1.MateriaPrima' Puede moverla o quitarla según sea necesario.
+            this.materiaPrimaTableAdapter.Fill(this.erpdbDataSet1.MateriaPrima);
             // TODO: esta línea de código carga datos en la tabla 'erpdbDataSet2.MateriaPrima' Puede moverla o quitarla según sea necesario.
             //this.materiaPrimaTableAdapter.Fill(this.erpdbDataSet1.MateriaPrima);
 
@@ -83,6 +86,7 @@ namespace ERP.Ingenieria
                 MessageBox.Show("Se inserto con exito");
                 try
                 {
+                    this.inventarioProductoTableAdapter.FillBy(this.erpdbDataSet3.InventarioProducto);
                 }
                 catch (System.Exception ex)
                 {
@@ -123,6 +127,7 @@ namespace ERP.Ingenieria
             }
             try
             {
+                this.materiaPrimaTableAdapter.FillBy(this.erpdbDataSet1.MateriaPrima);
             }
             catch (System.Exception ex)
             {
