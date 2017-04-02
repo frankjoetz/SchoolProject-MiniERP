@@ -13,10 +13,11 @@ namespace Datos
 {
     public class BaseDeDatos
     {
-        // Atributo conexión almacenará la conexión a la BD.
-        private MySqlConnection conexion;
+        //// Atributo conexión almacenará la conexión a la BD.
+        //private MySqlConnection conexion;
         // Atributo que almacenará temporalmente el query en cada método.
         private MySqlCommand comandoLocal;
+        Conexion conexion;
 
 
         public BaseDeDatos() // Constructor establecerá conexión
@@ -24,7 +25,7 @@ namespace Datos
             // Se carga la cadena y se asigna la conexión
             try
             {
-                conexion = new MySqlConnection(Settings.Default.erpdbConnectionString);
+                conexion = new Conexion();
             }
             catch (Exception)
             {
@@ -32,11 +33,12 @@ namespace Datos
             }
         }
 
+
         private bool ejecutarConsulta(string sqlQuery)
         {
-            conexion.Open(); // Se abre la conexión
+            conexion.conectar(); // Se abre la conexión
             // Se manda como primer parametro la consulta recibida (sqlQuery)
-            comandoLocal = new MySqlCommand(sqlQuery, conexion);
+            comandoLocal = new MySqlCommand(sqlQuery, conexion.conn);
 
             /* El método "ExecuteNonQuery" retorna un entero con la cantidad
              * de filas afectadas, en caso de ser distinto a 1, se ejecutó 
@@ -45,12 +47,12 @@ namespace Datos
 
             if (comandoLocal.ExecuteNonQuery() != 0)
             {
-                conexion.Close();
+                conexion.Desconectar();
                 return true;
             }
             else
             {
-                conexion.Close();
+                conexion.Desconectar();
                 return false;
             }
         }
@@ -95,15 +97,15 @@ namespace Datos
 
         public void llenarTabla(string sqlQuery, DataGridView tabla)
         {
-            conexion.Open();
-            comandoLocal = new MySqlCommand(sqlQuery, conexion);
+            conexion.conectar();
+            comandoLocal = new MySqlCommand(sqlQuery, conexion.conn);
             DataTable datos = new DataTable();
             MySqlDataAdapter adaptador = new MySqlDataAdapter(comandoLocal);
             adaptador.Fill(datos);
             tabla.DataSource = datos;
             tabla.DataMember = datos.TableName;
             tabla.AutoResizeColumns();
-            conexion.Close();
+            conexion.Desconectar();
         }
 
         public void buscarYLlenarTabla(string sqlQuery, DataGridView tablaALlenar)
@@ -113,24 +115,42 @@ namespace Datos
 
         public void llenarComboBox(string consulta, string columna, ComboBox combo)
         {
-            conexion.Open();
-            comandoLocal = new MySqlCommand(consulta, conexion);
-            MySqlDataReader dr = comandoLocal.ExecuteReader();
-            while (dr.Read())
+            MySqlDataReader dr1;
+            try
             {
-                combo.Items.Add(dr.GetString(columna));
+                conexion.conectar();
+                comandoLocal = new MySqlCommand(consulta, conexion.conn);
+                dr1 = comandoLocal.ExecuteReader();
+                while (dr1.Read())
+                {
+                    combo.Items.Add(dr1[columna].ToString());
+                }
+                dr1.Close();
             }
-            conexion.Close();
+            catch (Exception)
+            {
+                
+            }
+            conexion.Desconectar();
         }
 
         public string retornarValor(string consulta, string columna)
         {
-            conexion.Open();
-            comandoLocal = new MySqlCommand(consulta, conexion);
-            MySqlDataReader dr = comandoLocal.ExecuteReader();
-            dr.Read();
-            string valor = dr.GetString(columna);
-            conexion.Close();
+            string valor = "";
+            try
+            {
+                conexion.conectar();
+                comandoLocal = new MySqlCommand(consulta, conexion.conn);
+                MySqlDataReader dr2 = comandoLocal.ExecuteReader();
+                dr2.Read();
+                valor = dr2.GetString(columna);
+                conexion.Desconectar();
+                dr2.Close();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
             return valor;
         }
     }

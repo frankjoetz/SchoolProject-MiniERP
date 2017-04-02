@@ -32,5 +32,27 @@ namespace Datos.Properties {
                 return ((string)(this["erpdbConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("server=tics41.ddns.net;user id=root;database=erpdb;persistsecurityinfo=True;passw" +
+            "ord=pinguino")]
+        public string erpdbConnectionString1 {
+            get {
+                return ((string)(this["erpdbConnectionString1"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("server=tics41.ddns.net;user id=root;password=pinguino;persistsecurityinfo=True;da" +
+            "tabase=erpdb")]
+        public string erpdbConnectionString2 {
+            get {
+                return ((string)(this["erpdbConnectionString2"]));
+            }
+        }
     }
 }
