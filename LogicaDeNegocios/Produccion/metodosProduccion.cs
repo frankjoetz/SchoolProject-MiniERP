@@ -27,11 +27,16 @@ namespace LogicaDeNegocios.Produccion
 
         public void llenarTablaPlaneaciones(DataGridView tablaPlaneacion)
         {
-            bd.llenarTabla("select * from Vista_PlaneacionesAProducir", tablaPlaneacion);
+            bd.llenarTabla("select * from Vista_PlaneacionesAProducir where Status='Listo para producir'", tablaPlaneacion);
         }
 
         public void filtrarTablaPlaneacion(TextBox texto, DataGridView tablaPlaneacion)
         {
+        }
+
+        public void agregarProduccion()
+        {
+
         }
     }
 }

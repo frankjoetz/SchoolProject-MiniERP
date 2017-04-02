@@ -51,7 +51,7 @@ namespace LogicaDeNegocios.Ventas
                 conectar.conn.Close();
                 conectar.Desconectar();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }
