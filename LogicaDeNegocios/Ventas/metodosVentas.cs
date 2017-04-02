@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Datos;
 using MySql.Data.MySqlClient;
+using System.Windows.Forms;
 
 namespace LogicaDeNegocios.Ventas
 {
@@ -14,23 +15,23 @@ namespace LogicaDeNegocios.Ventas
         Conexion conectar = new Conexion();
         BaseDeDatos bd = new BaseDeDatos();
 
-        public bool altaCliente(string nombre, string apellidos, string empresa, int telefono, string direccion, string email, int status)
+        public bool altaTabla(string tabla, string valoresAagregar)
         {
-            if (bd.insertar("insert into Clientes(nombre,apellidos,empresa,telefono,direccion,email,statusCliente) values('" + nombre + "', '" + apellidos + "', '" + empresa + "', " + telefono + ",'"+direccion+"','"+email+"',"+status+")"))
+            if (bd.insertar("insert into "+tabla+" values("+valoresAagregar+")"))
                 return true;
             else
                 return false;
         }
-        public bool altaPedido(int idCliente, string fecha)
+        public bool actuTabla(string tabla, string set,string condicion)
         {
-            if (bd.insertar("insert into Pedido(idCliente,fecha) values(" + idCliente + ",'" + fecha + "')"))
+            if (bd.actualizar("update " + tabla + " set " + set +" "+ condicion))
                 return true;
             else
                 return false;
         }
-        public bool altaDetallesPedido(int idPedido,int idProducto, int cantidad, string observacion)
+        public bool bajasPedido(string query)
         {
-            if (bd.insertar("insert into DetallePedido(idpedido,idproducto,cantidad,detallepedido) values("+idPedido+","+ idProducto + ","+cantidad+",'" + observacion + "')"))
+            if (bd.eliminar(query))
                 return true;
             else
                 return false;
@@ -39,37 +40,26 @@ namespace LogicaDeNegocios.Ventas
         {
             return bd.buscar("select " + columna + " from " + tabla + " "+complemento,columna);
         }
-        public DataSet cargarClientes(string query)
+        public DataSet cargarTablas(string query,string tabla)
         {
-            DataSet erpCli = new DataSet();
+            DataSet erpTab = new DataSet();
             try
             {
                 conectar.conectar();
                 MySqlDataAdapter daCliente = new MySqlDataAdapter(query, conectar.conn);
-                daCliente.Fill(erpCli, "Cliente");
+                daCliente.Fill(erpTab, tabla);
                 conectar.conn.Close();
-            }
-            catch (Exception ex)
-            {
-                
-            }
-            return erpCli;
-        }
-        public DataSet cargarPedidos(string query)
-        {
-            DataSet erpCli = new DataSet();
-            try
-            {
-                conectar.conectar();
-                MySqlDataAdapter daCliente = new MySqlDataAdapter(query, conectar.conn);
-                daCliente.Fill(erpCli, "Pedido");
-                conectar.conn.Close();
+                conectar.Desconectar();
             }
             catch (Exception ex)
             {
 
             }
-            return erpCli;
+            return erpTab;
+        }
+        public void comboBox(string consulta, string columna, ComboBox cbx)
+        {
+            bd.llenarComboBox(consulta, columna, cbx);
         }
     }
 }

@@ -17,7 +17,8 @@ namespace ERP
         public static Planeacion.Planeacion frmPl = new Planeacion.Planeacion();
         public static Ventas.Ventas frmVe = new Ventas.Ventas();
         public static Dashboard.Dashboard frmDsh = new Dashboard.Dashboard();
-        public static Almacen.Almacen frmAlmacen = new Almacen.Almacen();
+        public static Compras.Compras frmCo = new Compras.Compras();
+        public static LogIn frmLogin = new LogIn();
 
         public void esconderForms()
         {
@@ -26,7 +27,7 @@ namespace ERP
             frmPr.Hide();
             frmVe.Hide();
             frmDsh.Hide();
-            frmAlmacen.Hide();
+            frmCo.Hide();
         }
 
         public Home()
@@ -34,13 +35,13 @@ namespace ERP
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
 
+            frmLogin.MdiParent = this;
             frmIn.MdiParent = this;
             frmPl.MdiParent = this;
             frmPr.MdiParent = this;
             frmVe.MdiParent = this;
             frmDsh.MdiParent = this;
-            frmAlmacen.MdiParent = this;
-            
+            frmCo.MdiParent = this;
         }
 
         private void producciónToolStripMenuItem_Click(object sender, EventArgs e)
@@ -86,7 +87,7 @@ namespace ERP
         private void almacenToolStripMenuItem_Click(object sender, EventArgs e)
         {
             esconderForms();
-            frmAlmacen.Show();
+            frmCo.Show();
         }
     }
 }

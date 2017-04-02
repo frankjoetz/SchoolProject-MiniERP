@@ -24,5 +24,14 @@ namespace LogicaDeNegocios.Produccion
         {
             bd.llenarTabla("select * from Produccion order by idProduccion DESC", tablaProduccion);
         }
+
+        public void llenarTablaPlaneaciones(DataGridView tablaPlaneacion)
+        {
+            bd.llenarTabla("select * from Vista_PlaneacionesAProducir", tablaPlaneacion);
+        }
+
+        public void filtrarTablaPlaneacion(TextBox texto, DataGridView tablaPlaneacion)
+        {
+        }
     }
 }

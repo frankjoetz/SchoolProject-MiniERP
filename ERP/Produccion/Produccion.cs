@@ -22,7 +22,7 @@ namespace ERP.Produccion
 
         private void Produccion_Load(object sender, EventArgs e)
         {
-            
+            prod.llenarTablaPlaneaciones(dgvPlaneaciones);
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -44,6 +44,30 @@ namespace ERP.Produccion
         private void groupBox3_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void dgvPlaneaciones_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+        }
+
+        private void dgvPlaneaciones_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            prod.filtrarTablaPlaneacion(txtBuscar, dgvPlaneaciones);
+        }
+
+        private void dgvPlaneaciones_Click(object sender, EventArgs e)
+        {
+
+            DataGridViewRow fila = dgvPlaneaciones.SelectedRows[0];
+
+            txtIdPlaneacion.Text = fila.Cells["idPlaneacion"].Value.ToString();
+
+            lblInfo.Text = "Detalle: Se producirán " + fila.Cells["Cantidad"].Value + " computadoras de " + fila.Cells["Tipo"].Value;
         }
     }
 }

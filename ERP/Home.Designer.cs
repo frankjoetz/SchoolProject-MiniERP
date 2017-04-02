@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.strpHome = new System.Windows.Forms.MenuStrip();
             this.inicioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ingenieríaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.almacenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -37,27 +37,29 @@
             this.planeaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.producciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dashboardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip1.SuspendLayout();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.strpHome.SuspendLayout();
             this.SuspendLayout();
             // 
-            // menuStrip1
+            // strpHome
             // 
-            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI Light", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.strpHome.Dock = System.Windows.Forms.DockStyle.Left;
+            this.strpHome.Font = new System.Drawing.Font("Segoe UI Light", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.strpHome.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.inicioToolStripMenuItem,
             this.ingenieríaToolStripMenuItem,
             this.almacenToolStripMenuItem,
             this.ventasToolStripMenuItem,
             this.planeaciónToolStripMenuItem,
             this.producciónToolStripMenuItem,
-            this.dashboardToolStripMenuItem});
-            this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(146, 761);
-            this.menuStrip1.TabIndex = 4;
-            this.menuStrip1.Text = "menuStrip1";
+            this.dashboardToolStripMenuItem,
+            this.toolStripMenuItem1});
+            this.strpHome.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
+            this.strpHome.Location = new System.Drawing.Point(0, 0);
+            this.strpHome.Name = "strpHome";
+            this.strpHome.Size = new System.Drawing.Size(146, 761);
+            this.strpHome.TabIndex = 4;
+            this.strpHome.Text = "menuStrip1";
             // 
             // inicioToolStripMenuItem
             // 
@@ -108,32 +110,37 @@
             this.dashboardToolStripMenuItem.Text = "Dashboard";
             this.dashboardToolStripMenuItem.Click += new System.EventHandler(this.dashboardToolStripMenuItem_Click);
             // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(133, 4);
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(984, 761);
-            this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.strpHome);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.Location = new System.Drawing.Point(10, 10);
-            this.MainMenuStrip = this.menuStrip1;
+            this.MainMenuStrip = this.strpHome;
             this.MaximumSize = new System.Drawing.Size(1920, 1080);
-            this.MinimumSize = new System.Drawing.Size(1000, 800);
+            this.MinimumSize = new System.Drawing.Size(1000, 758);
             this.Name = "Home";
             this.Text = "ERP";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Home_Load);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.strpHome.ResumeLayout(false);
+            this.strpHome.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.MenuStrip strpHome;
         private System.Windows.Forms.ToolStripMenuItem producciónToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ingenieríaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem almacenToolStripMenuItem;
@@ -141,6 +148,7 @@
         private System.Windows.Forms.ToolStripMenuItem planeaciónToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem inicioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dashboardToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
     }
 }
 
