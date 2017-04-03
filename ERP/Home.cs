@@ -52,7 +52,7 @@ namespace ERP
 
         private void Home_Load(object sender, EventArgs e)
         {
-
+            frmLogin.Show();
         }
 
         private void ingenieríaToolStripMenuItem_Click(object sender, EventArgs e)
