@@ -21,10 +21,5 @@ namespace ERP
         {
             this.CenterToScreen();
         }
-
-        private void btnIniciarSesion_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-        }
     }
 }
