@@ -119,12 +119,18 @@ namespace ERP.Planeacion
                 else
                     if (comboBoxBuscarPedido.Text == "Nombre")
                     {
-
+                        planeacion.BuscarNombre(GridPedidos, txtBuscarPedido);
                     }
                 else
                     if (comboBoxBuscarPedido.Text == "Empresa")
                     {
+                        planeacion.BuscarEmpresa(GridPedidos, txtBuscarPedido);
+                    }
 
+
+                    if (txtBuscarPedido.Text == "")
+                    {
+                        planeacion.llenarTablaPedidos(GridPedidos);
                     }
             }
             catch (Exception)
