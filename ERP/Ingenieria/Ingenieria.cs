@@ -77,24 +77,24 @@ namespace ERP.Ingenieria
 
         private void btnagregarcomponentes_Click(object sender, EventArgs e)
         {
-            bool result = MIngenieria.altaProducto(int.Parse(txtidproducto.Text), txtdescripcion.Text, int.Parse(cantidadtxt.Text), int.Parse(txtlocalidad.Text), txtfhora.Text);
-            if (result)
-            {
-                MessageBox.Show("Se inserto con exito");
-                try
-                {
-                }
-                catch (System.Exception ex)
-                {
-                    System.Windows.Forms.MessageBox.Show(ex.Message);
-                }
-                txtidproducto.Clear();
-                txtdescripcion.Clear();
-                cantidadtxt.Clear();
-                txtlocalidad.Clear();
-                txtfhora.Clear();
+            //bool result = MIngenieria.altaProducto(int.Parse(txtidproducto.Text), txtdescripcion.Text, int.Parse(cantidadtxt.Text), int.Parse(txtlocalidad.Text), txtfhora.Text);
+            //if (result)
+            //{
+            //    MessageBox.Show("Se inserto con exito");
+            //    try
+            //    {
+            //    }
+            //    catch (System.Exception ex)
+            //    {
+            //        System.Windows.Forms.MessageBox.Show(ex.Message);
+            //    }
+            //    txtidproducto.Clear();
+            //    txtdescripcion.Clear();
+            //    cantidadtxt.Clear();
+            //    txtlocalidad.Clear();
+            //    txtfhora.Clear();
 
-            }
+            //}
         }
 
         private void rbnelimnar_CheckedChanged(object sender, EventArgs e)
