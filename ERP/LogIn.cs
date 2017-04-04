@@ -31,7 +31,12 @@ namespace ERP
 
         private void LogIn_FormClosed(object sender, FormClosedEventArgs e)
         {
-            
+            Application.Exit();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
         ////////
         public string validar()
