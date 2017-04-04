@@ -128,7 +128,7 @@ namespace ERP.Ventas
             {
                 cargarTablas(dgvPedido, "select * from Pedido inner join Cliente on Pedido.idCliente = Cliente.idCliente where Cliente.nombre like '" + txtNomCliHis.Text + "%'", "Pedido");
             }
-            else
+            if (txtIDHis.Text == "" && txtNomCliHis.Text == "")
                 cargarTablas(dgvPedido, "select * from Pedido inner join Cliente on Pedido.idCliente = Cliente.idCliente", "Pedido");
         }
 
