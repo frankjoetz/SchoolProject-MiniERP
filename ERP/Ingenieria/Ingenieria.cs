@@ -146,5 +146,42 @@ namespace ERP.Ingenieria
             label6.Visible = true;
             btnmodificar.Visible = true;
         }
+
+        private void rbnagregar_CheckedChanged(object sender, EventArgs e)
+        {
+            idmateriatxt.Visible = false;
+            txtDesc.Visible = true;
+            txtFecha.Visible = true;
+            unidadtxt.Visible = true;
+            txttipo.Visible = true;
+            btneliminar.Visible = false;
+            btnagregarmp.Visible = true;
+            label2.Visible = false;
+            label3.Visible = true;
+            label9.Visible = true;
+            label6.Visible = true;
+            btnmodificar.Visible = false;
+        }
+
+        private void rbnmodificar_CheckedChanged(object sender, EventArgs e)
+        {
+            idmateriatxt.Visible = true;
+            txtDesc.Visible = true;
+            txtFecha.Visible = true;
+            unidadtxt.Visible = true;
+            txttipo.Visible = true;
+            btneliminar.Visible = false;
+            btnagregarmp.Visible = false;
+            label2.Visible = true;
+            label3.Visible = true;
+            label9.Visible = true;
+            label6.Visible = true;
+            btnmodificar.Visible = true;
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
