@@ -49,7 +49,7 @@ namespace ERP.Planeacion
 
         private void Planeacion_Load(object sender, EventArgs e)
         {
-            
+            planeacion.llenarTablaPedidos(GridPedidos);
         }
 
         private void groupBox2_Enter(object sender, EventArgs e)
@@ -105,6 +105,33 @@ namespace ERP.Planeacion
         private void cbxStatus_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtBuscarPedido_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+
+                    if (comboBoxBuscarPedido.Text == "IdPedido")
+                    {
+                        planeacion.BuscarIdPedido(GridPedidos, txtBuscarPedido);
+                    }
+                else
+                    if (comboBoxBuscarPedido.Text == "Nombre")
+                    {
+
+                    }
+                else
+                    if (comboBoxBuscarPedido.Text == "Empresa")
+                    {
+
+                    }
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Favor de seleccionar tipo de busqueda");
+            }
         }
     }
 }
