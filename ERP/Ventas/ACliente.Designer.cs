@@ -51,9 +51,9 @@
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(16, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(75, 18);
+            this.label1.Size = new System.Drawing.Size(62, 18);
             this.label1.TabIndex = 0;
-            this.label1.Text = "NOMBRE";
+            this.label1.Text = "Nombre";
             // 
             // label2
             // 
@@ -62,9 +62,9 @@
             this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(18, 94);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 18);
+            this.label2.Size = new System.Drawing.Size(66, 18);
             this.label2.TabIndex = 1;
-            this.label2.Text = "TELEFONO";
+            this.label2.Text = "Telefono";
             // 
             // label3
             // 
@@ -73,9 +73,9 @@
             this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(324, 94);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(81, 18);
+            this.label3.Size = new System.Drawing.Size(68, 18);
             this.label3.TabIndex = 2;
-            this.label3.Text = "EMPRESA";
+            this.label3.Text = "Empresa";
             // 
             // label4
             // 
@@ -84,13 +84,13 @@
             this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Location = new System.Drawing.Point(18, 169);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(91, 18);
+            this.label4.Size = new System.Drawing.Size(71, 18);
             this.label4.TabIndex = 3;
-            this.label4.Text = "DIRECCION";
+            this.label4.Text = "Dirección";
             // 
             // txtNombre
             // 
-            this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombre.Location = new System.Drawing.Point(41, 55);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(169, 24);
@@ -98,7 +98,7 @@
             // 
             // txtEmpresa
             // 
-            this.txtEmpresa.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmpresa.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmpresa.Location = new System.Drawing.Point(340, 127);
             this.txtEmpresa.Name = "txtEmpresa";
             this.txtEmpresa.Size = new System.Drawing.Size(182, 24);
@@ -106,7 +106,7 @@
             // 
             // txtDir
             // 
-            this.txtDir.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDir.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDir.Location = new System.Drawing.Point(41, 200);
             this.txtDir.Name = "txtDir";
             this.txtDir.Size = new System.Drawing.Size(169, 24);
@@ -117,17 +117,17 @@
             this.btnAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.ForeColor = System.Drawing.Color.Black;
-            this.btnAgregar.Location = new System.Drawing.Point(231, 289);
+            this.btnAgregar.Location = new System.Drawing.Point(227, 262);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(101, 26);
             this.btnAgregar.TabIndex = 11;
-            this.btnAgregar.Text = "AGREGAR";
+            this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // txtApe
             // 
-            this.txtApe.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtApe.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtApe.Location = new System.Drawing.Point(340, 55);
             this.txtApe.Name = "txtApe";
             this.txtApe.Size = new System.Drawing.Size(182, 24);
@@ -135,7 +135,7 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.Location = new System.Drawing.Point(340, 200);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(182, 24);
@@ -145,11 +145,11 @@
             // 
             this.chbStatus.AutoSize = true;
             this.chbStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chbStatus.Location = new System.Drawing.Point(241, 251);
+            this.chbStatus.Location = new System.Drawing.Point(247, 234);
             this.chbStatus.Name = "chbStatus";
-            this.chbStatus.Size = new System.Drawing.Size(80, 22);
+            this.chbStatus.Size = new System.Drawing.Size(67, 22);
             this.chbStatus.TabIndex = 10;
-            this.chbStatus.Text = "ACTIVO";
+            this.chbStatus.Text = "Activo";
             this.chbStatus.UseVisualStyleBackColor = true;
             // 
             // label5
@@ -158,9 +158,9 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(326, 26);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(79, 18);
+            this.label5.Size = new System.Drawing.Size(59, 18);
             this.label5.TabIndex = 13;
-            this.label5.Text = "APELLIDO";
+            this.label5.Text = "Apellido";
             // 
             // label6
             // 
@@ -168,13 +168,13 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(326, 179);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(187, 18);
+            this.label6.Size = new System.Drawing.Size(132, 18);
             this.label6.TabIndex = 14;
-            this.label6.Text = "CORREO ELECTRONICO";
+            this.label6.Text = "Correo electrónico";
             // 
             // txtTel
             // 
-            this.txtTel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTel.Location = new System.Drawing.Point(41, 127);
             this.txtTel.Name = "txtTel";
             this.txtTel.Size = new System.Drawing.Size(100, 24);
@@ -185,7 +185,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(582, 338);
+            this.ClientSize = new System.Drawing.Size(568, 305);
+            this.ControlBox = false;
             this.Controls.Add(this.txtTel);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -200,9 +201,8 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "ACliente";
-            this.Text = "AGREGAR UN CLIENTE";
+            this.Text = "Agregar un cliente";
             this.ResumeLayout(false);
             this.PerformLayout();
 

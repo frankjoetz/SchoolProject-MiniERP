@@ -39,18 +39,18 @@
             this.dgvPedidoFinal.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.dgvPedidoFinal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPedidoFinal.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvPedidoFinal.Location = new System.Drawing.Point(12, 80);
+            this.dgvPedidoFinal.Location = new System.Drawing.Point(12, 54);
             this.dgvPedidoFinal.MultiSelect = false;
             this.dgvPedidoFinal.Name = "dgvPedidoFinal";
-            this.dgvPedidoFinal.Size = new System.Drawing.Size(975, 150);
+            this.dgvPedidoFinal.Size = new System.Drawing.Size(975, 176);
             this.dgvPedidoFinal.TabIndex = 4;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(12, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(159, 18);
             this.label1.TabIndex = 1;
@@ -58,10 +58,10 @@
             // 
             // txtIDpedFin
             // 
-            this.txtIDpedFin.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIDpedFin.Location = new System.Drawing.Point(15, 41);
+            this.txtIDpedFin.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIDpedFin.Location = new System.Drawing.Point(177, 15);
             this.txtIDpedFin.Name = "txtIDpedFin";
-            this.txtIDpedFin.Size = new System.Drawing.Size(100, 24);
+            this.txtIDpedFin.Size = new System.Drawing.Size(128, 24);
             this.txtIDpedFin.TabIndex = 0;
             this.txtIDpedFin.TextChanged += new System.EventHandler(this.txtNom_TextChanged);
             // 
@@ -71,12 +71,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(999, 242);
+            this.ControlBox = false;
             this.Controls.Add(this.txtIDpedFin);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvPedidoFinal);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "PedidosFinal";
-            this.Text = "BUSCAR UN CLIENTE";
+            this.Text = "Buscar un cliente";
             this.Load += new System.EventHandler(this.PedidosFinal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedidoFinal)).EndInit();
             this.ResumeLayout(false);
