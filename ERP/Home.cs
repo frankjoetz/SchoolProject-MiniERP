@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using LogicaDeNegocios;
 
 namespace ERP
 {
@@ -18,7 +19,7 @@ namespace ERP
         public static Ventas.Ventas frmVe = new Ventas.Ventas();
         public static Dashboard.Dashboard frmDsh = new Dashboard.Dashboard();
         public static Compras.Compras frmCo = new Compras.Compras();
-        public static LogIn frmLogin = new LogIn();
+        LogIn frmLogin;
 
         public void esconderForms()
         {
@@ -35,7 +36,6 @@ namespace ERP
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
 
-            frmLogin.MdiParent = this;
             frmIn.MdiParent = this;
             frmPl.MdiParent = this;
             frmPr.MdiParent = this;
@@ -52,8 +52,45 @@ namespace ERP
 
         private void Home_Load(object sender, EventArgs e)
         {
+            frmLogin = new LogIn();
+            frmLogin.MdiParent = this;
+            frmLogin.FormClosed += new FormClosedEventHandler(LogIn_FormClosed);
             frmLogin.Show();
+            //--//
+            strpHome.Items[1].Enabled = false;
+            strpHome.Items[2].Enabled = false;
+            strpHome.Items[3].Enabled = false;
+            strpHome.Items[4].Enabled = false;
+            strpHome.Items[5].Enabled = false;
+            strpHome.Items[6].Enabled = false;
         }
+        /////////////
+        private void LogIn_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (frmLogin != null)
+            {
+                string puesto = frmLogin.validar();
+                if (puesto == "Vendedor")
+                {
+                    strpHome.Items[1].Enabled = false;
+                    strpHome.Items[2].Enabled = false;
+                    strpHome.Items[3].Enabled = true;
+                    strpHome.Items[4].Enabled = false;
+                    strpHome.Items[5].Enabled = false;
+                    strpHome.Items[6].Enabled = false;
+                }
+                if (puesto == "Master")
+                {
+                    strpHome.Items[1].Enabled = true;
+                    strpHome.Items[2].Enabled = true;
+                    strpHome.Items[3].Enabled = true;
+                    strpHome.Items[4].Enabled = true;
+                    strpHome.Items[5].Enabled = true;
+                    strpHome.Items[6].Enabled = true;
+                }
+            }
+        }
+        ////////////
 
         private void ingenieríaToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -88,6 +125,6 @@ namespace ERP
         {
             esconderForms();
             frmCo.Show();
-        }
+        }        
     }
 }

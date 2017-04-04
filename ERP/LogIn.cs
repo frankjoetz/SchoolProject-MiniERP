@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using LogicaDeNegocios;
 
 namespace ERP
 {
@@ -16,6 +17,7 @@ namespace ERP
         {
             InitializeComponent();
         }
+        LogicaDeNegocios.Ventas.metodosVentas datos = new LogicaDeNegocios.Ventas.metodosVentas();
 
         private void LogIn_Load(object sender, EventArgs e)
         {
@@ -24,7 +26,19 @@ namespace ERP
 
         private void btnIniciarSesion_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
         }
+
+        private void LogIn_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            
+        }
+        ////////
+        public string validar()
+        {
+            return datos.buscarUnDato("Puesto","Usuario"," where Nickname like '"+txtUserName.Text+"' and password like '"+txtPassword.Text+"'");
+        }
+        ////////
+        
     }
 }
