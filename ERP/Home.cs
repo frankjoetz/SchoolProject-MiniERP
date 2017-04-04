@@ -34,7 +34,6 @@ namespace ERP
         public Home()
         {
             InitializeComponent();
-            this.WindowState = FormWindowState.Maximized;
 
             frmIn.MdiParent = this;
             frmPl.MdiParent = this;
@@ -42,12 +41,6 @@ namespace ERP
             frmVe.MdiParent = this;
             frmDsh.MdiParent = this;
             frmCo.MdiParent = this;
-        }
-
-        private void producciónToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            esconderForms();
-            frmPr.Show();
         }
 
         private void Home_Load(object sender, EventArgs e)
@@ -92,6 +85,12 @@ namespace ERP
         }
         ////////////
 
+        private void producciónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            esconderForms();
+            frmPr.Show();
+        }
+
         private void ingenieríaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             esconderForms();
@@ -125,6 +124,10 @@ namespace ERP
         {
             esconderForms();
             frmCo.Show();
+        }
+
+        private void Home_SizeChanged(object sender, EventArgs e)
+        {
         }        
     }
 }

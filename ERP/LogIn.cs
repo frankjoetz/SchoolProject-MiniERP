@@ -16,12 +16,13 @@ namespace ERP
         public LogIn()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
         LogicaDeNegocios.Ventas.metodosVentas datos = new LogicaDeNegocios.Ventas.metodosVentas();
 
         private void LogIn_Load(object sender, EventArgs e)
         {
-            this.CenterToScreen();
+
         }
 
         private void btnIniciarSesion_Click(object sender, EventArgs e)

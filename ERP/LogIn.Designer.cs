@@ -120,12 +120,12 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtUserName;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label lblUserName;
         private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.Button btnIniciarSesion;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.TextBox txtUserName;
     }
 }

@@ -132,6 +132,7 @@
             this.Text = "ERP";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Home_Load);
+            this.Resize += new System.EventHandler(this.Home_SizeChanged);
             this.strpHome.ResumeLayout(false);
             this.strpHome.PerformLayout();
             this.ResumeLayout(false);
