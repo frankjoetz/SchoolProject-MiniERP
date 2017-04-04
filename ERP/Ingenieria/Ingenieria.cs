@@ -24,11 +24,11 @@ namespace ERP.Ingenieria
 
         private void btnagregarmp_Click(object sender, EventArgs e)
         {
-            bool result = MIngenieria.altaMateria(int.Parse(idmateriatxt.Text), txttipo.Text, txtDesc.Text, txtFecha.Text, int.Parse(unidadtxt.Text));
+            bool result = MIngenieria.altaMateria(int.Parse(txtidmateria.Text), txttipo.Text, txtDesc.Text, txtFecha.Text, int.Parse(unidadtxt.Text));
             if (result)
             {
                 MessageBox.Show("Se inserto con exito");
-                idmateriatxt.Clear();
+                txtidmateria.Clear();
                 txttipo.Clear();
                 txtDesc.Clear();
                 txtFecha.Clear();
@@ -99,7 +99,7 @@ namespace ERP.Ingenieria
 
         private void rbnelimnar_CheckedChanged(object sender, EventArgs e)
         {
-            idmateriatxt.Visible = true;
+            txtidmateria.Visible = true;
             txtDesc.Visible = false;
             txtFecha.Visible = false;
             unidadtxt.Visible = false;
@@ -110,13 +110,13 @@ namespace ERP.Ingenieria
             label3.Visible = false;
             label9.Visible = false;
             label6.Visible = false;
-
-
+            btnmodificar.Visible = false;
+            
         }
 
         private void btneliminar_Click(object sender, EventArgs e)
         {
-            bool result = MIngenieria.EliminaMateria(int.Parse(idmateriatxt.Text));
+            bool result = MIngenieria.EliminaMateria(int.Parse(txtidmateria.Text));
             if (result)
             {
                 MessageBox.Show("Se elimino con exito");
@@ -133,7 +133,7 @@ namespace ERP.Ingenieria
 
         private void rbdmodificar_CheckedChanged(object sender, EventArgs e)
         {
-            idmateriatxt.Visible = true;
+            txtidmateria.Visible = true;
             txtDesc.Visible = true;
             txtFecha.Visible = true;
             unidadtxt.Visible = true;
@@ -149,14 +149,14 @@ namespace ERP.Ingenieria
 
         private void rbnagregar_CheckedChanged(object sender, EventArgs e)
         {
-            idmateriatxt.Visible = false;
+            txtidmateria.Visible = true;
             txtDesc.Visible = true;
             txtFecha.Visible = true;
             unidadtxt.Visible = true;
             txttipo.Visible = true;
             btneliminar.Visible = false;
             btnagregarmp.Visible = true;
-            label2.Visible = false;
+            label2.Visible = true;
             label3.Visible = true;
             label9.Visible = true;
             label6.Visible = true;
@@ -165,7 +165,7 @@ namespace ERP.Ingenieria
 
         private void rbnmodificar_CheckedChanged(object sender, EventArgs e)
         {
-            idmateriatxt.Visible = true;
+            txtidmateria.Visible = true;
             txtDesc.Visible = true;
             txtFecha.Visible = true;
             unidadtxt.Visible = true;
@@ -180,6 +180,11 @@ namespace ERP.Ingenieria
         }
 
         private void label13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnmodificar_Click(object sender, EventArgs e)
         {
 
         }
