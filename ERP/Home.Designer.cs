@@ -79,7 +79,7 @@
             // 
             this.almacenToolStripMenuItem.Name = "almacenToolStripMenuItem";
             this.almacenToolStripMenuItem.Size = new System.Drawing.Size(133, 36);
-            this.almacenToolStripMenuItem.Text = "Almacen";
+            this.almacenToolStripMenuItem.Text = "Compras";
             this.almacenToolStripMenuItem.Click += new System.EventHandler(this.almacenToolStripMenuItem_Click);
             // 
             // ventasToolStripMenuItem
