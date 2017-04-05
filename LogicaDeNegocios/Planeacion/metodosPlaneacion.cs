@@ -13,31 +13,26 @@ namespace LogicaDeNegocios.Planeacion
         Datos.BaseDeDatos datos = new Datos.BaseDeDatos();
 
         //llenar datagridview con datos de pedidos y clientes
-        public void llenarTablaPedidos(DataGridView GridPedidos)
+        public void LlenarTablaVistaPedidos(DataGridView GridPedidos)
         {
             datos.llenarTabla("select * from Vista_PedidosPlaneacion where Status='En proceso'", GridPedidos);
         }
 
-        //metodos para el buscador
-
-        // por idPedido
-
-        public void BuscarIdPedido(DataGridView GridPedidos, TextBox txtBuscar)
+        // metodo para el buscador
+        public void Buscar(ComboBox columna, TextBox valor, DataGridView tabla)
         {
-            datos.llenarTabla("select * from Vista_PedidosPlaneacion where idPedido='" + int.Parse(txtBuscar.Text) + "' and Status='En proceso'", GridPedidos);
+            string consulta = "select * from Vista_PedidosPlaneacion where Status='En proceso' and " + columna.Text + " like '%" + valor.Text + "%'";
+            datos.llenarTabla(consulta, tabla);
         }
 
-        // por nombre
-        public void BuscarNombre(DataGridView GridPedidos, TextBox txtBuscar)
+        // llenar planeaciones
+        public void llenarPlaneaciones(DataGridView GridPlaneaciones)
         {
-            datos.llenarTabla("select * from Vista_PedidosPlaneacion where nombre='" + txtBuscar.Text + "' and Status='En proceso'", GridPedidos);
+            datos.llenarTabla("select * from Planeacion", GridPlaneaciones);
         }
         
-        // por empresa
-        public void BuscarEmpresa(DataGridView GridPedidos, TextBox txtBuscar)
-        {
-            datos.llenarTabla("select * from Vista_PedidosPlaneacion where empresa='" + txtBuscar.Text + "' and Status='En proceso'", GridPedidos);
-        }
+
+        
 
 
 
