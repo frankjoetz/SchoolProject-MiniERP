@@ -18,16 +18,24 @@ namespace ERP.Produccion
         {
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
+
+            cboxBuscar.SelectedIndex = 0;
+
         }
 
         private void Produccion_Load(object sender, EventArgs e)
         {
-            metodos.llenarTablaPlaneaciones(dgvPlaneaciones);
+            metodos.LlenarTablaPlaneaciones(dgvPlaneaciones);
+        }
+
+        private void txtBuscar_KeyDown(object sender, KeyEventArgs e)
+        {
+            metodos.Buscar(cboxBuscar, txtBuscar, dgvPlaneaciones);
         }
 
         private void dgvPlaneaciones_Click(object sender, EventArgs e)
         {
-
+            /*
             DataGridViewRow fila = dgvPlaneaciones.SelectedRows[0];
 
             txtIdPlaneacion.Text = fila.Cells["idPlaneacion"].Value.ToString();
@@ -47,13 +55,18 @@ namespace ERP.Produccion
                     break;
                 default:
                     break;
-            }
+            }*/
+
+           metodos.LlenarDetalles(dgvPlaneaciones, txtIdPlaneacion);
+
+
         }
 
         private void dtpFechaInicio_ValueChanged(object sender, EventArgs e)
         {
             //DateTime inicio = dtpFechaInicio.Value.ToString("yyyy-MM-dd");
-            
+
+            /*
             DateTime inicio = dtpFechaInicio.Value;
 
             DataGridViewRow fila = dgvPlaneaciones.SelectedRows[0];
@@ -63,7 +76,15 @@ namespace ERP.Produccion
             string mensaje = "Se producen 120 computadoras por día, por ende, sus " + cantidad + " computadoras se producirán en aproximadamente " + resultado + " días. \n";
             dtpFechaEstimada.Value = inicio.AddDays(resultado);
             MessageBox.Show(mensaje + "\nFecha estimada de entrega: " + inicio.AddDays(resultado).ToString("MMMM dd, yyyy"));
-            
+            */
+
+            //metodos.CalcularTiempo();
+        }
+
+        
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            //metodos.agregarProduccion();
         }
     }
 }

@@ -12,31 +12,26 @@ namespace LogicaDeNegocios.Produccion
     {
         Datos.BaseDeDatos bd = new Datos.BaseDeDatos();
 
-        public bool insertarProduccion(string idPlaneacion, string fechaInicio, string etapa, string fechaEntrega, string observaciones)
-        {
-            if (bd.insertar("insert into Produccion values(NULL, '" + idPlaneacion + "', '" + fechaInicio + "', '" + etapa + "', '" + fechaEntrega + "', '" + observaciones + "')"))
-                return true;
-            else
-                return false;
-        }
-
-        public void llenarTablaProduccion(DataGridView tablaProduccion)
-        {
-            bd.llenarTabla("select * from Produccion order by idProduccion DESC", tablaProduccion);
-        }
-
-        public void llenarTablaPlaneaciones(DataGridView tablaPlaneacion)
+        public void LlenarTablaPlaneaciones(DataGridView tablaPlaneacion)
         {
             bd.llenarTabla("select * from Vista_PlaneacionesAProducir where Status='Listo para producir'", tablaPlaneacion);
         }
 
-        public void filtrarTablaPlaneacion(TextBox texto, DataGridView tablaPlaneacion)
+        public void Buscar(ComboBox columna, TextBox valor, DataGridView tabla)
         {
+            string consulta = "select * from Vista_PlaneacionesAProducir where " + columna.Text + " like '%" + valor.Text + "%'";
+            bd.llenarTabla(consulta, tabla);
         }
 
-        public void agregarProduccion()
+        public void LlenarDetalles(DataGridView tabla, TextBox cantidad)
         {
+            cantidad.Text = retornarValor(tabla, "IdPlaneacion");
+        }
 
+        private string retornarValor(DataGridView tabla, string columna)
+        {
+            DataGridViewRow fila = tabla.SelectedRows[0];
+            return fila.Cells[columna].Value.ToString();
         }
     }
 }

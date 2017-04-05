@@ -31,6 +31,9 @@
             this.tabProduccion = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dtpFechaEstimada = new System.Windows.Forms.DateTimePicker();
+            this.label10 = new System.Windows.Forms.Label();
+            this.dtpFechaInicio = new System.Windows.Forms.DateTimePicker();
             this.lblInfo = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -59,9 +62,7 @@
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.dtpFechaInicio = new System.Windows.Forms.DateTimePicker();
-            this.dtpFechaEstimada = new System.Windows.Forms.DateTimePicker();
-            this.label10 = new System.Windows.Forms.Label();
+            this.cboxBuscar = new System.Windows.Forms.ComboBox();
             this.tabProduccion.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -106,6 +107,7 @@
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.cboxBuscar);
             this.groupBox1.Controls.Add(this.dtpFechaEstimada);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.dtpFechaInicio);
@@ -129,6 +131,34 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Comenzar a poducir una planeación";
+            // 
+            // dtpFechaEstimada
+            // 
+            this.dtpFechaEstimada.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtpFechaEstimada.Enabled = false;
+            this.dtpFechaEstimada.Location = new System.Drawing.Point(468, 300);
+            this.dtpFechaEstimada.Name = "dtpFechaEstimada";
+            this.dtpFechaEstimada.Size = new System.Drawing.Size(271, 29);
+            this.dtpFechaEstimada.TabIndex = 18;
+            // 
+            // label10
+            // 
+            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(345, 306);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(117, 21);
+            this.label10.TabIndex = 17;
+            this.label10.Text = "Fecha estimada";
+            // 
+            // dtpFechaInicio
+            // 
+            this.dtpFechaInicio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtpFechaInicio.Location = new System.Drawing.Point(468, 244);
+            this.dtpFechaInicio.Name = "dtpFechaInicio";
+            this.dtpFechaInicio.Size = new System.Drawing.Size(271, 29);
+            this.dtpFechaInicio.TabIndex = 16;
+            this.dtpFechaInicio.ValueChanged += new System.EventHandler(this.dtpFechaInicio_ValueChanged);
             // 
             // lblInfo
             // 
@@ -207,20 +237,20 @@
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(464, 29);
+            this.label2.Location = new System.Drawing.Point(388, 27);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 21);
+            this.label2.Size = new System.Drawing.Size(87, 21);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Filtrar";
+            this.label2.Text = "Buscar por:";
             // 
             // txtBuscar
             // 
             this.txtBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtBuscar.Location = new System.Drawing.Point(519, 26);
+            this.txtBuscar.Location = new System.Drawing.Point(481, 24);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(220, 29);
+            this.txtBuscar.Size = new System.Drawing.Size(120, 29);
             this.txtBuscar.TabIndex = 2;
-            
+            this.txtBuscar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBuscar_KeyDown);
             // 
             // label1
             // 
@@ -246,7 +276,6 @@
             this.dgvPlaneaciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPlaneaciones.Size = new System.Drawing.Size(733, 121);
             this.dgvPlaneaciones.TabIndex = 0;
-            
             this.dgvPlaneaciones.Click += new System.EventHandler(this.dgvPlaneaciones_Click);
             // 
             // btnGuardar
@@ -259,7 +288,7 @@
             this.btnGuardar.TabIndex = 0;
             this.btnGuardar.Text = "Agregar producción";
             this.btnGuardar.UseVisualStyleBackColor = true;
-            
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // tabPage2
             // 
@@ -327,7 +356,6 @@
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.Size = new System.Drawing.Size(723, 81);
             this.dataGridView3.TabIndex = 0;
-            
             // 
             // groupBox2
             // 
@@ -420,33 +448,22 @@
             this.tabPage4.Text = "Generar reporte";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // dtpFechaInicio
+            // cboxBuscar
             // 
-            this.dtpFechaInicio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.dtpFechaInicio.Location = new System.Drawing.Point(468, 244);
-            this.dtpFechaInicio.Name = "dtpFechaInicio";
-            this.dtpFechaInicio.Size = new System.Drawing.Size(271, 29);
-            this.dtpFechaInicio.TabIndex = 16;
-            this.dtpFechaInicio.ValueChanged += new System.EventHandler(this.dtpFechaInicio_ValueChanged);
-            // 
-            // dtpFechaEstimada
-            // 
-            this.dtpFechaEstimada.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.dtpFechaEstimada.Enabled = false;
-            this.dtpFechaEstimada.Location = new System.Drawing.Point(468, 300);
-            this.dtpFechaEstimada.Name = "dtpFechaEstimada";
-            this.dtpFechaEstimada.Size = new System.Drawing.Size(271, 29);
-            this.dtpFechaEstimada.TabIndex = 18;
-            // 
-            // label10
-            // 
-            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(345, 306);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(117, 21);
-            this.label10.TabIndex = 17;
-            this.label10.Text = "Fecha estimada";
+            this.cboxBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboxBuscar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboxBuscar.FormattingEnabled = true;
+            this.cboxBuscar.Items.AddRange(new object[] {
+            "Cantidad",
+            "Empresa",
+            "IdPedido",
+            "IdPlaneacion",
+            "Nombre",
+            "Tipo"});
+            this.cboxBuscar.Location = new System.Drawing.Point(618, 24);
+            this.cboxBuscar.Name = "cboxBuscar";
+            this.cboxBuscar.Size = new System.Drawing.Size(121, 29);
+            this.cboxBuscar.TabIndex = 19;
             // 
             // Produccion
             // 
@@ -513,5 +530,6 @@
         private System.Windows.Forms.DateTimePicker dtpFechaEstimada;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DateTimePicker dtpFechaInicio;
+        private System.Windows.Forms.ComboBox cboxBuscar;
     }
 }
