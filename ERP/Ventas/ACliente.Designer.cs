@@ -37,11 +37,10 @@
             this.txtDir = new System.Windows.Forms.TextBox();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.txtApe = new System.Windows.Forms.TextBox();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.chbStatus = new System.Windows.Forms.CheckBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.mtxtTel = new System.Windows.Forms.MaskedTextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtTel = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -133,25 +132,6 @@
             this.txtApe.Size = new System.Drawing.Size(182, 24);
             this.txtApe.TabIndex = 5;
             // 
-            // txtEmail
-            // 
-            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(340, 200);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(182, 24);
-            this.txtEmail.TabIndex = 9;
-            // 
-            // chbStatus
-            // 
-            this.chbStatus.AutoSize = true;
-            this.chbStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chbStatus.Location = new System.Drawing.Point(247, 234);
-            this.chbStatus.Name = "chbStatus";
-            this.chbStatus.Size = new System.Drawing.Size(67, 22);
-            this.chbStatus.TabIndex = 10;
-            this.chbStatus.Text = "Activo";
-            this.chbStatus.UseVisualStyleBackColor = true;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -162,23 +142,29 @@
             this.label5.TabIndex = 13;
             this.label5.Text = "Apellido";
             // 
+            // mtxtTel
+            // 
+            this.mtxtTel.Location = new System.Drawing.Point(41, 130);
+            this.mtxtTel.Name = "mtxtTel";
+            this.mtxtTel.Size = new System.Drawing.Size(100, 20);
+            this.mtxtTel.TabIndex = 14;
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(326, 179);
+            this.label6.Location = new System.Drawing.Point(340, 173);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(132, 18);
-            this.label6.TabIndex = 14;
-            this.label6.Text = "Correo electrónico";
+            this.label6.Size = new System.Drawing.Size(34, 13);
+            this.label6.TabIndex = 15;
+            this.label6.Text = "e-mail";
             // 
-            // txtTel
+            // txtEmail
             // 
-            this.txtTel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTel.Location = new System.Drawing.Point(41, 127);
-            this.txtTel.Name = "txtTel";
-            this.txtTel.Size = new System.Drawing.Size(100, 24);
-            this.txtTel.TabIndex = 6;
+            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.Location = new System.Drawing.Point(340, 200);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(182, 24);
+            this.txtEmail.TabIndex = 9;
             // 
             // ACliente
             // 
@@ -186,11 +172,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(568, 305);
-            this.ControlBox = false;
-            this.Controls.Add(this.txtTel);
             this.Controls.Add(this.label6);
+            this.Controls.Add(this.mtxtTel);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.chbStatus);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtApe);
             this.Controls.Add(this.btnAgregar);
@@ -201,7 +185,10 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "ACliente";
+            this.ShowIcon = false;
             this.Text = "Agregar un cliente";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -219,10 +206,9 @@
         private System.Windows.Forms.TextBox txtDir;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.TextBox txtApe;
-        private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.CheckBox chbStatus;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.MaskedTextBox mtxtTel;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtTel;
+        private System.Windows.Forms.TextBox txtEmail;
     }
 }

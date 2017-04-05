@@ -22,8 +22,7 @@ namespace ERP.Ventas
 
         private void Ventas_Load(object sender, EventArgs e)
         {
-            cargarTablas(dgvBuscar, "select * from Cliente", "Cliente");
-            cargarTablas(dgvPedido, "select * from Pedido inner join Cliente on Pedido.idCliente = Cliente.idCliente", "Pedido");
+
         }
 
         //Load de la ventana////////////////////////////////////////////////////////////
@@ -98,18 +97,25 @@ namespace ERP.Ventas
         {
             if (txtNomb.Text != "")
             {
-                if (txtEmp.Text != "")
-                {
-                    cargarTablas(dgvBuscar, string.Format("select * from Cliente where nombre like '" + txtNomb.Text + "%' and empresa like '" + txtEmp.Text + "%'"), "Cliente");
-                }
-                else
-                {
-                    cargarTablas(dgvBuscar, string.Format("select * from Cliente where nombre like '" + txtNomb.Text + "%'"), "Cliente");
-                }
+                txtApell.Enabled = true;
+                if (txtEmp.Text != "" && txtApell.Text != "")
+                    cargarTablas(dgvBuscar, string.Format("select * from Cliente where Nombre like '" + txtNomb.Text + "%' and Apellido like '" + txtApell.Text + "%' and Empresa like '" + txtEmp.Text + "%'"), "Cliente");
+                if (txtApell.Text != "")
+                    cargarTablas(dgvBuscar, string.Format("select * from Cliente where Nombre like '" + txtNomb.Text + "%' and Apellido like '" + txtApell.Text + "%'"), "Cliente");
+                if (txtEmp.Text == "" && txtApell.Text == "")
+                    cargarTablas(dgvBuscar, string.Format("select * from Cliente where Nombre like '" + txtNomb.Text + "%'"), "Cliente");
             }
-            else
+            if (txtEmp.Text != "")
             {
-                cargarTablas(dgvBuscar, string.Format("select * from Cliente where empresa like '" + txtEmp.Text + "%'"), "Cliente");
+                if (txtEmp.Text != "")
+                    cargarTablas(dgvBuscar, string.Format("select * from Cliente where Empresa like '" + txtEmp.Text + "%'"), "Cliente");
+                if (txtApell.Text != "")
+                    cargarTablas(dgvBuscar, string.Format("select * from Cliente where Nombre like '" + txtNomb.Text + "%' and Apellido like '" + txtApell.Text + "%'"), "Cliente");
+            }
+            if (txtNomb.Text == "")
+            {
+                txtApell.Enabled = false;
+                cargarTablas(dgvBuscar, "select * from Cliente", "Cliente");
             }
         }
 
@@ -148,7 +154,6 @@ namespace ERP.Ventas
             if (result)
             {
                 MessageBox.Show("simona la mona");
-                cargarTablas(dgvPedido,"select * from Pedido inner join Cliente on Pedido.idCliente = Cliente.idCliente" ,"Pedido");
                 txtIDcliente.Text = "";
                 txtCanGB.Text = "";
                 txtCanGM.Text = "";
@@ -181,6 +186,14 @@ namespace ERP.Ventas
             cargar = mV.cargarTablas(query, tablas);
             dgv.DataSource = cargar;
             dgv.DataMember = tablas;
+        }
+
+        private void tbcVentas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(tbcVentas.SelectedIndex == 2)
+                cargarTablas(dgvBuscar, "select * from Cliente", "Cliente");
+            if(tbcVentas.SelectedIndex == 1)
+                cargarTablas(dgvPedido, "select Pedido.idPedido, Pedido.idCliente, Pedido.Fecha, Pedido.Status, Pedido.CantGamaBaja, Pedido.CantGamaMedia, Pedido.CantGamaAlta, Pedido.Observacion, Cliente.Nombre, Cliente.Apellido, Cliente.Empresa, Cliente.email from Pedido inner join Cliente on Pedido.idCliente = Cliente.idCliente", "Pedido");
         }
     }
 }

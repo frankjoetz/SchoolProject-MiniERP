@@ -29,10 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.tbcVentas = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -76,6 +73,8 @@
             this.lblFH = new System.Windows.Forms.Label();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.lblH = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtApell = new System.Windows.Forms.TextBox();
             this.tbcVentas.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -106,6 +105,7 @@
             this.tbcVentas.SelectedIndex = 0;
             this.tbcVentas.Size = new System.Drawing.Size(900, 656);
             this.tbcVentas.TabIndex = 8;
+            this.tbcVentas.SelectedIndexChanged += new System.EventHandler(this.tbcVentas_SelectedIndexChanged);
             // 
             // tabPage1
             // 
@@ -435,6 +435,7 @@
             // 
             // txtIDBorrar
             // 
+            this.txtIDBorrar.Enabled = false;
             this.txtIDBorrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.txtIDBorrar.Location = new System.Drawing.Point(752, 18);
             this.txtIDBorrar.Name = "txtIDBorrar";
@@ -443,37 +444,16 @@
             // 
             // dgvPedido
             // 
+            this.dgvPedido.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.dgvPedido.BackgroundColor = System.Drawing.SystemColors.ControlLight;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPedido.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvPedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPedido.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvPedido.Location = new System.Drawing.Point(6, 61);
             this.dgvPedido.Name = "dgvPedido";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPedido.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvPedido.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvPedido.Size = new System.Drawing.Size(869, 490);
+            this.dgvPedido.ReadOnly = true;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvPedido.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvPedido.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvPedido.Size = new System.Drawing.Size(880, 563);
             this.dgvPedido.TabIndex = 3;
             this.dgvPedido.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPedido_CellClick);
             // 
@@ -499,6 +479,8 @@
             // 
             // BClient
             // 
+            this.BClient.Controls.Add(this.txtApell);
+            this.BClient.Controls.Add(this.label12);
             this.BClient.Controls.Add(this.label4);
             this.BClient.Controls.Add(this.txtEmp);
             this.BClient.Controls.Add(this.txtNomb);
@@ -517,7 +499,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(315, 40);
+            this.label4.Location = new System.Drawing.Point(245, 27);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(81, 18);
             this.label4.TabIndex = 10;
@@ -526,7 +508,7 @@
             // txtEmp
             // 
             this.txtEmp.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmp.Location = new System.Drawing.Point(402, 37);
+            this.txtEmp.Location = new System.Drawing.Point(332, 24);
             this.txtEmp.Name = "txtEmp";
             this.txtEmp.Size = new System.Drawing.Size(100, 24);
             this.txtEmp.TabIndex = 2;
@@ -535,7 +517,7 @@
             // txtNomb
             // 
             this.txtNomb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNomb.Location = new System.Drawing.Point(112, 40);
+            this.txtNomb.Location = new System.Drawing.Point(92, 9);
             this.txtNomb.Name = "txtNomb";
             this.txtNomb.Size = new System.Drawing.Size(100, 24);
             this.txtNomb.TabIndex = 1;
@@ -546,7 +528,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(31, 43);
+            this.label8.Location = new System.Drawing.Point(11, 12);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(75, 18);
             this.label8.TabIndex = 8;
@@ -554,15 +536,17 @@
             // 
             // dgvBuscar
             // 
+            this.dgvBuscar.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.dgvBuscar.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.dgvBuscar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBuscar.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvBuscar.Location = new System.Drawing.Point(6, 105);
+            this.dgvBuscar.Location = new System.Drawing.Point(6, 68);
             this.dgvBuscar.MultiSelect = false;
             this.dgvBuscar.Name = "dgvBuscar";
-            this.dgvBuscar.Size = new System.Drawing.Size(745, 437);
+            this.dgvBuscar.ReadOnly = true;
+            this.dgvBuscar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvBuscar.Size = new System.Drawing.Size(880, 556);
             this.dgvBuscar.TabIndex = 3;
-            this.dgvBuscar.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBuscar_Click);
             this.dgvBuscar.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBuscar_Click);
             // 
             // lblFH
@@ -590,6 +574,24 @@
             this.lblH.Size = new System.Drawing.Size(38, 18);
             this.lblH.TabIndex = 40;
             this.lblH.Text = "hora";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(11, 41);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(75, 17);
+            this.label12.TabIndex = 11;
+            this.label12.Text = "APELLIDO";
+            // 
+            // txtApell
+            // 
+            this.txtApell.Enabled = false;
+            this.txtApell.Location = new System.Drawing.Point(92, 39);
+            this.txtApell.Name = "txtApell";
+            this.txtApell.Size = new System.Drawing.Size(100, 23);
+            this.txtApell.TabIndex = 12;
+            this.txtApell.TextChanged += new System.EventHandler(this.txtCliente_TextChanged);
             // 
             // Ventas
             // 
@@ -667,5 +669,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.RadioButton rdbtnNC;
         private System.Windows.Forms.RadioButton rdbtnID;
+        private System.Windows.Forms.TextBox txtApell;
+        private System.Windows.Forms.Label label12;
     }
 }
