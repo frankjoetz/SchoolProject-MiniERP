@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabProduccion = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblTiempo = new System.Windows.Forms.Label();
             this.cboxBuscar = new System.Windows.Forms.ComboBox();
             this.dtpFechaEstimada = new System.Windows.Forms.DateTimePicker();
             this.label10 = new System.Windows.Forms.Label();
@@ -49,31 +50,33 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dgvPlaneaciones = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.label8 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.prgrsEtapa = new System.Windows.Forms.ProgressBar();
             this.Filtrar = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.txtFiltrar = new System.Windows.Forms.TextBox();
+            this.dgvProducciones = new System.Windows.Forms.DataGridView();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.label6 = new System.Windows.Forms.Label();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.label7 = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.lblTiempo = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.btnAvanzar = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnRetroceder = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lblEtapa = new System.Windows.Forms.Label();
             this.tabProduccion.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlaneaciones)).BeginInit();
             this.tabPage2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProducciones)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            this.groupBox3.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabProduccion
@@ -83,7 +86,6 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabProduccion.Controls.Add(this.tabPage1);
             this.tabProduccion.Controls.Add(this.tabPage2);
-            this.tabProduccion.Controls.Add(this.tabPage3);
             this.tabProduccion.Controls.Add(this.tabPage4);
             this.tabProduccion.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabProduccion.Location = new System.Drawing.Point(12, 12);
@@ -91,6 +93,7 @@
             this.tabProduccion.SelectedIndex = 0;
             this.tabProduccion.Size = new System.Drawing.Size(766, 626);
             this.tabProduccion.TabIndex = 1;
+            this.tabProduccion.SelectedIndexChanged += new System.EventHandler(this.tabProduccion_SelectedIndexChanged);
             // 
             // tabPage1
             // 
@@ -134,6 +137,17 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Comenzar a poducir una planeación";
+            // 
+            // lblTiempo
+            // 
+            this.lblTiempo.AutoSize = true;
+            this.lblTiempo.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTiempo.ForeColor = System.Drawing.Color.SteelBlue;
+            this.lblTiempo.Location = new System.Drawing.Point(9, 350);
+            this.lblTiempo.Name = "lblTiempo";
+            this.lblTiempo.Size = new System.Drawing.Size(65, 21);
+            this.lblTiempo.TabIndex = 20;
+            this.lblTiempo.Text = "Tiempo:";
             // 
             // cboxBuscar
             // 
@@ -221,16 +235,16 @@
             // 
             this.txtLinea.Enabled = false;
             this.txtLinea.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLinea.Location = new System.Drawing.Point(60, 297);
+            this.txtLinea.Location = new System.Drawing.Point(67, 297);
             this.txtLinea.Name = "txtLinea";
-            this.txtLinea.Size = new System.Drawing.Size(200, 26);
+            this.txtLinea.Size = new System.Drawing.Size(193, 26);
             this.txtLinea.TabIndex = 10;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(9, 300);
+            this.label5.Location = new System.Drawing.Point(13, 300);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(48, 21);
             this.label5.TabIndex = 9;
@@ -309,8 +323,8 @@
             this.dgvPlaneaciones.MultiSelect = false;
             this.dgvPlaneaciones.Name = "dgvPlaneaciones";
             this.dgvPlaneaciones.ReadOnly = true;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Franklin Gothic Medium", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvPlaneaciones.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Franklin Gothic Medium", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvPlaneaciones.RowsDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvPlaneaciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPlaneaciones.Size = new System.Drawing.Size(734, 121);
             this.dgvPlaneaciones.TabIndex = 0;
@@ -318,7 +332,6 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.groupBox3);
             this.tabPage2.Controls.Add(this.groupBox2);
             this.tabPage2.Location = new System.Drawing.Point(4, 34);
             this.tabPage2.Name = "tabPage2";
@@ -328,142 +341,64 @@
             this.tabPage2.Text = "Administrar producciones actuales";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // groupBox3
-            // 
-            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox3.Controls.Add(this.button2);
-            this.groupBox3.Controls.Add(this.label7);
-            this.groupBox3.Controls.Add(this.textBox7);
-            this.groupBox3.Controls.Add(this.dataGridView3);
-            this.groupBox3.Location = new System.Drawing.Point(9, 346);
-            this.groupBox3.MaximumSize = new System.Drawing.Size(1000, 400);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(746, 176);
-            this.groupBox3.TabIndex = 4;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Cancelar (Eliminar) una producción";
-            // 
-            // button2
-            // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.Location = new System.Drawing.Point(519, 124);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(218, 40);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Eliminar";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // label7
-            // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(10, 134);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(61, 25);
-            this.label7.TabIndex = 2;
-            this.label7.Text = "Filtrar";
-            // 
-            // textBox7
-            // 
-            this.textBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.textBox7.Location = new System.Drawing.Point(72, 131);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(213, 33);
-            this.textBox7.TabIndex = 1;
-            // 
-            // dataGridView3
-            // 
-            this.dataGridView3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(13, 33);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.Size = new System.Drawing.Size(724, 81);
-            this.dataGridView3.TabIndex = 0;
-            // 
             // groupBox2
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox2.Controls.Add(this.progressBar1);
-            this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Controls.Add(this.Filtrar);
-            this.groupBox2.Controls.Add(this.textBox6);
-            this.groupBox2.Controls.Add(this.dataGridView2);
+            this.groupBox2.Controls.Add(this.panel1);
+            this.groupBox2.Controls.Add(this.groupBox3);
+            this.groupBox2.Controls.Add(this.dgvProducciones);
+            this.groupBox2.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(6, 6);
             this.groupBox2.MaximumSize = new System.Drawing.Size(1000, 600);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(746, 308);
+            this.groupBox2.Size = new System.Drawing.Size(746, 567);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Estado de producciones";
             // 
-            // progressBar1
+            // prgrsEtapa
             // 
-            this.progressBar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.prgrsEtapa.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.progressBar1.Location = new System.Drawing.Point(16, 253);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(720, 43);
-            this.progressBar1.TabIndex = 5;
-            // 
-            // label8
-            // 
-            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(13, 222);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(124, 25);
-            this.label8.TabIndex = 4;
-            this.label8.Text = "Estado actual";
-            // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(520, 171);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(217, 42);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Avanzar etapa >>";
-            this.button1.UseVisualStyleBackColor = true;
+            this.prgrsEtapa.Location = new System.Drawing.Point(7, 41);
+            this.prgrsEtapa.Maximum = 8;
+            this.prgrsEtapa.Name = "prgrsEtapa";
+            this.prgrsEtapa.Size = new System.Drawing.Size(700, 22);
+            this.prgrsEtapa.Step = 1;
+            this.prgrsEtapa.TabIndex = 5;
             // 
             // Filtrar
             // 
             this.Filtrar.AutoSize = true;
-            this.Filtrar.Location = new System.Drawing.Point(10, 181);
+            this.Filtrar.Location = new System.Drawing.Point(6, 85);
             this.Filtrar.Name = "Filtrar";
-            this.Filtrar.Size = new System.Drawing.Size(61, 25);
+            this.Filtrar.Size = new System.Drawing.Size(50, 21);
             this.Filtrar.TabIndex = 2;
             this.Filtrar.Text = "Filtrar";
             // 
-            // textBox6
+            // txtFiltrar
             // 
-            this.textBox6.Location = new System.Drawing.Point(72, 178);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(213, 33);
-            this.textBox6.TabIndex = 1;
+            this.txtFiltrar.Location = new System.Drawing.Point(62, 82);
+            this.txtFiltrar.Name = "txtFiltrar";
+            this.txtFiltrar.Size = new System.Drawing.Size(146, 26);
+            this.txtFiltrar.TabIndex = 1;
             // 
-            // dataGridView2
+            // dgvProducciones
             // 
-            this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.dgvProducciones.AllowUserToAddRows = false;
+            this.dgvProducciones.AllowUserToDeleteRows = false;
+            this.dgvProducciones.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(13, 33);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(724, 125);
-            this.dataGridView2.TabIndex = 0;
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Location = new System.Drawing.Point(4, 34);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(758, 588);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Modificar";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.dgvProducciones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvProducciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProducciones.Location = new System.Drawing.Point(13, 25);
+            this.dgvProducciones.Name = "dgvProducciones";
+            this.dgvProducciones.ReadOnly = true;
+            this.dgvProducciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvProducciones.Size = new System.Drawing.Size(724, 185);
+            this.dgvProducciones.TabIndex = 0;
+            this.dgvProducciones.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProducciones_CellClick);
             // 
             // tabPage4
             // 
@@ -473,6 +408,31 @@
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Generar reporte";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(6, 31);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(171, 21);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "Simular producción con";
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(183, 29);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(44, 26);
+            this.numericUpDown1.TabIndex = 7;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(233, 31);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(145, 21);
+            this.label7.TabIndex = 8;
+            this.label7.Text = "segundos por etapa";
             // 
             // btnGuardar
             // 
@@ -489,16 +449,100 @@
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // lblTiempo
+            // button2
             // 
-            this.lblTiempo.AutoSize = true;
-            this.lblTiempo.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTiempo.ForeColor = System.Drawing.Color.SteelBlue;
-            this.lblTiempo.Location = new System.Drawing.Point(9, 350);
-            this.lblTiempo.Name = "lblTiempo";
-            this.lblTiempo.Size = new System.Drawing.Size(65, 21);
-            this.lblTiempo.TabIndex = 20;
-            this.lblTiempo.Text = "Tiempo:";
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.Image = global::ERP.Properties.Resources.iconplane;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button2.Location = new System.Drawing.Point(450, 19);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(260, 44);
+            this.button2.TabIndex = 9;
+            this.button2.Text = "Comenzar simulación";
+            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // btnAvanzar
+            // 
+            this.btnAvanzar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAvanzar.Image = global::ERP.Properties.Resources.redoicon;
+            this.btnAvanzar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAvanzar.Location = new System.Drawing.Point(500, 129);
+            this.btnAvanzar.Name = "btnAvanzar";
+            this.btnAvanzar.Size = new System.Drawing.Size(206, 42);
+            this.btnAvanzar.TabIndex = 3;
+            this.btnAvanzar.Text = "Avanzar etapa";
+            this.btnAvanzar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnAvanzar.UseVisualStyleBackColor = true;
+            this.btnAvanzar.Click += new System.EventHandler(this.btnAvanzar_Click);
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox3.Controls.Add(this.label6);
+            this.groupBox3.Controls.Add(this.button2);
+            this.groupBox3.Controls.Add(this.numericUpDown1);
+            this.groupBox3.Controls.Add(this.label7);
+            this.groupBox3.Location = new System.Drawing.Point(13, 413);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(720, 76);
+            this.groupBox3.TabIndex = 10;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Simular esta producción";
+            // 
+            // btnRetroceder
+            // 
+            this.btnRetroceder.Image = global::ERP.Properties.Resources.undoicon;
+            this.btnRetroceder.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRetroceder.Location = new System.Drawing.Point(6, 126);
+            this.btnRetroceder.Name = "btnRetroceder";
+            this.btnRetroceder.Size = new System.Drawing.Size(202, 42);
+            this.btnRetroceder.TabIndex = 11;
+            this.btnRetroceder.Text = "Retroceder etapa";
+            this.btnRetroceder.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRetroceder.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRetroceder.UseVisualStyleBackColor = true;
+            this.btnRetroceder.Click += new System.EventHandler(this.btnRetroceder_Click);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancelar.Image = global::ERP.Properties.Resources.cancelicon;
+            this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCancelar.Location = new System.Drawing.Point(500, 74);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(206, 42);
+            this.btnCancelar.TabIndex = 12;
+            this.btnCancelar.Text = "Cancelar produccion";
+            this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.lblEtapa);
+            this.panel1.Controls.Add(this.btnRetroceder);
+            this.panel1.Controls.Add(this.btnCancelar);
+            this.panel1.Controls.Add(this.prgrsEtapa);
+            this.panel1.Controls.Add(this.txtFiltrar);
+            this.panel1.Controls.Add(this.Filtrar);
+            this.panel1.Controls.Add(this.btnAvanzar);
+            this.panel1.Location = new System.Drawing.Point(13, 216);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(720, 180);
+            this.panel1.TabIndex = 13;
+            // 
+            // lblEtapa
+            // 
+            this.lblEtapa.AutoSize = true;
+            this.lblEtapa.Location = new System.Drawing.Point(6, 13);
+            this.lblEtapa.Name = "lblEtapa";
+            this.lblEtapa.Size = new System.Drawing.Size(51, 21);
+            this.lblEtapa.TabIndex = 13;
+            this.lblEtapa.Text = "Etapa";
             // 
             // Produccion
             // 
@@ -519,12 +563,13 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlaneaciones)).EndInit();
             this.tabPage2.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProducciones)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -547,25 +592,27 @@
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvPlaneaciones;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAvanzar;
         private System.Windows.Forms.Label Filtrar;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TextBox txtFiltrar;
+        private System.Windows.Forms.DataGridView dgvProducciones;
         private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.ProgressBar progressBar1;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ProgressBar prgrsEtapa;
         private System.Windows.Forms.Label lblDetalle;
         private System.Windows.Forms.DateTimePicker dtpFechaEstimada;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DateTimePicker dtpFechaInicio;
         private System.Windows.Forms.ComboBox cboxBuscar;
         private System.Windows.Forms.Label lblTiempo;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lblEtapa;
+        private System.Windows.Forms.Button btnRetroceder;
+        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.GroupBox groupBox3;
     }
 }

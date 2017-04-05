@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace LogicaDeNegocios.Produccion
 {
-    public class metodosProduccion
+    public class AgregarProduccion
     {
         Datos.BaseDeDatos bd = new Datos.BaseDeDatos();
 
@@ -63,7 +63,7 @@ namespace LogicaDeNegocios.Produccion
             
         }
 
-        public void AgregarProduccion(DataGridView tabla, DateTimePicker inicio, DateTimePicker estimada, RichTextBox observaciones)
+        public void InsertarProduccion(DataGridView tabla, DateTimePicker inicio, DateTimePicker estimada, RichTextBox observaciones)
         {
             string ip = RetornarValor(tabla, "idPlaneacion");
             string fi = inicio.Value.ToString("yyyy-MM-dd");
