@@ -38,6 +38,7 @@
             this.lblIdAlerta = new System.Windows.Forms.Label();
             this.tabPageInventario = new System.Windows.Forms.TabPage();
             this.grpAgregarMaterial = new System.Windows.Forms.GroupBox();
+            this.nudCantidad = new System.Windows.Forms.NumericUpDown();
             this.btnAgregarMaterial = new System.Windows.Forms.Button();
             this.lblMemoriaRam = new System.Windows.Forms.Label();
             this.lblIdMateria = new System.Windows.Forms.Label();
@@ -45,31 +46,30 @@
             this.lblDescripcion = new System.Windows.Forms.Label();
             this.lblMateria = new System.Windows.Forms.Label();
             this.grpMaterialStock = new System.Windows.Forms.GroupBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewStock = new System.Windows.Forms.DataGridView();
             this.tabPageConsumos = new System.Windows.Forms.TabPage();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dateTimeLocacion = new System.Windows.Forms.DateTimePicker();
-            this.rtbDescripcion = new System.Windows.Forms.RichTextBox();
-            this.btnAgregar = new System.Windows.Forms.Button();
+            this.grpAgregarLocacion = new System.Windows.Forms.GroupBox();
             this.lblFechaLocacion = new System.Windows.Forms.Label();
             this.lblFecha = new System.Windows.Forms.Label();
+            this.fLocacion = new System.Windows.Forms.DateTimePicker();
+            this.btnAgregar = new System.Windows.Forms.Button();
+            this.rtbDescripcion = new System.Windows.Forms.RichTextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dataGridViewLocacion = new System.Windows.Forms.DataGridView();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.grpAgregarLocacion = new System.Windows.Forms.GroupBox();
-            this.nudCantidad = new System.Windows.Forms.NumericUpDown();
             this.tabControlCompras.SuspendLayout();
             this.tabPageLocalizacion.SuspendLayout();
             this.grpAlertas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAlertas)).BeginInit();
             this.tabPageInventario.SuspendLayout();
             this.grpAgregarMaterial.SuspendLayout();
-            this.grpMaterialStock.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            this.tabPageConsumos.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.grpAgregarLocacion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).BeginInit();
+            this.grpMaterialStock.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStock)).BeginInit();
+            this.tabPageConsumos.SuspendLayout();
+            this.grpAgregarLocacion.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLocacion)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControlCompras
@@ -126,6 +126,7 @@
             this.btnActualizar.TabIndex = 4;
             this.btnActualizar.Text = "Actualizar alertas";
             this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // btnConfirmar
             // 
@@ -136,16 +137,23 @@
             this.btnConfirmar.TabIndex = 3;
             this.btnConfirmar.Text = "Confirmar ";
             this.btnConfirmar.UseVisualStyleBackColor = true;
+            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
             // dataGridViewAlertas
             // 
+            this.dataGridViewAlertas.AllowUserToAddRows = false;
+            this.dataGridViewAlertas.AllowUserToDeleteRows = false;
             this.dataGridViewAlertas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewAlertas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewAlertas.Location = new System.Drawing.Point(6, 21);
+            this.dataGridViewAlertas.MultiSelect = false;
             this.dataGridViewAlertas.Name = "dataGridViewAlertas";
+            this.dataGridViewAlertas.ReadOnly = true;
+            this.dataGridViewAlertas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewAlertas.Size = new System.Drawing.Size(635, 227);
             this.dataGridViewAlertas.TabIndex = 1;
+            this.dataGridViewAlertas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewAlertas_CellClick);
             // 
             // lblAlerta
             // 
@@ -195,6 +203,13 @@
             this.grpAgregarMaterial.TabIndex = 6;
             this.grpAgregarMaterial.TabStop = false;
             this.grpAgregarMaterial.Text = "Agregar material";
+            // 
+            // nudCantidad
+            // 
+            this.nudCantidad.Location = new System.Drawing.Point(420, 71);
+            this.nudCantidad.Name = "nudCantidad";
+            this.nudCantidad.Size = new System.Drawing.Size(120, 22);
+            this.nudCantidad.TabIndex = 10;
             // 
             // btnAgregarMaterial
             // 
@@ -253,7 +268,7 @@
             // 
             this.grpMaterialStock.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.grpMaterialStock.Controls.Add(this.dataGridView2);
+            this.grpMaterialStock.Controls.Add(this.dataGridViewStock);
             this.grpMaterialStock.Location = new System.Drawing.Point(20, 18);
             this.grpMaterialStock.Name = "grpMaterialStock";
             this.grpMaterialStock.Size = new System.Drawing.Size(647, 305);
@@ -261,15 +276,15 @@
             this.grpMaterialStock.TabStop = false;
             this.grpMaterialStock.Text = "Material en stock";
             // 
-            // dataGridView2
+            // dataGridViewStock
             // 
-            this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.dataGridViewStock.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(9, 21);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(632, 263);
-            this.dataGridView2.TabIndex = 5;
+            this.dataGridViewStock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewStock.Location = new System.Drawing.Point(9, 21);
+            this.dataGridViewStock.Name = "dataGridViewStock";
+            this.dataGridViewStock.Size = new System.Drawing.Size(632, 263);
+            this.dataGridViewStock.TabIndex = 5;
             // 
             // tabPageConsumos
             // 
@@ -283,51 +298,21 @@
             this.tabPageConsumos.Text = "Locacion";
             this.tabPageConsumos.UseVisualStyleBackColor = true;
             // 
-            // groupBox1
+            // grpAgregarLocacion
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.grpAgregarLocacion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.dataGridView1);
-            this.groupBox1.Location = new System.Drawing.Point(33, 26);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(618, 237);
-            this.groupBox1.TabIndex = 4;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Locaciones";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 21);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(606, 198);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // dateTimeLocacion
-            // 
-            this.dateTimeLocacion.Location = new System.Drawing.Point(306, 68);
-            this.dateTimeLocacion.Name = "dateTimeLocacion";
-            this.dateTimeLocacion.Size = new System.Drawing.Size(249, 22);
-            this.dateTimeLocacion.TabIndex = 15;
-            // 
-            // rtbDescripcion
-            // 
-            this.rtbDescripcion.Location = new System.Drawing.Point(196, 138);
-            this.rtbDescripcion.Name = "rtbDescripcion";
-            this.rtbDescripcion.Size = new System.Drawing.Size(344, 121);
-            this.rtbDescripcion.TabIndex = 14;
-            this.rtbDescripcion.Text = "";
-            // 
-            // btnAgregar
-            // 
-            this.btnAgregar.Location = new System.Drawing.Point(318, 275);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(106, 27);
-            this.btnAgregar.TabIndex = 13;
-            this.btnAgregar.Text = "Agregar ";
-            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.grpAgregarLocacion.Controls.Add(this.lblFechaLocacion);
+            this.grpAgregarLocacion.Controls.Add(this.lblFecha);
+            this.grpAgregarLocacion.Controls.Add(this.fLocacion);
+            this.grpAgregarLocacion.Controls.Add(this.btnAgregar);
+            this.grpAgregarLocacion.Controls.Add(this.rtbDescripcion);
+            this.grpAgregarLocacion.Location = new System.Drawing.Point(41, 287);
+            this.grpAgregarLocacion.Name = "grpAgregarLocacion";
+            this.grpAgregarLocacion.Size = new System.Drawing.Size(610, 323);
+            this.grpAgregarLocacion.TabIndex = 16;
+            this.grpAgregarLocacion.TabStop = false;
+            this.grpAgregarLocacion.Text = "Agregar locacion";
             // 
             // lblFechaLocacion
             // 
@@ -347,6 +332,55 @@
             this.lblFecha.TabIndex = 11;
             this.lblFecha.Text = "Descripcion";
             // 
+            // fLocacion
+            // 
+            this.fLocacion.Location = new System.Drawing.Point(306, 68);
+            this.fLocacion.Name = "fLocacion";
+            this.fLocacion.Size = new System.Drawing.Size(249, 22);
+            this.fLocacion.TabIndex = 15;
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.Location = new System.Drawing.Point(318, 275);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(106, 27);
+            this.btnAgregar.TabIndex = 13;
+            this.btnAgregar.Text = "Agregar ";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
+            // rtbDescripcion
+            // 
+            this.rtbDescripcion.Location = new System.Drawing.Point(196, 138);
+            this.rtbDescripcion.Name = "rtbDescripcion";
+            this.rtbDescripcion.Size = new System.Drawing.Size(344, 121);
+            this.rtbDescripcion.TabIndex = 14;
+            this.rtbDescripcion.Text = "";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.dataGridViewLocacion);
+            this.groupBox1.Location = new System.Drawing.Point(33, 26);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(618, 237);
+            this.groupBox1.TabIndex = 4;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Locaciones";
+            // 
+            // dataGridViewLocacion
+            // 
+            this.dataGridViewLocacion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewLocacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewLocacion.Location = new System.Drawing.Point(6, 21);
+            this.dataGridViewLocacion.Name = "dataGridViewLocacion";
+            this.dataGridViewLocacion.ReadOnly = true;
+            this.dataGridViewLocacion.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewLocacion.Size = new System.Drawing.Size(606, 198);
+            this.dataGridViewLocacion.TabIndex = 0;
+            // 
             // tabPage1
             // 
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
@@ -356,29 +390,6 @@
             this.tabPage1.TabIndex = 5;
             this.tabPage1.Text = "Consumo";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // grpAgregarLocacion
-            // 
-            this.grpAgregarLocacion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.grpAgregarLocacion.Controls.Add(this.lblFechaLocacion);
-            this.grpAgregarLocacion.Controls.Add(this.lblFecha);
-            this.grpAgregarLocacion.Controls.Add(this.dateTimeLocacion);
-            this.grpAgregarLocacion.Controls.Add(this.btnAgregar);
-            this.grpAgregarLocacion.Controls.Add(this.rtbDescripcion);
-            this.grpAgregarLocacion.Location = new System.Drawing.Point(41, 287);
-            this.grpAgregarLocacion.Name = "grpAgregarLocacion";
-            this.grpAgregarLocacion.Size = new System.Drawing.Size(610, 323);
-            this.grpAgregarLocacion.TabIndex = 16;
-            this.grpAgregarLocacion.TabStop = false;
-            this.grpAgregarLocacion.Text = "Agregar locacion";
-            // 
-            // nudCantidad
-            // 
-            this.nudCantidad.Location = new System.Drawing.Point(420, 71);
-            this.nudCantidad.Name = "nudCantidad";
-            this.nudCantidad.Size = new System.Drawing.Size(120, 22);
-            this.nudCantidad.TabIndex = 10;
             // 
             // Compras
             // 
@@ -392,7 +403,6 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Compras";
-            this.Load += new System.EventHandler(this.Almacen_Load);
             this.tabControlCompras.ResumeLayout(false);
             this.tabPageLocalizacion.ResumeLayout(false);
             this.grpAlertas.ResumeLayout(false);
@@ -401,14 +411,14 @@
             this.tabPageInventario.ResumeLayout(false);
             this.grpAgregarMaterial.ResumeLayout(false);
             this.grpAgregarMaterial.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).EndInit();
             this.grpMaterialStock.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStock)).EndInit();
             this.tabPageConsumos.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.grpAgregarLocacion.ResumeLayout(false);
             this.grpAgregarLocacion.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLocacion)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -419,14 +429,14 @@
         private System.Windows.Forms.TabPage tabPageLocalizacion;
         private System.Windows.Forms.TabPage tabPageInventario;
         private System.Windows.Forms.TabPage tabPageConsumos;
-        private System.Windows.Forms.DateTimePicker dateTimeLocacion;
+        private System.Windows.Forms.DateTimePicker fLocacion;
         private System.Windows.Forms.RichTextBox rtbDescripcion;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Label lblFechaLocacion;
         private System.Windows.Forms.Label lblFecha;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewLocacion;
         private System.Windows.Forms.GroupBox grpAlertas;
         private System.Windows.Forms.DataGridView dataGridViewAlertas;
         private System.Windows.Forms.Button btnActualizar;
@@ -434,7 +444,7 @@
         private System.Windows.Forms.Label lblAlerta;
         private System.Windows.Forms.Label lblIdAlerta;
         private System.Windows.Forms.GroupBox grpMaterialStock;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dataGridViewStock;
         private System.Windows.Forms.GroupBox grpAgregarMaterial;
         private System.Windows.Forms.Label lblMemoriaRam;
         private System.Windows.Forms.Label lblIdMateria;

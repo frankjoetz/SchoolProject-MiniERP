@@ -18,17 +18,34 @@ namespace LogicaDeNegocios.Compras
             bd.llenarTabla("select * from Locacion order by idLocacion asc", locacion);
         }
 
-        public void llenarGridViewCaptura(DataGridView material)
+        public void llenarGridViewAlertas(DataGridView alertas)
         {
-            bd.llenarTabla("select * from InventarioMateria order by nFolio asc", material);
+            bd.llenarTabla("select * from Alertas  where Status='No confirmado' order by IdAlerta desc", alertas);
         }
 
-        public bool altaLocacion(int Idlocacion, string descripcion, string FechaCreacion)
+        public void llenarDrigViewMaterial(DataGridView materiales)
         {
-            if (bd.insertar("insert into Locacion(idLocacion, descripcion, fCreada) values('" + Idlocacion + "', '" + descripcion + "', '" + FechaCreacion + "'" + ")"))
+            bd.llenarTabla("select * from InventarioMateria order by idMateria desc", materiales);
+        }
+
+        public bool altaLocacion(string descripcion, string FechaCreacion)
+        {
+            if (bd.insertar("insert into Locacion(descripcion, fCreada) values('" + descripcion + "', '" + FechaCreacion + "'" + ")"))
                 return true;
             else
                 return false;
+        }
+
+        public bool modificarAlerta(string id)
+        {
+            if(bd.actualizar("update Alertas set Status = 'Confirmado' where IdAlerta = '" + id +"'"))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }
