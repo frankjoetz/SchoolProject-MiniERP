@@ -42,6 +42,7 @@ namespace ERP.Compras
             }
 
             comp.llenarGridViewLocacion(dataGridViewLocacion);
+            rtbDescripcion.Text = null;
         }
 
         private void dataGridViewAlertas_CellClick(object sender, DataGridViewCellEventArgs e)

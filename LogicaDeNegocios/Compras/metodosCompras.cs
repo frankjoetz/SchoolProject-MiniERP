@@ -25,7 +25,7 @@ namespace LogicaDeNegocios.Compras
 
         public void llenarDrigViewMaterial(DataGridView materiales)
         {
-            bd.llenarTabla("select * from InventarioMateria order by idMateria desc", materiales);
+            bd.llenarTabla("select * from InventarioMateria order by idMateria asc", materiales);
         }
 
         public bool altaLocacion(string descripcion, string FechaCreacion)
