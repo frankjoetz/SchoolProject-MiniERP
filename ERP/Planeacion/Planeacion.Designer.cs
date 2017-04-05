@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Planeacion));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
@@ -96,7 +97,7 @@
             this.tabControl1.Location = new System.Drawing.Point(13, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(949, 670);
+            this.tabControl1.Size = new System.Drawing.Size(1180, 670);
             this.tabControl1.TabIndex = 2;
             // 
             // tabPage1
@@ -111,7 +112,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 30);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(941, 636);
+            this.tabPage1.Size = new System.Drawing.Size(1172, 636);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Nueva";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -123,7 +124,7 @@
             this.btnAlerta.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAlerta.Image = ((System.Drawing.Image)(resources.GetObject("btnAlerta.Image")));
             this.btnAlerta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAlerta.Location = new System.Drawing.Point(524, 467);
+            this.btnAlerta.Location = new System.Drawing.Point(629, 470);
             this.btnAlerta.Name = "btnAlerta";
             this.btnAlerta.Size = new System.Drawing.Size(278, 58);
             this.btnAlerta.TabIndex = 22;
@@ -138,9 +139,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox4.Controls.Add(this.GridPlaneacionesAgregadas);
             this.groupBox4.Font = new System.Drawing.Font("Franklin Gothic Book", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.Location = new System.Drawing.Point(10, 531);
+            this.groupBox4.Location = new System.Drawing.Point(10, 534);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(919, 99);
+            this.groupBox4.Size = new System.Drawing.Size(1150, 96);
             this.groupBox4.TabIndex = 21;
             this.groupBox4.TabStop = false;
             // 
@@ -151,9 +152,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.GridPlaneacionesAgregadas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.GridPlaneacionesAgregadas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GridPlaneacionesAgregadas.Location = new System.Drawing.Point(6, 19);
+            this.GridPlaneacionesAgregadas.Location = new System.Drawing.Point(6, 15);
             this.GridPlaneacionesAgregadas.Name = "GridPlaneacionesAgregadas";
-            this.GridPlaneacionesAgregadas.Size = new System.Drawing.Size(907, 74);
+            this.GridPlaneacionesAgregadas.Size = new System.Drawing.Size(1138, 75);
             this.GridPlaneacionesAgregadas.TabIndex = 0;
             // 
             // groupBox2
@@ -180,49 +181,53 @@
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.txtFechaInicio);
-            this.groupBox2.Font = new System.Drawing.Font("Franklin Gothic Book", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(6, 282);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(929, 179);
+            this.groupBox2.Size = new System.Drawing.Size(1160, 179);
             this.groupBox2.TabIndex = 18;
             this.groupBox2.TabStop = false;
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter_1);
             // 
             // txtBaja
             // 
-            this.txtBaja.Location = new System.Drawing.Point(555, 105);
+            this.txtBaja.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBaja.Location = new System.Drawing.Point(632, 100);
             this.txtBaja.Name = "txtBaja";
-            this.txtBaja.Size = new System.Drawing.Size(59, 29);
+            this.txtBaja.Size = new System.Drawing.Size(81, 26);
             this.txtBaja.TabIndex = 20;
             // 
             // txtMedia
             // 
-            this.txtMedia.Location = new System.Drawing.Point(361, 105);
+            this.txtMedia.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMedia.Location = new System.Drawing.Point(373, 100);
             this.txtMedia.Name = "txtMedia";
-            this.txtMedia.Size = new System.Drawing.Size(59, 29);
+            this.txtMedia.Size = new System.Drawing.Size(76, 26);
             this.txtMedia.TabIndex = 19;
             // 
             // txtAlta
             // 
-            this.txtAlta.Location = new System.Drawing.Point(158, 105);
+            this.txtAlta.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAlta.Location = new System.Drawing.Point(118, 100);
             this.txtAlta.Name = "txtAlta";
-            this.txtAlta.Size = new System.Drawing.Size(59, 29);
+            this.txtAlta.Size = new System.Drawing.Size(73, 26);
             this.txtAlta.TabIndex = 18;
             // 
             // txtObservaciones
             // 
             this.txtObservaciones.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtObservaciones.Location = new System.Drawing.Point(173, 140);
+            this.txtObservaciones.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtObservaciones.Location = new System.Drawing.Point(124, 143);
             this.txtObservaciones.Name = "txtObservaciones";
-            this.txtObservaciones.Size = new System.Drawing.Size(725, 29);
+            this.txtObservaciones.Size = new System.Drawing.Size(1023, 26);
             this.txtObservaciones.TabIndex = 17;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(56, 145);
+            this.label12.Location = new System.Drawing.Point(2, 146);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(111, 21);
             this.label12.TabIndex = 16;
@@ -231,7 +236,7 @@
             // checkBoxGamaBaja
             // 
             this.checkBoxGamaBaja.AutoSize = true;
-            this.checkBoxGamaBaja.Location = new System.Drawing.Point(453, 113);
+            this.checkBoxGamaBaja.Location = new System.Drawing.Point(518, 107);
             this.checkBoxGamaBaja.Name = "checkBoxGamaBaja";
             this.checkBoxGamaBaja.Size = new System.Drawing.Size(15, 14);
             this.checkBoxGamaBaja.TabIndex = 15;
@@ -240,7 +245,7 @@
             // checkBoxGamaMedia
             // 
             this.checkBoxGamaMedia.AutoSize = true;
-            this.checkBoxGamaMedia.Location = new System.Drawing.Point(245, 113);
+            this.checkBoxGamaMedia.Location = new System.Drawing.Point(248, 107);
             this.checkBoxGamaMedia.Name = "checkBoxGamaMedia";
             this.checkBoxGamaMedia.Size = new System.Drawing.Size(15, 14);
             this.checkBoxGamaMedia.TabIndex = 14;
@@ -249,7 +254,7 @@
             // checkBoxGamaAlta
             // 
             this.checkBoxGamaAlta.AutoSize = true;
-            this.checkBoxGamaAlta.Location = new System.Drawing.Point(59, 113);
+            this.checkBoxGamaAlta.Location = new System.Drawing.Point(6, 107);
             this.checkBoxGamaAlta.Name = "checkBoxGamaAlta";
             this.checkBoxGamaAlta.Size = new System.Drawing.Size(15, 14);
             this.checkBoxGamaAlta.TabIndex = 13;
@@ -259,7 +264,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(474, 109);
+            this.label10.Location = new System.Drawing.Point(539, 103);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(87, 21);
             this.label10.TabIndex = 12;
@@ -269,7 +274,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(266, 109);
+            this.label9.Location = new System.Drawing.Point(269, 103);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(99, 21);
             this.label9.TabIndex = 11;
@@ -277,16 +282,17 @@
             // 
             // txtIdPedido
             // 
-            this.txtIdPedido.Location = new System.Drawing.Point(136, 23);
+            this.txtIdPedido.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIdPedido.Location = new System.Drawing.Point(86, 31);
             this.txtIdPedido.Name = "txtIdPedido";
-            this.txtIdPedido.Size = new System.Drawing.Size(81, 29);
+            this.txtIdPedido.Size = new System.Drawing.Size(119, 26);
             this.txtIdPedido.TabIndex = 0;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(80, 109);
+            this.label8.Location = new System.Drawing.Point(26, 103);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(87, 21);
             this.label8.TabIndex = 10;
@@ -296,7 +302,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(56, 77);
+            this.label6.Location = new System.Drawing.Point(0, 70);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(274, 21);
             this.label6.TabIndex = 9;
@@ -305,16 +311,16 @@
             // DTPFechaEntrega
             // 
             this.DTPFechaEntrega.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DTPFechaEntrega.Location = new System.Drawing.Point(688, 28);
+            this.DTPFechaEntrega.Location = new System.Drawing.Point(856, 29);
             this.DTPFechaEntrega.Name = "DTPFechaEntrega";
-            this.DTPFechaEntrega.Size = new System.Drawing.Size(289, 26);
+            this.DTPFechaEntrega.Size = new System.Drawing.Size(292, 26);
             this.DTPFechaEntrega.TabIndex = 8;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(820, 77);
+            this.label5.Location = new System.Drawing.Point(784, 76);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(53, 21);
             this.label5.TabIndex = 7;
@@ -322,16 +328,17 @@
             // 
             // txtStatus
             // 
-            this.txtStatus.Location = new System.Drawing.Point(798, 101);
+            this.txtStatus.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtStatus.Location = new System.Drawing.Point(788, 100);
             this.txtStatus.Name = "txtStatus";
-            this.txtStatus.Size = new System.Drawing.Size(100, 29);
+            this.txtStatus.Size = new System.Drawing.Size(100, 26);
             this.txtStatus.TabIndex = 6;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(488, 28);
+            this.label4.Location = new System.Drawing.Point(656, 34);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(194, 21);
             this.label4.TabIndex = 5;
@@ -341,7 +348,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(246, 30);
+            this.label3.Location = new System.Drawing.Point(288, 34);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(90, 21);
             this.label3.TabIndex = 4;
@@ -351,7 +358,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(56, 30);
+            this.label2.Location = new System.Drawing.Point(0, 34);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(74, 21);
             this.label2.TabIndex = 3;
@@ -359,9 +366,10 @@
             // 
             // txtFechaInicio
             // 
-            this.txtFechaInicio.Location = new System.Drawing.Point(342, 25);
+            this.txtFechaInicio.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFechaInicio.Location = new System.Drawing.Point(384, 31);
             this.txtFechaInicio.Name = "txtFechaInicio";
-            this.txtFechaInicio.Size = new System.Drawing.Size(126, 29);
+            this.txtFechaInicio.Size = new System.Drawing.Size(209, 26);
             this.txtFechaInicio.TabIndex = 1;
             // 
             // groupBox1
@@ -371,9 +379,10 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txtBuscarPedido);
             this.groupBox1.Controls.Add(this.comboBoxBuscarPedido);
+            this.groupBox1.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(570, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(365, 78);
+            this.groupBox1.Size = new System.Drawing.Size(596, 78);
             this.groupBox1.TabIndex = 20;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Buscar pedido por:";
@@ -383,7 +392,8 @@
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(184, 9);
+            this.label1.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(154, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(150, 21);
             this.label1.TabIndex = 2;
@@ -393,21 +403,23 @@
             // 
             this.txtBuscarPedido.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtBuscarPedido.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBuscarPedido.Location = new System.Drawing.Point(158, 33);
             this.txtBuscarPedido.Multiline = true;
             this.txtBuscarPedido.Name = "txtBuscarPedido";
-            this.txtBuscarPedido.Size = new System.Drawing.Size(201, 29);
+            this.txtBuscarPedido.Size = new System.Drawing.Size(432, 29);
             this.txtBuscarPedido.TabIndex = 1;
             this.txtBuscarPedido.TextChanged += new System.EventHandler(this.txtBuscarPedido_TextChanged);
             // 
             // comboBoxBuscarPedido
             // 
+            this.comboBoxBuscarPedido.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxBuscarPedido.FormattingEnabled = true;
             this.comboBoxBuscarPedido.Items.AddRange(new object[] {
             "IdPedido",
             "Nombre",
             "Empresa"});
-            this.comboBoxBuscarPedido.Location = new System.Drawing.Point(16, 33);
+            this.comboBoxBuscarPedido.Location = new System.Drawing.Point(11, 33);
             this.comboBoxBuscarPedido.Name = "comboBoxBuscarPedido";
             this.comboBoxBuscarPedido.Size = new System.Drawing.Size(121, 29);
             this.comboBoxBuscarPedido.TabIndex = 0;
@@ -419,7 +431,7 @@
             this.btnNuevaPlaneacion.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevaPlaneacion.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevaPlaneacion.Image")));
             this.btnNuevaPlaneacion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNuevaPlaneacion.Location = new System.Drawing.Point(200, 467);
+            this.btnNuevaPlaneacion.Location = new System.Drawing.Point(268, 470);
             this.btnNuevaPlaneacion.Name = "btnNuevaPlaneacion";
             this.btnNuevaPlaneacion.Size = new System.Drawing.Size(260, 58);
             this.btnNuevaPlaneacion.TabIndex = 19;
@@ -433,23 +445,25 @@
             this.groupBoxGridPedidos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBoxGridPedidos.Controls.Add(this.GridPedidos);
-            this.groupBoxGridPedidos.Font = new System.Drawing.Font("Franklin Gothic Book", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBoxGridPedidos.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxGridPedidos.Location = new System.Drawing.Point(6, 71);
             this.groupBoxGridPedidos.Name = "groupBoxGridPedidos";
-            this.groupBoxGridPedidos.Size = new System.Drawing.Size(929, 211);
+            this.groupBoxGridPedidos.Size = new System.Drawing.Size(1160, 211);
             this.groupBoxGridPedidos.TabIndex = 17;
             this.groupBoxGridPedidos.TabStop = false;
             this.groupBoxGridPedidos.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // GridPedidos
             // 
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GridPedidos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.GridPedidos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.GridPedidos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.GridPedidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridPedidos.Location = new System.Drawing.Point(6, 16);
             this.GridPedidos.Name = "GridPedidos";
-            this.GridPedidos.Size = new System.Drawing.Size(917, 189);
+            this.GridPedidos.Size = new System.Drawing.Size(1148, 189);
             this.GridPedidos.TabIndex = 0;
             this.GridPedidos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridPedidos_CellContentClick_1);
             // 
@@ -458,13 +472,14 @@
             this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Franklin Gothic Book", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Franklin Gothic Book", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(6, 25);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(171, 24);
+            this.label7.Size = new System.Drawing.Size(187, 24);
             this.label7.TabIndex = 16;
             this.label7.Text = "NUEVA PLANEACIÓN";
             this.label7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // tabPage2
             // 
@@ -475,7 +490,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 30);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(941, 636);
+            this.tabPage2.Size = new System.Drawing.Size(1172, 636);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Buscar";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -489,13 +504,13 @@
             this.chart1.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(18, 293);
+            this.chart1.Location = new System.Drawing.Point(6, 278);
             this.chart1.Name = "chart1";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(907, 310);
+            this.chart1.Size = new System.Drawing.Size(740, 352);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
             // 
@@ -506,9 +521,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox3.Controls.Add(this.dataGridView1);
             this.groupBox3.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(18, 60);
+            this.groupBox3.Location = new System.Drawing.Point(6, 61);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(907, 211);
+            this.groupBox3.Size = new System.Drawing.Size(746, 211);
             this.groupBox3.TabIndex = 18;
             this.groupBox3.TabStop = false;
             // 
@@ -520,7 +535,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(9, 14);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(892, 191);
+            this.dataGridView1.Size = new System.Drawing.Size(731, 191);
             this.dataGridView1.TabIndex = 0;
             // 
             // label11
@@ -528,10 +543,10 @@
             this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Franklin Gothic Book", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(23, 22);
+            this.label11.Font = new System.Drawing.Font("Franklin Gothic Book", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(6, 22);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(184, 24);
+            this.label11.Size = new System.Drawing.Size(201, 24);
             this.label11.TabIndex = 17;
             this.label11.Text = "BUSCAR PLANEACIÓN";
             this.label11.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -541,7 +556,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(974, 694);
+            this.ClientSize = new System.Drawing.Size(1205, 694);
             this.ControlBox = false;
             this.Controls.Add(this.tabControl1);
             this.Name = "Planeacion";
