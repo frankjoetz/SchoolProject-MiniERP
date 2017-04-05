@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Planeacion));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.btnAlerta = new System.Windows.Forms.Button();
@@ -97,7 +97,7 @@
             this.tabControl1.Location = new System.Drawing.Point(13, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1180, 670);
+            this.tabControl1.Size = new System.Drawing.Size(1409, 807);
             this.tabControl1.TabIndex = 2;
             // 
             // tabPage1
@@ -112,7 +112,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 30);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1172, 636);
+            this.tabPage1.Size = new System.Drawing.Size(1401, 773);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Nueva";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -124,7 +124,7 @@
             this.btnAlerta.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAlerta.Image = ((System.Drawing.Image)(resources.GetObject("btnAlerta.Image")));
             this.btnAlerta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAlerta.Location = new System.Drawing.Point(629, 470);
+            this.btnAlerta.Location = new System.Drawing.Point(743, 470);
             this.btnAlerta.Name = "btnAlerta";
             this.btnAlerta.Size = new System.Drawing.Size(278, 58);
             this.btnAlerta.TabIndex = 22;
@@ -141,7 +141,7 @@
             this.groupBox4.Font = new System.Drawing.Font("Franklin Gothic Book", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.Location = new System.Drawing.Point(10, 534);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(1150, 96);
+            this.groupBox4.Size = new System.Drawing.Size(1379, 233);
             this.groupBox4.TabIndex = 21;
             this.groupBox4.TabStop = false;
             // 
@@ -154,7 +154,7 @@
             this.GridPlaneacionesAgregadas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridPlaneacionesAgregadas.Location = new System.Drawing.Point(6, 15);
             this.GridPlaneacionesAgregadas.Name = "GridPlaneacionesAgregadas";
-            this.GridPlaneacionesAgregadas.Size = new System.Drawing.Size(1138, 75);
+            this.GridPlaneacionesAgregadas.Size = new System.Drawing.Size(1367, 212);
             this.GridPlaneacionesAgregadas.TabIndex = 0;
             // 
             // groupBox2
@@ -184,7 +184,7 @@
             this.groupBox2.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(6, 282);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1160, 179);
+            this.groupBox2.Size = new System.Drawing.Size(1389, 179);
             this.groupBox2.TabIndex = 18;
             this.groupBox2.TabStop = false;
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter_1);
@@ -220,7 +220,7 @@
             this.txtObservaciones.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtObservaciones.Location = new System.Drawing.Point(124, 143);
             this.txtObservaciones.Name = "txtObservaciones";
-            this.txtObservaciones.Size = new System.Drawing.Size(1023, 26);
+            this.txtObservaciones.Size = new System.Drawing.Size(1252, 26);
             this.txtObservaciones.TabIndex = 17;
             // 
             // label12
@@ -382,7 +382,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(570, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(596, 78);
+            this.groupBox1.Size = new System.Drawing.Size(825, 78);
             this.groupBox1.TabIndex = 20;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Buscar pedido por:";
@@ -407,7 +407,7 @@
             this.txtBuscarPedido.Location = new System.Drawing.Point(158, 33);
             this.txtBuscarPedido.Multiline = true;
             this.txtBuscarPedido.Name = "txtBuscarPedido";
-            this.txtBuscarPedido.Size = new System.Drawing.Size(432, 29);
+            this.txtBuscarPedido.Size = new System.Drawing.Size(661, 29);
             this.txtBuscarPedido.TabIndex = 1;
             this.txtBuscarPedido.TextChanged += new System.EventHandler(this.txtBuscarPedido_TextChanged);
             // 
@@ -431,7 +431,7 @@
             this.btnNuevaPlaneacion.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevaPlaneacion.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevaPlaneacion.Image")));
             this.btnNuevaPlaneacion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNuevaPlaneacion.Location = new System.Drawing.Point(268, 470);
+            this.btnNuevaPlaneacion.Location = new System.Drawing.Point(382, 470);
             this.btnNuevaPlaneacion.Name = "btnNuevaPlaneacion";
             this.btnNuevaPlaneacion.Size = new System.Drawing.Size(260, 58);
             this.btnNuevaPlaneacion.TabIndex = 19;
@@ -448,22 +448,22 @@
             this.groupBoxGridPedidos.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxGridPedidos.Location = new System.Drawing.Point(6, 71);
             this.groupBoxGridPedidos.Name = "groupBoxGridPedidos";
-            this.groupBoxGridPedidos.Size = new System.Drawing.Size(1160, 211);
+            this.groupBoxGridPedidos.Size = new System.Drawing.Size(1389, 211);
             this.groupBoxGridPedidos.TabIndex = 17;
             this.groupBoxGridPedidos.TabStop = false;
             this.groupBoxGridPedidos.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // GridPedidos
             // 
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GridPedidos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GridPedidos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.GridPedidos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.GridPedidos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.GridPedidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridPedidos.Location = new System.Drawing.Point(6, 16);
             this.GridPedidos.Name = "GridPedidos";
-            this.GridPedidos.Size = new System.Drawing.Size(1148, 189);
+            this.GridPedidos.Size = new System.Drawing.Size(1377, 189);
             this.GridPedidos.TabIndex = 0;
             this.GridPedidos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridPedidos_CellContentClick_1);
             // 
@@ -500,16 +500,16 @@
             this.chart1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
+            chartArea3.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.chart1.Legends.Add(legend3);
             this.chart1.Location = new System.Drawing.Point(6, 278);
             this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            this.chart1.Series.Add(series3);
             this.chart1.Size = new System.Drawing.Size(740, 352);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
@@ -556,12 +556,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1205, 694);
+            this.ClientSize = new System.Drawing.Size(1434, 831);
             this.ControlBox = false;
             this.Controls.Add(this.tabControl1);
             this.Name = "Planeacion";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Planeacion";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Planeacion_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);

@@ -33,7 +33,8 @@ namespace LogicaDeNegocios.Planeacion
 
         // Mandar alerta
        
-        
+        //insertar planeacion
+
 
         
 
