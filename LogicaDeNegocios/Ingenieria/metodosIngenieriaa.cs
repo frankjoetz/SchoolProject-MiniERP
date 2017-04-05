@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Datos;
 using MySql.Data.MySqlClient;
+using System.Windows.Forms;
 
 namespace LogicaDeNegocios
 {
@@ -40,5 +41,9 @@ namespace LogicaDeNegocios
         //    else
         //        return false;
         //}
+        public void comboBox(string consulta, string columna, ComboBox cbx)
+        {
+            bd.llenarComboBox(consulta, columna, cbx);
+        }
     }
 }

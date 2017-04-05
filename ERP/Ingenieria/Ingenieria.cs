@@ -56,6 +56,7 @@ namespace ERP.Ingenieria
 
         private void Ingenieria_Load(object sender, EventArgs e)
         {
+            MIngenieria.comboBox("select descripcion from Producto", "descripcion", cmbgamascp);
             // TODO: esta línea de código carga datos en la tabla 'erpdbDataSet3.InventarioProducto' Puede moverla o quitarla según sea necesario.
             // TODO: esta línea de código carga datos en la tabla 'erpdbDataSet1.MateriaPrima' Puede moverla o quitarla según sea necesario.
             // TODO: esta línea de código carga datos en la tabla 'erpdbDataSet2.MateriaPrima' Puede moverla o quitarla según sea necesario.
