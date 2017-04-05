@@ -19,9 +19,9 @@ namespace LogicaDeNegocios.Planeacion
         }
 
         // metodo para el buscador
-        public void Buscar(ComboBox columna, TextBox valor, DataGridView tabla)
+        public void Buscarid(TextBox txtBuscar, DataGridView tabla)
         {
-            string consulta = "select * from Vista_PedidosPlaneacion where Status='En proceso' and " + columna.Text + " like '%" + valor.Text + "%'";
+            string consulta = "select * from Vista_PedidosPlaneacion where Status='En proceso' and idPedido  like '%" + int.Parse(txtBuscar.Text) + "%'";
             datos.llenarTabla(consulta, tabla);
         }
 

@@ -28,12 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Planeacion));
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.btnAlerta = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.GridPlaneacionesAgregadas = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtBaja = new System.Windows.Forms.TextBox();
+            this.txtMedia = new System.Windows.Forms.TextBox();
+            this.txtAlta = new System.Windows.Forms.TextBox();
             this.txtObservaciones = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.checkBoxGamaBaja = new System.Windows.Forms.CheckBox();
@@ -62,9 +69,8 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.txtAlta = new System.Windows.Forms.TextBox();
-            this.txtMedia = new System.Windows.Forms.TextBox();
-            this.txtBaja = new System.Windows.Forms.TextBox();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -74,6 +80,9 @@
             this.groupBoxGridPedidos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridPedidos)).BeginInit();
             this.tabPage2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -112,11 +121,14 @@
             // 
             this.btnAlerta.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnAlerta.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAlerta.Location = new System.Drawing.Point(484, 467);
+            this.btnAlerta.Image = ((System.Drawing.Image)(resources.GetObject("btnAlerta.Image")));
+            this.btnAlerta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAlerta.Location = new System.Drawing.Point(524, 467);
             this.btnAlerta.Name = "btnAlerta";
-            this.btnAlerta.Size = new System.Drawing.Size(407, 58);
+            this.btnAlerta.Size = new System.Drawing.Size(278, 58);
             this.btnAlerta.TabIndex = 22;
-            this.btnAlerta.Text = "Alertar a Compras (Falta de Materia Prima)";
+            this.btnAlerta.Text = "Alertas Falta Material Compras";
+            this.btnAlerta.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAlerta.UseVisualStyleBackColor = true;
             // 
             // groupBox4
@@ -175,6 +187,27 @@
             this.groupBox2.TabIndex = 18;
             this.groupBox2.TabStop = false;
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter_1);
+            // 
+            // txtBaja
+            // 
+            this.txtBaja.Location = new System.Drawing.Point(555, 105);
+            this.txtBaja.Name = "txtBaja";
+            this.txtBaja.Size = new System.Drawing.Size(59, 29);
+            this.txtBaja.TabIndex = 20;
+            // 
+            // txtMedia
+            // 
+            this.txtMedia.Location = new System.Drawing.Point(361, 105);
+            this.txtMedia.Name = "txtMedia";
+            this.txtMedia.Size = new System.Drawing.Size(59, 29);
+            this.txtMedia.TabIndex = 19;
+            // 
+            // txtAlta
+            // 
+            this.txtAlta.Location = new System.Drawing.Point(158, 105);
+            this.txtAlta.Name = "txtAlta";
+            this.txtAlta.Size = new System.Drawing.Size(59, 29);
+            this.txtAlta.TabIndex = 18;
             // 
             // txtObservaciones
             // 
@@ -366,7 +399,6 @@
             this.txtBuscarPedido.Size = new System.Drawing.Size(201, 29);
             this.txtBuscarPedido.TabIndex = 1;
             this.txtBuscarPedido.TextChanged += new System.EventHandler(this.txtBuscarPedido_TextChanged);
-            this.txtBuscarPedido.Enter += new System.EventHandler(this.txtBuscarPedido_Enter);
             // 
             // comboBoxBuscarPedido
             // 
@@ -383,12 +415,16 @@
             // btnNuevaPlaneacion
             // 
             this.btnNuevaPlaneacion.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnNuevaPlaneacion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnNuevaPlaneacion.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevaPlaneacion.Location = new System.Drawing.Point(41, 467);
+            this.btnNuevaPlaneacion.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevaPlaneacion.Image")));
+            this.btnNuevaPlaneacion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNuevaPlaneacion.Location = new System.Drawing.Point(200, 467);
             this.btnNuevaPlaneacion.Name = "btnNuevaPlaneacion";
-            this.btnNuevaPlaneacion.Size = new System.Drawing.Size(407, 58);
+            this.btnNuevaPlaneacion.Size = new System.Drawing.Size(260, 58);
             this.btnNuevaPlaneacion.TabIndex = 19;
             this.btnNuevaPlaneacion.Text = "Agregar Nueva Planeacion";
+            this.btnNuevaPlaneacion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnNuevaPlaneacion.UseVisualStyleBackColor = true;
             this.btnNuevaPlaneacion.Click += new System.EventHandler(this.btnNuevaPlaneacion_Click);
             // 
@@ -432,6 +468,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.chart1);
             this.tabPage2.Controls.Add(this.groupBox3);
             this.tabPage2.Controls.Add(this.label11);
             this.tabPage2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -448,10 +485,11 @@
             this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox3.Controls.Add(this.dataGridView1);
             this.groupBox3.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(18, 60);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(712, 233);
+            this.groupBox3.Size = new System.Drawing.Size(907, 211);
             this.groupBox3.TabIndex = 18;
             this.groupBox3.TabStop = false;
             // 
@@ -460,35 +498,44 @@
             this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Franklin Gothic Book", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(246, 9);
+            this.label11.Font = new System.Drawing.Font("Franklin Gothic Book", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(23, 22);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(201, 24);
+            this.label11.Size = new System.Drawing.Size(184, 24);
             this.label11.TabIndex = 17;
             this.label11.Text = "BUSCAR PLANEACIÓN";
             this.label11.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
-            // txtAlta
+            // chart1
             // 
-            this.txtAlta.Location = new System.Drawing.Point(158, 105);
-            this.txtAlta.Name = "txtAlta";
-            this.txtAlta.Size = new System.Drawing.Size(59, 29);
-            this.txtAlta.TabIndex = 18;
+            this.chart1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(18, 293);
+            this.chart1.Name = "chart1";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
+            this.chart1.Size = new System.Drawing.Size(907, 310);
+            this.chart1.TabIndex = 0;
+            this.chart1.Text = "chart1";
             // 
-            // txtMedia
+            // dataGridView1
             // 
-            this.txtMedia.Location = new System.Drawing.Point(362, 105);
-            this.txtMedia.Name = "txtMedia";
-            this.txtMedia.Size = new System.Drawing.Size(59, 29);
-            this.txtMedia.TabIndex = 19;
-            // 
-            // txtBaja
-            // 
-            this.txtBaja.Location = new System.Drawing.Point(555, 105);
-            this.txtBaja.Name = "txtBaja";
-            this.txtBaja.Size = new System.Drawing.Size(59, 29);
-            this.txtBaja.TabIndex = 20;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(9, 14);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(892, 191);
+            this.dataGridView1.TabIndex = 0;
             // 
             // Planeacion
             // 
@@ -514,6 +561,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.GridPedidos)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -557,6 +607,8 @@
         private System.Windows.Forms.TextBox txtBaja;
         private System.Windows.Forms.TextBox txtMedia;
         private System.Windows.Forms.TextBox txtAlta;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.DataGridView dataGridView1;
 
     }
 }

@@ -60,6 +60,8 @@ namespace ERP.Planeacion
             checkBoxGamaAlta.Enabled = false;
             checkBoxGamaMedia.Enabled = false;
             checkBoxGamaBaja.Enabled = false;
+
+            
         }
 
         private void groupBox2_Enter(object sender, EventArgs e)
@@ -119,7 +121,10 @@ namespace ERP.Planeacion
 
         private void txtBuscarPedido_TextChanged(object sender, EventArgs e)
         {
-           
+            if (comboBoxBuscarPedido.Text == "idPedido")
+            {
+                planeacion.Buscarid(txtBuscarPedido, GridPedidos);
+            }
         }
 
         private void txtBuscarPedido_KeyDown(object sender, KeyEventArgs e)
@@ -182,11 +187,6 @@ namespace ERP.Planeacion
         private void groupBox2_Enter_1(object sender, EventArgs e)
         {
 
-        }
-
-        private void txtBuscarPedido_Enter(object sender, EventArgs e)
-        {
-            planeacion.Buscar(comboBoxBuscarPedido, txtBuscarPedido, GridPedidos);
         }
     }
 }
