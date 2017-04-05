@@ -85,6 +85,12 @@
     <Compile Include="LogIn.Designer.cs">
       <DependentUpon>LogIn.cs</DependentUpon>
     </Compile>
+    <Compile Include="Planeacion\MandarAlerta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Planeacion\MandarAlerta.Designer.cs">
+      <DependentUpon>MandarAlerta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Planeacion\Planeacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +139,9 @@
     <EmbeddedResource Include="Ingenieria\Report2.rdlc" />
     <EmbeddedResource Include="LogIn.resx">
       <DependentUpon>LogIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Planeacion\MandarAlerta.resx">
+      <DependentUpon>MandarAlerta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Planeacion\Planeacion.resx">
       <DependentUpon>Planeacion.cs</DependentUpon>

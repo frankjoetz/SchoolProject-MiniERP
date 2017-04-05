@@ -30,6 +30,9 @@ namespace LogicaDeNegocios.Planeacion
         {
             datos.llenarTabla("select * from Planeacion", GridPlaneaciones);
         }
+
+        // Mandar alerta
+       
         
 
         
