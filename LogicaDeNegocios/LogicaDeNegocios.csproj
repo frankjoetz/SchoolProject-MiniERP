@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Compras\metodosCompras.cs" />
+    <Compile Include="Dashboard\metodosDashboard.cs" />
     <Compile Include="Planeacion\metodosPlaneacion.cs" />
     <Compile Include="Produccion\AdministrarProduccion.cs" />
     <Compile Include="Produccion\AgregarProduccion.cs" />
@@ -51,9 +52,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Ventas\metodosVentas.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Dashboard\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\Datos\Datos.csproj">
       <Project>{0670e448-0cb4-4610-a2c1-54b67d4db997}</Project>
