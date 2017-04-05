@@ -31,15 +31,16 @@ namespace ERP.Compras
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            bool locacion = comp.altaLocacion(rtbDescripcion.Text, fLocacion.Value.ToString("yyyy-MM-dd"));
-            if (locacion)
+            if (!string.IsNullOrEmpty(rtbDescripcion.Text))
             {
-                MessageBox.Show("Locacion agregada con exito");
+                bool locacion = comp.altaLocacion(rtbDescripcion.Text, fLocacion.Value.ToString("yyyy-MM-dd"));
+                if (locacion)
+                {
+                    MessageBox.Show("Locacion agregada con exito");
+                }
             }
             else
-            {
                 MessageBox.Show("Llenar todos los campos");
-            }
 
             comp.llenarGridViewLocacion(dataGridViewLocacion);
             rtbDescripcion.Text = null;
@@ -65,9 +66,60 @@ namespace ERP.Compras
                 MessageBox.Show("Error al confirmar");
             }
         }
-
         
+        public void pintarColumnas(DataGridView stock)
+        {
+            int stockActual = 0;
+            int stockMinimo = 0;
+            int tamanioTabla = stock.Rows.Count - 1;
 
-        
+            for (int i = 0; i < tamanioTabla; i++)
+            {
+                stockActual = int.Parse(stock.Rows[i].Cells[3].Value.ToString());
+                stockMinimo = int.Parse(stock.Rows[i].Cells[4].Value.ToString());
+                if (stockActual < stockMinimo)
+                {
+                    stock.Rows[i].DefaultCellStyle.BackColor = Color.Red;
+                }
+            }
+        }
+
+        private void dataGridViewStock_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string stock = dataGridViewStock.Rows[dataGridViewStock.CurrentRow.Index].Cells["Tipo"].Value.ToString();
+            lblIdMateria.Text = stock;
+            string des = dataGridViewStock.Rows[dataGridViewStock.CurrentRow.Index].Cells["Descripcion"].Value.ToString();
+            lblDescripcion.Text = des;
+        }
+
+        private void tabControlCompras_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            pintarColumnas(dataGridViewStock);
+        }
+
+        private void btnAgregarMaterial_Click(object sender, EventArgs e)
+        {
+            string stockActual = dataGridViewStock.Rows[dataGridViewStock.CurrentRow.Index].Cells["StockActual"].Value.ToString();
+            string valorAgregar = nudCantidad.Value.ToString();
+            string StockUpdate = (int.Parse(stockActual) + int.Parse(valorAgregar)).ToString();
+            string id = dataGridViewStock.Rows[dataGridViewStock.CurrentRow.Index].Cells["idMateria"].Value.ToString();
+
+            if (!string.IsNullOrEmpty(stockActual))
+            {
+                bool agregado = comp.agregarStock(id,StockUpdate);
+                if (agregado)
+                    MessageBox.Show("Materia agregado exitosamente");
+                comp.llenarDrigViewMaterial(dataGridViewStock);
+                pintarColumnas(dataGridViewStock);
+                lblIdMateria.Text = null;
+                lblDescripcion.Text = null;
+                nudCantidad.Value = 1;
+            }
+            else
+            {
+                MessageBox.Show("Seleccionar una materia prima");
+            }
+
+        }
     }
 }

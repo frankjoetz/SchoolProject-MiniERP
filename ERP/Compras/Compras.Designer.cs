@@ -88,6 +88,7 @@
             this.tabControlCompras.Size = new System.Drawing.Size(690, 667);
             this.tabControlCompras.TabIndex = 3;
             this.tabControlCompras.Tag = "";
+            this.tabControlCompras.SelectedIndexChanged += new System.EventHandler(this.tabControlCompras_SelectedIndexChanged);
             // 
             // tabPageLocalizacion
             // 
@@ -197,34 +198,50 @@
             this.grpAgregarMaterial.Controls.Add(this.lblCantidad);
             this.grpAgregarMaterial.Controls.Add(this.lblDescripcion);
             this.grpAgregarMaterial.Controls.Add(this.lblMateria);
-            this.grpAgregarMaterial.Location = new System.Drawing.Point(20, 341);
+            this.grpAgregarMaterial.Location = new System.Drawing.Point(20, 367);
             this.grpAgregarMaterial.Name = "grpAgregarMaterial";
-            this.grpAgregarMaterial.Size = new System.Drawing.Size(647, 291);
+            this.grpAgregarMaterial.Size = new System.Drawing.Size(647, 265);
             this.grpAgregarMaterial.TabIndex = 6;
             this.grpAgregarMaterial.TabStop = false;
             this.grpAgregarMaterial.Text = "Agregar material";
             // 
             // nudCantidad
             // 
-            this.nudCantidad.Location = new System.Drawing.Point(420, 71);
+            this.nudCantidad.Location = new System.Drawing.Point(528, 147);
+            this.nudCantidad.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.nudCantidad.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nudCantidad.Name = "nudCantidad";
             this.nudCantidad.Size = new System.Drawing.Size(120, 22);
             this.nudCantidad.TabIndex = 10;
+            this.nudCantidad.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // btnAgregarMaterial
             // 
             this.btnAgregarMaterial.AutoSize = true;
-            this.btnAgregarMaterial.Location = new System.Drawing.Point(263, 133);
+            this.btnAgregarMaterial.Location = new System.Drawing.Point(371, 211);
             this.btnAgregarMaterial.Name = "btnAgregarMaterial";
             this.btnAgregarMaterial.Size = new System.Drawing.Size(118, 26);
             this.btnAgregarMaterial.TabIndex = 9;
             this.btnAgregarMaterial.Text = "Agregar material";
             this.btnAgregarMaterial.UseVisualStyleBackColor = true;
+            this.btnAgregarMaterial.Click += new System.EventHandler(this.btnAgregarMaterial_Click);
             // 
             // lblMemoriaRam
             // 
             this.lblMemoriaRam.AutoSize = true;
-            this.lblMemoriaRam.Location = new System.Drawing.Point(298, 36);
+            this.lblMemoriaRam.Location = new System.Drawing.Point(399, 114);
             this.lblMemoriaRam.Name = "lblMemoriaRam";
             this.lblMemoriaRam.Size = new System.Drawing.Size(80, 16);
             this.lblMemoriaRam.TabIndex = 7;
@@ -233,15 +250,15 @@
             // lblIdMateria
             // 
             this.lblIdMateria.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblIdMateria.Location = new System.Drawing.Point(176, 70);
+            this.lblIdMateria.Location = new System.Drawing.Point(220, 148);
             this.lblIdMateria.Name = "lblIdMateria";
-            this.lblIdMateria.Size = new System.Drawing.Size(73, 23);
+            this.lblIdMateria.Size = new System.Drawing.Size(119, 23);
             this.lblIdMateria.TabIndex = 6;
             // 
             // lblCantidad
             // 
             this.lblCantidad.AutoSize = true;
-            this.lblCantidad.Location = new System.Drawing.Point(435, 36);
+            this.lblCantidad.Location = new System.Drawing.Point(543, 114);
             this.lblCantidad.Name = "lblCantidad";
             this.lblCantidad.Size = new System.Drawing.Size(62, 16);
             this.lblCantidad.TabIndex = 3;
@@ -250,15 +267,15 @@
             // lblDescripcion
             // 
             this.lblDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblDescripcion.Location = new System.Drawing.Point(288, 70);
+            this.lblDescripcion.Location = new System.Drawing.Point(371, 148);
             this.lblDescripcion.Name = "lblDescripcion";
-            this.lblDescripcion.Size = new System.Drawing.Size(107, 16);
+            this.lblDescripcion.Size = new System.Drawing.Size(132, 16);
             this.lblDescripcion.TabIndex = 1;
             // 
             // lblMateria
             // 
             this.lblMateria.AutoSize = true;
-            this.lblMateria.Location = new System.Drawing.Point(185, 36);
+            this.lblMateria.Location = new System.Drawing.Point(253, 114);
             this.lblMateria.Name = "lblMateria";
             this.lblMateria.Size = new System.Drawing.Size(53, 16);
             this.lblMateria.TabIndex = 0;
@@ -271,7 +288,7 @@
             this.grpMaterialStock.Controls.Add(this.dataGridViewStock);
             this.grpMaterialStock.Location = new System.Drawing.Point(20, 18);
             this.grpMaterialStock.Name = "grpMaterialStock";
-            this.grpMaterialStock.Size = new System.Drawing.Size(647, 305);
+            this.grpMaterialStock.Size = new System.Drawing.Size(647, 343);
             this.grpMaterialStock.TabIndex = 2;
             this.grpMaterialStock.TabStop = false;
             this.grpMaterialStock.Text = "Material en stock";
@@ -283,8 +300,11 @@
             this.dataGridViewStock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewStock.Location = new System.Drawing.Point(9, 21);
             this.dataGridViewStock.Name = "dataGridViewStock";
+            this.dataGridViewStock.ReadOnly = true;
+            this.dataGridViewStock.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewStock.Size = new System.Drawing.Size(632, 263);
             this.dataGridViewStock.TabIndex = 5;
+            this.dataGridViewStock.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewStock_CellClick);
             // 
             // tabPageConsumos
             // 
@@ -334,6 +354,7 @@
             // 
             // fLocacion
             // 
+            this.fLocacion.Enabled = false;
             this.fLocacion.Location = new System.Drawing.Point(306, 68);
             this.fLocacion.Name = "fLocacion";
             this.fLocacion.Size = new System.Drawing.Size(249, 22);
