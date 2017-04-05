@@ -26,6 +26,8 @@ namespace ERP.Produccion
         private void Produccion_Load(object sender, EventArgs e)
         {
             metodos.LlenarTablaPlaneaciones(dgvPlaneaciones);
+            metodos.LlenarDetalles(dgvPlaneaciones, txtIdPlaneacion, txtLinea, dtpFechaInicio, dtpFechaEstimada, lblTiempo);
+            metodos.mostrarDetalle(lblDetalle, dgvPlaneaciones);
         }
 
         private void txtBuscar_KeyDown(object sender, KeyEventArgs e)
@@ -35,56 +37,24 @@ namespace ERP.Produccion
 
         private void dgvPlaneaciones_Click(object sender, EventArgs e)
         {
-            /*
-            DataGridViewRow fila = dgvPlaneaciones.SelectedRows[0];
-
-            txtIdPlaneacion.Text = fila.Cells["idPlaneacion"].Value.ToString();
-
-            lblInfo.Text = "Detalle: Se producirán " + fila.Cells["Cantidad"].Value + " computadoras de " + fila.Cells["Tipo"].Value;
-
-            switch (fila.Cells["Tipo"].Value.ToString())
-            {
-                case "Gama baja":
-                    txtLinea.Text = "Linea 1 - Gama baja";
-                    break;
-                case "Gama media":
-                    txtLinea.Text = "Linea 2 - Gama media";
-                    break;
-                case "Gama alta":
-                    txtLinea.Text = "Linea 3 - Gama alta";
-                    break;
-                default:
-                    break;
-            }*/
-
-           metodos.LlenarDetalles(dgvPlaneaciones, txtIdPlaneacion);
-
+            metodos.LlenarDetalles(dgvPlaneaciones, txtIdPlaneacion, txtLinea, dtpFechaInicio, dtpFechaEstimada, lblTiempo);
+            metodos.mostrarDetalle(lblDetalle, dgvPlaneaciones);
 
         }
 
         private void dtpFechaInicio_ValueChanged(object sender, EventArgs e)
         {
-            //DateTime inicio = dtpFechaInicio.Value.ToString("yyyy-MM-dd");
-
-            /*
-            DateTime inicio = dtpFechaInicio.Value;
-
-            DataGridViewRow fila = dgvPlaneaciones.SelectedRows[0];
-
-            float cantidad = float.Parse(fila.Cells["Cantidad"].Value.ToString());
-            float resultado = cantidad / 120;
-            string mensaje = "Se producen 120 computadoras por día, por ende, sus " + cantidad + " computadoras se producirán en aproximadamente " + resultado + " días. \n";
-            dtpFechaEstimada.Value = inicio.AddDays(resultado);
-            MessageBox.Show(mensaje + "\nFecha estimada de entrega: " + inicio.AddDays(resultado).ToString("MMMM dd, yyyy"));
-            */
-
-            //metodos.CalcularTiempo();
+            metodos.MostrarTiempo(dtpFechaInicio, dtpFechaEstimada, lblTiempo, dgvPlaneaciones);
         }
 
         
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            //metodos.agregarProduccion();
+            metodos.AgregarProduccion(dgvPlaneaciones, dtpFechaInicio, dtpFechaEstimada, txtObservaciones);
+            metodos.LlenarTablaPlaneaciones(dgvPlaneaciones);
+            metodos.LlenarDetalles(dgvPlaneaciones, txtIdPlaneacion, txtLinea, dtpFechaInicio, dtpFechaEstimada, lblTiempo);
+            
         }
+
     }
 }

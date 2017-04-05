@@ -44,7 +44,7 @@ namespace ERP
         }
 
         private void Home_Load(object sender, EventArgs e)
-        {
+        {/*
             frmLogin = new LogIn();
             frmLogin.MdiParent = this;
             frmLogin.FormClosed += new FormClosedEventHandler(LogIn_FormClosed);
@@ -55,7 +55,7 @@ namespace ERP
             strpHome.Items[3].Enabled = false;
             strpHome.Items[4].Enabled = false;
             strpHome.Items[5].Enabled = false;
-            strpHome.Items[6].Enabled = false;
+            strpHome.Items[6].Enabled = false;*/
         }
         /////////////
         private void LogIn_FormClosed(object sender, FormClosedEventArgs e)

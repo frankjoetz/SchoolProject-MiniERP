@@ -61,10 +61,17 @@ namespace Datos
         "false" de lo contrario */
         public bool insertar(string sqlQuery) 
         {
-            if (ejecutarConsulta(sqlQuery))
-                return true;
-            else
+            try
+            {
+                if (ejecutarConsulta(sqlQuery))
+                    return true;
+            }
+            catch (Exception)
+            {
                 return false;
+                throw;
+            }
+            return false;
         }
 
         public string buscar(string sqlQuery, string columna)
