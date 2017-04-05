@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using LogicaDeNegocios;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace ERP.Planeacion
 {
@@ -49,8 +50,11 @@ namespace ERP.Planeacion
 
         private void Planeacion_Load(object sender, EventArgs e)
         {
+            // metodos implementados de llenado
             planeacion.LlenarTablaVistaPedidos(GridPedidos);
             planeacion.llenarPlaneaciones(GridPlaneacionesAgregadas);
+
+            // inhabilitacion de txt y checkbox
             txtIdPedido.Enabled = false;
             txtFechaInicio.Enabled = false;
             txtStatus.Enabled = false;
@@ -60,8 +64,6 @@ namespace ERP.Planeacion
             checkBoxGamaAlta.Enabled = false;
             checkBoxGamaMedia.Enabled = false;
             checkBoxGamaBaja.Enabled = false;
-
-            
         }
 
         private void groupBox2_Enter(object sender, EventArgs e)
