@@ -25,12 +25,20 @@ namespace LogicaDeNegocios.Compras
 
         public void llenarDrigViewMaterial(DataGridView materiales)
         {
-            bd.llenarTabla("select * from InventarioMateria order by idMateria asc", materiales);
+            bd.llenarTabla("select * from Stock_Materiales order by idMateria asc", materiales);
         }
-
+            
         public bool altaLocacion(string descripcion, string FechaCreacion)
         {
             if (bd.insertar("insert into Locacion(descripcion, fCreada) values('" + descripcion + "', '" + FechaCreacion + "'" + ")"))
+                return true;
+            else
+                return false;
+        }
+
+        public bool agregarStock(string id, string cantidad)
+        {
+            if (bd.actualizar("update InventarioMateria set StockActual='" + cantidad + "' where idMateria='" + id + "'"))
                 return true;
             else
                 return false;
