@@ -63,6 +63,16 @@ namespace ERP.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _17820272_1542756185755161_1588427044_o {
+            get {
+                object obj = ResourceManager.GetObject("17820272_1542756185755161_1588427044_o", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Alienware17R3__1_ {
             get {
                 object obj = ResourceManager.GetObject("Alienware17R3__1_", resourceCulture);
