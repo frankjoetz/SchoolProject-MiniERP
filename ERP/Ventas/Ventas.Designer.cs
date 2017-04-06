@@ -135,12 +135,13 @@
             this.btnAddC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnAddC.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddC.Image = global::ERP.Properties.Resources.iconAdd;
-            this.btnAddC.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddC.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAddC.Location = new System.Drawing.Point(615, 31);
             this.btnAddC.Name = "btnAddC";
             this.btnAddC.Size = new System.Drawing.Size(170, 49);
             this.btnAddC.TabIndex = 3;
             this.btnAddC.Text = "Agregar Cliente";
+            this.btnAddC.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAddC.UseVisualStyleBackColor = true;
             this.btnAddC.Click += new System.EventHandler(this.btnAddC_Click_1);
             // 
@@ -169,7 +170,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(23, 90);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(826, 317);
+            this.groupBox1.Size = new System.Drawing.Size(826, 335);
             this.groupBox1.TabIndex = 39;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "PRODUCTO";
@@ -263,12 +264,13 @@
             this.btnAceptar.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAceptar.ForeColor = System.Drawing.Color.Black;
             this.btnAceptar.Image = global::ERP.Properties.Resources.iconplane;
-            this.btnAceptar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAceptar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAceptar.Location = new System.Drawing.Point(326, 271);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(109, 36);
+            this.btnAceptar.Size = new System.Drawing.Size(155, 45);
             this.btnAceptar.TabIndex = 11;
             this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAceptar.UseVisualStyleBackColor = true;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
@@ -297,7 +299,7 @@
             // 
             this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.Location = new System.Drawing.Point(168, 51);
+            this.btnBuscar.Location = new System.Drawing.Point(168, 65);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(10, 10);
             this.btnBuscar.TabIndex = 1;

@@ -215,6 +215,13 @@ namespace ERP.Ventas
                     cargarTablas(dgvBuscar, "select * from Cliente", "Cliente");
                 if (tbcVentas.SelectedIndex == 1)
                     cargarTablas(dgvPedido, "select Pedido.idPedido, Pedido.idCliente, Pedido.Fecha, Pedido.Status, Pedido.CantGamaBaja, Pedido.CantGamaMedia, Pedido.CantGamaAlta, Pedido.Observacion, Cliente.Nombre, Cliente.Apellido, Cliente.Empresa, Cliente.email from Pedido inner join Cliente on Pedido.idCliente = Cliente.idCliente", "Pedido");
+
+                int id = int.Parse(mV.buscarUnDato("idCliente", "Cliente", "Limit 1"));
+                int id2 = int.Parse(mV.buscarUnDato("idCliente", "Cliente", "ORDER BY idCliente DESC Limit 1"));
+                if (int.Parse(txtIDcliente.Text) < id || int.Parse(txtIDcliente.Text) > id2)
+                {
+                    tbcVentas.SelectedIndex = 0;
+                }
             }
             catch { }
         }
@@ -413,6 +420,11 @@ namespace ERP.Ventas
                 }
             }
             catch { }
+            finally
+            {
+                if (tbcVentas.SelectedIndex == 0)
+                    txtIDcliente.Focus();
+            }
         }
     }
 }
