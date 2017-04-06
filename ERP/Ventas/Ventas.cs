@@ -21,6 +21,7 @@ namespace ERP.Ventas
         private void Ventas_Load(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
+            //mV.comboBox("select descripcion from Producto", "descripcion", cmbGamas);
         }
 
         //Load de la ventana////////////////////////////////////////////////////////////
@@ -47,15 +48,24 @@ namespace ERP.Ventas
             if (chkGB.Checked)
                 txtCanGB.Enabled = true;
             else
+            {
+                txtCanGB.Text = "";
                 txtCanGB.Enabled = false;
+            }
             if (chkGM.Checked)
                 txtCanGM.Enabled = true;
             else
+            {
+                txtCanGM.Text = "";
                 txtCanGM.Enabled = false;
+            }
             if (chkGA.Checked)
                 txtCanGA.Enabled = true;
             else
+            {
+                txtCanGA.Text = "";
                 txtCanGA.Enabled = false;
+            }
         }
 
         //Timers//////////////////////////////////////////////////////////////////////////////////////////
@@ -424,6 +434,23 @@ namespace ERP.Ventas
             }
             catch { 
             }
+        }
+
+        private void cmbGamas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //try
+            //{
+            //    string materia;
+            //    string condicion;
+            //    if (cmbGamas.SelectedIndex  == 0)
+            //        {
+            //            string idmat = mV.buscarUnDato("idMateria", "Consumo", " where idproducto = " + 1);
+            //            materia = string.Format("descripcion");
+            //            condicion = "where idMateria = " + idmat +" ORDER BY idMateria ASC "+" LIMIT ";
+            //            lblDescrip.Text = string.Format(mV.buscarUnDato(materia, "MateriaPrima", condicion + 1) + ", " + mV.buscarUnDato(materia, "MateriaPrima", condicion + 2) + ", " + mV.buscarUnDato(materia, "MateriaPrima", condicion + 3) + ", " + mV.buscarUnDato(materia, "MateriaPrima", condicion + 4) + ", " + mV.buscarUnDato(materia, "MateriaPrima", condicion + 5) + ", " + mV.buscarUnDato(materia, "MateriaPrima", condicion + 6) + ", " + mV.buscarUnDato(materia, "MateriaPrima", condicion + 7) + ", " + mV.buscarUnDato(materia, "MateriaPrima", condicion + 8) + ", " + mV.buscarUnDato(materia, "MateriaPrima", condicion + 9) + ", " + mV.buscarUnDato(materia, "MateriaPrima", condicion + 10));
+            //        }
+            //}
+            //catch { }
         }
     }
 }

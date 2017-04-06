@@ -81,5 +81,9 @@ namespace LogicaDeNegocios.Ventas
             }
             return erpTab;
         }
+        public void comboBox(string query, string columna, ComboBox cmb)
+        {
+            bd.llenarComboBox(query, columna, cmb);
+        }
     }
 }

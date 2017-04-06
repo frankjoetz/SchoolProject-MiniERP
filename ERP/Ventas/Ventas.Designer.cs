@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.tbcVentas = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -255,7 +255,7 @@
             this.txtaCom.Location = new System.Drawing.Point(23, 222);
             this.txtaCom.Multiline = true;
             this.txtaCom.Name = "txtaCom";
-            this.txtaCom.Size = new System.Drawing.Size(889, 189);
+            this.txtaCom.Size = new System.Drawing.Size(889, 149);
             this.txtaCom.TabIndex = 10;
             // 
             // label7
@@ -275,7 +275,7 @@
             this.btnAceptar.ForeColor = System.Drawing.Color.Black;
             this.btnAceptar.Image = global::ERP.Properties.Resources.iconplane;
             this.btnAceptar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAceptar.Location = new System.Drawing.Point(500, 458);
+            this.btnAceptar.Location = new System.Drawing.Point(592, 401);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(155, 45);
             this.btnAceptar.TabIndex = 11;
@@ -311,9 +311,9 @@
             // 
             this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.Location = new System.Drawing.Point(168, 65);
+            this.btnBuscar.Location = new System.Drawing.Point(168, 59);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(10, 10);
+            this.btnBuscar.Size = new System.Drawing.Size(16, 16);
             this.btnBuscar.TabIndex = 1;
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
@@ -472,8 +472,8 @@
             // 
             // dgvPedido
             // 
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvPedido.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvPedido.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvPedido.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -484,8 +484,8 @@
             this.dgvPedido.Location = new System.Drawing.Point(3, 59);
             this.dgvPedido.Name = "dgvPedido";
             this.dgvPedido.ReadOnly = true;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvPedido.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvPedido.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvPedido.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPedido.Size = new System.Drawing.Size(971, 590);
             this.dgvPedido.TabIndex = 7;
@@ -525,7 +525,7 @@
             this.BClient.Location = new System.Drawing.Point(4, 22);
             this.BClient.Name = "BClient";
             this.BClient.Padding = new System.Windows.Forms.Padding(3);
-            this.BClient.Size = new System.Drawing.Size(983, 414);
+            this.BClient.Size = new System.Drawing.Size(983, 655);
             this.BClient.TabIndex = 2;
             this.BClient.Text = "Clientes";
             this.BClient.UseVisualStyleBackColor = true;
@@ -607,8 +607,8 @@
             this.dgvBuscar.MultiSelect = false;
             this.dgvBuscar.Name = "dgvBuscar";
             this.dgvBuscar.ReadOnly = true;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvBuscar.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvBuscar.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvBuscar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvBuscar.Size = new System.Drawing.Size(971, 338);
             this.dgvBuscar.TabIndex = 4;
