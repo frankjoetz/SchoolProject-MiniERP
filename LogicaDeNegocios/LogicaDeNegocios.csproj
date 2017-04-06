@@ -45,9 +45,7 @@
     <Compile Include="Compras\metodosCompras.cs" />
     <Compile Include="Dashboard\metodosDashboard.cs" />
     <Compile Include="Planeacion\metodosPlaneacion.cs" />
-    <Compile Include="Produccion\AdministrarProduccion.cs" />
-    <Compile Include="Produccion\AgregarProduccion.cs" />
-    <Compile Include="Class1.cs" />
+    <Compile Include="Produccion\Metodos.cs" />
     <Compile Include="Ingenieria\metodosIngenieriaa.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Ventas\metodosVentas.cs" />
