@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.tbcVentas = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -105,7 +105,7 @@
             this.tbcVentas.Location = new System.Drawing.Point(12, 6);
             this.tbcVentas.Name = "tbcVentas";
             this.tbcVentas.SelectedIndex = 0;
-            this.tbcVentas.Size = new System.Drawing.Size(991, 681);
+            this.tbcVentas.Size = new System.Drawing.Size(991, 651);
             this.tbcVentas.TabIndex = 8;
             this.tbcVentas.SelectedIndexChanged += new System.EventHandler(this.tbcVentas_SelectedIndexChanged);
             // 
@@ -126,7 +126,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(983, 655);
+            this.tabPage1.Size = new System.Drawing.Size(983, 625);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Venta";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -174,7 +174,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(23, 124);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(938, 525);
+            this.groupBox1.Size = new System.Drawing.Size(938, 506);
             this.groupBox1.TabIndex = 39;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Producto";
@@ -255,7 +255,7 @@
             this.txtaCom.Location = new System.Drawing.Point(23, 222);
             this.txtaCom.Multiline = true;
             this.txtaCom.Name = "txtaCom";
-            this.txtaCom.Size = new System.Drawing.Size(889, 149);
+            this.txtaCom.Size = new System.Drawing.Size(889, 162);
             this.txtaCom.TabIndex = 10;
             // 
             // label7
@@ -275,7 +275,7 @@
             this.btnAceptar.ForeColor = System.Drawing.Color.Black;
             this.btnAceptar.Image = global::ERP.Properties.Resources.iconplane;
             this.btnAceptar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAceptar.Location = new System.Drawing.Point(496, 411);
+            this.btnAceptar.Location = new System.Drawing.Point(481, 411);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(155, 45);
             this.btnAceptar.TabIndex = 11;
@@ -381,7 +381,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(983, 655);
+            this.tabPage2.Size = new System.Drawing.Size(983, 625);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Historial";
             // 
@@ -399,7 +399,7 @@
             // 
             this.rdbtnID.AutoSize = true;
             this.rdbtnID.Checked = true;
-            this.rdbtnID.Location = new System.Drawing.Point(225, 25);
+            this.rdbtnID.Location = new System.Drawing.Point(231, 25);
             this.rdbtnID.Name = "rdbtnID";
             this.rdbtnID.Size = new System.Drawing.Size(14, 13);
             this.rdbtnID.TabIndex = 3;
@@ -472,8 +472,8 @@
             // 
             // dgvPedido
             // 
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvPedido.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvPedido.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvPedido.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -484,10 +484,10 @@
             this.dgvPedido.Location = new System.Drawing.Point(3, 59);
             this.dgvPedido.Name = "dgvPedido";
             this.dgvPedido.ReadOnly = true;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvPedido.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvPedido.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvPedido.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPedido.Size = new System.Drawing.Size(971, 590);
+            this.dgvPedido.Size = new System.Drawing.Size(971, 560);
             this.dgvPedido.TabIndex = 7;
             this.dgvPedido.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPedido_CellClick);
             // 
@@ -525,7 +525,7 @@
             this.BClient.Location = new System.Drawing.Point(4, 22);
             this.BClient.Name = "BClient";
             this.BClient.Padding = new System.Windows.Forms.Padding(3);
-            this.BClient.Size = new System.Drawing.Size(983, 655);
+            this.BClient.Size = new System.Drawing.Size(983, 625);
             this.BClient.TabIndex = 2;
             this.BClient.Text = "Clientes";
             this.BClient.UseVisualStyleBackColor = true;
@@ -607,10 +607,10 @@
             this.dgvBuscar.MultiSelect = false;
             this.dgvBuscar.Name = "dgvBuscar";
             this.dgvBuscar.ReadOnly = true;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvBuscar.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvBuscar.RowsDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvBuscar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvBuscar.Size = new System.Drawing.Size(971, 338);
+            this.dgvBuscar.Size = new System.Drawing.Size(971, 549);
             this.dgvBuscar.TabIndex = 4;
             this.dgvBuscar.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBuscar_Click);
             // 
@@ -645,7 +645,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1015, 700);
+            this.ClientSize = new System.Drawing.Size(1015, 670);
             this.ControlBox = false;
             this.Controls.Add(this.lblH);
             this.Controls.Add(this.lblFH);
