@@ -79,13 +79,19 @@ namespace ERP.Ventas
         //Botones de redireccion/////////////////////////////////////////////////////////////////////////
         private void txtIDcliente_TextChanged(object sender, EventArgs e)
         {
-            if (txtIDcliente.Text != "")
+            int id = int.Parse(mV.buscarUnDato("idCliente", "Cliente", " Limit 1"));
+            if (int.Parse(txtIDcliente.Text) >= id)
             {
-                txtNombre.Text = mV.buscarUnDato("nombre", "Cliente", " where idCliente = " + txtIDcliente.Text);
-                txtEmpresa.Text = mV.buscarUnDato("empresa", "Cliente", " where idCliente = " + txtIDcliente.Text);
+                if (txtIDcliente.Text != "")
+                {
+                    txtNombre.Text = mV.buscarUnDato("nombre", "Cliente", " where idCliente = " + txtIDcliente.Text);
+                    txtEmpresa.Text = mV.buscarUnDato("empresa", "Cliente", " where idCliente = " + txtIDcliente.Text);
+                }
             }
             else
             {
+                MessageBox.Show("No existe cliente");
+                txtIDcliente.Text = "";
                 txtNombre.Text = "";
                 txtEmpresa.Text = "";
             }

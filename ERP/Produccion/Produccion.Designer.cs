@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabProduccion = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -49,34 +49,34 @@
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvPlaneaciones = new System.Windows.Forms.DataGridView();
+            this.btnGuardar = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.prgrsEtapa = new System.Windows.Forms.ProgressBar();
-            this.Filtrar = new System.Windows.Forms.Label();
-            this.txtFiltrar = new System.Windows.Forms.TextBox();
-            this.dgvProducciones = new System.Windows.Forms.DataGridView();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.label6 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.label7 = new System.Windows.Forms.Label();
-            this.btnGuardar = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.btnAvanzar = new System.Windows.Forms.Button();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.btnRetroceder = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblEtapa = new System.Windows.Forms.Label();
+            this.btnRetroceder = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.prgrsEtapa = new System.Windows.Forms.ProgressBar();
+            this.txtFiltrar = new System.Windows.Forms.TextBox();
+            this.Filtrar = new System.Windows.Forms.Label();
+            this.btnAvanzar = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.label7 = new System.Windows.Forms.Label();
+            this.dgvProducciones = new System.Windows.Forms.DataGridView();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabProduccion.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlaneaciones)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProducciones)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            this.groupBox3.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProducciones)).BeginInit();
             this.SuspendLayout();
             // 
             // tabProduccion
@@ -323,12 +323,27 @@
             this.dgvPlaneaciones.MultiSelect = false;
             this.dgvPlaneaciones.Name = "dgvPlaneaciones";
             this.dgvPlaneaciones.ReadOnly = true;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Franklin Gothic Medium", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvPlaneaciones.RowsDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Franklin Gothic Medium", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvPlaneaciones.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvPlaneaciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPlaneaciones.Size = new System.Drawing.Size(734, 121);
             this.dgvPlaneaciones.TabIndex = 0;
             this.dgvPlaneaciones.Click += new System.EventHandler(this.dgvPlaneaciones_Click);
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGuardar.Image = global::ERP.Properties.Resources.iconAdd;
+            this.btnGuardar.Location = new System.Drawing.Point(6, 529);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(746, 56);
+            this.btnGuardar.TabIndex = 0;
+            this.btnGuardar.Text = "Comenzar a producir";
+            this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // tabPage2
             // 
@@ -357,6 +372,59 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Estado de producciones";
             // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.lblEtapa);
+            this.panel1.Controls.Add(this.btnRetroceder);
+            this.panel1.Controls.Add(this.btnCancelar);
+            this.panel1.Controls.Add(this.prgrsEtapa);
+            this.panel1.Controls.Add(this.txtFiltrar);
+            this.panel1.Controls.Add(this.Filtrar);
+            this.panel1.Controls.Add(this.btnAvanzar);
+            this.panel1.Location = new System.Drawing.Point(13, 216);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(720, 180);
+            this.panel1.TabIndex = 13;
+            // 
+            // lblEtapa
+            // 
+            this.lblEtapa.AutoSize = true;
+            this.lblEtapa.Location = new System.Drawing.Point(6, 13);
+            this.lblEtapa.Name = "lblEtapa";
+            this.lblEtapa.Size = new System.Drawing.Size(51, 21);
+            this.lblEtapa.TabIndex = 13;
+            this.lblEtapa.Text = "Etapa";
+            // 
+            // btnRetroceder
+            // 
+            this.btnRetroceder.Image = global::ERP.Properties.Resources.undoicon;
+            this.btnRetroceder.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRetroceder.Location = new System.Drawing.Point(6, 126);
+            this.btnRetroceder.Name = "btnRetroceder";
+            this.btnRetroceder.Size = new System.Drawing.Size(202, 42);
+            this.btnRetroceder.TabIndex = 11;
+            this.btnRetroceder.Text = "Retroceder etapa";
+            this.btnRetroceder.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRetroceder.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRetroceder.UseVisualStyleBackColor = true;
+            this.btnRetroceder.Click += new System.EventHandler(this.btnRetroceder_Click);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancelar.Image = global::ERP.Properties.Resources.cancelicon;
+            this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCancelar.Location = new System.Drawing.Point(500, 74);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(206, 42);
+            this.btnCancelar.TabIndex = 12;
+            this.btnCancelar.Text = "Cancelar produccion";
+            this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
             // prgrsEtapa
             // 
             this.prgrsEtapa.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -368,6 +436,13 @@
             this.prgrsEtapa.Step = 1;
             this.prgrsEtapa.TabIndex = 5;
             // 
+            // txtFiltrar
+            // 
+            this.txtFiltrar.Location = new System.Drawing.Point(62, 82);
+            this.txtFiltrar.Name = "txtFiltrar";
+            this.txtFiltrar.Size = new System.Drawing.Size(146, 26);
+            this.txtFiltrar.TabIndex = 1;
+            // 
             // Filtrar
             // 
             this.Filtrar.AutoSize = true;
@@ -376,91 +451,6 @@
             this.Filtrar.Size = new System.Drawing.Size(50, 21);
             this.Filtrar.TabIndex = 2;
             this.Filtrar.Text = "Filtrar";
-            // 
-            // txtFiltrar
-            // 
-            this.txtFiltrar.Location = new System.Drawing.Point(62, 82);
-            this.txtFiltrar.Name = "txtFiltrar";
-            this.txtFiltrar.Size = new System.Drawing.Size(146, 26);
-            this.txtFiltrar.TabIndex = 1;
-            // 
-            // dgvProducciones
-            // 
-            this.dgvProducciones.AllowUserToAddRows = false;
-            this.dgvProducciones.AllowUserToDeleteRows = false;
-            this.dgvProducciones.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvProducciones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvProducciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProducciones.Location = new System.Drawing.Point(13, 25);
-            this.dgvProducciones.Name = "dgvProducciones";
-            this.dgvProducciones.ReadOnly = true;
-            this.dgvProducciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProducciones.Size = new System.Drawing.Size(724, 185);
-            this.dgvProducciones.TabIndex = 0;
-            this.dgvProducciones.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProducciones_CellClick);
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.Location = new System.Drawing.Point(4, 34);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(758, 588);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Generar reporte";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 31);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(171, 21);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "Simular producción con";
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Location = new System.Drawing.Point(183, 29);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(44, 26);
-            this.numericUpDown1.TabIndex = 7;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(233, 31);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(145, 21);
-            this.label7.TabIndex = 8;
-            this.label7.Text = "segundos por etapa";
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGuardar.Image = global::ERP.Properties.Resources.iconAdd;
-            this.btnGuardar.Location = new System.Drawing.Point(6, 529);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(746, 56);
-            this.btnGuardar.TabIndex = 0;
-            this.btnGuardar.Text = "Comenzar a producir";
-            this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnGuardar.UseVisualStyleBackColor = true;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
-            // button2
-            // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.Image = global::ERP.Properties.Resources.iconplane;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.Location = new System.Drawing.Point(450, 19);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(260, 44);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "Comenzar simulación";
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // btnAvanzar
             // 
@@ -491,58 +481,68 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Simular esta producción";
             // 
-            // btnRetroceder
+            // label6
             // 
-            this.btnRetroceder.Image = global::ERP.Properties.Resources.undoicon;
-            this.btnRetroceder.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnRetroceder.Location = new System.Drawing.Point(6, 126);
-            this.btnRetroceder.Name = "btnRetroceder";
-            this.btnRetroceder.Size = new System.Drawing.Size(202, 42);
-            this.btnRetroceder.TabIndex = 11;
-            this.btnRetroceder.Text = "Retroceder etapa";
-            this.btnRetroceder.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRetroceder.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnRetroceder.UseVisualStyleBackColor = true;
-            this.btnRetroceder.Click += new System.EventHandler(this.btnRetroceder_Click);
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(6, 31);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(171, 21);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "Simular producción con";
             // 
-            // btnCancelar
+            // button2
             // 
-            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancelar.Image = global::ERP.Properties.Resources.cancelicon;
-            this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCancelar.Location = new System.Drawing.Point(500, 74);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(206, 42);
-            this.btnCancelar.TabIndex = 12;
-            this.btnCancelar.Text = "Cancelar produccion";
-            this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.Image = global::ERP.Properties.Resources.iconplane;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button2.Location = new System.Drawing.Point(450, 19);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(260, 44);
+            this.button2.TabIndex = 9;
+            this.button2.Text = "Comenzar simulación";
+            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button2.UseVisualStyleBackColor = true;
             // 
-            // panel1
+            // numericUpDown1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.numericUpDown1.Location = new System.Drawing.Point(183, 29);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(44, 26);
+            this.numericUpDown1.TabIndex = 7;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(233, 31);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(145, 21);
+            this.label7.TabIndex = 8;
+            this.label7.Text = "segundos por etapa";
+            // 
+            // dgvProducciones
+            // 
+            this.dgvProducciones.AllowUserToAddRows = false;
+            this.dgvProducciones.AllowUserToDeleteRows = false;
+            this.dgvProducciones.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.Controls.Add(this.lblEtapa);
-            this.panel1.Controls.Add(this.btnRetroceder);
-            this.panel1.Controls.Add(this.btnCancelar);
-            this.panel1.Controls.Add(this.prgrsEtapa);
-            this.panel1.Controls.Add(this.txtFiltrar);
-            this.panel1.Controls.Add(this.Filtrar);
-            this.panel1.Controls.Add(this.btnAvanzar);
-            this.panel1.Location = new System.Drawing.Point(13, 216);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(720, 180);
-            this.panel1.TabIndex = 13;
+            this.dgvProducciones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvProducciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProducciones.Location = new System.Drawing.Point(13, 25);
+            this.dgvProducciones.Name = "dgvProducciones";
+            this.dgvProducciones.ReadOnly = true;
+            this.dgvProducciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvProducciones.Size = new System.Drawing.Size(724, 185);
+            this.dgvProducciones.TabIndex = 0;
+            this.dgvProducciones.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProducciones_CellClick);
             // 
-            // lblEtapa
+            // tabPage4
             // 
-            this.lblEtapa.AutoSize = true;
-            this.lblEtapa.Location = new System.Drawing.Point(6, 13);
-            this.lblEtapa.Name = "lblEtapa";
-            this.lblEtapa.Size = new System.Drawing.Size(51, 21);
-            this.lblEtapa.TabIndex = 13;
-            this.lblEtapa.Text = "Etapa";
+            this.tabPage4.Location = new System.Drawing.Point(4, 34);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Size = new System.Drawing.Size(758, 588);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Generar reporte";
+            this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // Produccion
             // 
@@ -555,7 +555,7 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Produccion";
+            this.Text = " ";
             this.Load += new System.EventHandler(this.Produccion_Load);
             this.tabProduccion.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -564,12 +564,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlaneaciones)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProducciones)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProducciones)).EndInit();
             this.ResumeLayout(false);
 
         }

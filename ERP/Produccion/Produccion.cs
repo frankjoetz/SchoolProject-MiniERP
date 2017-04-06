@@ -18,7 +18,6 @@ namespace ERP.Produccion
         public Produccion()
         {
             InitializeComponent();
-            this.WindowState = FormWindowState.Maximized;
 
             cboxBuscar.SelectedIndex = 0;
 
@@ -33,6 +32,9 @@ namespace ERP.Produccion
 
             // Métodos para el segundo tab
             metodosAdministrar.LlenarProducciones(dgvProducciones);
+
+            // Método para el automaximizar
+            this.WindowState = FormWindowState.Maximized;
         }
 
         // <<<<<<<<<<<<<<<<<<<<<< Inicio de métodos para agregar producción (tab 1) >>>>>>>>>>>>>>>>>>>>>>>>>>>

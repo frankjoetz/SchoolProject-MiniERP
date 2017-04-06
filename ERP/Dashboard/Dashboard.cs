@@ -15,7 +15,6 @@ namespace ERP.Dashboard
         public Dashboard()
         {
             InitializeComponent();
-            this.WindowState = FormWindowState.Maximized;
 
         }
 
@@ -31,7 +30,7 @@ namespace ERP.Dashboard
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
-
+            this.WindowState = FormWindowState.Maximized;
         }
     }
 }

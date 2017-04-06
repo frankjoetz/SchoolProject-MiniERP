@@ -19,7 +19,6 @@ namespace ERP.Ingenieria
         public Ingenieria()
         {
             InitializeComponent();
-            this.WindowState = FormWindowState.Maximized;
         }
 
         private void btnagregarmp_Click(object sender, EventArgs e)
@@ -63,6 +62,7 @@ namespace ERP.Ingenieria
             //this.materiaPrimaTableAdapter.Fill(this.erpdbDataSet1.MateriaPrima);
 
             //this.reportViewer1.RefreshReport();
+            this.WindowState = FormWindowState.Maximized;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

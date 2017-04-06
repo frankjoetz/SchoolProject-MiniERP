@@ -19,13 +19,12 @@ namespace ERP.Planeacion
         public Planeacion()
         {
             InitializeComponent();
-            this.WindowState = FormWindowState.Maximized;
            
         }
 
         private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
         {
-
+            this.WindowState = FormWindowState.Maximized;
         }
 
         private void progressBar1_Click(object sender, EventArgs e)
