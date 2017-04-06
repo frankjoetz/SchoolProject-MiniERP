@@ -156,6 +156,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.txtCanGA);
             this.groupBox1.Controls.Add(this.txtCanGM);
             this.groupBox1.Controls.Add(this.chkGA);

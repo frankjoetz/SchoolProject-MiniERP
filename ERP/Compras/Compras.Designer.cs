@@ -29,7 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.Stock_MaterialesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Reportes = new ERP.Compras.Reportes();
             this.tabControlCompras = new System.Windows.Forms.TabControl();
             this.tabPageLocalizacion = new System.Windows.Forms.TabPage();
             this.grpAlertas = new System.Windows.Forms.GroupBox();
@@ -58,11 +60,11 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridViewLocacion = new System.Windows.Forms.DataGridView();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.revStock = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.Reportes = new ERP.Compras.Reportes();
-            this.Stock_MaterialesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.Stock_MaterialesTableAdapter = new ERP.Compras.ReportesTableAdapters.Stock_MaterialesTableAdapter();
             this.grpReporte = new System.Windows.Forms.GroupBox();
+            this.revStock = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.Stock_MaterialesTableAdapter = new ERP.Compras.ReportesTableAdapters.Stock_MaterialesTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.Stock_MaterialesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Reportes)).BeginInit();
             this.tabControlCompras.SuspendLayout();
             this.tabPageLocalizacion.SuspendLayout();
             this.grpAlertas.SuspendLayout();
@@ -77,10 +79,18 @@
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLocacion)).BeginInit();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Reportes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Stock_MaterialesBindingSource)).BeginInit();
             this.grpReporte.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // Stock_MaterialesBindingSource
+            // 
+            this.Stock_MaterialesBindingSource.DataMember = "Stock_Materiales";
+            this.Stock_MaterialesBindingSource.DataSource = this.Reportes;
+            // 
+            // Reportes
+            // 
+            this.Reportes.DataSetName = "Reportes";
+            this.Reportes.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // tabControlCompras
             // 
@@ -365,7 +375,7 @@
             this.fLocacion.Enabled = false;
             this.fLocacion.Location = new System.Drawing.Point(303, 36);
             this.fLocacion.Name = "fLocacion";
-            this.fLocacion.Size = new System.Drawing.Size(249, 26);
+            this.fLocacion.Size = new System.Drawing.Size(301, 26);
             this.fLocacion.TabIndex = 15;
             // 
             // btnAgregar
@@ -426,33 +436,6 @@
             this.tabPage1.Text = "Reporte stock";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // revStock
-            // 
-            this.revStock.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            reportDataSource1.Name = "stock";
-            reportDataSource1.Value = this.Stock_MaterialesBindingSource;
-            this.revStock.LocalReport.DataSources.Add(reportDataSource1);
-            this.revStock.LocalReport.ReportEmbeddedResource = "ERP.Compras.Stock.rdlc";
-            this.revStock.Location = new System.Drawing.Point(6, 25);
-            this.revStock.Name = "revStock";
-            this.revStock.Size = new System.Drawing.Size(649, 221);
-            this.revStock.TabIndex = 0;
-            // 
-            // Reportes
-            // 
-            this.Reportes.DataSetName = "Reportes";
-            this.Reportes.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // Stock_MaterialesBindingSource
-            // 
-            this.Stock_MaterialesBindingSource.DataMember = "Stock_Materiales";
-            this.Stock_MaterialesBindingSource.DataSource = this.Reportes;
-            // 
-            // Stock_MaterialesTableAdapter
-            // 
-            this.Stock_MaterialesTableAdapter.ClearBeforeFill = true;
-            // 
             // grpReporte
             // 
             this.grpReporte.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -460,10 +443,27 @@
             this.grpReporte.Controls.Add(this.revStock);
             this.grpReporte.Location = new System.Drawing.Point(15, 16);
             this.grpReporte.Name = "grpReporte";
-            this.grpReporte.Size = new System.Drawing.Size(661, 252);
+            this.grpReporte.Size = new System.Drawing.Size(661, 408);
             this.grpReporte.TabIndex = 1;
             this.grpReporte.TabStop = false;
             this.grpReporte.Text = "Generar reporte";
+            // 
+            // revStock
+            // 
+            this.revStock.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            reportDataSource2.Name = "stock";
+            reportDataSource2.Value = this.Stock_MaterialesBindingSource;
+            this.revStock.LocalReport.DataSources.Add(reportDataSource2);
+            this.revStock.LocalReport.ReportEmbeddedResource = "ERP.Compras.Stock.rdlc";
+            this.revStock.Location = new System.Drawing.Point(6, 25);
+            this.revStock.Name = "revStock";
+            this.revStock.Size = new System.Drawing.Size(649, 377);
+            this.revStock.TabIndex = 0;
+            // 
+            // Stock_MaterialesTableAdapter
+            // 
+            this.Stock_MaterialesTableAdapter.ClearBeforeFill = true;
             // 
             // Compras
             // 
@@ -479,6 +479,8 @@
             this.Text = "Compras";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Compras_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.Stock_MaterialesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Reportes)).EndInit();
             this.tabControlCompras.ResumeLayout(false);
             this.tabPageLocalizacion.ResumeLayout(false);
             this.grpAlertas.ResumeLayout(false);
@@ -496,8 +498,6 @@
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLocacion)).EndInit();
             this.tabPage1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.Reportes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Stock_MaterialesBindingSource)).EndInit();
             this.grpReporte.ResumeLayout(false);
             this.ResumeLayout(false);
 
