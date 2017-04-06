@@ -79,23 +79,17 @@ namespace ERP.Ventas
         //Botones de redireccion/////////////////////////////////////////////////////////////////////////
         private void txtIDcliente_TextChanged(object sender, EventArgs e)
         {
-            int id = int.Parse(mV.buscarUnDato("idCliente", "Cliente", " Limit 1"));
+            int id = int.Parse(mV.buscarUnDato("idCliente", "Cliente", "Limit 1"));
+            int id2 = int.Parse(mV.buscarUnDato("idCliente", "Cliente", "ORDER BY idCliente DESC Limit 1"));
             try
             {
-                if (int.Parse(txtIDcliente.Text) >= id)
+                if (int.Parse(txtIDcliente.Text) >= id && int.Parse(txtIDcliente.Text) <= id2)
                 {
                     if (txtIDcliente.Text != "")
                     {
                         txtNombre.Text = mV.buscarUnDato("nombre", "Cliente", " where idCliente = " + txtIDcliente.Text);
                         txtEmpresa.Text = mV.buscarUnDato("empresa", "Cliente", " where idCliente = " + txtIDcliente.Text);
                     }
-                }
-                else
-                {
-                    MessageBox.Show("No existe cliente");
-                    txtIDcliente.Text = "";
-                    txtNombre.Text = "";
-                    txtEmpresa.Text = "";
                 }
             }
             catch { }
@@ -149,28 +143,33 @@ namespace ERP.Ventas
         //Buscar y/o rellendar campos//////////////////////////////////////////////////////////////////////////////////////
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            string status = "En proceso";
-            int cGB =0,cGM = 0,cGA=0;
-            if (txtCanGB.Text != "")
-                cGB = int.Parse(txtCanGB.Text);
-            if (txtCanGM.Text != "")
-                cGM = int.Parse(txtCanGM.Text);
-            if (txtCanGA.Text != "")
-                cGA = int.Parse(txtCanGA.Text);
-            string values = string.Format(int.Parse(txtIDcliente.Text) + ",'" + lblFH.Text + "','" + status + "'," + cGB + "," + cGM + "," + cGA + ",'" + txtaCom.Text+"'");
-            bool result = mV.altaTabla("Pedido(idCliente,Fecha,Status,CantGamaBaja,CantGamaMedia,CantGamaAlta,Observacion)", values);
-            if (result)
+            if (txtNombre.Text != "")
             {
-                MessageBox.Show("simona la mona");
-                txtIDcliente.Text = "";
-                txtCanGB.Text = "";
-                txtCanGM.Text = "";
-                txtCanGA.Text = "";
-                chkGB.Checked = false;
-                chkGM.Checked = false;
-                chkGA.Checked = false;
-                txtaCom.Text = "";
+                string status = "En proceso";
+                int cGB = 0, cGM = 0, cGA = 0;
+                if (txtCanGB.Text != "")
+                    cGB = int.Parse(txtCanGB.Text);
+                if (txtCanGM.Text != "")
+                    cGM = int.Parse(txtCanGM.Text);
+                if (txtCanGA.Text != "")
+                    cGA = int.Parse(txtCanGA.Text);
+                string values = string.Format(int.Parse(txtIDcliente.Text) + ",'" + lblFH.Text + "','" + status + "'," + cGB + "," + cGM + "," + cGA + ",'" + txtaCom.Text + "'");
+                bool result = mV.altaTabla("Pedido(idCliente,Fecha,Status,CantGamaBaja,CantGamaMedia,CantGamaAlta,Observacion)", values);
+                if (result)
+                {
+                    MessageBox.Show("Pedido agregado");
+                    txtIDcliente.Text = "";
+                    txtCanGB.Text = "";
+                    txtCanGM.Text = "";
+                    txtCanGA.Text = "";
+                    chkGB.Checked = false;
+                    chkGM.Checked = false;
+                    chkGA.Checked = false;
+                    txtaCom.Text = "";
+                }
             }
+            else
+                MessageBox.Show("Ingrese valores validos");
         }
 
         //Insercion/////////////////////////////////////////////////////////////////////////////////////
