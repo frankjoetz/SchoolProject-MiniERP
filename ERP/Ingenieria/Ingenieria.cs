@@ -23,25 +23,6 @@ namespace ERP.Ingenieria
             MIngenieria.llenarGridViewmateriaprima(dgwmateriaprima);
         }
 
-        private void btnagregarmp_Click(object sender, EventArgs e)
-        {
-            bool result = MIngenieria.altaMateria(cmbtipo.Text, txtDesc.Text, pikerfecha.Value.ToString("yyyy-MM-dd"));
-            if (result)
-            {
-                MessageBox.Show("Se inserto con exito");
-                txtDesc.Clear();
-                cmbtipo.Text = null;
-            }
-            try
-            {
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-
-            }
-
-        }
         private void ingenieriaform_Click(object sender, EventArgs e)
         {
 
@@ -63,6 +44,8 @@ namespace ERP.Ingenieria
             MIngenieria.comboBox("select descripcion from Producto", "descripcion", cmbtarjetadevideocp);
             MIngenieria.comboBox("select descripcion from Producto", "descripcion", cmbtarjetamadrecp);
             MIngenieria.comboBox("select descripcion from Producto", "descripcion", cmbcasecp);
+            MIngenieria.comboBox("Select descripcion from Produccion", "descripcion", cmbdescripcion);
+            MIngenieria.comboBox("select idlinea from Linea", "idLinea", cmbidlinea);
             //MIngenieria.comboBox("select Tipo from MateriaPrima", "Tipo", cmbtipo);
             // TODO: esta línea de código carga datos en la tabla 'erpdbDataSet3.InventarioProducto' Puede moverla o quitarla según sea necesario.
             // TODO: esta línea de código carga datos en la tabla 'erpdbDataSet1.MateriaPrima' Puede moverla o quitarla según sea necesario.
@@ -86,24 +69,20 @@ namespace ERP.Ingenieria
 
         private void btnagregarcomponentes_Click(object sender, EventArgs e)
         {
-            //bool result = MIngenieria.altaProducto(int.Parse(txtidproducto.Text), txtdescripcion.Text, int.Parse(cantidadtxt.Text), int.Parse(txtlocalidad.Text), txtfhora.Text);
-            //if (result)
-            //{
-            //    MessageBox.Show("Se inserto con exito");
-            //    try
-            //    {
-            //    }
-            //    catch (System.Exception ex)
-            //    {
-            //        System.Windows.Forms.MessageBox.Show(ex.Message);
-            //    }
-            //    txtidproducto.Clear();
-            //    txtdescripcion.Clear();
-            //    cantidadtxt.Clear();
-            //    txtlocalidad.Clear();
-            //    txtfhora.Clear();
+            bool result = MIngenieria.altaProducto(cmbdescripcion.Text, cmbidlinea.Text, cmbdestino.Text);
+            if (result)
+            {
+                MessageBox.Show("Se inserto con exito");
+                try
+                {
+                }
+                catch (System.Exception ex)
+                {
+                    System.Windows.Forms.MessageBox.Show(ex.Message);
+                }
+               
 
-            //}
+            }
         }
 
         private void rbnelimnar_CheckedChanged(object sender, EventArgs e)
@@ -208,6 +187,40 @@ namespace ERP.Ingenieria
         }
 
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnagregarmp_Click_1(object sender, EventArgs e)
+        {
+            bool result = MIngenieria.altaMateria(cmbtipo.Text, txtDesc.Text, pikerfecha.Value.ToString("yyyy-MM-dd"));
+            if (result)
+            {
+                MessageBox.Show("Se inserto con exito");
+                txtDesc.Clear();
+                cmbtipo.Text = null;
+            }
+            else
+            {
+                MessageBox.Show("Ingrese todos los datos");
+                txtDesc.Focus();
+            }
+            try
+            {
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+
+            }
+        }
+
+        private void cmbdescripcion_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbgamascp_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

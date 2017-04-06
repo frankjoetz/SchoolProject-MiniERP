@@ -20,9 +20,9 @@ namespace LogicaDeNegocios
             else
                 return false;
         }
-        public bool altaProducto(int idProducto, string descripcion, int cantidad, int locacion, string fHora)
+        public bool altaProducto(string descripcion, string destino, string fHora)
         {
-            if (bd.insertar("insert into InventarioProducto(idProducto, descripcion, cantidad, locacion, fHora) values(" + idProducto + ",'" + descripcion + "','" + cantidad + "', '" + locacion + "','" + fHora + "')"))
+            if (bd.insertar("insert into Producto(descripcion, destino, fHora) values('" + descripcion + "', '" + destino + "','" + fHora + "')"))
                 return true;
             else
                 return false;
