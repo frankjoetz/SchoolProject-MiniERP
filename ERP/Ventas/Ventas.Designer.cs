@@ -29,7 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ventas));
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.tbcVentas = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -50,7 +51,6 @@
             this.txtIDcliente = new System.Windows.Forms.TextBox();
             this.txtEmpresa = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnAddC = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.rdbtnNC = new System.Windows.Forms.RadioButton();
@@ -65,6 +65,8 @@
             this.txtIDHis = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.BClient = new System.Windows.Forms.TabPage();
+            this.txtApell = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtEmp = new System.Windows.Forms.TextBox();
             this.txtNomb = new System.Windows.Forms.TextBox();
@@ -73,8 +75,7 @@
             this.lblFH = new System.Windows.Forms.Label();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.lblH = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.txtApell = new System.Windows.Forms.TextBox();
+            this.btnAddC = new System.Windows.Forms.Button();
             this.tbcVentas.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -103,20 +104,20 @@
             this.tbcVentas.Location = new System.Drawing.Point(12, 6);
             this.tbcVentas.Name = "tbcVentas";
             this.tbcVentas.SelectedIndex = 0;
-            this.tbcVentas.Size = new System.Drawing.Size(900, 656);
+            this.tbcVentas.Size = new System.Drawing.Size(900, 504);
             this.tbcVentas.TabIndex = 8;
             this.tbcVentas.SelectedIndexChanged += new System.EventHandler(this.tbcVentas_SelectedIndexChanged);
             // 
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.Transparent;
+            this.tabPage1.Controls.Add(this.btnAddC);
             this.tabPage1.Controls.Add(this.txtNombre);
             this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Controls.Add(this.btnBuscar);
             this.tabPage1.Controls.Add(this.txtIDcliente);
             this.tabPage1.Controls.Add(this.txtEmpresa);
             this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Controls.Add(this.btnAddC);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Cursor = System.Windows.Forms.Cursors.Default;
             this.tabPage1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -124,7 +125,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(892, 630);
+            this.tabPage1.Size = new System.Drawing.Size(892, 478);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Venta";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -133,7 +134,7 @@
             // 
             this.txtNombre.Enabled = false;
             this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(23, 53);
+            this.txtNombre.Location = new System.Drawing.Point(23, 49);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(100, 24);
             this.txtNombre.TabIndex = 40;
@@ -152,9 +153,9 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txtCanGB);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(9, 154);
+            this.groupBox1.Location = new System.Drawing.Point(23, 90);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(861, 473);
+            this.groupBox1.Size = new System.Drawing.Size(851, 344);
             this.groupBox1.TabIndex = 39;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "PRODUCTO";
@@ -167,6 +168,7 @@
             this.txtCanGA.Name = "txtCanGA";
             this.txtCanGA.Size = new System.Drawing.Size(126, 24);
             this.txtCanGA.TabIndex = 39;
+            this.txtCanGA.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCanGA_KeyPress);
             // 
             // txtCanGM
             // 
@@ -176,6 +178,7 @@
             this.txtCanGM.Name = "txtCanGM";
             this.txtCanGM.Size = new System.Drawing.Size(126, 24);
             this.txtCanGM.TabIndex = 38;
+            this.txtCanGM.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCanGM_KeyPress);
             // 
             // chkGA
             // 
@@ -224,17 +227,17 @@
             // txtaCom
             // 
             this.txtaCom.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtaCom.Location = new System.Drawing.Point(23, 256);
+            this.txtaCom.Location = new System.Drawing.Point(23, 181);
             this.txtaCom.Multiline = true;
             this.txtaCom.Name = "txtaCom";
-            this.txtaCom.Size = new System.Drawing.Size(706, 135);
+            this.txtaCom.Size = new System.Drawing.Size(706, 101);
             this.txtaCom.TabIndex = 5;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(20, 218);
+            this.label7.Location = new System.Drawing.Point(11, 160);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(98, 18);
             this.label7.TabIndex = 34;
@@ -245,7 +248,7 @@
             this.btnAceptar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAceptar.ForeColor = System.Drawing.Color.Black;
-            this.btnAceptar.Location = new System.Drawing.Point(331, 413);
+            this.btnAceptar.Location = new System.Drawing.Point(353, 288);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(113, 35);
             this.btnAceptar.TabIndex = 7;
@@ -258,7 +261,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(460, 32);
+            this.label3.Location = new System.Drawing.Point(429, 32);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(66, 18);
             this.label3.TabIndex = 22;
@@ -272,12 +275,13 @@
             this.txtCanGB.Name = "txtCanGB";
             this.txtCanGB.Size = new System.Drawing.Size(126, 24);
             this.txtCanGB.TabIndex = 4;
+            this.txtCanGB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCanGB_KeyPress);
             // 
             // btnBuscar
             // 
             this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.Location = new System.Drawing.Point(168, 57);
+            this.btnBuscar.Location = new System.Drawing.Point(168, 54);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(18, 17);
             this.btnBuscar.TabIndex = 1;
@@ -287,18 +291,19 @@
             // txtIDcliente
             // 
             this.txtIDcliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIDcliente.Location = new System.Drawing.Point(132, 53);
+            this.txtIDcliente.Location = new System.Drawing.Point(131, 49);
             this.txtIDcliente.Name = "txtIDcliente";
             this.txtIDcliente.Size = new System.Drawing.Size(31, 24);
             this.txtIDcliente.TabIndex = 0;
             this.txtIDcliente.TextChanged += new System.EventHandler(this.txtIDcliente_TextChanged);
+            this.txtIDcliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIDcliente_KeyPress);
             // 
             // txtEmpresa
             // 
             this.txtEmpresa.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtEmpresa.Enabled = false;
             this.txtEmpresa.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmpresa.Location = new System.Drawing.Point(278, 52);
+            this.txtEmpresa.Location = new System.Drawing.Point(278, 49);
             this.txtEmpresa.Name = "txtEmpresa";
             this.txtEmpresa.Size = new System.Drawing.Size(163, 24);
             this.txtEmpresa.TabIndex = 2;
@@ -313,19 +318,6 @@
             this.label2.Size = new System.Drawing.Size(68, 18);
             this.label2.TabIndex = 20;
             this.label2.Text = "Empresa";
-            // 
-            // btnAddC
-            // 
-            this.btnAddC.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddC.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddC.ForeColor = System.Drawing.Color.Black;
-            this.btnAddC.Location = new System.Drawing.Point(601, 83);
-            this.btnAddC.Name = "btnAddC";
-            this.btnAddC.Size = new System.Drawing.Size(113, 34);
-            this.btnAddC.TabIndex = 6;
-            this.btnAddC.Text = "Añadir Cliente";
-            this.btnAddC.UseVisualStyleBackColor = true;
-            this.btnAddC.Click += new System.EventHandler(this.btnAddC_Click);
             // 
             // label1
             // 
@@ -358,7 +350,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(892, 630);
+            this.tabPage2.Size = new System.Drawing.Size(892, 421);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Historial";
             // 
@@ -411,6 +403,7 @@
             this.txtNomCliHis.Size = new System.Drawing.Size(100, 24);
             this.txtNomCliHis.TabIndex = 7;
             this.txtNomCliHis.TextChanged += new System.EventHandler(this.txtHis_TextChanged);
+            this.txtNomCliHis.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNomCliHis_KeyPress);
             // 
             // btnCancelar
             // 
@@ -450,8 +443,8 @@
             this.dgvPedido.Location = new System.Drawing.Point(6, 61);
             this.dgvPedido.Name = "dgvPedido";
             this.dgvPedido.ReadOnly = true;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvPedido.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvPedido.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvPedido.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPedido.Size = new System.Drawing.Size(880, 563);
             this.dgvPedido.TabIndex = 3;
@@ -465,6 +458,7 @@
             this.txtIDHis.Size = new System.Drawing.Size(31, 24);
             this.txtIDHis.TabIndex = 1;
             this.txtIDHis.TextChanged += new System.EventHandler(this.txtHis_TextChanged);
+            this.txtIDHis.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIDHis_KeyPress);
             // 
             // label6
             // 
@@ -489,10 +483,29 @@
             this.BClient.Location = new System.Drawing.Point(4, 22);
             this.BClient.Name = "BClient";
             this.BClient.Padding = new System.Windows.Forms.Padding(3);
-            this.BClient.Size = new System.Drawing.Size(892, 630);
+            this.BClient.Size = new System.Drawing.Size(892, 421);
             this.BClient.TabIndex = 2;
             this.BClient.Text = "Clientes";
             this.BClient.UseVisualStyleBackColor = true;
+            // 
+            // txtApell
+            // 
+            this.txtApell.Enabled = false;
+            this.txtApell.Location = new System.Drawing.Point(92, 39);
+            this.txtApell.Name = "txtApell";
+            this.txtApell.Size = new System.Drawing.Size(100, 23);
+            this.txtApell.TabIndex = 12;
+            this.txtApell.TextChanged += new System.EventHandler(this.txtCliente_TextChanged);
+            this.txtApell.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApell_KeyPress);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(11, 41);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(75, 17);
+            this.label12.TabIndex = 11;
+            this.label12.Text = "APELLIDO";
             // 
             // label4
             // 
@@ -513,6 +526,7 @@
             this.txtEmp.Size = new System.Drawing.Size(100, 24);
             this.txtEmp.TabIndex = 2;
             this.txtEmp.TextChanged += new System.EventHandler(this.txtCliente_TextChanged);
+            this.txtEmp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEmp_KeyPress);
             // 
             // txtNomb
             // 
@@ -522,6 +536,7 @@
             this.txtNomb.Size = new System.Drawing.Size(100, 24);
             this.txtNomb.TabIndex = 1;
             this.txtNomb.TextChanged += new System.EventHandler(this.txtCliente_TextChanged);
+            this.txtNomb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNomb_KeyPress);
             // 
             // label8
             // 
@@ -569,36 +584,32 @@
             // 
             this.lblH.AutoSize = true;
             this.lblH.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblH.Location = new System.Drawing.Point(742, 8);
+            this.lblH.Location = new System.Drawing.Point(742, 6);
             this.lblH.Name = "lblH";
             this.lblH.Size = new System.Drawing.Size(38, 18);
             this.lblH.TabIndex = 40;
             this.lblH.Text = "hora";
             // 
-            // label12
+            // btnAddC
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(11, 41);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(75, 17);
-            this.label12.TabIndex = 11;
-            this.label12.Text = "APELLIDO";
-            // 
-            // txtApell
-            // 
-            this.txtApell.Enabled = false;
-            this.txtApell.Location = new System.Drawing.Point(92, 39);
-            this.txtApell.Name = "txtApell";
-            this.txtApell.Size = new System.Drawing.Size(100, 23);
-            this.txtApell.TabIndex = 12;
-            this.txtApell.TextChanged += new System.EventHandler(this.txtCliente_TextChanged);
+            this.btnAddC.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnAddC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnAddC.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddC.Image = ((System.Drawing.Image)(resources.GetObject("btnAddC.Image")));
+            this.btnAddC.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddC.Location = new System.Drawing.Point(614, 26);
+            this.btnAddC.Name = "btnAddC";
+            this.btnAddC.Size = new System.Drawing.Size(237, 58);
+            this.btnAddC.TabIndex = 42;
+            this.btnAddC.Text = "Agregar Cliente";
+            this.btnAddC.UseVisualStyleBackColor = true;
             // 
             // Ventas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(924, 675);
+            this.ClientSize = new System.Drawing.Size(924, 523);
             this.ControlBox = false;
             this.Controls.Add(this.lblH);
             this.Controls.Add(this.lblFH);
@@ -631,7 +642,6 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnAceptar;
-        private System.Windows.Forms.Button btnAddC;
         private System.Windows.Forms.TextBox txtCanGB;
         private System.Windows.Forms.TextBox txtEmpresa;
         private System.Windows.Forms.Label label3;
@@ -671,5 +681,6 @@
         private System.Windows.Forms.RadioButton rdbtnID;
         private System.Windows.Forms.TextBox txtApell;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button btnAddC;
     }
 }
