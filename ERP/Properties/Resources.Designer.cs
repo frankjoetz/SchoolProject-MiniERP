@@ -193,6 +193,16 @@ namespace ERP.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Sin_título_2 {
+            get {
+                object obj = ResourceManager.GetObject("Sin título-2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap undoicon {
             get {
                 object obj = ResourceManager.GetObject("undoicon", resourceCulture);
