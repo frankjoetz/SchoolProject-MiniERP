@@ -130,6 +130,8 @@ namespace ERP.Compras
 
         private void Compras_Load(object sender, EventArgs e)
         {
+            // TODO: esta línea de código carga datos en la tabla 'Reportes.Stock_Materiales' Puede moverla o quitarla según sea necesario.
+            this.Stock_MaterialesTableAdapter.Fill(this.Reportes.Stock_Materiales);
             this.WindowState = FormWindowState.Maximized;
             this.revStock.RefreshReport();
         }
