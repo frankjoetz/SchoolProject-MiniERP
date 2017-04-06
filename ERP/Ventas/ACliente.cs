@@ -31,5 +31,82 @@ namespace ERP.Ventas
             }
             
         }
+////////////////Filtros de caracteres/////////////
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsNumber(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            else
+                if (char.IsSymbol(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            else
+                if (char.IsPunctuation(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void mtxtTel_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            else
+            if (char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            else
+                if (char.IsSymbol(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            else
+                if (char.IsPunctuation(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtApe_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsNumber(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            else
+                if (char.IsSymbol(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            else
+                if (char.IsPunctuation(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtEmpresa_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsNumber(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            else
+                if (char.IsSymbol(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            else
+                if (char.IsPunctuation(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }
