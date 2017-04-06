@@ -61,6 +61,11 @@
     <Compile Include="Compras\Compras.Designer.cs">
       <DependentUpon>Compras.cs</DependentUpon>
     </Compile>
+    <Compile Include="Compras\Reportes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reportes.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Dashboard\Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +125,7 @@
     <EmbeddedResource Include="Compras\Compras.resx">
       <DependentUpon>Compras.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Compras\Stock.rdlc" />
     <EmbeddedResource Include="Dashboard\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
@@ -160,6 +166,17 @@
       <DependentUpon>Ventas.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
+    <None Include="Compras\Reportes.xsc">
+      <DependentUpon>Reportes.xsd</DependentUpon>
+    </None>
+    <None Include="Compras\Reportes.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Reportes.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Compras\Reportes.xss">
+      <DependentUpon>Reportes.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -200,6 +217,33 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\undoicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LOGO VENTAS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LOGO PLANEACION.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LOGO INGENIERIA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LOGO COMPRAS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LOGO DASHBOARD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ERP SS LOGO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconProduction.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sin título-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ERP SS LOGO GRIS.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabProduccion = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -49,34 +49,42 @@
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvPlaneaciones = new System.Windows.Forms.DataGridView();
+            this.btnGuardar = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.prgrsEtapa = new System.Windows.Forms.ProgressBar();
-            this.Filtrar = new System.Windows.Forms.Label();
-            this.txtFiltrar = new System.Windows.Forms.TextBox();
-            this.dgvProducciones = new System.Windows.Forms.DataGridView();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.label6 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.label7 = new System.Windows.Forms.Label();
-            this.btnGuardar = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.btnAvanzar = new System.Windows.Forms.Button();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.btnRetroceder = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblEtapa = new System.Windows.Forms.Label();
+            this.btnRetroceder = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.prgrsEtapa = new System.Windows.Forms.ProgressBar();
+            this.btnAvanzar = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.btnComenzar = new System.Windows.Forms.Button();
+            this.nudSegundos = new System.Windows.Forms.NumericUpDown();
+            this.label7 = new System.Windows.Forms.Label();
+            this.dgvProducciones = new System.Windows.Forms.DataGridView();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.dgvPedidos = new System.Windows.Forms.DataGridView();
+            this.btnEntregar = new System.Windows.Forms.Button();
+            this.dgvProduccionesCorrespondientes = new System.Windows.Forms.DataGridView();
+            this.label8 = new System.Windows.Forms.Label();
+            this.lblInfoPedido = new System.Windows.Forms.Label();
             this.tabProduccion.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlaneaciones)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProducciones)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            this.groupBox3.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSegundos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProducciones)).BeginInit();
+            this.tabPage3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPedidos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProduccionesCorrespondientes)).BeginInit();
             this.SuspendLayout();
             // 
             // tabProduccion
@@ -86,8 +94,8 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabProduccion.Controls.Add(this.tabPage1);
             this.tabProduccion.Controls.Add(this.tabPage2);
-            this.tabProduccion.Controls.Add(this.tabPage4);
-            this.tabProduccion.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabProduccion.Controls.Add(this.tabPage3);
+            this.tabProduccion.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabProduccion.Location = new System.Drawing.Point(12, 12);
             this.tabProduccion.Name = "tabProduccion";
             this.tabProduccion.SelectedIndex = 0;
@@ -100,10 +108,10 @@
             this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Controls.Add(this.btnGuardar);
             this.tabPage1.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPage1.Location = new System.Drawing.Point(4, 34);
+            this.tabPage1.Location = new System.Drawing.Point(4, 30);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(758, 588);
+            this.tabPage1.Size = new System.Drawing.Size(758, 592);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Agregar una producción";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -323,20 +331,35 @@
             this.dgvPlaneaciones.MultiSelect = false;
             this.dgvPlaneaciones.Name = "dgvPlaneaciones";
             this.dgvPlaneaciones.ReadOnly = true;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Franklin Gothic Medium", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvPlaneaciones.RowsDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Franklin Gothic Medium", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvPlaneaciones.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvPlaneaciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPlaneaciones.Size = new System.Drawing.Size(734, 121);
             this.dgvPlaneaciones.TabIndex = 0;
-            this.dgvPlaneaciones.Click += new System.EventHandler(this.dgvPlaneaciones_Click);
+            this.dgvPlaneaciones.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPlaneaciones_CellClick);
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGuardar.Image = global::ERP.Properties.Resources.iconAdd;
+            this.btnGuardar.Location = new System.Drawing.Point(6, 533);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(746, 56);
+            this.btnGuardar.TabIndex = 0;
+            this.btnGuardar.Text = "Comenzar a producir";
+            this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.groupBox2);
-            this.tabPage2.Location = new System.Drawing.Point(4, 34);
+            this.tabPage2.Location = new System.Drawing.Point(4, 30);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(758, 588);
+            this.tabPage2.Size = new System.Drawing.Size(758, 592);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Administrar producciones actuales";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -357,139 +380,28 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Estado de producciones";
             // 
-            // prgrsEtapa
+            // panel1
             // 
-            this.prgrsEtapa.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.prgrsEtapa.Location = new System.Drawing.Point(7, 41);
-            this.prgrsEtapa.Maximum = 8;
-            this.prgrsEtapa.Name = "prgrsEtapa";
-            this.prgrsEtapa.Size = new System.Drawing.Size(700, 22);
-            this.prgrsEtapa.Step = 1;
-            this.prgrsEtapa.TabIndex = 5;
+            this.panel1.Controls.Add(this.lblEtapa);
+            this.panel1.Controls.Add(this.btnRetroceder);
+            this.panel1.Controls.Add(this.btnCancelar);
+            this.panel1.Controls.Add(this.prgrsEtapa);
+            this.panel1.Controls.Add(this.btnAvanzar);
+            this.panel1.Location = new System.Drawing.Point(13, 216);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(720, 180);
+            this.panel1.TabIndex = 13;
             // 
-            // Filtrar
+            // lblEtapa
             // 
-            this.Filtrar.AutoSize = true;
-            this.Filtrar.Location = new System.Drawing.Point(6, 85);
-            this.Filtrar.Name = "Filtrar";
-            this.Filtrar.Size = new System.Drawing.Size(50, 21);
-            this.Filtrar.TabIndex = 2;
-            this.Filtrar.Text = "Filtrar";
-            // 
-            // txtFiltrar
-            // 
-            this.txtFiltrar.Location = new System.Drawing.Point(62, 82);
-            this.txtFiltrar.Name = "txtFiltrar";
-            this.txtFiltrar.Size = new System.Drawing.Size(146, 26);
-            this.txtFiltrar.TabIndex = 1;
-            // 
-            // dgvProducciones
-            // 
-            this.dgvProducciones.AllowUserToAddRows = false;
-            this.dgvProducciones.AllowUserToDeleteRows = false;
-            this.dgvProducciones.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvProducciones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvProducciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProducciones.Location = new System.Drawing.Point(13, 25);
-            this.dgvProducciones.Name = "dgvProducciones";
-            this.dgvProducciones.ReadOnly = true;
-            this.dgvProducciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProducciones.Size = new System.Drawing.Size(724, 185);
-            this.dgvProducciones.TabIndex = 0;
-            this.dgvProducciones.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProducciones_CellClick);
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.Location = new System.Drawing.Point(4, 34);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(758, 588);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Generar reporte";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 31);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(171, 21);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "Simular producción con";
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Location = new System.Drawing.Point(183, 29);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(44, 26);
-            this.numericUpDown1.TabIndex = 7;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(233, 31);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(145, 21);
-            this.label7.TabIndex = 8;
-            this.label7.Text = "segundos por etapa";
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGuardar.Image = global::ERP.Properties.Resources.iconAdd;
-            this.btnGuardar.Location = new System.Drawing.Point(6, 529);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(746, 56);
-            this.btnGuardar.TabIndex = 0;
-            this.btnGuardar.Text = "Comenzar a producir";
-            this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnGuardar.UseVisualStyleBackColor = true;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
-            // button2
-            // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.Image = global::ERP.Properties.Resources.iconplane;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.Location = new System.Drawing.Point(450, 19);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(260, 44);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "Comenzar simulación";
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // btnAvanzar
-            // 
-            this.btnAvanzar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAvanzar.Image = global::ERP.Properties.Resources.redoicon;
-            this.btnAvanzar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAvanzar.Location = new System.Drawing.Point(500, 129);
-            this.btnAvanzar.Name = "btnAvanzar";
-            this.btnAvanzar.Size = new System.Drawing.Size(206, 42);
-            this.btnAvanzar.TabIndex = 3;
-            this.btnAvanzar.Text = "Avanzar etapa";
-            this.btnAvanzar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnAvanzar.UseVisualStyleBackColor = true;
-            this.btnAvanzar.Click += new System.EventHandler(this.btnAvanzar_Click);
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox3.Controls.Add(this.label6);
-            this.groupBox3.Controls.Add(this.button2);
-            this.groupBox3.Controls.Add(this.numericUpDown1);
-            this.groupBox3.Controls.Add(this.label7);
-            this.groupBox3.Location = new System.Drawing.Point(13, 413);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(720, 76);
-            this.groupBox3.TabIndex = 10;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Simular esta producción";
+            this.lblEtapa.AutoSize = true;
+            this.lblEtapa.Location = new System.Drawing.Point(6, 13);
+            this.lblEtapa.Name = "lblEtapa";
+            this.lblEtapa.Size = new System.Drawing.Size(51, 21);
+            this.lblEtapa.TabIndex = 13;
+            this.lblEtapa.Text = "Etapa";
             // 
             // btnRetroceder
             // 
@@ -510,7 +422,7 @@
             this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancelar.Image = global::ERP.Properties.Resources.cancelicon;
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCancelar.Location = new System.Drawing.Point(500, 74);
+            this.btnCancelar.Location = new System.Drawing.Point(6, 74);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(206, 42);
             this.btnCancelar.TabIndex = 12;
@@ -519,30 +431,192 @@
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // panel1
+            // prgrsEtapa
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.prgrsEtapa.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.Controls.Add(this.lblEtapa);
-            this.panel1.Controls.Add(this.btnRetroceder);
-            this.panel1.Controls.Add(this.btnCancelar);
-            this.panel1.Controls.Add(this.prgrsEtapa);
-            this.panel1.Controls.Add(this.txtFiltrar);
-            this.panel1.Controls.Add(this.Filtrar);
-            this.panel1.Controls.Add(this.btnAvanzar);
-            this.panel1.Location = new System.Drawing.Point(13, 216);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(720, 180);
-            this.panel1.TabIndex = 13;
+            this.prgrsEtapa.Location = new System.Drawing.Point(7, 41);
+            this.prgrsEtapa.Maximum = 8;
+            this.prgrsEtapa.Name = "prgrsEtapa";
+            this.prgrsEtapa.Size = new System.Drawing.Size(700, 22);
+            this.prgrsEtapa.Step = 1;
+            this.prgrsEtapa.TabIndex = 5;
             // 
-            // lblEtapa
+            // btnAvanzar
             // 
-            this.lblEtapa.AutoSize = true;
-            this.lblEtapa.Location = new System.Drawing.Point(6, 13);
-            this.lblEtapa.Name = "lblEtapa";
-            this.lblEtapa.Size = new System.Drawing.Size(51, 21);
-            this.lblEtapa.TabIndex = 13;
-            this.lblEtapa.Text = "Etapa";
+            this.btnAvanzar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAvanzar.Image = global::ERP.Properties.Resources.redoicon;
+            this.btnAvanzar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAvanzar.Location = new System.Drawing.Point(500, 129);
+            this.btnAvanzar.Name = "btnAvanzar";
+            this.btnAvanzar.Size = new System.Drawing.Size(206, 42);
+            this.btnAvanzar.TabIndex = 3;
+            this.btnAvanzar.Text = "Avanzar etapa";
+            this.btnAvanzar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnAvanzar.UseVisualStyleBackColor = true;
+            this.btnAvanzar.Click += new System.EventHandler(this.btnAvanzar_Click);
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox3.Controls.Add(this.label6);
+            this.groupBox3.Controls.Add(this.btnComenzar);
+            this.groupBox3.Controls.Add(this.nudSegundos);
+            this.groupBox3.Controls.Add(this.label7);
+            this.groupBox3.Enabled = false;
+            this.groupBox3.Location = new System.Drawing.Point(13, 413);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(720, 76);
+            this.groupBox3.TabIndex = 10;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Simular esta producción";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(6, 31);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(171, 21);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "Simular producción con";
+            // 
+            // btnComenzar
+            // 
+            this.btnComenzar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnComenzar.Image = global::ERP.Properties.Resources.iconplane;
+            this.btnComenzar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnComenzar.Location = new System.Drawing.Point(450, 19);
+            this.btnComenzar.Name = "btnComenzar";
+            this.btnComenzar.Size = new System.Drawing.Size(260, 44);
+            this.btnComenzar.TabIndex = 9;
+            this.btnComenzar.Text = "Comenzar simulación";
+            this.btnComenzar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnComenzar.UseVisualStyleBackColor = true;
+            // 
+            // nudSegundos
+            // 
+            this.nudSegundos.Location = new System.Drawing.Point(183, 29);
+            this.nudSegundos.Name = "nudSegundos";
+            this.nudSegundos.Size = new System.Drawing.Size(44, 26);
+            this.nudSegundos.TabIndex = 7;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(233, 31);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(145, 21);
+            this.label7.TabIndex = 8;
+            this.label7.Text = "segundos por etapa";
+            // 
+            // dgvProducciones
+            // 
+            this.dgvProducciones.AllowUserToAddRows = false;
+            this.dgvProducciones.AllowUserToDeleteRows = false;
+            this.dgvProducciones.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvProducciones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvProducciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProducciones.Location = new System.Drawing.Point(13, 25);
+            this.dgvProducciones.Name = "dgvProducciones";
+            this.dgvProducciones.ReadOnly = true;
+            this.dgvProducciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvProducciones.Size = new System.Drawing.Size(724, 185);
+            this.dgvProducciones.TabIndex = 0;
+            this.dgvProducciones.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProducciones_CellClick);
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.groupBox4);
+            this.tabPage3.Location = new System.Drawing.Point(4, 30);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(758, 592);
+            this.tabPage3.TabIndex = 4;
+            this.tabPage3.Text = "Entregar pedido";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox4.Controls.Add(this.lblInfoPedido);
+            this.groupBox4.Controls.Add(this.label8);
+            this.groupBox4.Controls.Add(this.dgvProduccionesCorrespondientes);
+            this.groupBox4.Controls.Add(this.btnEntregar);
+            this.groupBox4.Controls.Add(this.dgvPedidos);
+            this.groupBox4.Location = new System.Drawing.Point(10, 12);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(752, 388);
+            this.groupBox4.TabIndex = 1;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Seleccionar pedido a entregar";
+            // 
+            // dgvPedidos
+            // 
+            this.dgvPedidos.AllowUserToAddRows = false;
+            this.dgvPedidos.AllowUserToDeleteRows = false;
+            this.dgvPedidos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvPedidos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvPedidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPedidos.Location = new System.Drawing.Point(17, 32);
+            this.dgvPedidos.Name = "dgvPedidos";
+            this.dgvPedidos.ReadOnly = true;
+            this.dgvPedidos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvPedidos.Size = new System.Drawing.Size(719, 117);
+            this.dgvPedidos.TabIndex = 0;
+            this.dgvPedidos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPedidos_CellClick);
+            // 
+            // btnEntregar
+            // 
+            this.btnEntregar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEntregar.Enabled = false;
+            this.btnEntregar.Image = global::ERP.Properties.Resources.iconplane;
+            this.btnEntregar.Location = new System.Drawing.Point(467, 308);
+            this.btnEntregar.Name = "btnEntregar";
+            this.btnEntregar.Size = new System.Drawing.Size(269, 54);
+            this.btnEntregar.TabIndex = 1;
+            this.btnEntregar.Text = "Entregar pedido";
+            this.btnEntregar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEntregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEntregar.UseVisualStyleBackColor = true;
+            this.btnEntregar.Click += new System.EventHandler(this.btnEntregar_Click);
+            // 
+            // dgvProduccionesCorrespondientes
+            // 
+            this.dgvProduccionesCorrespondientes.AllowUserToAddRows = false;
+            this.dgvProduccionesCorrespondientes.AllowUserToDeleteRows = false;
+            this.dgvProduccionesCorrespondientes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvProduccionesCorrespondientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvProduccionesCorrespondientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProduccionesCorrespondientes.Enabled = false;
+            this.dgvProduccionesCorrespondientes.Location = new System.Drawing.Point(17, 200);
+            this.dgvProduccionesCorrespondientes.Name = "dgvProduccionesCorrespondientes";
+            this.dgvProduccionesCorrespondientes.ReadOnly = true;
+            this.dgvProduccionesCorrespondientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvProduccionesCorrespondientes.Size = new System.Drawing.Size(719, 89);
+            this.dgvProduccionesCorrespondientes.TabIndex = 2;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(13, 164);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(221, 21);
+            this.label8.TabIndex = 3;
+            this.label8.Text = "Producciones correspondientes";
+            // 
+            // lblInfoPedido
+            // 
+            this.lblInfoPedido.AutoSize = true;
+            this.lblInfoPedido.ForeColor = System.Drawing.Color.Teal;
+            this.lblInfoPedido.Location = new System.Drawing.Point(13, 325);
+            this.lblInfoPedido.Name = "lblInfoPedido";
+            this.lblInfoPedido.Size = new System.Drawing.Size(58, 21);
+            this.lblInfoPedido.TabIndex = 4;
+            this.lblInfoPedido.Text = "Detalle";
             // 
             // Produccion
             // 
@@ -555,8 +629,7 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Produccion";
-            this.Load += new System.EventHandler(this.Produccion_Load);
+            this.Text = " ";
             this.tabProduccion.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
@@ -564,12 +637,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlaneaciones)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProducciones)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSegundos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProducciones)).EndInit();
+            this.tabPage3.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPedidos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProduccionesCorrespondientes)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -594,10 +672,7 @@
         private System.Windows.Forms.DataGridView dgvPlaneaciones;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnAvanzar;
-        private System.Windows.Forms.Label Filtrar;
-        private System.Windows.Forms.TextBox txtFiltrar;
         private System.Windows.Forms.DataGridView dgvProducciones;
-        private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.ProgressBar prgrsEtapa;
         private System.Windows.Forms.Label lblDetalle;
         private System.Windows.Forms.DateTimePicker dtpFechaEstimada;
@@ -605,14 +680,21 @@
         private System.Windows.Forms.DateTimePicker dtpFechaInicio;
         private System.Windows.Forms.ComboBox cboxBuscar;
         private System.Windows.Forms.Label lblTiempo;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnComenzar;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown nudSegundos;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblEtapa;
         private System.Windows.Forms.Button btnRetroceder;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.DataGridView dgvPedidos;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.DataGridView dgvProduccionesCorrespondientes;
+        private System.Windows.Forms.Button btnEntregar;
+        private System.Windows.Forms.Label lblInfoPedido;
     }
 }

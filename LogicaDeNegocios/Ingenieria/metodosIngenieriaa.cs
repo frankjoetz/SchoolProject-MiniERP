@@ -13,16 +13,16 @@ namespace LogicaDeNegocios
     {
         BaseDeDatos bd = new BaseDeDatos();
 
-        public bool altaMateria(int idmateria, string tipo, string descrip, string fecha, int cantidad)
+        public bool altaMateria(string tipo, string descrip, string fecha)
         {
-            if (bd.insertar("insert into MateriaPrima(idMateria, Tipo, descripcion, Fecha, cantidad) values('" + idmateria + "','" + tipo + "', '" + descrip + "', '" + fecha + "', '" + cantidad + "')"))
+            if (bd.insertar("insert into MateriaPrima(Tipo, descripcion, Fecha) values('" + tipo + "', '" + descrip + "', '" + fecha + "')"))
                 return true;
             else
                 return false;
         }
-        public bool altaProducto(int idProducto, string descripcion, int cantidad, int locacion, string fHora)
+        public bool altaProducto(string descripcion, string destino, string fHora)
         {
-            if (bd.insertar("insert into InventarioProducto(idProducto, descripcion, cantidad, locacion, fHora) values(" + idProducto + ",'" + descripcion + "','" + cantidad + "', '" + locacion + "','" + fHora + "')"))
+            if (bd.insertar("insert into Producto(descripcion, destino, fHora) values('" + descripcion + "', '" + destino + "','" + fHora + "')"))
                 return true;
             else
                 return false;
@@ -44,6 +44,10 @@ namespace LogicaDeNegocios
         public void comboBox(string consulta, string columna, ComboBox cbx)
         {
             bd.llenarComboBox(consulta, columna, cbx);
+        }
+        public void llenarGridViewmateriaprima(DataGridView materiaprima)
+        {
+            bd.llenarTabla("select * from MateriaPrima order by idMateria asc", materiaprima);
         }
     }
 }
