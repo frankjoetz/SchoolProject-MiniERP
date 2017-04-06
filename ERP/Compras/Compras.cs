@@ -131,6 +131,7 @@ namespace ERP.Compras
         private void Compras_Load(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
+            this.revStock.RefreshReport();
         }
     }
 }
