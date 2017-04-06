@@ -63,7 +63,7 @@
             // 
             // inicioToolStripMenuItem
             // 
-            this.inicioToolStripMenuItem.Image = global::ERP.Properties.Resources.ERP_SS_LOGO;
+            this.inicioToolStripMenuItem.Image = global::ERP.Properties.Resources.SS_Logo;
             this.inicioToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.inicioToolStripMenuItem.Name = "inicioToolStripMenuItem";
             this.inicioToolStripMenuItem.Size = new System.Drawing.Size(149, 36);
@@ -72,7 +72,7 @@
             // 
             // ingenieríaToolStripMenuItem
             // 
-            this.ingenieríaToolStripMenuItem.Image = global::ERP.Properties.Resources.LOGO_INGENIERIA;
+            this.ingenieríaToolStripMenuItem.Image = global::ERP.Properties.Resources.LogoIngenieria;
             this.ingenieríaToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ingenieríaToolStripMenuItem.Name = "ingenieríaToolStripMenuItem";
             this.ingenieríaToolStripMenuItem.Size = new System.Drawing.Size(149, 36);
@@ -82,7 +82,7 @@
             // 
             // almacenToolStripMenuItem
             // 
-            this.almacenToolStripMenuItem.Image = global::ERP.Properties.Resources.LOGO_COMPRAS;
+            this.almacenToolStripMenuItem.Image = global::ERP.Properties.Resources.LogoCompras;
             this.almacenToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.almacenToolStripMenuItem.Name = "almacenToolStripMenuItem";
             this.almacenToolStripMenuItem.Size = new System.Drawing.Size(149, 36);
@@ -92,7 +92,7 @@
             // 
             // ventasToolStripMenuItem
             // 
-            this.ventasToolStripMenuItem.Image = global::ERP.Properties.Resources.LOGO_VENTAS;
+            this.ventasToolStripMenuItem.Image = global::ERP.Properties.Resources.LogoVentas;
             this.ventasToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ventasToolStripMenuItem.Name = "ventasToolStripMenuItem";
             this.ventasToolStripMenuItem.Size = new System.Drawing.Size(149, 36);
@@ -102,7 +102,7 @@
             // 
             // planeaciónToolStripMenuItem
             // 
-            this.planeaciónToolStripMenuItem.Image = global::ERP.Properties.Resources.LOGO_PLANEACION;
+            this.planeaciónToolStripMenuItem.Image = global::ERP.Properties.Resources.LogoPlaneacion;
             this.planeaciónToolStripMenuItem.Name = "planeaciónToolStripMenuItem";
             this.planeaciónToolStripMenuItem.Size = new System.Drawing.Size(149, 36);
             this.planeaciónToolStripMenuItem.Text = "Planeación";
@@ -119,7 +119,7 @@
             // 
             // dashboardToolStripMenuItem
             // 
-            this.dashboardToolStripMenuItem.Image = global::ERP.Properties.Resources.LOGO_DASHBOARD1;
+            this.dashboardToolStripMenuItem.Image = global::ERP.Properties.Resources.LogoDash;
             this.dashboardToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.dashboardToolStripMenuItem.Name = "dashboardToolStripMenuItem";
             this.dashboardToolStripMenuItem.Size = new System.Drawing.Size(149, 36);
@@ -135,7 +135,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::ERP.Properties.Resources.Sin_título_2;
+            this.BackgroundImage = global::ERP.Properties.Resources.LogoPrincipal;
             this.ClientSize = new System.Drawing.Size(984, 459);
             this.Controls.Add(this.strpHome);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

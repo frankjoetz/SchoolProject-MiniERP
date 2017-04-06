@@ -83,16 +83,6 @@ namespace ERP.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap ERP_SS_LOGO {
-            get {
-                object obj = ResourceManager.GetObject("ERP SS LOGO", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap iconAdd {
             get {
                 object obj = ResourceManager.GetObject("iconAdd", resourceCulture);
@@ -123,9 +113,9 @@ namespace ERP.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap LOGO_COMPRAS {
+        internal static System.Drawing.Bitmap LogoCompras {
             get {
-                object obj = ResourceManager.GetObject("LOGO COMPRAS", resourceCulture);
+                object obj = ResourceManager.GetObject("LogoCompras", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -133,9 +123,9 @@ namespace ERP.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap LOGO_DASHBOARD {
+        internal static System.Drawing.Bitmap LogoDash {
             get {
-                object obj = ResourceManager.GetObject("LOGO DASHBOARD", resourceCulture);
+                object obj = ResourceManager.GetObject("LogoDash", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -143,9 +133,9 @@ namespace ERP.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap LOGO_DASHBOARD1 {
+        internal static System.Drawing.Bitmap LogoIngenieria {
             get {
-                object obj = ResourceManager.GetObject("LOGO DASHBOARD1", resourceCulture);
+                object obj = ResourceManager.GetObject("LogoIngenieria", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -153,9 +143,9 @@ namespace ERP.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap LOGO_INGENIERIA {
+        internal static System.Drawing.Bitmap LogoPlaneacion {
             get {
-                object obj = ResourceManager.GetObject("LOGO INGENIERIA", resourceCulture);
+                object obj = ResourceManager.GetObject("LogoPlaneacion", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -163,9 +153,9 @@ namespace ERP.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap LOGO_PLANEACION {
+        internal static System.Drawing.Bitmap LogoPrincipal {
             get {
-                object obj = ResourceManager.GetObject("LOGO PLANEACION", resourceCulture);
+                object obj = ResourceManager.GetObject("LogoPrincipal", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -173,9 +163,9 @@ namespace ERP.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap LOGO_VENTAS {
+        internal static System.Drawing.Bitmap LogoVentas {
             get {
-                object obj = ResourceManager.GetObject("LOGO VENTAS", resourceCulture);
+                object obj = ResourceManager.GetObject("LogoVentas", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -193,9 +183,9 @@ namespace ERP.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Sin_título_2 {
+        internal static System.Drawing.Bitmap SS_Logo {
             get {
-                object obj = ResourceManager.GetObject("Sin título-2", resourceCulture);
+                object obj = ResourceManager.GetObject("SS_Logo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
