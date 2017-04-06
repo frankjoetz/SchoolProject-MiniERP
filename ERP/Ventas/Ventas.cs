@@ -195,5 +195,185 @@ namespace ERP.Ventas
             if(tbcVentas.SelectedIndex == 1)
                 cargarTablas(dgvPedido, "select Pedido.idPedido, Pedido.idCliente, Pedido.Fecha, Pedido.Status, Pedido.CantGamaBaja, Pedido.CantGamaMedia, Pedido.CantGamaAlta, Pedido.Observacion, Cliente.Nombre, Cliente.Apellido, Cliente.Empresa, Cliente.email from Pedido inner join Cliente on Pedido.idCliente = Cliente.idCliente", "Pedido");
         }
+
+        //////Filtros de Caracteres en Textbox//////////////////////////////////////////////////////////////////////////////////////
+        private void txtIDcliente_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            else
+            if (char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            else
+                if (char.IsSymbol(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            else
+                if (char.IsPunctuation(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtIDHis_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            else
+            if (char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            else
+                if (char.IsSymbol(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            else
+                if (char.IsPunctuation(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+        private void txtNomCliHis_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsNumber(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            else
+                if (char.IsSymbol(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            else
+                if (char.IsPunctuation(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+        private void txtNomb_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsNumber(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            else
+                if (char.IsSymbol(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            else
+                if (char.IsPunctuation(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtApell_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsNumber(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            else
+                if (char.IsSymbol(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            else
+                if (char.IsPunctuation(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+        private void txtEmp_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsNumber(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            else
+                if (char.IsSymbol(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+        ///Igual son filtros pero de las Gama Alta,Media & Baja//////////////////////
+        private void txtCanGB_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            else
+            if (char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            else
+                if (char.IsSymbol(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            else
+                if (char.IsPunctuation(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtCanGM_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            else
+            if (char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            else
+                if (char.IsSymbol(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            else
+                if (char.IsPunctuation(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtCanGA_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            else
+            if (char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            else
+                if (char.IsSymbol(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            else
+                if (char.IsPunctuation(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }
