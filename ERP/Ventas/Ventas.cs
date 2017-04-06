@@ -143,45 +143,52 @@ namespace ERP.Ventas
         //Buscar y/o rellendar campos//////////////////////////////////////////////////////////////////////////////////////
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            if (txtNombre.Text != "")
+            try
             {
-                string status = "En proceso";
-                int cGB = 0, cGM = 0, cGA = 0;
-                if (txtCanGB.Text != "")
-                    cGB = int.Parse(txtCanGB.Text);
-                if (txtCanGM.Text != "")
-                    cGM = int.Parse(txtCanGM.Text);
-                if (txtCanGA.Text != "")
-                    cGA = int.Parse(txtCanGA.Text);
-                string values = string.Format(int.Parse(txtIDcliente.Text) + ",'" + lblFH.Text + "','" + status + "'," + cGB + "," + cGM + "," + cGA + ",'" + txtaCom.Text + "'");
-                bool result = mV.altaTabla("Pedido(idCliente,Fecha,Status,CantGamaBaja,CantGamaMedia,CantGamaAlta,Observacion)", values);
-                if (result)
+                if (txtNombre.Text != "")
                 {
-                    MessageBox.Show("Pedido agregado");
-                    txtIDcliente.Text = "";
-                    txtCanGB.Text = "";
-                    txtCanGM.Text = "";
-                    txtCanGA.Text = "";
-                    chkGB.Checked = false;
-                    chkGM.Checked = false;
-                    chkGA.Checked = false;
-                    txtaCom.Text = "";
+                    string status = "En proceso";
+                    int cGB = 0, cGM = 0, cGA = 0;
+                    if (txtCanGB.Text != "")
+                        cGB = int.Parse(txtCanGB.Text);
+                    if (txtCanGM.Text != "")
+                        cGM = int.Parse(txtCanGM.Text);
+                    if (txtCanGA.Text != "")
+                        cGA = int.Parse(txtCanGA.Text);
+                    string values = string.Format(int.Parse(txtIDcliente.Text) + ",'" + lblFH.Text + "','" + status + "'," + cGB + "," + cGM + "," + cGA + ",'" + txtaCom.Text + "'");
+                    bool result = mV.altaTabla("Pedido(idCliente,Fecha,Status,CantGamaBaja,CantGamaMedia,CantGamaAlta,Observacion)", values);
+                    if (result)
+                    {
+                        MessageBox.Show("Pedido agregado");
+                        txtIDcliente.Text = "";
+                        txtCanGB.Text = "";
+                        txtCanGM.Text = "";
+                        txtCanGA.Text = "";
+                        chkGB.Checked = false;
+                        chkGM.Checked = false;
+                        chkGA.Checked = false;
+                        txtaCom.Text = "";
+                    }
                 }
+                else
+                    MessageBox.Show("Ingrese valores validos");
             }
-            else
-                MessageBox.Show("Ingrese valores validos");
+            catch { }
         }
 
         //Insercion/////////////////////////////////////////////////////////////////////////////////////
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            bool actu = mV.actuTabla("Pedido", "Status = 'Cancelado'", "where idPedido = " + int.Parse(txtIDBorrar.Text));
-            if (actu)
-                MessageBox.Show("Actualizado");
-            else
-                MessageBox.Show("Error");
-            cargarTablas(dgvPedido, "select * from Pedido inner join Cliente on Pedido.idCliente = Cliente.idCliente", "Pedido");
-
+            try
+            {
+                bool actu = mV.actuTabla("Pedido", "Status = 'Cancelado'", "where idPedido = " + int.Parse(txtIDBorrar.Text));
+                if (actu)
+                    MessageBox.Show("Cancelado");
+                else
+                    MessageBox.Show("Error");
+                cargarTablas(dgvPedido, "select * from Pedido inner join Cliente on Pedido.idCliente = Cliente.idCliente", "Pedido");
+            }
+            catch { }
         }
 
         //Actualizacion//////////////////////////////////////////////////////////////////////////////////////
@@ -197,10 +204,14 @@ namespace ERP.Ventas
 
         private void tbcVentas_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(tbcVentas.SelectedIndex == 2)
-                cargarTablas(dgvBuscar, "select * from Cliente", "Cliente");
-            if(tbcVentas.SelectedIndex == 1)
-                cargarTablas(dgvPedido, "select Pedido.idPedido, Pedido.idCliente, Pedido.Fecha, Pedido.Status, Pedido.CantGamaBaja, Pedido.CantGamaMedia, Pedido.CantGamaAlta, Pedido.Observacion, Cliente.Nombre, Cliente.Apellido, Cliente.Empresa, Cliente.email from Pedido inner join Cliente on Pedido.idCliente = Cliente.idCliente", "Pedido");
+            try
+            {
+                if (tbcVentas.SelectedIndex == 2)
+                    cargarTablas(dgvBuscar, "select * from Cliente", "Cliente");
+                if (tbcVentas.SelectedIndex == 1)
+                    cargarTablas(dgvPedido, "select Pedido.idPedido, Pedido.idCliente, Pedido.Fecha, Pedido.Status, Pedido.CantGamaBaja, Pedido.CantGamaMedia, Pedido.CantGamaAlta, Pedido.Observacion, Cliente.Nombre, Cliente.Apellido, Cliente.Empresa, Cliente.email from Pedido inner join Cliente on Pedido.idCliente = Cliente.idCliente", "Pedido");
+            }
+            catch { }
         }
 
         //////Filtros de Caracteres en Textbox//////////////////////////////////////////////////////////////////////////////////////
@@ -380,6 +391,16 @@ namespace ERP.Ventas
                 if (char.IsPunctuation(e.KeyChar))
             {
                 e.Handled = true;
+            }
+        }
+
+        private void txtIDcliente_Leave(object sender, EventArgs e)
+        {
+            string id = mV.buscarUnDato("idCliente", "Cliente", "Limit 1");
+            string id2 = mV.buscarUnDato("idCliente", "Cliente", "ORDER BY idCliente DESC Limit 1");
+            if (txtIDcliente.Text != id && txtIDcliente.Text != id2)
+            {
+                MessageBox.Show("No existe cliente");
             }
         }
     }

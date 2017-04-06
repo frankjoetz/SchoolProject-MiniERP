@@ -314,6 +314,7 @@
             this.txtIDcliente.TabIndex = 0;
             this.txtIDcliente.TextChanged += new System.EventHandler(this.txtIDcliente_TextChanged);
             this.txtIDcliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIDcliente_KeyPress);
+            this.txtIDcliente.Leave += new System.EventHandler(this.txtIDcliente_Leave);
             // 
             // txtEmpresa
             // 
