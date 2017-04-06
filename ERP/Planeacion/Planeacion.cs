@@ -55,7 +55,7 @@ namespace ERP.Planeacion
 
             // inhabilitacion de txt y checkbox
             txtIdPedido.Enabled = false;
-            txtFechaInicio.Enabled = false;
+            dtpFechaInicio.Enabled = false;
             txtStatus.Enabled = false;
             txtAlta.Enabled = false;
             txtMedia.Enabled = false;
@@ -107,7 +107,22 @@ namespace ERP.Planeacion
 
         private void btnNuevaPlaneacion_Click(object sender, EventArgs e)
         {
-            
+            if (txtAlta.Text != "0")
+            {
+                planeacion.InsertarPlaneacionAlta(txtIdPedido, txtAlta, dtpFechaInicio, DTPFechaEntrega, txtStatus, txtObservaciones);
+                planeacion.llenarPlaneaciones(GridPlaneacionesAgregadas);
+
+            }
+            if (txtMedia.Text != "0")
+            {
+                planeacion.InsertarPlaneacionMedia(txtIdPedido, txtMedia, dtpFechaInicio, DTPFechaEntrega, txtStatus, txtObservaciones);
+                planeacion.llenarPlaneaciones(GridPlaneacionesAgregadas);
+            }
+            if (txtBaja.Text != "0")
+            {
+                planeacion.InsertarPlaneacionBaja(txtIdPedido, txtBaja, dtpFechaInicio, DTPFechaEntrega, txtStatus, txtObservaciones);
+                planeacion.llenarPlaneaciones(GridPlaneacionesAgregadas);
+            }
         }
 
         private void txtbId_ped_buscar_TextChanged(object sender, EventArgs e)
@@ -146,8 +161,8 @@ namespace ERP.Planeacion
                 DataGridViewRow row = this.GridPedidos.Rows[e.RowIndex];
 
                 txtIdPedido.Text = row.Cells["idPedido"].Value.ToString();
-                txtFechaInicio.Text = row.Cells["Fecha"].Value.ToString();
-                txtStatus.Text = row.Cells["Status"].Value.ToString();
+                dtpFechaInicio.Value = DateTime.Parse(row.Cells["Fecha"].Value.ToString());
+                txtStatus.Text = "Listo para producir";
                 txtAlta.Text = row.Cells["CantGamaAlta"].Value.ToString();
                 txtMedia.Text =  row.Cells["CantGamaMedia"].Value.ToString();
                 txtBaja.Text = row.Cells["CantGamaBaja"].Value.ToString();
@@ -193,6 +208,13 @@ namespace ERP.Planeacion
         private void label7_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnAlerta_Click(object sender, EventArgs e)
+        {
+            MandarAlerta mandaralerta = new MandarAlerta();
+            mandaralerta.Show();
+            
         }
     }
 }

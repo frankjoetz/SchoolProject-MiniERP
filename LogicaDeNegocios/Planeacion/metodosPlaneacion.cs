@@ -34,60 +34,76 @@ namespace LogicaDeNegocios.Planeacion
         // Mandar alerta
        
         //insertar planeacion
-        public void InsertarPlaneacionAlta(TextBox idPedido, TextBox Cantidad, TextBox fInicio, DateTimePicker fEntregar, TextBox status, TextBox Observaciones)
+        public void InsertarPlaneacionAlta(TextBox idPedido, TextBox Cantidad, DateTimePicker fInicio, DateTimePicker fEntregar, TextBox status, TextBox Observaciones)
         { // Método para agregar planeacion
             string id = idPedido.Text;
             string ti = "Gama alta";
-            string ca = Cantidad.Text;
-            string fi = fInicio.Text;
+            string caa = Cantidad.Text;
+            string fi = fInicio.Value.ToString("yyyy-MM-dd");
             string ff = fEntregar.Value.ToString("yyyy-MM-dd"); // Fecha estimada
             string st = status.Text;
             string ob = Observaciones.Text;
-            string query = String.Format("INSERT INTO Planeacion VALUES (NULL, '{0}', '{1}', '{2}', '1', '{3}', '{4}', '{5}', '{6}')", id, ti ,ca,fi,ff,st, ob);
+            string query = String.Format("INSERT INTO Planeacion VALUES (NULL, '{0}', '{1}', '{2}','{3}', '{4}', '{5}', '{6}')", id, ti, caa, fi, ff, st, ob);
             if (datos.insertar(query))
             {
-                MessageBox.Show("Planeacion Agregada");
+                MessageBox.Show("Planeacion de " + caa + " computadoras de gama alta agregadas a planeacion");
             }
             else
                 MessageBox.Show("error 404 not found. :(", "Oops", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
-        public void InsertarPlaneacionMedia(TextBox idPedido, TextBox Cantidad, TextBox fInicio, DateTimePicker fEntregar, TextBox status, TextBox Observaciones)
+        public void InsertarPlaneacionMedia(TextBox idPedido, TextBox Cantidad, DateTimePicker fInicio, DateTimePicker fEntregar, TextBox status, TextBox Observaciones)
         { // Método para agregar planeacion
             string id = idPedido.Text;
             string ti = "Gama media";
-            string ca = Cantidad.Text;
-            string fi = fInicio.Text;
+            string cam = Cantidad.Text;
+            string fi = fInicio.Value.ToString("yyyy-MM-dd");
             string ff = fEntregar.Value.ToString("yyyy-MM-dd"); // Fecha estimada
             string st = status.Text;
             string ob = Observaciones.Text;
-            string query = String.Format("INSERT INTO Planeacion VALUES (NULL, '{0}', '{1}', '{2}', '1', '{3}', '{4}', '{5}', '{6}')", id, ti, ca, fi, ff, st, ob);
+            string query = String.Format("INSERT INTO Planeacion VALUES (NULL, '{0}', '{1}', '{2}','{3}', '{4}', '{5}', '{6}')", id, ti, cam, fi, ff, st, ob);
             if (datos.insertar(query))
             {
-                MessageBox.Show("Planeacion Agregada");
+                MessageBox.Show("Planeacion de " + cam + " computadoras de gama media agregadas a planeacion");
             }
             else
                 MessageBox.Show("error 404 not found. :(", "Oops", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
-        public void InsertarPlaneacionBaja(TextBox idPedido, TextBox Cantidad, TextBox fInicio, DateTimePicker fEntregar, TextBox status, TextBox Observaciones)
+        public void InsertarPlaneacionBaja(TextBox idPedido, TextBox Cantidad, DateTimePicker fInicio, DateTimePicker fEntregar, TextBox status, TextBox Observaciones)
         { // Método para agregar planeacion
             string id = idPedido.Text;
             string ti = "Gama baja";
-            string ca = Cantidad.Text;
-            string fi = fInicio.Text;
+            string cab = Cantidad.Text;
+            string fi = fInicio.Value.ToString("yyyy-MM-dd");
             string ff = fEntregar.Value.ToString("yyyy-MM-dd"); // Fecha estimada
             string st = status.Text;
             string ob = Observaciones.Text;
-            string query = String.Format("INSERT INTO Planeacion VALUES (NULL, '{0}', '{1}', '{2}', '1', '{3}', '{4}', '{5}', '{6}')", id, ti, ca, fi, ff, st, ob);
+            string query = String.Format("INSERT INTO Planeacion VALUES (NULL, '{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}')", id, ti, cab, fi, ff, st, ob);
             if (datos.insertar(query))
             {
-                MessageBox.Show("Planeacion Agregada");
+                MessageBox.Show("Planeacion de " + cab + " computadoras de gama baja agregadas a planeacion");
             }
             else
                 MessageBox.Show("error 404 not found. :(", "Oops", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
         
 
+        // Metodo para enviar alerta
+
+        public void MandarAlerta(TextBox mensaje)
+        {
+            string msg = mensaje.Text;
+            string query = String.Format("INSERT INTO Alertas(Mensaje) VALUES ('{0}')", msg);
+            if (datos.insertar(query))
+            {
+                MessageBox.Show("Se envio alerta correctamente");
+                
+ 
+            }
+            else
+                MessageBox.Show("Oops algo salio mal", "Oops", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+        }
 
 
     }
 }
+ 

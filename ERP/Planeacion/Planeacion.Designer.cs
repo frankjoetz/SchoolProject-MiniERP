@@ -58,7 +58,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtFechaInicio = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtBuscarPedido = new System.Windows.Forms.TextBox();
@@ -72,6 +71,7 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label11 = new System.Windows.Forms.Label();
+            this.dtpFechaInicio = new System.Windows.Forms.DateTimePicker();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -131,6 +131,7 @@
             this.btnAlerta.Text = "Alertas Falta Material Compras";
             this.btnAlerta.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAlerta.UseVisualStyleBackColor = true;
+            this.btnAlerta.Click += new System.EventHandler(this.btnAlerta_Click);
             // 
             // groupBox4
             // 
@@ -161,6 +162,7 @@
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Controls.Add(this.dtpFechaInicio);
             this.groupBox2.Controls.Add(this.txtBaja);
             this.groupBox2.Controls.Add(this.txtMedia);
             this.groupBox2.Controls.Add(this.txtAlta);
@@ -180,7 +182,6 @@
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.txtFechaInicio);
             this.groupBox2.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(6, 282);
             this.groupBox2.Name = "groupBox2";
@@ -348,7 +349,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(288, 34);
+            this.label3.Location = new System.Drawing.Point(262, 34);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(90, 21);
             this.label3.TabIndex = 4;
@@ -363,14 +364,6 @@
             this.label2.Size = new System.Drawing.Size(74, 21);
             this.label2.TabIndex = 3;
             this.label2.Text = "Id Pedido";
-            // 
-            // txtFechaInicio
-            // 
-            this.txtFechaInicio.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFechaInicio.Location = new System.Drawing.Point(384, 31);
-            this.txtFechaInicio.Name = "txtFechaInicio";
-            this.txtFechaInicio.Size = new System.Drawing.Size(209, 26);
-            this.txtFechaInicio.TabIndex = 1;
             // 
             // groupBox1
             // 
@@ -463,6 +456,8 @@
             this.GridPedidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridPedidos.Location = new System.Drawing.Point(6, 16);
             this.GridPedidos.Name = "GridPedidos";
+            this.GridPedidos.ReadOnly = true;
+            this.GridPedidos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.GridPedidos.Size = new System.Drawing.Size(1299, 189);
             this.GridPedidos.TabIndex = 0;
             this.GridPedidos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridPedidos_CellContentClick_1);
@@ -490,7 +485,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 30);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1401, 773);
+            this.tabPage2.Size = new System.Drawing.Size(1323, 683);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Buscar";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -551,6 +546,13 @@
             this.label11.Text = "BUSCAR PLANEACIÓN";
             this.label11.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.label11.Click += new System.EventHandler(this.label11_Click);
+            // 
+            // dtpFechaInicio
+            // 
+            this.dtpFechaInicio.Location = new System.Drawing.Point(358, 29);
+            this.dtpFechaInicio.Name = "dtpFechaInicio";
+            this.dtpFechaInicio.Size = new System.Drawing.Size(277, 26);
+            this.dtpFechaInicio.TabIndex = 21;
             // 
             // Planeacion
             // 
@@ -615,7 +617,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtFechaInicio;
         private System.Windows.Forms.TextBox txtIdPedido;
         private System.Windows.Forms.TextBox txtObservaciones;
         private System.Windows.Forms.Label label12;
@@ -624,6 +625,7 @@
         private System.Windows.Forms.TextBox txtAlta;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DateTimePicker dtpFechaInicio;
 
     }
 }
