@@ -119,7 +119,7 @@ namespace ERP.Ventas
                 if (txtApell.Text != "")
                     cargarTablas(dgvBuscar, string.Format("select * from Cliente where Nombre like '" + txtNomb.Text + "%' and Apellido like '" + txtApell.Text + "%'"), "Cliente");
             }
-            if (txtNomb.Text == "")
+            if (txtNomb.Text == "" && txtEmp.Text == "")
             {
                 txtApell.Enabled = false;
                 cargarTablas(dgvBuscar, "select * from Cliente", "Cliente");
@@ -401,14 +401,18 @@ namespace ERP.Ventas
 
         private void txtIDcliente_Leave(object sender, EventArgs e)
         {
-            int id = int.Parse(mV.buscarUnDato("idCliente", "Cliente", "Limit 1"));
-            int id2 = int.Parse(mV.buscarUnDato("idCliente", "Cliente", "ORDER BY idCliente DESC Limit 1"));
-            if (int.Parse(txtIDcliente.Text) < id || int.Parse(txtIDcliente.Text) > id2)
+            try
             {
-                MessageBox.Show("No existe cliente");
-                txtNombre.Clear();
-                txtEmpresa.Clear();
+                int id = int.Parse(mV.buscarUnDato("idCliente", "Cliente", "Limit 1"));
+                int id2 = int.Parse(mV.buscarUnDato("idCliente", "Cliente", "ORDER BY idCliente DESC Limit 1"));
+                if (int.Parse(txtIDcliente.Text) < id || int.Parse(txtIDcliente.Text) > id2)
+                {
+                    MessageBox.Show("No existe cliente");
+                    txtNombre.Clear();
+                    txtEmpresa.Clear();
+                }
             }
+            catch { }
         }
     }
 }

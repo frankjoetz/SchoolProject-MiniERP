@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ventas));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.tbcVentas = new System.Windows.Forms.TabControl();
@@ -135,7 +134,7 @@
             this.btnAddC.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnAddC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnAddC.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddC.Image = ((System.Drawing.Image)(resources.GetObject("btnAddC.Image")));
+            this.btnAddC.Image = global::ERP.Properties.Resources.iconAdd;
             this.btnAddC.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAddC.Location = new System.Drawing.Point(615, 31);
             this.btnAddC.Name = "btnAddC";
@@ -573,7 +572,7 @@
             // 
             // dgvBuscar
             // 
-            this.dgvBuscar.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.dgvBuscar.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvBuscar.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.dgvBuscar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBuscar.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
