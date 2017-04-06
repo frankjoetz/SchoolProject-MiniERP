@@ -21,13 +21,9 @@ namespace ERP.Compras
             comp.llenarGridViewAlertas(dataGridViewAlertas);
             comp.llenarGridViewLocacion(dataGridViewLocacion);
             comp.llenarDrigViewMaterial(dataGridViewStock);
-        }
 
-        private void btnActualizar_Click(object sender, EventArgs e)
-        {
-            comp.llenarGridViewAlertas(dataGridViewAlertas);
         }
-
+        
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(rtbDescripcion.Text))
@@ -53,12 +49,15 @@ namespace ERP.Compras
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
-            bool modificacion = comp.modificarAlerta(idAlerta);
-            if(modificacion)
+            if (MessageBox.Show("¿Estas seguro de la confirmacion?", "Advertencia", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                MessageBox.Show("Alerta confirmada");
-                comp.llenarGridViewAlertas(dataGridViewAlertas);
-                lblAlerta.Text = null;
+                bool modificacion = comp.modificarAlerta(idAlerta);
+                if (modificacion)
+                {
+                    MessageBox.Show("Alerta confirmada");
+                    comp.llenarGridViewAlertas(dataGridViewAlertas);
+                    lblAlerta.Text = null;
+                }
             }
             else
             {
@@ -94,6 +93,7 @@ namespace ERP.Compras
         private void tabControlCompras_SelectedIndexChanged(object sender, EventArgs e)
         {
             pintarColumnas(dataGridViewStock);
+            comp.llenarGridViewAlertas(dataGridViewAlertas);
         }
 
         private void btnAgregarMaterial_Click(object sender, EventArgs e)
@@ -103,20 +103,27 @@ namespace ERP.Compras
             string StockUpdate = (int.Parse(stockActual) + int.Parse(valorAgregar)).ToString();
             string id = dataGridViewStock.Rows[dataGridViewStock.CurrentRow.Index].Cells["idMateria"].Value.ToString();
 
-            if (!string.IsNullOrEmpty(stockActual))
+            if (MessageBox.Show("¿Estas seguro de agregar esa cantidad?", "Advertencia", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                bool agregado = comp.agregarStock(id,StockUpdate);
-                if (agregado)
-                    MessageBox.Show("Materia agregado exitosamente");
-                comp.llenarDrigViewMaterial(dataGridViewStock);
-                pintarColumnas(dataGridViewStock);
-                lblIdMateria.Text = null;
-                lblDescripcion.Text = null;
-                nudCantidad.Value = 1;
+                if (!string.IsNullOrEmpty(stockActual))
+                {
+                    bool agregado = comp.agregarStock(id, StockUpdate);
+                    if (agregado)
+                        MessageBox.Show("Materia agregado exitosamente");
+                    comp.llenarDrigViewMaterial(dataGridViewStock);
+                    pintarColumnas(dataGridViewStock);
+                    lblIdMateria.Text = null;
+                    lblDescripcion.Text = null;
+                    nudCantidad.Value = 1;
+                }
+                else
+                {
+                    MessageBox.Show("Seleccionar una materia prima");
+                }
             }
             else
             {
-                MessageBox.Show("Seleccionar una materia prima");
+                MessageBox.Show("Error al agregar la materia prima");
             }
 
         }
