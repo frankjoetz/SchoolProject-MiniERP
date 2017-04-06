@@ -63,7 +63,7 @@
             // 
             // inicioToolStripMenuItem
             // 
-            this.inicioToolStripMenuItem.Image = global::ERP.Properties.Resources.SS_LogoG;
+            this.inicioToolStripMenuItem.Image = global::ERP.Properties.Resources.SS_Logo;
             this.inicioToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.inicioToolStripMenuItem.Name = "inicioToolStripMenuItem";
             this.inicioToolStripMenuItem.Size = new System.Drawing.Size(149, 36);
