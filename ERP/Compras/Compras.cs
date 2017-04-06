@@ -21,7 +21,6 @@ namespace ERP.Compras
             comp.llenarGridViewAlertas(dataGridViewAlertas);
             comp.llenarGridViewLocacion(dataGridViewLocacion);
             comp.llenarDrigViewMaterial(dataGridViewStock);
-
         }
         
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -92,8 +91,9 @@ namespace ERP.Compras
 
         private void tabControlCompras_SelectedIndexChanged(object sender, EventArgs e)
         {
-            pintarColumnas(dataGridViewStock);
             comp.llenarGridViewAlertas(dataGridViewAlertas);
+            comp.llenarDrigViewMaterial(dataGridViewStock);
+            pintarColumnas(dataGridViewStock);
         }
 
         private void btnAgregarMaterial_Click(object sender, EventArgs e)

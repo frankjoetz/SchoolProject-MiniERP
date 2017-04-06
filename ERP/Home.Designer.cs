@@ -63,7 +63,7 @@
             // 
             // inicioToolStripMenuItem
             // 
-            this.inicioToolStripMenuItem.Image = global::ERP.Properties.Resources.SS_Logo;
+            this.inicioToolStripMenuItem.Image = global::ERP.Properties.Resources.SS_LogoG;
             this.inicioToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.inicioToolStripMenuItem.Name = "inicioToolStripMenuItem";
             this.inicioToolStripMenuItem.Size = new System.Drawing.Size(149, 36);
@@ -135,7 +135,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::ERP.Properties.Resources.LogoPrincipal;
+            this.BackgroundImage = global::ERP.Properties.Resources.LogoHome;
             this.ClientSize = new System.Drawing.Size(984, 459);
             this.Controls.Add(this.strpHome);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

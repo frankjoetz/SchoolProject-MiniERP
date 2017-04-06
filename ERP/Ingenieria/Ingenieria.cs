@@ -35,17 +35,16 @@ namespace ERP.Ingenieria
 
         private void Ingenieria_Load(object sender, EventArgs e)
         {
-            MIngenieria.comboBox("select descripcion from Producto", "descripcion", cmbgamascp);
-            MIngenieria.comboBox("select descripcion from Producto", "descripcion", cmbdiscodurocp);
-            MIngenieria.comboBox("select descripcion from Producto", "descripcion", cmbdisipadorcp);
-            MIngenieria.comboBox("select descripcion from Producto", "descripcion", cmbfuentepodercp);
-            MIngenieria.comboBox("select descripcion from Producto", "descripcion", cmbmemoriaramcp);
-            MIngenieria.comboBox("select descripcion from Producto", "descripcion", cmbprocesadorcp);
-            MIngenieria.comboBox("select descripcion from Producto", "descripcion", cmbtarjetadevideocp);
-            MIngenieria.comboBox("select descripcion from Producto", "descripcion", cmbtarjetamadrecp);
-            MIngenieria.comboBox("select descripcion from Producto", "descripcion", cmbcasecp);
-            MIngenieria.comboBox("Select descripcion from Produccion", "descripcion", cmbdescripcion);
-            MIngenieria.comboBox("select idlinea from Linea", "idLinea", cmbidlinea);
+            MIngenieria.comboBox("select descripcion from Producto", "descripcion", cmbdescripcion);
+            MIngenieria.comboBox("select descripcion from MateriaPrima where Tipo='Disco duro'", "descripcion", cmbdiscodurocp);
+            MIngenieria.comboBox("select descripcion from MateriaPrima where Tipo='Disipador'", "descripcion", cmbdisipadorcp);
+            MIngenieria.comboBox("select descripcion from MateriaPrima where Tipo='Fuente de poder'", "descripcion", cmbfuentepodercp);
+            MIngenieria.comboBox("select descripcion from MateriaPrima where Tipo='Memoria RAM'", "descripcion", cmbmemoriaramcp);
+            MIngenieria.comboBox("select descripcion from MateriaPrima where Tipo='Procesador'", "descripcion", cmbprocesadorcp);
+            MIngenieria.comboBox("select descripcion from MateriaPrima where Tipo='Tarjeta gráfica'", "descripcion", cmbtarjetadevideocp);
+            MIngenieria.comboBox("select descripcion from MateriaPrima where Tipo='Tarjeta madre'", "descripcion", cmbtarjetamadrecp);
+            MIngenieria.comboBox("select descripcion from MateriaPrima where Tipo='Case'", "descripcion", cmbcasecp);
+            //MIngenieria.comboBox("select idlinea from Linea", "idLinea", );
             //MIngenieria.comboBox("select Tipo from MateriaPrima", "Tipo", cmbtipo);
             // TODO: esta línea de código carga datos en la tabla 'erpdbDataSet3.InventarioProducto' Puede moverla o quitarla según sea necesario.
             // TODO: esta línea de código carga datos en la tabla 'erpdbDataSet1.MateriaPrima' Puede moverla o quitarla según sea necesario.
@@ -67,23 +66,23 @@ namespace ERP.Ingenieria
 
         }
 
-        private void btnagregarcomponentes_Click(object sender, EventArgs e)
-        {
-            bool result = MIngenieria.altaProducto(cmbdescripcion.Text, cmbidlinea.Text, cmbdestino.Text);
-            if (result)
-            {
-                MessageBox.Show("Se inserto con exito");
-                try
-                {
-                }
-                catch (System.Exception ex)
-                {
-                    System.Windows.Forms.MessageBox.Show(ex.Message);
-                }
+        //private void btnagregarcomponentes_Click(object sender, EventArgs e)
+        //{
+        //    bool result = MIngenieria.altaProducto(cmbdescripcion.Text, dtpfecha.Value.ToString("yyyy-MM-dd"), cmbdestino.Text);
+        //    if (result)
+        //    {
+        //        MessageBox.Show("Se inserto con exito");
+        //        try
+        //        {
+        //        }
+        //        catch (System.Exception ex)
+        //        {
+        //            System.Windows.Forms.MessageBox.Show(ex.Message);
+        //        }
                
 
-            }
-        }
+        //    }
+        //}
 
         private void rbnelimnar_CheckedChanged(object sender, EventArgs e)
         {
@@ -97,6 +96,7 @@ namespace ERP.Ingenieria
             lbltipo.Visible = false;
             btnmodificar.Visible = false;
             pikerfecha.Visible = false;
+            lblidmateria.Visible = true;
 
         }
 
@@ -224,5 +224,33 @@ namespace ERP.Ingenieria
         {
 
         }
+
+        private void btningresarpro_Click(object sender, EventArgs e)
+        {
+            bool result = MIngenieria.altaProducto(cmbdescripcion.Text, cmbdestino.Text, dtpfecha.Value.ToString("yyyy-MM-dd"));
+            if (result)
+            {
+                MessageBox.Show("Se inserto con exito");
+                try
+                {
+                }
+                catch (System.Exception ex)
+                {
+                    System.Windows.Forms.MessageBox.Show(ex.Message);
+                }
+
+
+            }
+        }
+
+        private void btnmodificar_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rbnmodificar_CheckedChanged_1(object sender, EventArgs e)
+        {
+            
+        }
+        }
     }
-}

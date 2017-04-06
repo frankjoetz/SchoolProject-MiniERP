@@ -133,6 +133,16 @@ namespace ERP.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap LogoHome {
+            get {
+                object obj = ResourceManager.GetObject("LogoHome", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap LogoIngenieria {
             get {
                 object obj = ResourceManager.GetObject("LogoIngenieria", resourceCulture);
@@ -146,16 +156,6 @@ namespace ERP.Properties {
         internal static System.Drawing.Bitmap LogoPlaneacion {
             get {
                 object obj = ResourceManager.GetObject("LogoPlaneacion", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap LogoPrincipal {
-            get {
-                object obj = ResourceManager.GetObject("LogoPrincipal", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -183,9 +183,9 @@ namespace ERP.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap SS_Logo {
+        internal static System.Drawing.Bitmap SS_LogoG {
             get {
-                object obj = ResourceManager.GetObject("SS_Logo", resourceCulture);
+                object obj = ResourceManager.GetObject("SS_LogoG", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
