@@ -35,22 +35,7 @@ namespace ERP.Ingenieria
 
         private void Ingenieria_Load(object sender, EventArgs e)
         {
-            MIngenieria.comboBox("select descripcion from Producto", "descripcion", cmbdescripcion);
-            MIngenieria.comboBox("select descripcion from MateriaPrima where Tipo='Disco duro'", "descripcion", cmbdiscodurocp);
-            MIngenieria.comboBox("select descripcion from MateriaPrima where Tipo='Disipador'", "descripcion", cmbdisipadorcp);
-            MIngenieria.comboBox("select descripcion from MateriaPrima where Tipo='Fuente de poder'", "descripcion", cmbfuentepodercp);
-            MIngenieria.comboBox("select descripcion from MateriaPrima where Tipo='Memoria RAM'", "descripcion", cmbmemoriaramcp);
-            MIngenieria.comboBox("select descripcion from MateriaPrima where Tipo='Procesador'", "descripcion", cmbprocesadorcp);
-            MIngenieria.comboBox("select descripcion from MateriaPrima where Tipo='Tarjeta gráfica'", "descripcion", cmbtarjetadevideocp);
-            MIngenieria.comboBox("select descripcion from MateriaPrima where Tipo='Tarjeta madre'", "descripcion", cmbtarjetamadrecp);
-            MIngenieria.comboBox("select descripcion from MateriaPrima where Tipo='Case'", "descripcion", cmbcasecp);
-            //MIngenieria.comboBox("select idlinea from Linea", "idLinea", );
-            //MIngenieria.comboBox("select Tipo from MateriaPrima", "Tipo", cmbtipo);
-            // TODO: esta línea de código carga datos en la tabla 'erpdbDataSet3.InventarioProducto' Puede moverla o quitarla según sea necesario.
-            // TODO: esta línea de código carga datos en la tabla 'erpdbDataSet1.MateriaPrima' Puede moverla o quitarla según sea necesario.
-            // TODO: esta línea de código carga datos en la tabla 'erpdbDataSet2.MateriaPrima' Puede moverla o quitarla según sea necesario.
-            //this.materiaPrimaTableAdapter.Fill(this.erpdbDataSet1.MateriaPrima);
-
+            
             //this.reportViewer1.RefreshReport();
             this.WindowState = FormWindowState.Maximized;
         }
@@ -79,7 +64,7 @@ namespace ERP.Ingenieria
         //        {
         //            System.Windows.Forms.MessageBox.Show(ex.Message);
         //        }
-               
+
 
         //    }
         //}
@@ -197,6 +182,7 @@ namespace ERP.Ingenieria
             if (result)
             {
                 MessageBox.Show("Se inserto con exito");
+                MIngenieria.llenarGridViewmateriaprima(dgwmateriaprima);
                 txtDesc.Clear();
                 cmbtipo.Text = null;
             }
@@ -250,7 +236,72 @@ namespace ERP.Ingenieria
 
         private void rbnmodificar_CheckedChanged_1(object sender, EventArgs e)
         {
-            
+            txtidmateria.Visible = true;
+            txtDesc.Visible = true;
+            cmbtipo.Visible = true;
+            btneliminar.Visible = false;
+            btnagregarmp.Visible = false;
+            lbldesc.Visible = true;
+            lblfecha.Visible = true;
+            lbltipo.Visible = true;
+            btnmodificar.Visible = true;
+
         }
+
+        private void btnagregarcomponentes_Click(object sender, EventArgs e)
+        {
+            //bool result = MIngenieria.altaconsumo();
+            //if (result)
+            //{
+            //    MessageBox.Show("Se inserto con exito");
+            //    try
+            //    {
+            //    }
+            //    catch (System.Exception ex)
+            //    {
+            //        System.Windows.Forms.MessageBox.Show(ex.Message);
+            //    }
+            //}
+        }
+
+        private void rbnelimnar_CheckedChanged_1(object sender, EventArgs e)
+        {
+            txtidmateria.Visible = true;
+            txtDesc.Visible = false;
+            cmbtipo.Visible = false;
+            btneliminar.Visible = true;
+            btnagregarmp.Visible = false;
+            lbldesc.Visible = false;
+            lblfecha.Visible = false;
+            lbltipo.Visible = false;
+            btnmodificar.Visible = false;
+            pikerfecha.Visible = false;
+            lblidmateria.Visible = true;
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gbMaterial_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtgama_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbmemoriaramcp_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
         }
     }
+}

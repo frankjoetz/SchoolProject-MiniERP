@@ -46,6 +46,14 @@
             this.txtidmateria = new System.Windows.Forms.TextBox();
             this.btnagregarmp = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.txtgama = new System.Windows.Forms.TextBox();
+            this.cmbmemoriaramcp = new System.Windows.Forms.ComboBox();
+            this.cmbprocesadorcp = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnagregarcomponentes = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.btnagregar = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -53,44 +61,26 @@
             this.fechaptxt = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.dtpfecha = new System.Windows.Forms.DateTimePicker();
-            this.btningresarpro = new System.Windows.Forms.Button();
-            this.txtgama = new System.Windows.Forms.TextBox();
-            this.chkbFan = new System.Windows.Forms.CheckBox();
-            this.cmbdisipadorcp = new System.Windows.Forms.ComboBox();
-            this.cmbtarjetadevideocp = new System.Windows.Forms.ComboBox();
-            this.cmbcasecp = new System.Windows.Forms.ComboBox();
-            this.cmbtarjetamadrecp = new System.Windows.Forms.ComboBox();
-            this.cmbfuentepodercp = new System.Windows.Forms.ComboBox();
-            this.cmbdiscodurocp = new System.Windows.Forms.ComboBox();
-            this.cmbmemoriaramcp = new System.Windows.Forms.ComboBox();
-            this.cmbprocesadorcp = new System.Windows.Forms.ComboBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.gbMaterial = new System.Windows.Forms.GroupBox();
+            this.gbProducto = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btningresarpro = new System.Windows.Forms.Button();
             this.cmbdestino = new System.Windows.Forms.ComboBox();
+            this.dtpfecha = new System.Windows.Forms.DateTimePicker();
             this.cmbdescripcion = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.btnagregarcomponentes = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.ingenieriatc.SuspendLayout();
             this.ingenieriaform.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgwmateriaprima)).BeginInit();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPage3.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.gbMaterial.SuspendLayout();
+            this.gbProducto.SuspendLayout();
             this.SuspendLayout();
             // 
             // ingenieriatc
@@ -149,21 +139,21 @@
             "Tarjeta gráfica",
             "Disipador",
             "Abanico"});
-            this.cmbtipo.Location = new System.Drawing.Point(224, 252);
+            this.cmbtipo.Location = new System.Drawing.Point(224, 128);
             this.cmbtipo.Name = "cmbtipo";
             this.cmbtipo.Size = new System.Drawing.Size(148, 26);
             this.cmbtipo.TabIndex = 28;
             // 
             // pikerfecha
             // 
-            this.pikerfecha.Location = new System.Drawing.Point(224, 200);
+            this.pikerfecha.Location = new System.Drawing.Point(224, 215);
             this.pikerfecha.Name = "pikerfecha";
             this.pikerfecha.Size = new System.Drawing.Size(148, 24);
             this.pikerfecha.TabIndex = 27;
             // 
             // btnmodificar
             // 
-            this.btnmodificar.Location = new System.Drawing.Point(30, 297);
+            this.btnmodificar.Location = new System.Drawing.Point(136, 292);
             this.btnmodificar.Name = "btnmodificar";
             this.btnmodificar.Size = new System.Drawing.Size(112, 32);
             this.btnmodificar.TabIndex = 26;
@@ -174,7 +164,7 @@
             // 
             // btneliminar
             // 
-            this.btneliminar.Location = new System.Drawing.Point(149, 157);
+            this.btneliminar.Location = new System.Drawing.Point(136, 292);
             this.btneliminar.Name = "btneliminar";
             this.btneliminar.Size = new System.Drawing.Size(112, 32);
             this.btneliminar.TabIndex = 25;
@@ -215,12 +205,13 @@
             this.rbnelimnar.TabStop = true;
             this.rbnelimnar.Text = "Eliminar";
             this.rbnelimnar.UseVisualStyleBackColor = true;
+            this.rbnelimnar.CheckedChanged += new System.EventHandler(this.rbnelimnar_CheckedChanged_1);
             // 
             // lbltipo
             // 
             this.lbltipo.AutoSize = true;
             this.lbltipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbltipo.Location = new System.Drawing.Point(86, 255);
+            this.lbltipo.Location = new System.Drawing.Point(49, 131);
             this.lbltipo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbltipo.Name = "lbltipo";
             this.lbltipo.Size = new System.Drawing.Size(37, 18);
@@ -244,7 +235,7 @@
             // 
             this.lblfecha.AutoSize = true;
             this.lblfecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblfecha.Location = new System.Drawing.Point(48, 200);
+            this.lblfecha.Location = new System.Drawing.Point(48, 215);
             this.lblfecha.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblfecha.Name = "lblfecha";
             this.lblfecha.Size = new System.Drawing.Size(101, 18);
@@ -255,7 +246,7 @@
             // 
             this.lbldesc.AutoSize = true;
             this.lbldesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbldesc.Location = new System.Drawing.Point(48, 164);
+            this.lbldesc.Location = new System.Drawing.Point(48, 176);
             this.lbldesc.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbldesc.Name = "lbldesc";
             this.lbldesc.Size = new System.Drawing.Size(139, 18);
@@ -266,7 +257,7 @@
             // 
             this.lblidmateria.AutoSize = true;
             this.lblidmateria.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblidmateria.Location = new System.Drawing.Point(48, 124);
+            this.lblidmateria.Location = new System.Drawing.Point(48, 393);
             this.lblidmateria.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblidmateria.Name = "lblidmateria";
             this.lblidmateria.Size = new System.Drawing.Size(75, 18);
@@ -277,7 +268,7 @@
             // txtDesc
             // 
             this.txtDesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDesc.Location = new System.Drawing.Point(224, 161);
+            this.txtDesc.Location = new System.Drawing.Point(224, 170);
             this.txtDesc.Margin = new System.Windows.Forms.Padding(4);
             this.txtDesc.Name = "txtDesc";
             this.txtDesc.Size = new System.Drawing.Size(148, 24);
@@ -286,7 +277,7 @@
             // txtidmateria
             // 
             this.txtidmateria.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtidmateria.Location = new System.Drawing.Point(224, 121);
+            this.txtidmateria.Location = new System.Drawing.Point(224, 390);
             this.txtidmateria.Margin = new System.Windows.Forms.Padding(4);
             this.txtidmateria.Name = "txtidmateria";
             this.txtidmateria.Size = new System.Drawing.Size(148, 24);
@@ -296,7 +287,7 @@
             // btnagregarmp
             // 
             this.btnagregarmp.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnagregarmp.Location = new System.Drawing.Point(149, 322);
+            this.btnagregarmp.Location = new System.Drawing.Point(136, 292);
             this.btnagregarmp.Margin = new System.Windows.Forms.Padding(4);
             this.btnagregarmp.Name = "btnagregarmp";
             this.btnagregarmp.Size = new System.Drawing.Size(112, 32);
@@ -307,35 +298,9 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.gbProducto);
+            this.tabPage2.Controls.Add(this.gbMaterial);
             this.tabPage2.Controls.Add(this.dataGridView1);
-            this.tabPage2.Controls.Add(this.dtpfecha);
-            this.tabPage2.Controls.Add(this.btningresarpro);
-            this.tabPage2.Controls.Add(this.txtgama);
-            this.tabPage2.Controls.Add(this.chkbFan);
-            this.tabPage2.Controls.Add(this.cmbdisipadorcp);
-            this.tabPage2.Controls.Add(this.cmbtarjetadevideocp);
-            this.tabPage2.Controls.Add(this.cmbcasecp);
-            this.tabPage2.Controls.Add(this.cmbtarjetamadrecp);
-            this.tabPage2.Controls.Add(this.cmbfuentepodercp);
-            this.tabPage2.Controls.Add(this.cmbdiscodurocp);
-            this.tabPage2.Controls.Add(this.cmbmemoriaramcp);
-            this.tabPage2.Controls.Add(this.cmbprocesadorcp);
-            this.tabPage2.Controls.Add(this.label19);
-            this.tabPage2.Controls.Add(this.label18);
-            this.tabPage2.Controls.Add(this.label17);
-            this.tabPage2.Controls.Add(this.label16);
-            this.tabPage2.Controls.Add(this.label15);
-            this.tabPage2.Controls.Add(this.label14);
-            this.tabPage2.Controls.Add(this.label13);
-            this.tabPage2.Controls.Add(this.label11);
-            this.tabPage2.Controls.Add(this.label5);
-            this.tabPage2.Controls.Add(this.label4);
-            this.tabPage2.Controls.Add(this.label1);
-            this.tabPage2.Controls.Add(this.cmbdestino);
-            this.tabPage2.Controls.Add(this.cmbdescripcion);
-            this.tabPage2.Controls.Add(this.label10);
-            this.tabPage2.Controls.Add(this.btnagregarcomponentes);
-            this.tabPage2.Controls.Add(this.label7);
             this.tabPage2.Location = new System.Drawing.Point(4, 27);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage2.Name = "tabPage2";
@@ -344,6 +309,78 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Captura de Producto Final";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(562, 142);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(446, 224);
+            this.dataGridView1.TabIndex = 86;
+            // 
+            // txtgama
+            // 
+            this.txtgama.Location = new System.Drawing.Point(172, 43);
+            this.txtgama.Name = "txtgama";
+            this.txtgama.Size = new System.Drawing.Size(332, 24);
+            this.txtgama.TabIndex = 83;
+            this.txtgama.TextChanged += new System.EventHandler(this.txtgama_TextChanged);
+            // 
+            // cmbmemoriaramcp
+            // 
+            this.cmbmemoriaramcp.FormattingEnabled = true;
+            this.cmbmemoriaramcp.Location = new System.Drawing.Point(311, 76);
+            this.cmbmemoriaramcp.Name = "cmbmemoriaramcp";
+            this.cmbmemoriaramcp.Size = new System.Drawing.Size(193, 26);
+            this.cmbmemoriaramcp.TabIndex = 74;
+            this.cmbmemoriaramcp.SelectedIndexChanged += new System.EventHandler(this.cmbmemoriaramcp_SelectedIndexChanged);
+            // 
+            // cmbprocesadorcp
+            // 
+            this.cmbprocesadorcp.FormattingEnabled = true;
+            this.cmbprocesadorcp.Location = new System.Drawing.Point(60, 81);
+            this.cmbprocesadorcp.Name = "cmbprocesadorcp";
+            this.cmbprocesadorcp.Size = new System.Drawing.Size(140, 26);
+            this.cmbprocesadorcp.TabIndex = 73;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(245, 84);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(60, 18);
+            this.label11.TabIndex = 65;
+            this.label11.Text = "Material";
+            this.label11.Click += new System.EventHandler(this.label11_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(17, 84);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(37, 18);
+            this.label5.TabIndex = 64;
+            this.label5.Text = "Tipo";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(17, 43);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(149, 18);
+            this.label4.TabIndex = 63;
+            this.label4.Text = "Modelo / Descripcion";
+            // 
+            // btnagregarcomponentes
+            // 
+            this.btnagregarcomponentes.Location = new System.Drawing.Point(323, 147);
+            this.btnagregarcomponentes.Margin = new System.Windows.Forms.Padding(4);
+            this.btnagregarcomponentes.Name = "btnagregarcomponentes";
+            this.btnagregarcomponentes.Size = new System.Drawing.Size(176, 32);
+            this.btnagregarcomponentes.TabIndex = 58;
+            this.btnagregarcomponentes.Text = "Ingresar Material";
+            this.btnagregarcomponentes.UseVisualStyleBackColor = true;
+            this.btnagregarcomponentes.Click += new System.EventHandler(this.btnagregarcomponentes_Click);
             // 
             // tabPage3
             // 
@@ -418,202 +455,60 @@
             this.dataGridView3.Size = new System.Drawing.Size(716, 314);
             this.dataGridView3.TabIndex = 0;
             // 
-            // dtpfecha
+            // gbMaterial
             // 
-            this.dtpfecha.Location = new System.Drawing.Point(330, 8);
-            this.dtpfecha.Name = "dtpfecha";
-            this.dtpfecha.Size = new System.Drawing.Size(200, 24);
-            this.dtpfecha.TabIndex = 85;
+            this.gbMaterial.Controls.Add(this.label4);
+            this.gbMaterial.Controls.Add(this.btnagregarcomponentes);
+            this.gbMaterial.Controls.Add(this.label5);
+            this.gbMaterial.Controls.Add(this.label11);
+            this.gbMaterial.Controls.Add(this.txtgama);
+            this.gbMaterial.Controls.Add(this.cmbprocesadorcp);
+            this.gbMaterial.Controls.Add(this.cmbmemoriaramcp);
+            this.gbMaterial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.gbMaterial.Location = new System.Drawing.Point(11, 142);
+            this.gbMaterial.Name = "gbMaterial";
+            this.gbMaterial.Size = new System.Drawing.Size(523, 224);
+            this.gbMaterial.TabIndex = 87;
+            this.gbMaterial.TabStop = false;
+            this.gbMaterial.Text = "Material";
+            this.gbMaterial.Enter += new System.EventHandler(this.gbMaterial_Enter);
+            // 
+            // gbProducto
+            // 
+            this.gbProducto.Controls.Add(this.label7);
+            this.gbProducto.Controls.Add(this.label10);
+            this.gbProducto.Controls.Add(this.cmbdescripcion);
+            this.gbProducto.Controls.Add(this.dtpfecha);
+            this.gbProducto.Controls.Add(this.cmbdestino);
+            this.gbProducto.Controls.Add(this.btningresarpro);
+            this.gbProducto.Controls.Add(this.label1);
+            this.gbProducto.Location = new System.Drawing.Point(11, 27);
+            this.gbProducto.Name = "gbProducto";
+            this.gbProducto.Size = new System.Drawing.Size(997, 77);
+            this.gbProducto.TabIndex = 88;
+            this.gbProducto.TabStop = false;
+            this.gbProducto.Text = "Datos Productos";
+            this.gbProducto.Enter += new System.EventHandler(this.groupBox2_Enter);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(548, 35);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(59, 18);
+            this.label1.TabIndex = 62;
+            this.label1.Text = "Destino";
             // 
             // btningresarpro
             // 
-            this.btningresarpro.Location = new System.Drawing.Point(811, 8);
+            this.btningresarpro.Location = new System.Drawing.Point(810, 31);
             this.btningresarpro.Name = "btningresarpro";
             this.btningresarpro.Size = new System.Drawing.Size(162, 26);
             this.btningresarpro.TabIndex = 84;
             this.btningresarpro.Text = "Ingresar Producto";
             this.btningresarpro.UseVisualStyleBackColor = true;
             this.btningresarpro.Click += new System.EventHandler(this.btningresarpro_Click);
-            // 
-            // txtgama
-            // 
-            this.txtgama.Location = new System.Drawing.Point(156, 62);
-            this.txtgama.Name = "txtgama";
-            this.txtgama.Size = new System.Drawing.Size(163, 24);
-            this.txtgama.TabIndex = 83;
-            // 
-            // chkbFan
-            // 
-            this.chkbFan.AutoSize = true;
-            this.chkbFan.Location = new System.Drawing.Point(232, 439);
-            this.chkbFan.Name = "chkbFan";
-            this.chkbFan.Size = new System.Drawing.Size(15, 14);
-            this.chkbFan.TabIndex = 81;
-            this.chkbFan.UseVisualStyleBackColor = true;
-            // 
-            // cmbdisipadorcp
-            // 
-            this.cmbdisipadorcp.FormattingEnabled = true;
-            this.cmbdisipadorcp.Location = new System.Drawing.Point(156, 393);
-            this.cmbdisipadorcp.Name = "cmbdisipadorcp";
-            this.cmbdisipadorcp.Size = new System.Drawing.Size(163, 26);
-            this.cmbdisipadorcp.TabIndex = 80;
-            // 
-            // cmbtarjetadevideocp
-            // 
-            this.cmbtarjetadevideocp.FormattingEnabled = true;
-            this.cmbtarjetadevideocp.Location = new System.Drawing.Point(156, 353);
-            this.cmbtarjetadevideocp.Name = "cmbtarjetadevideocp";
-            this.cmbtarjetadevideocp.Size = new System.Drawing.Size(163, 26);
-            this.cmbtarjetadevideocp.TabIndex = 79;
-            // 
-            // cmbcasecp
-            // 
-            this.cmbcasecp.FormattingEnabled = true;
-            this.cmbcasecp.Location = new System.Drawing.Point(156, 313);
-            this.cmbcasecp.Name = "cmbcasecp";
-            this.cmbcasecp.Size = new System.Drawing.Size(163, 26);
-            this.cmbcasecp.TabIndex = 78;
-            // 
-            // cmbtarjetamadrecp
-            // 
-            this.cmbtarjetamadrecp.FormattingEnabled = true;
-            this.cmbtarjetamadrecp.Location = new System.Drawing.Point(156, 275);
-            this.cmbtarjetamadrecp.Name = "cmbtarjetamadrecp";
-            this.cmbtarjetamadrecp.Size = new System.Drawing.Size(163, 26);
-            this.cmbtarjetamadrecp.TabIndex = 77;
-            // 
-            // cmbfuentepodercp
-            // 
-            this.cmbfuentepodercp.FormattingEnabled = true;
-            this.cmbfuentepodercp.Location = new System.Drawing.Point(156, 227);
-            this.cmbfuentepodercp.Name = "cmbfuentepodercp";
-            this.cmbfuentepodercp.Size = new System.Drawing.Size(163, 26);
-            this.cmbfuentepodercp.TabIndex = 76;
-            // 
-            // cmbdiscodurocp
-            // 
-            this.cmbdiscodurocp.FormattingEnabled = true;
-            this.cmbdiscodurocp.Location = new System.Drawing.Point(156, 186);
-            this.cmbdiscodurocp.Name = "cmbdiscodurocp";
-            this.cmbdiscodurocp.Size = new System.Drawing.Size(163, 26);
-            this.cmbdiscodurocp.TabIndex = 75;
-            // 
-            // cmbmemoriaramcp
-            // 
-            this.cmbmemoriaramcp.FormattingEnabled = true;
-            this.cmbmemoriaramcp.Location = new System.Drawing.Point(156, 146);
-            this.cmbmemoriaramcp.Name = "cmbmemoriaramcp";
-            this.cmbmemoriaramcp.Size = new System.Drawing.Size(163, 26);
-            this.cmbmemoriaramcp.TabIndex = 74;
-            // 
-            // cmbprocesadorcp
-            // 
-            this.cmbprocesadorcp.FormattingEnabled = true;
-            this.cmbprocesadorcp.Location = new System.Drawing.Point(156, 106);
-            this.cmbprocesadorcp.Name = "cmbprocesadorcp";
-            this.cmbprocesadorcp.Size = new System.Drawing.Size(163, 26);
-            this.cmbprocesadorcp.TabIndex = 73;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(19, 439);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(33, 18);
-            this.label19.TabIndex = 72;
-            this.label19.Text = "Fan";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(19, 401);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(71, 18);
-            this.label18.TabIndex = 71;
-            this.label18.Text = "Disipador";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(15, 361);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(112, 18);
-            this.label17.TabIndex = 70;
-            this.label17.Text = "Tarjeta de video";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(19, 321);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(43, 18);
-            this.label16.TabIndex = 69;
-            this.label16.Text = "Case";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(19, 283);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(99, 18);
-            this.label15.TabIndex = 68;
-            this.label15.Text = "Tarjeta Madre";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(19, 235);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(115, 18);
-            this.label14.TabIndex = 67;
-            this.label14.Text = "Fuente de poder";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(19, 194);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(84, 18);
-            this.label13.TabIndex = 66;
-            this.label13.Text = "Disco Duro";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(15, 154);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(103, 18);
-            this.label11.TabIndex = 65;
-            this.label11.Text = "Memoria Ram";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(19, 109);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(86, 18);
-            this.label5.TabIndex = 64;
-            this.label5.Text = "Procesador";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(19, 68);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(90, 18);
-            this.label4.TabIndex = 63;
-            this.label4.Text = "Elegir Gama";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(537, 10);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 18);
-            this.label1.TabIndex = 62;
-            this.label1.Text = "Destino";
             // 
             // cmbdestino
             // 
@@ -623,15 +518,26 @@
             "Estados Unidos",
             "Canada",
             "Siria"});
-            this.cmbdestino.Location = new System.Drawing.Point(603, 7);
+            this.cmbdestino.Location = new System.Drawing.Point(627, 32);
             this.cmbdestino.Name = "cmbdestino";
             this.cmbdestino.Size = new System.Drawing.Size(164, 26);
             this.cmbdestino.TabIndex = 61;
             // 
+            // dtpfecha
+            // 
+            this.dtpfecha.Location = new System.Drawing.Point(337, 31);
+            this.dtpfecha.Name = "dtpfecha";
+            this.dtpfecha.Size = new System.Drawing.Size(200, 24);
+            this.dtpfecha.TabIndex = 85;
+            // 
             // cmbdescripcion
             // 
             this.cmbdescripcion.FormattingEnabled = true;
-            this.cmbdescripcion.Location = new System.Drawing.Point(99, 7);
+            this.cmbdescripcion.Items.AddRange(new object[] {
+            "Equipo Gama Baja",
+            "Equipo Gama Media",
+            "Equipo Gama Alta"});
+            this.cmbdescripcion.Location = new System.Drawing.Point(98, 30);
             this.cmbdescripcion.Name = "cmbdescripcion";
             this.cmbdescripcion.Size = new System.Drawing.Size(176, 26);
             this.cmbdescripcion.TabIndex = 60;
@@ -639,40 +545,22 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(282, 10);
+            this.label10.Location = new System.Drawing.Point(281, 33);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(49, 18);
             this.label10.TabIndex = 59;
             this.label10.Text = "Fecha";
             // 
-            // btnagregarcomponentes
-            // 
-            this.btnagregarcomponentes.Location = new System.Drawing.Point(99, 479);
-            this.btnagregarcomponentes.Margin = new System.Windows.Forms.Padding(4);
-            this.btnagregarcomponentes.Name = "btnagregarcomponentes";
-            this.btnagregarcomponentes.Size = new System.Drawing.Size(112, 32);
-            this.btnagregarcomponentes.TabIndex = 58;
-            this.btnagregarcomponentes.Text = "Ingresar";
-            this.btnagregarcomponentes.UseVisualStyleBackColor = true;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(8, 10);
+            this.label7.Location = new System.Drawing.Point(7, 33);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(87, 18);
             this.label7.TabIndex = 57;
             this.label7.Text = "Descripción";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(407, 62);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(446, 224);
-            this.dataGridView1.TabIndex = 86;
             // 
             // Ingenieria
             // 
@@ -696,12 +584,15 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgwmateriaprima)).EndInit();
             this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.gbMaterial.ResumeLayout(false);
+            this.gbMaterial.PerformLayout();
+            this.gbProducto.ResumeLayout(false);
+            this.gbProducto.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -744,34 +635,22 @@
         private System.Windows.Forms.TextBox txtDesc;
         private System.Windows.Forms.TextBox txtidmateria;
         private System.Windows.Forms.Button btnagregarmp;
-        private System.Windows.Forms.DateTimePicker dtpfecha;
-        private System.Windows.Forms.Button btningresarpro;
         private System.Windows.Forms.TextBox txtgama;
-        private System.Windows.Forms.CheckBox chkbFan;
-        private System.Windows.Forms.ComboBox cmbdisipadorcp;
-        private System.Windows.Forms.ComboBox cmbtarjetadevideocp;
-        private System.Windows.Forms.ComboBox cmbcasecp;
-        private System.Windows.Forms.ComboBox cmbtarjetamadrecp;
-        private System.Windows.Forms.ComboBox cmbfuentepodercp;
-        private System.Windows.Forms.ComboBox cmbdiscodurocp;
         private System.Windows.Forms.ComboBox cmbmemoriaramcp;
         private System.Windows.Forms.ComboBox cmbprocesadorcp;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cmbdestino;
-        private System.Windows.Forms.ComboBox cmbdescripcion;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btnagregarcomponentes;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.GroupBox gbMaterial;
+        private System.Windows.Forms.GroupBox gbProducto;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox cmbdescripcion;
+        private System.Windows.Forms.DateTimePicker dtpfecha;
+        private System.Windows.Forms.ComboBox cmbdestino;
+        private System.Windows.Forms.Button btningresarpro;
+        private System.Windows.Forms.Label label1;
     }
 }

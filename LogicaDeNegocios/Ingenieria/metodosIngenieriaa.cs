@@ -22,7 +22,7 @@ namespace LogicaDeNegocios
         }
         public bool altaProducto(string descripcion, string destino, string fHora)
         {
-            if (bd.insertar("insert into Producto(descripcion, destino, fHora) values('" + descripcion + "', '" + destino + "','" + fHora + "')"))
+            if (bd.insertar("insert into Producto(descripcion, fecha, destino) values('" + descripcion + "','" + fHora + "', '" + destino + "')"))
                 return true;
             else
                 return false;
@@ -36,9 +36,9 @@ namespace LogicaDeNegocios
         }
         //public bool modificarMateria(int idmateria, string tipo, string descrip, string fecha, int cantidad)
         //{
-        //    //if (bd.modificar("UPDATE MateriaPrima SET Tipo='{0}',descripcion='{1}',fecha='{2}',destino='{3}' WHERE idMateria={4}", tipo, descrip, fecha, destino, idmateria))
+        //    if (bd.modificar("UPDATE MateriaPrima SET Tipo='{0}',descripcion='{1}',fecha='{2}',destino='{3}' WHERE idMateria={4}", tipo, descrip, fecha, destino, idmateria))
         //        return true;
-        //    else
+        //else
         //        return false;
         //}
         public void comboBox(string consulta, string columna, ComboBox cbx)
