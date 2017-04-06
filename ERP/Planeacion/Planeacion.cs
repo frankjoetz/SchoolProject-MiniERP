@@ -153,7 +153,7 @@ namespace ERP.Planeacion
 
         }
 
-        private void GridPedidos_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        private void GridPedidos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             // llenar textbox con informacion del GRIDVIEW
             if (e.RowIndex >= 0)
@@ -214,7 +214,19 @@ namespace ERP.Planeacion
         {
             MandarAlerta mandaralerta = new MandarAlerta();
             mandaralerta.Show();
-            
+
+        }
+
+        private void Planeacion_Shown(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // metodos implementados de llenado
+            planeacion.LlenarTablaVistaPedidos(GridPedidos);
+            planeacion.llenarPlaneaciones(GridPlaneacionesAgregadas);
         }
     }
 }

@@ -28,7 +28,7 @@ namespace LogicaDeNegocios.Planeacion
         // llenar planeaciones
         public void llenarPlaneaciones(DataGridView GridPlaneaciones)
         {
-            datos.llenarTabla("select * from Planeacion", GridPlaneaciones);
+            datos.llenarTabla("select * from Planeacion where status='Listo para producir'", GridPlaneaciones);
         }
 
         // Mandar alerta

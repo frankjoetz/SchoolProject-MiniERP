@@ -172,7 +172,9 @@ namespace LogicaDeNegocios.Produccion
         public void EntregarPedido(DataGridView tabla)
         {
             int idPedido = int.Parse(tabla.SelectedRows[0].Cells["idPedido"].Value.ToString());
+            int idPlaneacion = int.Parse(tabla.SelectedRows[0].Cells["idPedido"].Value.ToString());
             bd.actualizar("update Pedido set Status='Entregado' where idPedido=" + idPedido);
+            bd.actualizar("update Planeacion set status='Finalizado' where idPedido=" + idPedido);
             
         }
 
