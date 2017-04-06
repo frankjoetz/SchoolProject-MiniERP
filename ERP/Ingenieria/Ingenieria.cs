@@ -19,19 +19,18 @@ namespace ERP.Ingenieria
         public Ingenieria()
         {
             InitializeComponent();
+            this.WindowState = FormWindowState.Maximized;
+            MIngenieria.llenarGridViewmateriaprima(dgwmateriaprima);
         }
 
         private void btnagregarmp_Click(object sender, EventArgs e)
         {
-            bool result = MIngenieria.altaMateria(int.Parse(txtidmateria.Text), txttipo.Text, txtDesc.Text, txtFecha.Text, int.Parse(unidadtxt.Text));
+            bool result = MIngenieria.altaMateria(cmbtipo.Text, txtDesc.Text, pikerfecha.Value.ToString("yyyy-MM-dd"));
             if (result)
             {
                 MessageBox.Show("Se inserto con exito");
-                txtidmateria.Clear();
-                txttipo.Clear();
                 txtDesc.Clear();
-                txtFecha.Clear();
-                unidadtxt.Clear();
+                cmbtipo.Text = null;
             }
             try
             {
@@ -56,6 +55,15 @@ namespace ERP.Ingenieria
         private void Ingenieria_Load(object sender, EventArgs e)
         {
             MIngenieria.comboBox("select descripcion from Producto", "descripcion", cmbgamascp);
+            MIngenieria.comboBox("select descripcion from Producto", "descripcion", cmbdiscodurocp);
+            MIngenieria.comboBox("select descripcion from Producto", "descripcion", cmbdisipadorcp);
+            MIngenieria.comboBox("select descripcion from Producto", "descripcion", cmbfuentepodercp);
+            MIngenieria.comboBox("select descripcion from Producto", "descripcion", cmbmemoriaramcp);
+            MIngenieria.comboBox("select descripcion from Producto", "descripcion", cmbprocesadorcp);
+            MIngenieria.comboBox("select descripcion from Producto", "descripcion", cmbtarjetadevideocp);
+            MIngenieria.comboBox("select descripcion from Producto", "descripcion", cmbtarjetamadrecp);
+            MIngenieria.comboBox("select descripcion from Producto", "descripcion", cmbcasecp);
+            //MIngenieria.comboBox("select Tipo from MateriaPrima", "Tipo", cmbtipo);
             // TODO: esta línea de código carga datos en la tabla 'erpdbDataSet3.InventarioProducto' Puede moverla o quitarla según sea necesario.
             // TODO: esta línea de código carga datos en la tabla 'erpdbDataSet1.MateriaPrima' Puede moverla o quitarla según sea necesario.
             // TODO: esta línea de código carga datos en la tabla 'erpdbDataSet2.MateriaPrima' Puede moverla o quitarla según sea necesario.
@@ -102,17 +110,15 @@ namespace ERP.Ingenieria
         {
             txtidmateria.Visible = true;
             txtDesc.Visible = false;
-            txtFecha.Visible = false;
-            unidadtxt.Visible = false;
-            txttipo.Visible = false;
+            cmbtipo.Visible = false;
             btneliminar.Visible = true;
             btnagregarmp.Visible = false;
-            label2.Visible = false;
-            label3.Visible = false;
-            label9.Visible = false;
-            label6.Visible = false;
+            lbldesc.Visible = false;
+            lblfecha.Visible = false;
+            lbltipo.Visible = false;
             btnmodificar.Visible = false;
-            
+            pikerfecha.Visible = false;
+
         }
 
         private void btneliminar_Click(object sender, EventArgs e)
@@ -134,49 +140,45 @@ namespace ERP.Ingenieria
 
         private void rbdmodificar_CheckedChanged(object sender, EventArgs e)
         {
+            //nombre.value.ToString("yyyy-MM-dd");
             txtidmateria.Visible = true;
             txtDesc.Visible = true;
-            txtFecha.Visible = true;
-            unidadtxt.Visible = true;
-            txttipo.Visible = true;
+            cmbtipo.Visible = true;
             btneliminar.Visible = false;
             btnagregarmp.Visible = false;
-            label2.Visible = true;
-            label3.Visible = true;
-            label9.Visible = true;
-            label6.Visible = true;
+            lbldesc.Visible = true;
+            lblfecha.Visible = true;
+            lbltipo.Visible = true;
             btnmodificar.Visible = true;
+            pikerfecha.Visible = true;
         }
 
-        private void rbnagregar_CheckedChanged(object sender, EventArgs e)
-        {
-            txtidmateria.Visible = true;
-            txtDesc.Visible = true;
-            txtFecha.Visible = true;
-            unidadtxt.Visible = true;
-            txttipo.Visible = true;
-            btneliminar.Visible = false;
-            btnagregarmp.Visible = true;
-            label2.Visible = true;
-            label3.Visible = true;
-            label9.Visible = true;
-            label6.Visible = true;
-            btnmodificar.Visible = false;
-        }
+        //private void rbnagregar_CheckedChanged(object sender, EventArgs e)
+        //{
+        //    txtidmateria.Visible = false;
+        //    txtDesc.Visible = true;
+
+
+        //    cmbtipo.Visible = true;
+        //    btneliminar.Visible = false;
+        //    btnagregarmp.Visible = true;
+        //    lbldesc.Visible = true;
+        //    lblfecha.Visible = true;
+
+        //    lbltipo.Visible = true;
+        //    btnmodificar.Visible = false;
+        //}
 
         private void rbnmodificar_CheckedChanged(object sender, EventArgs e)
         {
             txtidmateria.Visible = true;
             txtDesc.Visible = true;
-            txtFecha.Visible = true;
-            unidadtxt.Visible = true;
-            txttipo.Visible = true;
+            cmbtipo.Visible = true;
             btneliminar.Visible = false;
             btnagregarmp.Visible = false;
-            label2.Visible = true;
-            label3.Visible = true;
-            label9.Visible = true;
-            label6.Visible = true;
+            lbldesc.Visible = true;
+            lblfecha.Visible = true;
+            lbltipo.Visible = true;
             btnmodificar.Visible = true;
         }
 
@@ -186,6 +188,26 @@ namespace ERP.Ingenieria
         }
 
         private void btnmodificar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnagregar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

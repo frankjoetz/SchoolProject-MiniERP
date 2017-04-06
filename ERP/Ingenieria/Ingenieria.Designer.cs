@@ -30,24 +30,6 @@
         {
             this.ingenieriatc = new System.Windows.Forms.TabControl();
             this.ingenieriaform = new System.Windows.Forms.TabPage();
-            this.btnmodificar = new System.Windows.Forms.Button();
-            this.btneliminar = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rbnagregar = new System.Windows.Forms.RadioButton();
-            this.rbnmodificar = new System.Windows.Forms.RadioButton();
-            this.rbnelimnar = new System.Windows.Forms.RadioButton();
-            this.txttipo = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label9 = new System.Windows.Forms.Label();
-            this.unidadtxt = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtFecha = new System.Windows.Forms.TextBox();
-            this.txtDesc = new System.Windows.Forms.TextBox();
-            this.txtidmateria = new System.Windows.Forms.TextBox();
-            this.btnagregarmp = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.txtidlineapf = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -59,6 +41,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.chkbFan = new System.Windows.Forms.CheckBox();
             this.btnagregar = new System.Windows.Forms.Button();
             this.cmbdisipadorcp = new System.Windows.Forms.ComboBox();
             this.cmbtarjetadevideocp = new System.Windows.Forms.ComboBox();
@@ -84,16 +67,30 @@
             this.fechaptxt = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.chkbFan = new System.Windows.Forms.CheckBox();
+            this.cmbtipo = new System.Windows.Forms.ComboBox();
+            this.pikerfecha = new System.Windows.Forms.DateTimePicker();
+            this.btnmodificar = new System.Windows.Forms.Button();
+            this.btneliminar = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rbnmodificar = new System.Windows.Forms.RadioButton();
+            this.rbnelimnar = new System.Windows.Forms.RadioButton();
+            this.lbltipo = new System.Windows.Forms.Label();
+            this.dgwmateriaprima = new System.Windows.Forms.DataGridView();
+            this.lblfecha = new System.Windows.Forms.Label();
+            this.lbldesc = new System.Windows.Forms.Label();
+            this.lblidmateria = new System.Windows.Forms.Label();
+            this.txtDesc = new System.Windows.Forms.TextBox();
+            this.txtidmateria = new System.Windows.Forms.TextBox();
+            this.btnagregarmp = new System.Windows.Forms.Button();
             this.ingenieriatc.SuspendLayout();
             this.ingenieriaform.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.tabPage3.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgwmateriaprima)).BeginInit();
             this.SuspendLayout();
             // 
             // ingenieriatc
@@ -116,18 +113,16 @@
             // ingenieriaform
             // 
             this.ingenieriaform.AutoScroll = true;
+            this.ingenieriaform.Controls.Add(this.cmbtipo);
+            this.ingenieriaform.Controls.Add(this.pikerfecha);
             this.ingenieriaform.Controls.Add(this.btnmodificar);
             this.ingenieriaform.Controls.Add(this.btneliminar);
             this.ingenieriaform.Controls.Add(this.groupBox1);
-            this.ingenieriaform.Controls.Add(this.txttipo);
-            this.ingenieriaform.Controls.Add(this.label6);
-            this.ingenieriaform.Controls.Add(this.dataGridView1);
-            this.ingenieriaform.Controls.Add(this.label9);
-            this.ingenieriaform.Controls.Add(this.unidadtxt);
-            this.ingenieriaform.Controls.Add(this.label3);
-            this.ingenieriaform.Controls.Add(this.label2);
-            this.ingenieriaform.Controls.Add(this.label1);
-            this.ingenieriaform.Controls.Add(this.txtFecha);
+            this.ingenieriaform.Controls.Add(this.lbltipo);
+            this.ingenieriaform.Controls.Add(this.dgwmateriaprima);
+            this.ingenieriaform.Controls.Add(this.lblfecha);
+            this.ingenieriaform.Controls.Add(this.lbldesc);
+            this.ingenieriaform.Controls.Add(this.lblidmateria);
             this.ingenieriaform.Controls.Add(this.txtDesc);
             this.ingenieriaform.Controls.Add(this.txtidmateria);
             this.ingenieriaform.Controls.Add(this.btnagregarmp);
@@ -140,201 +135,6 @@
             this.ingenieriaform.Text = "Captura de Materia Prima";
             this.ingenieriaform.UseVisualStyleBackColor = true;
             this.ingenieriaform.Click += new System.EventHandler(this.ingenieriaform_Click);
-            // 
-            // btnmodificar
-            // 
-            this.btnmodificar.Location = new System.Drawing.Point(205, 342);
-            this.btnmodificar.Name = "btnmodificar";
-            this.btnmodificar.Size = new System.Drawing.Size(112, 32);
-            this.btnmodificar.TabIndex = 13;
-            this.btnmodificar.Text = "Modificar";
-            this.btnmodificar.UseVisualStyleBackColor = true;
-            this.btnmodificar.Visible = false;
-            this.btnmodificar.Click += new System.EventHandler(this.btnmodificar_Click);
-            // 
-            // btneliminar
-            // 
-            this.btneliminar.Location = new System.Drawing.Point(205, 304);
-            this.btneliminar.Name = "btneliminar";
-            this.btneliminar.Size = new System.Drawing.Size(112, 32);
-            this.btneliminar.TabIndex = 12;
-            this.btneliminar.Text = "Eliminar";
-            this.btneliminar.UseVisualStyleBackColor = true;
-            this.btneliminar.Visible = false;
-            this.btneliminar.Click += new System.EventHandler(this.btneliminar_Click);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.rbnagregar);
-            this.groupBox1.Controls.Add(this.rbnmodificar);
-            this.groupBox1.Controls.Add(this.rbnelimnar);
-            this.groupBox1.Location = new System.Drawing.Point(19, 7);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(320, 60);
-            this.groupBox1.TabIndex = 2;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Mas opciones";
-            // 
-            // rbnagregar
-            // 
-            this.rbnagregar.AutoSize = true;
-            this.rbnagregar.Location = new System.Drawing.Point(219, 19);
-            this.rbnagregar.Name = "rbnagregar";
-            this.rbnagregar.Size = new System.Drawing.Size(77, 22);
-            this.rbnagregar.TabIndex = 2;
-            this.rbnagregar.TabStop = true;
-            this.rbnagregar.Text = "Agregar";
-            this.rbnagregar.UseVisualStyleBackColor = true;
-            this.rbnagregar.CheckedChanged += new System.EventHandler(this.rbnagregar_CheckedChanged);
-            // 
-            // rbnmodificar
-            // 
-            this.rbnmodificar.AutoSize = true;
-            this.rbnmodificar.Location = new System.Drawing.Point(121, 19);
-            this.rbnmodificar.Name = "rbnmodificar";
-            this.rbnmodificar.Size = new System.Drawing.Size(87, 22);
-            this.rbnmodificar.TabIndex = 1;
-            this.rbnmodificar.TabStop = true;
-            this.rbnmodificar.Text = "Modificar";
-            this.rbnmodificar.UseVisualStyleBackColor = true;
-            this.rbnmodificar.CheckedChanged += new System.EventHandler(this.rbnmodificar_CheckedChanged);
-            // 
-            // rbnelimnar
-            // 
-            this.rbnelimnar.AutoSize = true;
-            this.rbnelimnar.Location = new System.Drawing.Point(18, 23);
-            this.rbnelimnar.Name = "rbnelimnar";
-            this.rbnelimnar.Size = new System.Drawing.Size(79, 22);
-            this.rbnelimnar.TabIndex = 0;
-            this.rbnelimnar.TabStop = true;
-            this.rbnelimnar.Text = "Eliminar";
-            this.rbnelimnar.UseVisualStyleBackColor = true;
-            this.rbnelimnar.CheckedChanged += new System.EventHandler(this.rbnelimnar_CheckedChanged);
-            // 
-            // txttipo
-            // 
-            this.txttipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txttipo.Location = new System.Drawing.Point(191, 242);
-            this.txttipo.Margin = new System.Windows.Forms.Padding(4);
-            this.txttipo.Name = "txttipo";
-            this.txttipo.Size = new System.Drawing.Size(148, 24);
-            this.txttipo.TabIndex = 11;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(16, 245);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(37, 18);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "Tipo";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(409, 24);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(544, 336);
-            this.dataGridView1.TabIndex = 9;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(16, 206);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(54, 18);
-            this.label9.TabIndex = 8;
-            this.label9.Text = "Unidad";
-            // 
-            // unidadtxt
-            // 
-            this.unidadtxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.unidadtxt.Location = new System.Drawing.Point(191, 203);
-            this.unidadtxt.Margin = new System.Windows.Forms.Padding(4);
-            this.unidadtxt.Name = "unidadtxt";
-            this.unidadtxt.Size = new System.Drawing.Size(148, 24);
-            this.unidadtxt.TabIndex = 7;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(15, 163);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(101, 18);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Ingrese Fecha";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(15, 127);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(139, 18);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Ingrese Descripción";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(15, 87);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(75, 18);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "ID Materia";
-            // 
-            // txtFecha
-            // 
-            this.txtFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFecha.Location = new System.Drawing.Point(191, 160);
-            this.txtFecha.Margin = new System.Windows.Forms.Padding(4);
-            this.txtFecha.Name = "txtFecha";
-            this.txtFecha.Size = new System.Drawing.Size(148, 24);
-            this.txtFecha.TabIndex = 3;
-            // 
-            // txtDesc
-            // 
-            this.txtDesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDesc.Location = new System.Drawing.Point(191, 124);
-            this.txtDesc.Margin = new System.Windows.Forms.Padding(4);
-            this.txtDesc.Name = "txtDesc";
-            this.txtDesc.Size = new System.Drawing.Size(148, 24);
-            this.txtDesc.TabIndex = 2;
-            // 
-            // txtidmateria
-            // 
-            this.txtidmateria.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtidmateria.Location = new System.Drawing.Point(191, 84);
-            this.txtidmateria.Margin = new System.Windows.Forms.Padding(4);
-            this.txtidmateria.Name = "txtidmateria";
-            this.txtidmateria.Size = new System.Drawing.Size(148, 24);
-            this.txtidmateria.TabIndex = 1;
-            // 
-            // btnagregarmp
-            // 
-            this.btnagregarmp.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnagregarmp.Location = new System.Drawing.Point(205, 304);
-            this.btnagregarmp.Margin = new System.Windows.Forms.Padding(4);
-            this.btnagregarmp.Name = "btnagregarmp";
-            this.btnagregarmp.Size = new System.Drawing.Size(112, 32);
-            this.btnagregarmp.TabIndex = 0;
-            this.btnagregarmp.Text = "Agregar";
-            this.btnagregarmp.UseVisualStyleBackColor = true;
-            this.btnagregarmp.Click += new System.EventHandler(this.btnagregarmp_Click);
             // 
             // tabPage2
             // 
@@ -474,6 +274,15 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Captura Lineas de Produccion";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // chkbFan
+            // 
+            this.chkbFan.AutoSize = true;
+            this.chkbFan.Location = new System.Drawing.Point(217, 418);
+            this.chkbFan.Name = "chkbFan";
+            this.chkbFan.Size = new System.Drawing.Size(15, 14);
+            this.chkbFan.TabIndex = 21;
+            this.chkbFan.UseVisualStyleBackColor = true;
             // 
             // btnagregar
             // 
@@ -699,14 +508,171 @@
             this.dataGridView3.Size = new System.Drawing.Size(716, 314);
             this.dataGridView3.TabIndex = 0;
             // 
-            // chkbFan
+            // cmbtipo
             // 
-            this.chkbFan.AutoSize = true;
-            this.chkbFan.Location = new System.Drawing.Point(217, 418);
-            this.chkbFan.Name = "chkbFan";
-            this.chkbFan.Size = new System.Drawing.Size(15, 14);
-            this.chkbFan.TabIndex = 21;
-            this.chkbFan.UseVisualStyleBackColor = true;
+            this.cmbtipo.FormattingEnabled = true;
+            this.cmbtipo.Items.AddRange(new object[] {
+            "Procesador",
+            "Memoria RAM",
+            "Disco Duro",
+            "Fuente de poder",
+            "Tarjeta madre",
+            "Case",
+            "Tarjeta gráfica",
+            "Disipador",
+            "Abanico"});
+            this.cmbtipo.Location = new System.Drawing.Point(224, 252);
+            this.cmbtipo.Name = "cmbtipo";
+            this.cmbtipo.Size = new System.Drawing.Size(148, 26);
+            this.cmbtipo.TabIndex = 28;
+            // 
+            // pikerfecha
+            // 
+            this.pikerfecha.Location = new System.Drawing.Point(224, 200);
+            this.pikerfecha.Name = "pikerfecha";
+            this.pikerfecha.Size = new System.Drawing.Size(148, 24);
+            this.pikerfecha.TabIndex = 27;
+            // 
+            // btnmodificar
+            // 
+            this.btnmodificar.Location = new System.Drawing.Point(149, 326);
+            this.btnmodificar.Name = "btnmodificar";
+            this.btnmodificar.Size = new System.Drawing.Size(112, 32);
+            this.btnmodificar.TabIndex = 26;
+            this.btnmodificar.Text = "Modificar";
+            this.btnmodificar.UseVisualStyleBackColor = true;
+            this.btnmodificar.Visible = false;
+            // 
+            // btneliminar
+            // 
+            this.btneliminar.Location = new System.Drawing.Point(149, 157);
+            this.btneliminar.Name = "btneliminar";
+            this.btneliminar.Size = new System.Drawing.Size(112, 32);
+            this.btneliminar.TabIndex = 25;
+            this.btneliminar.Text = "Eliminar";
+            this.btneliminar.UseVisualStyleBackColor = true;
+            this.btneliminar.Visible = false;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.rbnmodificar);
+            this.groupBox1.Controls.Add(this.rbnelimnar);
+            this.groupBox1.Location = new System.Drawing.Point(52, 44);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(320, 60);
+            this.groupBox1.TabIndex = 18;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Mas opciones";
+            // 
+            // rbnmodificar
+            // 
+            this.rbnmodificar.AutoSize = true;
+            this.rbnmodificar.Location = new System.Drawing.Point(184, 23);
+            this.rbnmodificar.Name = "rbnmodificar";
+            this.rbnmodificar.Size = new System.Drawing.Size(87, 22);
+            this.rbnmodificar.TabIndex = 1;
+            this.rbnmodificar.TabStop = true;
+            this.rbnmodificar.Text = "Modificar";
+            this.rbnmodificar.UseVisualStyleBackColor = true;
+            // 
+            // rbnelimnar
+            // 
+            this.rbnelimnar.AutoSize = true;
+            this.rbnelimnar.Location = new System.Drawing.Point(18, 23);
+            this.rbnelimnar.Name = "rbnelimnar";
+            this.rbnelimnar.Size = new System.Drawing.Size(79, 22);
+            this.rbnelimnar.TabIndex = 0;
+            this.rbnelimnar.TabStop = true;
+            this.rbnelimnar.Text = "Eliminar";
+            this.rbnelimnar.UseVisualStyleBackColor = true;
+            // 
+            // lbltipo
+            // 
+            this.lbltipo.AutoSize = true;
+            this.lbltipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbltipo.Location = new System.Drawing.Point(86, 255);
+            this.lbltipo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbltipo.Name = "lbltipo";
+            this.lbltipo.Size = new System.Drawing.Size(37, 18);
+            this.lbltipo.TabIndex = 24;
+            this.lbltipo.Text = "Tipo";
+            // 
+            // dgwmateriaprima
+            // 
+            this.dgwmateriaprima.AllowUserToAddRows = false;
+            this.dgwmateriaprima.AllowUserToDeleteRows = false;
+            this.dgwmateriaprima.AllowUserToOrderColumns = true;
+            this.dgwmateriaprima.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgwmateriaprima.Location = new System.Drawing.Point(442, 61);
+            this.dgwmateriaprima.Margin = new System.Windows.Forms.Padding(4);
+            this.dgwmateriaprima.Name = "dgwmateriaprima";
+            this.dgwmateriaprima.ReadOnly = true;
+            this.dgwmateriaprima.Size = new System.Drawing.Size(544, 336);
+            this.dgwmateriaprima.TabIndex = 23;
+            // 
+            // lblfecha
+            // 
+            this.lblfecha.AutoSize = true;
+            this.lblfecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblfecha.Location = new System.Drawing.Point(48, 200);
+            this.lblfecha.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblfecha.Name = "lblfecha";
+            this.lblfecha.Size = new System.Drawing.Size(101, 18);
+            this.lblfecha.TabIndex = 22;
+            this.lblfecha.Text = "Ingrese Fecha";
+            // 
+            // lbldesc
+            // 
+            this.lbldesc.AutoSize = true;
+            this.lbldesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbldesc.Location = new System.Drawing.Point(48, 164);
+            this.lbldesc.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbldesc.Name = "lbldesc";
+            this.lbldesc.Size = new System.Drawing.Size(139, 18);
+            this.lbldesc.TabIndex = 21;
+            this.lbldesc.Text = "Ingrese Descripción";
+            // 
+            // lblidmateria
+            // 
+            this.lblidmateria.AutoSize = true;
+            this.lblidmateria.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblidmateria.Location = new System.Drawing.Point(48, 124);
+            this.lblidmateria.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblidmateria.Name = "lblidmateria";
+            this.lblidmateria.Size = new System.Drawing.Size(75, 18);
+            this.lblidmateria.TabIndex = 20;
+            this.lblidmateria.Text = "ID Materia";
+            this.lblidmateria.Visible = false;
+            // 
+            // txtDesc
+            // 
+            this.txtDesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDesc.Location = new System.Drawing.Point(224, 161);
+            this.txtDesc.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDesc.Name = "txtDesc";
+            this.txtDesc.Size = new System.Drawing.Size(148, 24);
+            this.txtDesc.TabIndex = 19;
+            // 
+            // txtidmateria
+            // 
+            this.txtidmateria.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtidmateria.Location = new System.Drawing.Point(224, 121);
+            this.txtidmateria.Margin = new System.Windows.Forms.Padding(4);
+            this.txtidmateria.Name = "txtidmateria";
+            this.txtidmateria.Size = new System.Drawing.Size(148, 24);
+            this.txtidmateria.TabIndex = 17;
+            this.txtidmateria.Visible = false;
+            // 
+            // btnagregarmp
+            // 
+            this.btnagregarmp.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnagregarmp.Location = new System.Drawing.Point(149, 326);
+            this.btnagregarmp.Margin = new System.Windows.Forms.Padding(4);
+            this.btnagregarmp.Name = "btnagregarmp";
+            this.btnagregarmp.Size = new System.Drawing.Size(112, 32);
+            this.btnagregarmp.TabIndex = 16;
+            this.btnagregarmp.Text = "Agregar";
+            this.btnagregarmp.UseVisualStyleBackColor = true;
             // 
             // Ingenieria
             // 
@@ -726,9 +692,6 @@
             this.ingenieriatc.ResumeLayout(false);
             this.ingenieriaform.ResumeLayout(false);
             this.ingenieriaform.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
@@ -737,6 +700,9 @@
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgwmateriaprima)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -745,13 +711,6 @@
 
         private System.Windows.Forms.TabControl ingenieriatc;
         private System.Windows.Forms.TabPage ingenieriaform;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox unidadtxt;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtDesc;
-        private System.Windows.Forms.Button btnagregarmp;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Button btnagregarcomponentes;
@@ -765,11 +724,6 @@
         private System.Windows.Forms.TextBox fechaptxt;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.DataGridView dataGridView3;
-        private System.Windows.Forms.TextBox txtFecha;
-        private System.Windows.Forms.TextBox txttipo;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton rbnelimnar;
         private System.Windows.Forms.DataGridViewTextBoxColumn idMateriaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tipoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcionDataGridViewTextBoxColumn;
@@ -781,12 +735,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cantidadDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn locacionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcionDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.Button btneliminar;
-        private System.Windows.Forms.Button btnmodificar;
-        private System.Windows.Forms.RadioButton rbnagregar;
-        private System.Windows.Forms.RadioButton rbnmodificar;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtidmateria;
         private System.Windows.Forms.TextBox txtidlineapf;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btnagregarpf;
@@ -811,5 +759,20 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Button btnagregar;
         private System.Windows.Forms.CheckBox chkbFan;
+        private System.Windows.Forms.ComboBox cmbtipo;
+        private System.Windows.Forms.DateTimePicker pikerfecha;
+        private System.Windows.Forms.Button btnmodificar;
+        private System.Windows.Forms.Button btneliminar;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton rbnmodificar;
+        private System.Windows.Forms.RadioButton rbnelimnar;
+        private System.Windows.Forms.Label lbltipo;
+        private System.Windows.Forms.DataGridView dgwmateriaprima;
+        private System.Windows.Forms.Label lblfecha;
+        private System.Windows.Forms.Label lbldesc;
+        private System.Windows.Forms.Label lblidmateria;
+        private System.Windows.Forms.TextBox txtDesc;
+        private System.Windows.Forms.TextBox txtidmateria;
+        private System.Windows.Forms.Button btnagregarmp;
     }
 }
