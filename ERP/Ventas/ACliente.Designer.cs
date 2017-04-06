@@ -94,7 +94,7 @@
             this.txtNombre.Location = new System.Drawing.Point(41, 55);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(169, 26);
-            this.txtNombre.TabIndex = 4;
+            this.txtNombre.TabIndex = 1;
             this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // txtEmpresa
@@ -103,7 +103,7 @@
             this.txtEmpresa.Location = new System.Drawing.Point(340, 127);
             this.txtEmpresa.Name = "txtEmpresa";
             this.txtEmpresa.Size = new System.Drawing.Size(182, 26);
-            this.txtEmpresa.TabIndex = 7;
+            this.txtEmpresa.TabIndex = 4;
             this.txtEmpresa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEmpresa_KeyPress);
             // 
             // txtDir
@@ -112,7 +112,7 @@
             this.txtDir.Location = new System.Drawing.Point(41, 200);
             this.txtDir.Name = "txtDir";
             this.txtDir.Size = new System.Drawing.Size(169, 26);
-            this.txtDir.TabIndex = 8;
+            this.txtDir.TabIndex = 5;
             // 
             // txtApe
             // 
@@ -120,7 +120,7 @@
             this.txtApe.Location = new System.Drawing.Point(340, 55);
             this.txtApe.Name = "txtApe";
             this.txtApe.Size = new System.Drawing.Size(182, 26);
-            this.txtApe.TabIndex = 5;
+            this.txtApe.TabIndex = 2;
             this.txtApe.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApe_KeyPress);
             // 
             // label5
@@ -139,7 +139,7 @@
             this.mtxtTel.Location = new System.Drawing.Point(41, 131);
             this.mtxtTel.Name = "mtxtTel";
             this.mtxtTel.Size = new System.Drawing.Size(169, 26);
-            this.mtxtTel.TabIndex = 14;
+            this.mtxtTel.TabIndex = 3;
             this.mtxtTel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mtxtTel_KeyPress);
             // 
             // label6
@@ -158,7 +158,7 @@
             this.txtEmail.Location = new System.Drawing.Point(340, 200);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(182, 26);
-            this.txtEmail.TabIndex = 9;
+            this.txtEmail.TabIndex = 6;
             // 
             // btnAgregar
             // 
@@ -170,7 +170,7 @@
             this.btnAgregar.Location = new System.Drawing.Point(152, 235);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(260, 58);
-            this.btnAgregar.TabIndex = 42;
+            this.btnAgregar.TabIndex = 7;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
