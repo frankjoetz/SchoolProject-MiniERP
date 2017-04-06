@@ -150,7 +150,9 @@ namespace ERP.Ventas
         {
             try
             {
-                if (txtNombre.Text != "")
+                int id = int.Parse(mV.buscarUnDato("idCliente", "Cliente", "Limit 1"));
+                int id2 = int.Parse(mV.buscarUnDato("idCliente", "Cliente", "ORDER BY idCliente DESC Limit 1"));
+                if (int.Parse(txtIDcliente.Text)>=id && (int.Parse(txtIDcliente.Text)<=id2))
                 {
                     string status = "En proceso";
                     int cGB = 0, cGM = 0, cGA = 0;
@@ -174,11 +176,11 @@ namespace ERP.Ventas
                         chkGA.Checked = false;
                         txtaCom.Text = "";
                     }
+                    else
+                        MessageBox.Show("Ingresa un cliente válido");
                 }
-                else
-                    MessageBox.Show("Ingrese valores validos");
             }
-            catch { }
+            catch {}
         }
 
         //Insercion/////////////////////////////////////////////////////////////////////////////////////
@@ -415,15 +417,12 @@ namespace ERP.Ventas
                 if (int.Parse(txtIDcliente.Text) < id || int.Parse(txtIDcliente.Text) > id2)
                 {
                     MessageBox.Show("No existe cliente");
+                    txtIDcliente.Focus();
                     txtNombre.Clear();
                     txtEmpresa.Clear();
                 }
             }
-            catch { }
-            finally
-            {
-                if (tbcVentas.SelectedIndex == 0)
-                    txtIDcliente.Focus();
+            catch { 
             }
         }
     }

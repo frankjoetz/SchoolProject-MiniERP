@@ -34,7 +34,7 @@ namespace ERP.Ventas
                 }
             }
             else
-                MessageBox.Show("Correo electronico invalido");
+                MessageBox.Show("Correo electránico invalido");
             
         }
 ////////////////Filtros de caracteres/////////////

@@ -17,28 +17,52 @@ namespace LogicaDeNegocios.Ventas
 
         public bool altaTabla(string tabla, string valoresAagregar)
         {
-            if (bd.insertar("insert into "+tabla+" values("+valoresAagregar+")"))
+            bool alta = false;
+            try
+            {
+                if (bd.insertar("insert into "+tabla+" values("+valoresAagregar+")"))
                 return true;
             else
                 return false;
+            }
+            catch { }
+            return alta;
         }
         public bool actuTabla(string tabla, string set,string condicion)
         {
-            if (bd.actualizar("update " + tabla + " set " + set +" "+ condicion))
+            bool actu = false;
+            try
+            {
+                if (bd.actualizar("update " + tabla + " set " + set +" "+ condicion))
                 return true;
             else
                 return false;
+            }
+            catch { }
+            return actu;
         }
         public bool bajasPedido(string query)
         {
-            if (bd.eliminar(query))
+            bool bajas = false;
+            try
+            {
+                if (bd.eliminar(query))
                 return true;
             else
                 return false;
+            }
+            catch { }
+            return bajas;
         }
         public string buscarUnDato(string columna, string tabla, string complemento)
         {
-            return bd.buscar("select " + columna + " from " + tabla + " "+complemento,columna);
+            string buscar = "";
+            try
+            {
+                buscar= bd.buscar("select " + columna + " from " + tabla + " "+complemento,columna);
+            }
+            catch {}
+            return buscar;
         }
         public DataSet cargarTablas(string query,string tabla)
         {
@@ -56,10 +80,6 @@ namespace LogicaDeNegocios.Ventas
 
             }
             return erpTab;
-        }
-        public void comboBox(string consulta, string columna, ComboBox cbx)
-        {
-            bd.llenarComboBox(consulta, columna, cbx);
         }
     }
 }
