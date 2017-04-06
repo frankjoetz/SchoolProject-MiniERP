@@ -360,5 +360,20 @@ namespace ERP.Ingenieria
 
         }
 
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            txtidmateria.Visible = false;
+            txtDesc.Visible = true;
+            cmbtipo.Visible = true;
+            btneliminar.Visible = false;
+            btnagregarmp.Visible = true;
+            lbldesc.Visible = true;
+            lblfecha.Visible = true;
+            lbltipo.Visible = true;
+            btnmodificar.Visible = false;
+            pikerfecha.Visible = true;
+            lblidmateria.Visible = false;
+        }
+
     }
 }
