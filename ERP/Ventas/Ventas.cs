@@ -61,12 +61,12 @@ namespace ERP.Ventas
         }
 
         //Timers//////////////////////////////////////////////////////////////////////////////////////////
-        private void btnAddC_Click(object sender, EventArgs e)
+        private void btnAddC_Click_1(object sender, EventArgs e)
         {
             ACliente agc = new ACliente();
             agc.Show();
         }
-
+       
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             tbcVentas.SelectedIndex = 2;

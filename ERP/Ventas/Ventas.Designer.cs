@@ -29,11 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ventas));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.tbcVentas = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btnAddC = new System.Windows.Forms.Button();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtCanGA = new System.Windows.Forms.TextBox();
@@ -75,7 +76,6 @@
             this.lblFH = new System.Windows.Forms.Label();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.lblH = new System.Windows.Forms.Label();
-            this.btnAddC = new System.Windows.Forms.Button();
             this.tbcVentas.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -130,6 +130,21 @@
             this.tabPage1.Text = "Venta";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // btnAddC
+            // 
+            this.btnAddC.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnAddC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnAddC.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddC.Image = ((System.Drawing.Image)(resources.GetObject("btnAddC.Image")));
+            this.btnAddC.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddC.Location = new System.Drawing.Point(614, 26);
+            this.btnAddC.Name = "btnAddC";
+            this.btnAddC.Size = new System.Drawing.Size(237, 58);
+            this.btnAddC.TabIndex = 42;
+            this.btnAddC.Text = "Agregar Cliente";
+            this.btnAddC.UseVisualStyleBackColor = true;
+            this.btnAddC.Click += new System.EventHandler(this.btnAddC_Click_1);
+            // 
             // txtNombre
             // 
             this.txtNombre.Enabled = false;
@@ -164,7 +179,7 @@
             // 
             this.txtCanGA.Enabled = false;
             this.txtCanGA.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCanGA.Location = new System.Drawing.Point(432, 124);
+            this.txtCanGA.Location = new System.Drawing.Point(432, 122);
             this.txtCanGA.Name = "txtCanGA";
             this.txtCanGA.Size = new System.Drawing.Size(126, 24);
             this.txtCanGA.TabIndex = 39;
@@ -174,7 +189,7 @@
             // 
             this.txtCanGM.Enabled = false;
             this.txtCanGM.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCanGM.Location = new System.Drawing.Point(432, 94);
+            this.txtCanGM.Location = new System.Drawing.Point(432, 92);
             this.txtCanGM.Name = "txtCanGM";
             this.txtCanGM.Size = new System.Drawing.Size(126, 24);
             this.txtCanGM.TabIndex = 38;
@@ -184,7 +199,7 @@
             // 
             this.chkGA.AutoSize = true;
             this.chkGA.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkGA.Location = new System.Drawing.Point(23, 120);
+            this.chkGA.Location = new System.Drawing.Point(23, 118);
             this.chkGA.Name = "chkGA";
             this.chkGA.Size = new System.Drawing.Size(96, 22);
             this.chkGA.TabIndex = 37;
@@ -195,7 +210,7 @@
             // 
             this.chkGM.AutoSize = true;
             this.chkGM.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkGM.Location = new System.Drawing.Point(23, 91);
+            this.chkGM.Location = new System.Drawing.Point(23, 89);
             this.chkGM.Name = "chkGM";
             this.chkGM.Size = new System.Drawing.Size(112, 22);
             this.chkGM.TabIndex = 36;
@@ -227,17 +242,17 @@
             // txtaCom
             // 
             this.txtaCom.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtaCom.Location = new System.Drawing.Point(23, 181);
+            this.txtaCom.Location = new System.Drawing.Point(23, 173);
             this.txtaCom.Multiline = true;
             this.txtaCom.Name = "txtaCom";
-            this.txtaCom.Size = new System.Drawing.Size(706, 101);
+            this.txtaCom.Size = new System.Drawing.Size(706, 92);
             this.txtaCom.TabIndex = 5;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(11, 160);
+            this.label7.Location = new System.Drawing.Point(11, 152);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(98, 18);
             this.label7.TabIndex = 34;
@@ -248,7 +263,7 @@
             this.btnAceptar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAceptar.ForeColor = System.Drawing.Color.Black;
-            this.btnAceptar.Location = new System.Drawing.Point(353, 288);
+            this.btnAceptar.Location = new System.Drawing.Point(343, 271);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(113, 35);
             this.btnAceptar.TabIndex = 7;
@@ -350,7 +365,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(892, 421);
+            this.tabPage2.Size = new System.Drawing.Size(892, 478);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Historial";
             // 
@@ -443,8 +458,8 @@
             this.dgvPedido.Location = new System.Drawing.Point(6, 61);
             this.dgvPedido.Name = "dgvPedido";
             this.dgvPedido.ReadOnly = true;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvPedido.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvPedido.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvPedido.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPedido.Size = new System.Drawing.Size(880, 563);
             this.dgvPedido.TabIndex = 3;
@@ -483,7 +498,7 @@
             this.BClient.Location = new System.Drawing.Point(4, 22);
             this.BClient.Name = "BClient";
             this.BClient.Padding = new System.Windows.Forms.Padding(3);
-            this.BClient.Size = new System.Drawing.Size(892, 421);
+            this.BClient.Size = new System.Drawing.Size(892, 478);
             this.BClient.TabIndex = 2;
             this.BClient.Text = "Clientes";
             this.BClient.UseVisualStyleBackColor = true;
@@ -589,20 +604,6 @@
             this.lblH.Size = new System.Drawing.Size(38, 18);
             this.lblH.TabIndex = 40;
             this.lblH.Text = "hora";
-            // 
-            // btnAddC
-            // 
-            this.btnAddC.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnAddC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnAddC.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddC.Image = ((System.Drawing.Image)(resources.GetObject("btnAddC.Image")));
-            this.btnAddC.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddC.Location = new System.Drawing.Point(614, 26);
-            this.btnAddC.Name = "btnAddC";
-            this.btnAddC.Size = new System.Drawing.Size(237, 58);
-            this.btnAddC.TabIndex = 42;
-            this.btnAddC.Text = "Agregar Cliente";
-            this.btnAddC.UseVisualStyleBackColor = true;
             // 
             // Ventas
             // 
