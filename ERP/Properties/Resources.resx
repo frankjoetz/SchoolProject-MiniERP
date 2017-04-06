@@ -121,11 +121,17 @@
   <data name="LogoDash" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LOGO DASHBOARD.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="LogoProduccion" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LogoProduccion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="LogoVentas" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LOGO VENTAS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="SS_Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ERP SS LOGOGRIS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HomeSS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HomeSS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="LogoHome" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Sin título-3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -142,11 +148,26 @@
   <data name="undoicon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\undoicon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="HomeVentas" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HomeVentas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HomeIng" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HomeIng.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="iconAdd" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconAdd.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="HomePlan" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HomePlan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="iconProduction" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconProduction.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HomeCompras" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HomeCompras.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HomeProduc" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HomeProduc.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="LogoPlaneacion" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LOGO PLANEACION.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -160,7 +181,7 @@
   <data name="redoicon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\redoicon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="LogoProduccion" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\LogoProduccion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="HomeDash" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HomeDash.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

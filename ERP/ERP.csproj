@@ -257,6 +257,27 @@
   <ItemGroup>
     <None Include="Resources\LogoProduccion.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HomeSS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HomeIng.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HomeCompras.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HomeVentas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HomePlan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HomeProduc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HomeDash.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

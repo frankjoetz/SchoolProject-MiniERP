@@ -37,7 +37,6 @@
             this.planeaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.producciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dashboardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.strpHome.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,82 +51,90 @@
             this.ventasToolStripMenuItem,
             this.planeaciónToolStripMenuItem,
             this.producciónToolStripMenuItem,
-            this.dashboardToolStripMenuItem,
-            this.toolStripMenuItem1});
+            this.dashboardToolStripMenuItem});
             this.strpHome.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
             this.strpHome.Location = new System.Drawing.Point(0, 0);
             this.strpHome.Name = "strpHome";
-            this.strpHome.Size = new System.Drawing.Size(146, 459);
+            this.strpHome.Size = new System.Drawing.Size(131, 459);
             this.strpHome.TabIndex = 4;
             this.strpHome.Text = "menuStrip1";
             // 
             // inicioToolStripMenuItem
             // 
-            this.inicioToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("inicioToolStripMenuItem.Image")));
+            this.inicioToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.inicioToolStripMenuItem.Image = global::ERP.Properties.Resources.HomeSS;
+            this.inicioToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.inicioToolStripMenuItem.Name = "inicioToolStripMenuItem";
-            this.inicioToolStripMenuItem.Size = new System.Drawing.Size(133, 52);
+            this.inicioToolStripMenuItem.Size = new System.Drawing.Size(118, 94);
             this.inicioToolStripMenuItem.Text = "Inicio";
             this.inicioToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.inicioToolStripMenuItem.Click += new System.EventHandler(this.inicioToolStripMenuItem_Click);
             // 
             // ingenieríaToolStripMenuItem
             // 
-            this.ingenieríaToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("ingenieríaToolStripMenuItem.Image")));
+            this.ingenieríaToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.ingenieríaToolStripMenuItem.Image = global::ERP.Properties.Resources.HomeIng;
+            this.ingenieríaToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ingenieríaToolStripMenuItem.Name = "ingenieríaToolStripMenuItem";
-            this.ingenieríaToolStripMenuItem.Size = new System.Drawing.Size(133, 52);
+            this.ingenieríaToolStripMenuItem.Size = new System.Drawing.Size(118, 94);
             this.ingenieríaToolStripMenuItem.Text = "Ingeniería";
             this.ingenieríaToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.ingenieríaToolStripMenuItem.Click += new System.EventHandler(this.ingenieríaToolStripMenuItem_Click);
             // 
             // almacenToolStripMenuItem
             // 
-            this.almacenToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("almacenToolStripMenuItem.Image")));
+            this.almacenToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.almacenToolStripMenuItem.Image = global::ERP.Properties.Resources.HomeCompras;
+            this.almacenToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.almacenToolStripMenuItem.Name = "almacenToolStripMenuItem";
-            this.almacenToolStripMenuItem.Size = new System.Drawing.Size(133, 52);
+            this.almacenToolStripMenuItem.Size = new System.Drawing.Size(118, 94);
             this.almacenToolStripMenuItem.Text = "Compras";
             this.almacenToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.almacenToolStripMenuItem.Click += new System.EventHandler(this.almacenToolStripMenuItem_Click);
             // 
             // ventasToolStripMenuItem
             // 
-            this.ventasToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("ventasToolStripMenuItem.Image")));
+            this.ventasToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.ventasToolStripMenuItem.Image = global::ERP.Properties.Resources.HomeVentas;
+            this.ventasToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ventasToolStripMenuItem.Name = "ventasToolStripMenuItem";
-            this.ventasToolStripMenuItem.Size = new System.Drawing.Size(133, 52);
+            this.ventasToolStripMenuItem.Size = new System.Drawing.Size(118, 94);
             this.ventasToolStripMenuItem.Text = "Ventas";
             this.ventasToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.ventasToolStripMenuItem.Click += new System.EventHandler(this.ventasToolStripMenuItem_Click);
             // 
             // planeaciónToolStripMenuItem
             // 
-            this.planeaciónToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("planeaciónToolStripMenuItem.Image")));
+            this.planeaciónToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.planeaciónToolStripMenuItem.Image = global::ERP.Properties.Resources.HomePlan;
+            this.planeaciónToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.planeaciónToolStripMenuItem.Name = "planeaciónToolStripMenuItem";
-            this.planeaciónToolStripMenuItem.Size = new System.Drawing.Size(133, 52);
+            this.planeaciónToolStripMenuItem.Size = new System.Drawing.Size(118, 94);
             this.planeaciónToolStripMenuItem.Text = "Planeación";
             this.planeaciónToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.planeaciónToolStripMenuItem.Click += new System.EventHandler(this.planeaciónToolStripMenuItem_Click);
             // 
             // producciónToolStripMenuItem
             // 
-            this.producciónToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("producciónToolStripMenuItem.Image")));
+            this.producciónToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.producciónToolStripMenuItem.Image = global::ERP.Properties.Resources.HomeProduc;
+            this.producciónToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.producciónToolStripMenuItem.Name = "producciónToolStripMenuItem";
-            this.producciónToolStripMenuItem.Size = new System.Drawing.Size(133, 52);
+            this.producciónToolStripMenuItem.Size = new System.Drawing.Size(118, 94);
             this.producciónToolStripMenuItem.Text = "Producción";
             this.producciónToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.producciónToolStripMenuItem.Click += new System.EventHandler(this.producciónToolStripMenuItem_Click);
             // 
             // dashboardToolStripMenuItem
             // 
-            this.dashboardToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("dashboardToolStripMenuItem.Image")));
+            this.dashboardToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.dashboardToolStripMenuItem.Image = global::ERP.Properties.Resources.HomeDash;
+            this.dashboardToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.dashboardToolStripMenuItem.Name = "dashboardToolStripMenuItem";
-            this.dashboardToolStripMenuItem.Size = new System.Drawing.Size(133, 52);
+            this.dashboardToolStripMenuItem.Size = new System.Drawing.Size(118, 94);
             this.dashboardToolStripMenuItem.Text = "Dashboard";
             this.dashboardToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.dashboardToolStripMenuItem.Click += new System.EventHandler(this.dashboardToolStripMenuItem_Click);
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(133, 4);
             // 
             // Home
             // 
@@ -166,7 +173,6 @@
         private System.Windows.Forms.ToolStripMenuItem planeaciónToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem inicioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dashboardToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
     }
 }
 
