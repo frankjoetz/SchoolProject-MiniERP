@@ -36,7 +36,7 @@ namespace LogicaDeNegocios.Compras
                 return false;
         }
 
-        public bool agregarStock(string id, string cantidad)
+        public bool moverStock(string id, string cantidad)
         {
             if (bd.actualizar("update InventarioMateria set StockActual='" + cantidad + "' where idMateria='" + id + "'"))
                 return true;

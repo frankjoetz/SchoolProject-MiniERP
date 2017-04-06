@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.Stock_MaterialesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Reportes = new ERP.Compras.Reportes();
             this.tabControlCompras = new System.Windows.Forms.TabControl();
@@ -63,6 +63,14 @@
             this.grpReporte = new System.Windows.Forms.GroupBox();
             this.revStock = new Microsoft.Reporting.WinForms.ReportViewer();
             this.Stock_MaterialesTableAdapter = new ERP.Compras.ReportesTableAdapters.Stock_MaterialesTableAdapter();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lblMateriaDos = new System.Windows.Forms.Label();
+            this.lblDescDos = new System.Windows.Forms.Label();
+            this.lblCantidadDos = new System.Windows.Forms.Label();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.lblMateriaShow = new System.Windows.Forms.Label();
+            this.lblDescDosShow = new System.Windows.Forms.Label();
+            this.btnDescontar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Stock_MaterialesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Reportes)).BeginInit();
             this.tabControlCompras.SuspendLayout();
@@ -80,6 +88,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLocacion)).BeginInit();
             this.tabPage1.SuspendLayout();
             this.grpReporte.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // Stock_MaterialesBindingSource
@@ -105,7 +115,7 @@
             this.tabControlCompras.Location = new System.Drawing.Point(12, 12);
             this.tabControlCompras.Name = "tabControlCompras";
             this.tabControlCompras.SelectedIndex = 0;
-            this.tabControlCompras.Size = new System.Drawing.Size(690, 540);
+            this.tabControlCompras.Size = new System.Drawing.Size(690, 671);
             this.tabControlCompras.TabIndex = 3;
             this.tabControlCompras.Tag = "";
             this.tabControlCompras.SelectedIndexChanged += new System.EventHandler(this.tabControlCompras_SelectedIndexChanged);
@@ -188,12 +198,13 @@
             // 
             // tabPageInventario
             // 
+            this.tabPageInventario.Controls.Add(this.groupBox2);
             this.tabPageInventario.Controls.Add(this.grpAgregarMaterial);
             this.tabPageInventario.Controls.Add(this.grpMaterialStock);
             this.tabPageInventario.Location = new System.Drawing.Point(4, 30);
             this.tabPageInventario.Name = "tabPageInventario";
             this.tabPageInventario.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageInventario.Size = new System.Drawing.Size(682, 506);
+            this.tabPageInventario.Size = new System.Drawing.Size(682, 637);
             this.tabPageInventario.TabIndex = 3;
             this.tabPageInventario.Text = "Stock";
             this.tabPageInventario.UseVisualStyleBackColor = true;
@@ -209,9 +220,9 @@
             this.grpAgregarMaterial.Controls.Add(this.lblCantidad);
             this.grpAgregarMaterial.Controls.Add(this.lblDescripcion);
             this.grpAgregarMaterial.Controls.Add(this.lblMateria);
-            this.grpAgregarMaterial.Location = new System.Drawing.Point(20, 309);
+            this.grpAgregarMaterial.Location = new System.Drawing.Point(20, 236);
             this.grpAgregarMaterial.Name = "grpAgregarMaterial";
-            this.grpAgregarMaterial.Size = new System.Drawing.Size(647, 165);
+            this.grpAgregarMaterial.Size = new System.Drawing.Size(647, 204);
             this.grpAgregarMaterial.TabIndex = 6;
             this.grpAgregarMaterial.TabStop = false;
             this.grpAgregarMaterial.Text = "Agregar material";
@@ -304,7 +315,7 @@
             this.grpMaterialStock.Controls.Add(this.dataGridViewStock);
             this.grpMaterialStock.Location = new System.Drawing.Point(20, 18);
             this.grpMaterialStock.Name = "grpMaterialStock";
-            this.grpMaterialStock.Size = new System.Drawing.Size(647, 272);
+            this.grpMaterialStock.Size = new System.Drawing.Size(647, 212);
             this.grpMaterialStock.TabIndex = 2;
             this.grpMaterialStock.TabStop = false;
             this.grpMaterialStock.Text = "Material en stock";
@@ -320,7 +331,7 @@
             this.dataGridViewStock.Name = "dataGridViewStock";
             this.dataGridViewStock.ReadOnly = true;
             this.dataGridViewStock.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewStock.Size = new System.Drawing.Size(632, 245);
+            this.dataGridViewStock.Size = new System.Drawing.Size(632, 185);
             this.dataGridViewStock.TabIndex = 5;
             this.dataGridViewStock.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewStock_CellClick);
             // 
@@ -452,9 +463,9 @@
             // 
             this.revStock.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            reportDataSource2.Name = "stock";
-            reportDataSource2.Value = this.Stock_MaterialesBindingSource;
-            this.revStock.LocalReport.DataSources.Add(reportDataSource2);
+            reportDataSource3.Name = "stock";
+            reportDataSource3.Value = this.Stock_MaterialesBindingSource;
+            this.revStock.LocalReport.DataSources.Add(reportDataSource3);
             this.revStock.LocalReport.ReportEmbeddedResource = "ERP.Compras.Stock.rdlc";
             this.revStock.Location = new System.Drawing.Point(6, 25);
             this.revStock.Name = "revStock";
@@ -465,11 +476,98 @@
             // 
             this.Stock_MaterialesTableAdapter.ClearBeforeFill = true;
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Controls.Add(this.btnDescontar);
+            this.groupBox2.Controls.Add(this.lblDescDosShow);
+            this.groupBox2.Controls.Add(this.lblMateriaShow);
+            this.groupBox2.Controls.Add(this.numericUpDown1);
+            this.groupBox2.Controls.Add(this.lblCantidadDos);
+            this.groupBox2.Controls.Add(this.lblDescDos);
+            this.groupBox2.Controls.Add(this.lblMateriaDos);
+            this.groupBox2.Location = new System.Drawing.Point(20, 446);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(647, 185);
+            this.groupBox2.TabIndex = 4;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Descontar material";
+            // 
+            // lblMateriaDos
+            // 
+            this.lblMateriaDos.AutoSize = true;
+            this.lblMateriaDos.Location = new System.Drawing.Point(225, 47);
+            this.lblMateriaDos.Name = "lblMateriaDos";
+            this.lblMateriaDos.Size = new System.Drawing.Size(63, 21);
+            this.lblMateriaDos.TabIndex = 0;
+            this.lblMateriaDos.Text = "Materia";
+            // 
+            // lblDescDos
+            // 
+            this.lblDescDos.AutoSize = true;
+            this.lblDescDos.Location = new System.Drawing.Point(371, 47);
+            this.lblDescDos.Name = "lblDescDos";
+            this.lblDescDos.Size = new System.Drawing.Size(88, 21);
+            this.lblDescDos.TabIndex = 1;
+            this.lblDescDos.Text = "Descripcion";
+            // 
+            // lblCantidadDos
+            // 
+            this.lblCantidadDos.AutoSize = true;
+            this.lblCantidadDos.Location = new System.Drawing.Point(525, 47);
+            this.lblCantidadDos.Name = "lblCantidadDos";
+            this.lblCantidadDos.Size = new System.Drawing.Size(73, 21);
+            this.lblCantidadDos.TabIndex = 2;
+            this.lblCantidadDos.Text = "Cantidad";
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(500, 81);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(120, 26);
+            this.numericUpDown1.TabIndex = 5;
+            this.numericUpDown1.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // lblMateriaShow
+            // 
+            this.lblMateriaShow.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblMateriaShow.Location = new System.Drawing.Point(192, 77);
+            this.lblMateriaShow.Name = "lblMateriaShow";
+            this.lblMateriaShow.Size = new System.Drawing.Size(119, 30);
+            this.lblMateriaShow.TabIndex = 6;
+            // 
+            // lblDescDosShow
+            // 
+            this.lblDescDosShow.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblDescDosShow.Location = new System.Drawing.Point(343, 77);
+            this.lblDescDosShow.Name = "lblDescDosShow";
+            this.lblDescDosShow.Size = new System.Drawing.Size(132, 30);
+            this.lblDescDosShow.TabIndex = 7;
+            // 
+            // btnDescontar
+            // 
+            this.btnDescontar.AutoSize = true;
+            this.btnDescontar.Image = global::ERP.Properties.Resources.undoicon;
+            this.btnDescontar.Location = new System.Drawing.Point(343, 128);
+            this.btnDescontar.Name = "btnDescontar";
+            this.btnDescontar.Size = new System.Drawing.Size(182, 51);
+            this.btnDescontar.TabIndex = 8;
+            this.btnDescontar.Text = "Descontar material";
+            this.btnDescontar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDescontar.UseVisualStyleBackColor = true;
+            this.btnDescontar.Click += new System.EventHandler(this.btnDescontar_Click);
+            // 
             // Compras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(729, 569);
+            this.ClientSize = new System.Drawing.Size(729, 700);
             this.ControlBox = false;
             this.Controls.Add(this.tabControlCompras);
             this.Name = "Compras";
@@ -499,6 +597,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLocacion)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.grpReporte.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -538,5 +639,13 @@
         private Reportes Reportes;
         private ReportesTableAdapters.Stock_MaterialesTableAdapter Stock_MaterialesTableAdapter;
         private System.Windows.Forms.GroupBox grpReporte;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button btnDescontar;
+        private System.Windows.Forms.Label lblDescDosShow;
+        private System.Windows.Forms.Label lblMateriaShow;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.Label lblCantidadDos;
+        private System.Windows.Forms.Label lblDescDos;
+        private System.Windows.Forms.Label lblMateriaDos;
     }
 }

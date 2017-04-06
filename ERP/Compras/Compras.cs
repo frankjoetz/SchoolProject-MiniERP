@@ -85,8 +85,11 @@ namespace ERP.Compras
         {
             string stock = dataGridViewStock.Rows[dataGridViewStock.CurrentRow.Index].Cells["Tipo"].Value.ToString();
             lblIdMateria.Text = stock;
+            lblMateriaShow.Text = stock;
             string des = dataGridViewStock.Rows[dataGridViewStock.CurrentRow.Index].Cells["Descripcion"].Value.ToString();
             lblDescripcion.Text = des;
+            lblDescDosShow.Text = des;
+            
         }
 
         private void tabControlCompras_SelectedIndexChanged(object sender, EventArgs e)
@@ -107,7 +110,7 @@ namespace ERP.Compras
             {
                 if (!string.IsNullOrEmpty(stockActual))
                 {
-                    bool agregado = comp.agregarStock(id, StockUpdate);
+                    bool agregado = comp.moverStock(id, StockUpdate);
                     if (agregado)
                         MessageBox.Show("Materia agregado exitosamente");
                     comp.llenarDrigViewMaterial(dataGridViewStock);
@@ -134,6 +137,37 @@ namespace ERP.Compras
             this.Stock_MaterialesTableAdapter.Fill(this.Reportes.Stock_Materiales);
             this.WindowState = FormWindowState.Maximized;
             this.revStock.RefreshReport();
+        }
+
+        private void btnDescontar_Click(object sender, EventArgs e)
+        {
+            string stockActual = dataGridViewStock.Rows[dataGridViewStock.CurrentRow.Index].Cells["StockActual"].Value.ToString();
+            string valorAgregar = nudCantidad.Value.ToString();
+            string StockUpdate = (int.Parse(stockActual) - int.Parse(valorAgregar)).ToString();
+            string id = dataGridViewStock.Rows[dataGridViewStock.CurrentRow.Index].Cells["idMateria"].Value.ToString();
+
+            if (MessageBox.Show("¿Estas seguro de descontar esa cantidad?", "Advertencia", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                if (!string.IsNullOrEmpty(stockActual))
+                {
+                    bool agregado = comp.moverStock(id, StockUpdate);
+                    if (agregado)
+                        MessageBox.Show("Materia agregado exitosamente");
+                    comp.llenarDrigViewMaterial(dataGridViewStock);
+                    pintarColumnas(dataGridViewStock);
+                    lblMateriaShow.Text = null;
+                    lblDescDosShow.Text = null;
+                    nudCantidad.Value = 1;
+                }
+                else
+                {
+                    MessageBox.Show("Seleccionar una materia prima");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Error al descontar la materia prima");
+            }
         }
     }
 }
