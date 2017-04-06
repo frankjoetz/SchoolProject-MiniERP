@@ -137,7 +137,7 @@ namespace LogicaDeNegocios.Produccion
 
         public void ActualizarPedidos(DataGridView tabla)
         { // Actualiza la lista de pedidos
-            bd.llenarTabla("select * from Pedido where Status != 'Cancelado'", tabla);
+            bd.llenarTabla("select * from Pedido where Status = 'En proceso'", tabla);
         }
 
         public bool ActualizarProduccionesCorrespondientes(DataGridView tablaPedido, DataGridView tablaProducciones, Label infoPedido)
@@ -154,11 +154,26 @@ namespace LogicaDeNegocios.Produccion
             if (cantGA != 0)
                 total++;
             bd.llenarTabla("select idPedido, nombre, empresa, idProduccion, tipo, cantidad, Etapa from Vista_ProduccionesOverview where Etapa=8 AND idPedido=" + idPedido, tablaProducciones);
-            infoPedido.Text = "Se han producido " + tablaProducciones.RowCount + " de las " + total + " gamas ordenadas.";
-            if (total == tablaProducciones.RowCount)
+            int producido = tablaProducciones.RowCount;
+            if (total == producido)
+            {
+                infoPedido.Text = "Pedido terminado, esperando entrega.";
+                MessageBox.Show("Se ha/n producido la/s " + producido + " de " + total + " gama/s que el pedido solicitó. \nAhora se puede realizar la entrega, presione Entregar", "Producción finalizada", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return true;
+            }
             else
+            {
+                infoPedido.Text = producido + " de " + total + " gamas producidas.";
+                MessageBox.Show("Al parecer aún falta/n " + (total - producido) + " de la/s " + total + " gama/s que el cliente ordenó. \nFinalice la producción para poder entregar.", "Pedido no terminado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return false;
+            }
+        }
+
+        public void EntregarPedido(DataGridView tabla)
+        {
+            int idPedido = int.Parse(tabla.SelectedRows[0].Cells["idPedido"].Value.ToString());
+            bd.actualizar("update Pedido set Status='Entregado' where idPedido=" + idPedido);
+            
         }
 
         // ◘◘◘◘◘ Métodos generales y esclusivos ◘◘◘◘◘

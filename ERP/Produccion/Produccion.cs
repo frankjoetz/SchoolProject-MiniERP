@@ -132,6 +132,16 @@ namespace ERP.Produccion
                 btnEntregar.Enabled = false;
         }
 
+
+        private void btnEntregar_Click(object sender, EventArgs e)
+        {
+            met.EntregarPedido(dgvPedidos);
+            ActualizarTabla(dgvPedidos);
+            dgvProduccionesCorrespondientes.DataSource = null;
+            btnEntregar.Enabled = false;
+            lblInfoPedido.Text = "";
+        }
+
         // ◘◘◘◘◘ Métodos privados de el formulario ◘◘◘◘◘
 
         private void ActualizarTabla(DataGridView tabla)
@@ -174,9 +184,10 @@ namespace ERP.Produccion
 
         private void EvaluarNumeroFilas()
         {
-            if (dgvPlaneaciones.RowCount == 0)
-                dgvPlaneaciones.Enabled = false;
+           // if (dgvPlaneaciones.RowCount == 0)
+               // dgvPlaneaciones.Enabled = false;
         }
+
 
         /*
    private void validarBotones()
