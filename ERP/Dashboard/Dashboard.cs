@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace ERP.Dashboard
 {
     public partial class Dashboard : Form
     {
+        LogicaDeNegocios.Dashboard.metodosDashboard dash = new LogicaDeNegocios.Dashboard.metodosDashboard();
+
         public Dashboard()
         {
             InitializeComponent();
@@ -31,7 +34,23 @@ namespace ERP.Dashboard
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
+            string[] series = { "Juan", "Roberto", "Alex" };
+            int[] puntos = { 34, 56, 23 };
+            chartcomputadora.Palette = ChartColorPalette.Pastel;
+            chartcomputadora.Titles.Add("Veces que han hecho commit sin saber que pedo");
 
+            for (int i = 0; i < series.Length; i++)
+            {
+                Series serie = chartcomputadora.Series.Add(series[i]);
+                serie.Label = puntos[i].ToString();
+                serie.Points.Add(puntos[i]);
+            }
+
+            txttotaldepedidos.Text = dash.imprimirTotalPedidos();
+            txtproduccionenproceso.Text = dash.imprimirProdEnProceso();
+            txtmasvendido.Text = dash.imprimirMasVendido();
+            txtmenosvendido.Text = dash.imprimirMenosVendido();
+            txtpocomaterial.Text = dash.imprimirPocoMaterial();
         }
     }
 }
