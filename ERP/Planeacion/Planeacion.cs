@@ -63,6 +63,8 @@ namespace ERP.Planeacion
             checkBoxGamaAlta.Enabled = false;
             checkBoxGamaMedia.Enabled = false;
             checkBoxGamaBaja.Enabled = false;
+            comboBoxBuscarPedido.SelectedIndex = 0;
+            this.reportViewer1.RefreshReport();
         }
 
         private void groupBox2_Enter(object sender, EventArgs e)
@@ -137,10 +139,7 @@ namespace ERP.Planeacion
 
         private void txtBuscarPedido_TextChanged(object sender, EventArgs e)
         {
-            if (comboBoxBuscarPedido.Text == "idPedido")
-            {
-                planeacion.Buscarid(txtBuscarPedido, GridPedidos);
-            }
+            planeacion.Buscar(comboBoxBuscarPedido,txtBuscarPedido,GridPedidos);
         }
 
         private void txtBuscarPedido_KeyDown(object sender, KeyEventArgs e)

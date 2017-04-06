@@ -31,7 +31,11 @@ namespace LogicaDeNegocios.Planeacion
             datos.llenarTabla("select * from Planeacion where status='Listo para producir'", GridPlaneaciones);
         }
 
-        // Mandar alerta
+        // Buscar pedido
+        public void Buscar(ComboBox columna, TextBox valor, DataGridView tabla)
+        { // Método para buscar pedidos
+            datos.llenarTabla("select * from Vista_PedidosPlaneacion where " + columna.Text + " like '%" + valor.Text + "%' and Status='En proceso'", tabla);
+        }
        
         //insertar planeacion
         public void InsertarPlaneacionAlta(TextBox idPedido, TextBox Cantidad, DateTimePicker fInicio, DateTimePicker fEntregar, TextBox status, TextBox Observaciones)
