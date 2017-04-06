@@ -36,7 +36,7 @@ namespace LogicaDeNegocios
         }
         //public bool modificarMateria(int idmateria, string tipo, string descrip, string fecha, int cantidad)
         //{
-        //    if (bd.modificar("UPDATE MateriaPrima SET Tipo='{0}',descripcion='{1}',Fecha='{2}',cantidad='{3}' WHERE idMateria={4}", tipo, descrip, fecha, cantidad, idmateria))
+        //    //if (bd.modificar("UPDATE MateriaPrima SET Tipo='{0}',descripcion='{1}',fecha='{2}',destino='{3}' WHERE idMateria={4}", tipo, descrip, fecha, destino, idmateria))
         //        return true;
         //    else
         //        return false;
@@ -48,6 +48,13 @@ namespace LogicaDeNegocios
         public void llenarGridViewmateriaprima(DataGridView materiaprima)
         {
             bd.llenarTabla("select * from MateriaPrima order by idMateria asc", materiaprima);
+        }
+        public bool altaconsumo(int idproducto, int idmateria, int idline, int cantidad)
+        {
+            if (bd.insertar("insert into Consumo(idProducto,idMateria,idLinea, Cantidad) values('" + idproducto + "', '" + idmateria + "', '" + idline + "','" + cantidad + "')"))
+                return true;
+            else
+                return false;
         }
     }
 }
