@@ -90,6 +90,11 @@ namespace ERP.Ventas
                         txtNombre.Text = mV.buscarUnDato("nombre", "Cliente", " where idCliente = " + txtIDcliente.Text);
                         txtEmpresa.Text = mV.buscarUnDato("empresa", "Cliente", " where idCliente = " + txtIDcliente.Text);
                     }
+                    if (txtIDcliente.Text == "")
+                    {
+                        txtNombre.Text = "";
+                        txtEmpresa.Clear();
+                    }
                 }
             }
             catch { }
@@ -396,11 +401,13 @@ namespace ERP.Ventas
 
         private void txtIDcliente_Leave(object sender, EventArgs e)
         {
-            string id = mV.buscarUnDato("idCliente", "Cliente", "Limit 1");
-            string id2 = mV.buscarUnDato("idCliente", "Cliente", "ORDER BY idCliente DESC Limit 1");
-            if (txtIDcliente.Text != id && txtIDcliente.Text != id2)
+            int id = int.Parse(mV.buscarUnDato("idCliente", "Cliente", "Limit 1"));
+            int id2 = int.Parse(mV.buscarUnDato("idCliente", "Cliente", "ORDER BY idCliente DESC Limit 1"));
+            if (int.Parse(txtIDcliente.Text) < id || int.Parse(txtIDcliente.Text) > id2)
             {
                 MessageBox.Show("No existe cliente");
+                txtNombre.Clear();
+                txtEmpresa.Clear();
             }
         }
     }
