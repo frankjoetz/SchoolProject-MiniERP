@@ -33,11 +33,12 @@ namespace ERP.Produccion
         { // Métodos a llamar cuando se cambia de tab
             ActualizarTabla(dgvProducciones);
             ActualizarTabla(dgvPlaneaciones);
+            ActualizarTabla(dgvPedidos);
             ControlesActivados(1, false);
             ControlesActivados(2, false);
         }
 
-        // ====== Eventos relacionados a tab 1 (Agregar una producción) =====
+        // ◘◘◘◘◘ Eventos relacionados a tab 1 (Agregar una producción) ◘◘◘◘◘
 
         private void txtBuscar_KeyDown(object sender, KeyEventArgs e)
         { // Evento de tecla en TextBox búsqueda
@@ -65,7 +66,7 @@ namespace ERP.Produccion
             EvaluarNumeroFilas();
         }
 
-        //  ===== Métodos para eventos de Administrar producciones (tab2) ==== 
+        // ◘◘◘◘◘ Métodos para eventos de Administrar producciones (tab2) ◘◘◘◘◘
 
         private void dgvProducciones_CellClick(object sender, DataGridViewCellEventArgs e)
         { // Evento de click en celda de tabla producciones
@@ -121,7 +122,17 @@ namespace ERP.Produccion
 
         }
 
-        // ===== Métodos privados de el formulario ====
+        // ◘◘◘◘◘ Métodos para eventos de tab 3 (Entregar pedido) ◘◘◘◘◘
+
+         private void dgvPedidos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (met.ActualizarProduccionesCorrespondientes(dgvPedidos, dgvProduccionesCorrespondientes, lblInfoPedido))
+                btnEntregar.Enabled = true;
+            else
+                btnEntregar.Enabled = false;
+        }
+
+        // ◘◘◘◘◘ Métodos privados de el formulario ◘◘◘◘◘
 
         private void ActualizarTabla(DataGridView tabla)
         { // Método para refrescar valores de tabla
@@ -132,6 +143,9 @@ namespace ERP.Produccion
                     break;
                 case "dgvProducciones":
                     met.ActualizarProducciones(tabla);
+                    break;
+                case "dgvPedidos":
+                    met.ActualizarPedidos(tabla);
                     break;
                 default: break;
             }
@@ -163,26 +177,27 @@ namespace ERP.Produccion
             if (dgvPlaneaciones.RowCount == 0)
                 dgvPlaneaciones.Enabled = false;
         }
-    /*
-        private void validarBotones()
-        {
-            string etapa = metodosAdministrar.RetornarValor(dgvProducciones, "Etapa");
-            if (etapa == "8")
-            {
-                btnAvanzar.Enabled = false;
-                btnRetroceder.Enabled = true;
-            }
-            else if(etapa == "1")
-            {
-                btnAvanzar.Enabled = true;
-                btnRetroceder.Enabled = false;
-            }
-            else
-            {
-                btnAvanzar.Enabled = true;
-                btnRetroceder.Enabled = true;
-            }
-        }*/
-        
+
+        /*
+   private void validarBotones()
+   {
+       string etapa = metodosAdministrar.RetornarValor(dgvProducciones, "Etapa");
+       if (etapa == "8")
+       {
+           btnAvanzar.Enabled = false;
+           btnRetroceder.Enabled = true;
+       }
+       else if(etapa == "1")
+       {
+           btnAvanzar.Enabled = true;
+           btnRetroceder.Enabled = false;
+       }
+       else
+       {
+           btnAvanzar.Enabled = true;
+           btnRetroceder.Enabled = true;
+       }
+   }*/
+
     }
 }

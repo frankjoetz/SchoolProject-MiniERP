@@ -133,6 +133,34 @@ namespace LogicaDeNegocios.Produccion
                 return false;
         }
 
+        // ◘◘◘◘◘ Métodos para tab 3 - Entregar pedido ◘◘◘◘◘
+
+        public void ActualizarPedidos(DataGridView tabla)
+        { // Actualiza la lista de pedidos
+            bd.llenarTabla("select * from Pedido where Status != 'Cancelado'", tabla);
+        }
+
+        public bool ActualizarProduccionesCorrespondientes(DataGridView tablaPedido, DataGridView tablaProducciones, Label infoPedido)
+        {
+            string idPedido = tablaPedido.SelectedRows[0].Cells["idPedido"].Value.ToString();
+            int cantGB = int.Parse(tablaPedido.SelectedRows[0].Cells["cantGamaBaja"].Value.ToString());
+            int cantGM = int.Parse(tablaPedido.SelectedRows[0].Cells["cantGamaMedia"].Value.ToString());
+            int cantGA = int.Parse(tablaPedido.SelectedRows[0].Cells["cantGamaAlta"].Value.ToString());
+            int total = 0;
+            if (cantGB != 0)
+                total++;
+            if (cantGM != 0)
+                total++;
+            if (cantGA != 0)
+                total++;
+            bd.llenarTabla("select idPedido, nombre, empresa, idProduccion, tipo, cantidad, Etapa from Vista_ProduccionesOverview where Etapa=8 AND idPedido=" + idPedido, tablaProducciones);
+            infoPedido.Text = "Se han producido " + tablaProducciones.RowCount + " de las " + total + " gamas ordenadas.";
+            if (total == tablaProducciones.RowCount)
+                return true;
+            else
+                return false;
+        }
+
         // ◘◘◘◘◘ Métodos generales y esclusivos ◘◘◘◘◘
 
         private string RetornarValor(DataGridView tabla, string columna)

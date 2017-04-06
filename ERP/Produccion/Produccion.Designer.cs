@@ -66,7 +66,14 @@
             this.nudSegundos = new System.Windows.Forms.NumericUpDown();
             this.label7 = new System.Windows.Forms.Label();
             this.dgvProducciones = new System.Windows.Forms.DataGridView();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.dgvPedidos = new System.Windows.Forms.DataGridView();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.btnEntregar = new System.Windows.Forms.Button();
+            this.dgvProduccionesCorrespondientes = new System.Windows.Forms.DataGridView();
+            this.label8 = new System.Windows.Forms.Label();
+            this.lblInfoPedido = new System.Windows.Forms.Label();
             this.tabProduccion.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -77,6 +84,10 @@
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudSegundos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducciones)).BeginInit();
+            this.tabPage3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPedidos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProduccionesCorrespondientes)).BeginInit();
             this.SuspendLayout();
             // 
             // tabProduccion
@@ -86,8 +97,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabProduccion.Controls.Add(this.tabPage1);
             this.tabProduccion.Controls.Add(this.tabPage2);
+            this.tabProduccion.Controls.Add(this.tabPage3);
             this.tabProduccion.Controls.Add(this.tabPage4);
-            this.tabProduccion.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabProduccion.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabProduccion.Location = new System.Drawing.Point(12, 12);
             this.tabProduccion.Name = "tabProduccion";
             this.tabProduccion.SelectedIndex = 0;
@@ -100,10 +112,10 @@
             this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Controls.Add(this.btnGuardar);
             this.tabPage1.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPage1.Location = new System.Drawing.Point(4, 34);
+            this.tabPage1.Location = new System.Drawing.Point(4, 30);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(758, 588);
+            this.tabPage1.Size = new System.Drawing.Size(758, 592);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Agregar una producción";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -335,22 +347,7 @@
             this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnGuardar.Image = global::ERP.Properties.Resources.iconAdd;
-            this.btnGuardar.Location = new System.Drawing.Point(6, 529);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(746, 56);
-            this.btnGuardar.TabIndex = 0;
-            this.btnGuardar.Text = "Comenzar a producir";
-            this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnGuardar.UseVisualStyleBackColor = true;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGuardar.Image = global::ERP.Properties.Resources.iconAdd;
-            this.btnGuardar.Location = new System.Drawing.Point(6, 529);
+            this.btnGuardar.Location = new System.Drawing.Point(6, 533);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(746, 56);
             this.btnGuardar.TabIndex = 0;
@@ -363,10 +360,10 @@
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.groupBox2);
-            this.tabPage2.Location = new System.Drawing.Point(4, 34);
+            this.tabPage2.Location = new System.Drawing.Point(4, 30);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(758, 588);
+            this.tabPage2.Size = new System.Drawing.Size(758, 592);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Administrar producciones actuales";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -524,7 +521,6 @@
             this.nudSegundos.Name = "nudSegundos";
             this.nudSegundos.Size = new System.Drawing.Size(44, 26);
             this.nudSegundos.TabIndex = 7;
-           
             // 
             // label7
             // 
@@ -551,6 +547,48 @@
             this.dgvProducciones.TabIndex = 0;
             this.dgvProducciones.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProducciones_CellClick);
             // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.groupBox4);
+            this.tabPage3.Location = new System.Drawing.Point(4, 30);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(758, 592);
+            this.tabPage3.TabIndex = 4;
+            this.tabPage3.Text = "Entregar pedido";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox4.Controls.Add(this.lblInfoPedido);
+            this.groupBox4.Controls.Add(this.label8);
+            this.groupBox4.Controls.Add(this.dgvProduccionesCorrespondientes);
+            this.groupBox4.Controls.Add(this.btnEntregar);
+            this.groupBox4.Controls.Add(this.dgvPedidos);
+            this.groupBox4.Location = new System.Drawing.Point(10, 12);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(752, 388);
+            this.groupBox4.TabIndex = 1;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Seleccionar pedido a entregar";
+            // 
+            // dgvPedidos
+            // 
+            this.dgvPedidos.AllowUserToAddRows = false;
+            this.dgvPedidos.AllowUserToDeleteRows = false;
+            this.dgvPedidos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvPedidos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvPedidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPedidos.Location = new System.Drawing.Point(17, 32);
+            this.dgvPedidos.Name = "dgvPedidos";
+            this.dgvPedidos.ReadOnly = true;
+            this.dgvPedidos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvPedidos.Size = new System.Drawing.Size(719, 117);
+            this.dgvPedidos.TabIndex = 0;
+            this.dgvPedidos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPedidos_CellClick);
+            // 
             // tabPage4
             // 
             this.tabPage4.Location = new System.Drawing.Point(4, 34);
@@ -559,6 +597,45 @@
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Generar reporte";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // btnEntregar
+            // 
+            this.btnEntregar.Enabled = false;
+            this.btnEntregar.Location = new System.Drawing.Point(439, 314);
+            this.btnEntregar.Name = "btnEntregar";
+            this.btnEntregar.Size = new System.Drawing.Size(178, 43);
+            this.btnEntregar.TabIndex = 1;
+            this.btnEntregar.Text = "Entregar pedido";
+            this.btnEntregar.UseVisualStyleBackColor = true;
+            // 
+            // dgvProduccionesCorrespondientes
+            // 
+            this.dgvProduccionesCorrespondientes.AllowUserToAddRows = false;
+            this.dgvProduccionesCorrespondientes.AllowUserToDeleteRows = false;
+            this.dgvProduccionesCorrespondientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProduccionesCorrespondientes.Location = new System.Drawing.Point(17, 200);
+            this.dgvProduccionesCorrespondientes.Name = "dgvProduccionesCorrespondientes";
+            this.dgvProduccionesCorrespondientes.ReadOnly = true;
+            this.dgvProduccionesCorrespondientes.Size = new System.Drawing.Size(700, 89);
+            this.dgvProduccionesCorrespondientes.TabIndex = 2;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(12, 162);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(221, 21);
+            this.label8.TabIndex = 3;
+            this.label8.Text = "Producciones correspondientes";
+            // 
+            // lblInfoPedido
+            // 
+            this.lblInfoPedido.AutoSize = true;
+            this.lblInfoPedido.Location = new System.Drawing.Point(13, 325);
+            this.lblInfoPedido.Name = "lblInfoPedido";
+            this.lblInfoPedido.Size = new System.Drawing.Size(62, 21);
+            this.lblInfoPedido.TabIndex = 4;
+            this.lblInfoPedido.Text = "label11";
             // 
             // Produccion
             // 
@@ -571,11 +648,7 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-
-            this.Text = "Produccion";
-
             this.Text = " ";
-            
             this.tabProduccion.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
@@ -589,6 +662,11 @@
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudSegundos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducciones)).EndInit();
+            this.tabPage3.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPedidos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProduccionesCorrespondientes)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -633,5 +711,12 @@
         private System.Windows.Forms.Button btnRetroceder;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.DataGridView dgvPedidos;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.DataGridView dgvProduccionesCorrespondientes;
+        private System.Windows.Forms.Button btnEntregar;
+        private System.Windows.Forms.Label lblInfoPedido;
     }
 }
