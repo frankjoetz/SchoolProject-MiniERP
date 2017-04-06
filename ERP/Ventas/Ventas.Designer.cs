@@ -275,7 +275,7 @@
             this.btnAceptar.ForeColor = System.Drawing.Color.Black;
             this.btnAceptar.Image = global::ERP.Properties.Resources.iconplane;
             this.btnAceptar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAceptar.Location = new System.Drawing.Point(592, 401);
+            this.btnAceptar.Location = new System.Drawing.Point(496, 411);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(155, 45);
             this.btnAceptar.TabIndex = 11;
