@@ -21,11 +21,12 @@ namespace ERP.Produccion
             // Métodos a llamar cuando el form se instancia
             cboxBuscar.SelectedIndex = 0;
             this.WindowState = FormWindowState.Maximized;
-            
+
             // Métodos para primer tab 
             ActualizarTabla(dgvPlaneaciones);
             ControlesActivados(1, false);
             EvaluarNumeroFilas();
+
         }
 
         private void tabProduccion_SelectedIndexChanged(object sender, EventArgs e)

@@ -424,6 +424,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Compras";
+            this.Load += new System.EventHandler(this.Compras_Load);
             this.tabControlCompras.ResumeLayout(false);
             this.tabPageLocalizacion.ResumeLayout(false);
             this.grpAlertas.ResumeLayout(false);

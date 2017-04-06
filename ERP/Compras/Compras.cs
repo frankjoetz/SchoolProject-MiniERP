@@ -18,7 +18,6 @@ namespace ERP.Compras
         public Compras()
         {
             InitializeComponent();
-            this.WindowState = FormWindowState.Maximized;
             comp.llenarGridViewAlertas(dataGridViewAlertas);
             comp.llenarGridViewLocacion(dataGridViewLocacion);
             comp.llenarDrigViewMaterial(dataGridViewStock);
@@ -120,6 +119,11 @@ namespace ERP.Compras
                 MessageBox.Show("Seleccionar una materia prima");
             }
 
+        }
+
+        private void Compras_Load(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
         }
     }
 }

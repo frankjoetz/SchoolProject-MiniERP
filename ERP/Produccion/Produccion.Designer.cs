@@ -345,6 +345,21 @@
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGuardar.Image = global::ERP.Properties.Resources.iconAdd;
+            this.btnGuardar.Location = new System.Drawing.Point(6, 529);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(746, 56);
+            this.btnGuardar.TabIndex = 0;
+            this.btnGuardar.Text = "Comenzar a producir";
+            this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.groupBox2);
@@ -509,6 +524,7 @@
             this.nudSegundos.Name = "nudSegundos";
             this.nudSegundos.Size = new System.Drawing.Size(44, 26);
             this.nudSegundos.TabIndex = 7;
+           
             // 
             // label7
             // 
@@ -555,7 +571,11 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+
             this.Text = "Produccion";
+
+            this.Text = " ";
+            
             this.tabProduccion.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
