@@ -83,6 +83,16 @@ namespace ERP.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ERP_SS_LOGO {
+            get {
+                object obj = ResourceManager.GetObject("ERP SS LOGO", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap iconAdd {
             get {
                 object obj = ResourceManager.GetObject("iconAdd", resourceCulture);
@@ -96,6 +106,66 @@ namespace ERP.Properties {
         internal static System.Drawing.Bitmap iconplane {
             get {
                 object obj = ResourceManager.GetObject("iconplane", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap LOGO_COMPRAS {
+            get {
+                object obj = ResourceManager.GetObject("LOGO COMPRAS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap LOGO_DASHBOARD {
+            get {
+                object obj = ResourceManager.GetObject("LOGO DASHBOARD", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap LOGO_DASHBOARD1 {
+            get {
+                object obj = ResourceManager.GetObject("LOGO DASHBOARD1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap LOGO_INGENIERIA {
+            get {
+                object obj = ResourceManager.GetObject("LOGO INGENIERIA", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap LOGO_PLANEACION {
+            get {
+                object obj = ResourceManager.GetObject("LOGO PLANEACION", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap LOGO_VENTAS {
+            get {
+                object obj = ResourceManager.GetObject("LOGO VENTAS", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
