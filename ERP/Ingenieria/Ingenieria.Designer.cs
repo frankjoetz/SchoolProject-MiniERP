@@ -178,6 +178,7 @@
             this.btneliminar.Text = "Eliminar";
             this.btneliminar.UseVisualStyleBackColor = true;
             this.btneliminar.Visible = false;
+            this.btneliminar.Click += new System.EventHandler(this.btneliminar_Click_1);
             // 
             // groupBox1
             // 
@@ -343,7 +344,6 @@
             this.dataGridViewConsumo.Name = "dataGridViewConsumo";
             this.dataGridViewConsumo.Size = new System.Drawing.Size(988, 101);
             this.dataGridViewConsumo.TabIndex = 0;
-            
             // 
             // gbProducto
             // 
@@ -498,7 +498,6 @@
             this.dataGridViewGamas.Size = new System.Drawing.Size(454, 201);
             this.dataGridViewGamas.TabIndex = 86;
             this.dataGridViewGamas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewGamas_CellClick);
-
             // 
             // btnagregarcomponentes
             // 
@@ -546,6 +545,7 @@
             this.cmbprocesadorcp.Name = "cmbprocesadorcp";
             this.cmbprocesadorcp.Size = new System.Drawing.Size(140, 26);
             this.cmbprocesadorcp.TabIndex = 73;
+            this.cmbprocesadorcp.SelectedIndexChanged += new System.EventHandler(this.cmbprocesadorcp_SelectedIndexChanged);
             // 
             // cmbmemoriaramcp
             // 

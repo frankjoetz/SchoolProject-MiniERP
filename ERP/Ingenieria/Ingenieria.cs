@@ -38,6 +38,8 @@ namespace ERP.Ingenieria
             
             //this.reportViewer1.RefreshReport();
             this.WindowState = FormWindowState.Maximized;
+            MIngenieria.comboBox("select DISTINCT Tipo from MateriaPrima ", "Tipo", cmbprocesadorcp);
+            MIngenieria.comboBox("select descripcion from MateriaPrima where Tipo = '"+cmbprocesadorcp.Text+"'", "descripcion", cmbmemoriaramcp);
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -87,19 +89,6 @@ namespace ERP.Ingenieria
 
         private void btneliminar_Click(object sender, EventArgs e)
         {
-            bool result = MIngenieria.EliminaMateria(int.Parse(txtidmateria.Text));
-            if (result)
-            {
-                MessageBox.Show("Se elimino con exito");
-            }
-            try
-            {
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-
-            }
         }
 
         private void rbdmodificar_CheckedChanged(object sender, EventArgs e)
@@ -317,6 +306,31 @@ namespace ERP.Ingenieria
             lblIdShow.Text = id;
             string gama = dataGridViewGamas.Rows[dataGridViewGamas.CurrentRow.Index].Cells["descripcion"].Value.ToString();
             txtgama.Text = gama;
+        }
+
+        private void btneliminar_Click_1(object sender, EventArgs e)
+        {
+            bool result = MIngenieria.EliminaMateria(int.Parse(txtidmateria.Text));
+            if (result)
+            {
+                MessageBox.Show("Se elimino con exito");
+            }
+            try
+            {
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+
+            }
+            MIngenieria.llenarGridViewmateriaprima(dgwmateriaprima);
+            txtidmateria.Clear();
+        }
+
+        private void cmbprocesadorcp_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cmbmemoriaramcp.Text = " ";
+            MIngenieria.comboBox("select descripcion from MateriaPrima where Tipo = '" + cmbprocesadorcp.Text + "'", "descripcion", cmbmemoriaramcp);
         }
 
     }
