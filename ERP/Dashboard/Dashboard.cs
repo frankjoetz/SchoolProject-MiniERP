@@ -49,7 +49,6 @@ namespace ERP.Dashboard
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
-<<<<<<< HEAD
 
             actualizarChart();
 
@@ -126,9 +125,7 @@ namespace ERP.Dashboard
             //Para iniciar el hilo y que ejecute en tiempo real
             this.hilo1 = new Thread(new ThreadStart(this.hiloTiempoReal));
             this.hilo1.Start();
-=======
             this.WindowState = FormWindowState.Maximized;
->>>>>>> origin/master
         }
     }
 }
