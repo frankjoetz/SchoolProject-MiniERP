@@ -303,5 +303,21 @@ namespace ERP.Ingenieria
         {
 
         }
+
+        private void ingenieriatc_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            MIngenieria.llenaGriedViewConsumos(dataGridViewConsumo);
+            MIngenieria.llenarGridViewmateriaprima(dgwmateriaprima);
+            MIngenieria.llenarGridViewGamas(dataGridViewGamas);
+        }
+
+        private void dataGridViewGamas_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string id = dataGridViewGamas.Rows[dataGridViewGamas.CurrentRow.Index].Cells["IdProducto"].Value.ToString();
+            lblIdShow.Text = id;
+            string gama = dataGridViewGamas.Rows[dataGridViewGamas.CurrentRow.Index].Cells["descripcion"].Value.ToString();
+            txtgama.Text = gama;
+        }
+
     }
 }

@@ -46,14 +46,27 @@
             this.txtidmateria = new System.Windows.Forms.TextBox();
             this.btnagregarmp = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.txtgama = new System.Windows.Forms.TextBox();
-            this.cmbmemoriaramcp = new System.Windows.Forms.ComboBox();
-            this.cmbprocesadorcp = new System.Windows.Forms.ComboBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dataGridViewConsumo = new System.Windows.Forms.DataGridView();
+            this.gbProducto = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.cmbdescripcion = new System.Windows.Forms.ComboBox();
+            this.dtpfecha = new System.Windows.Forms.DateTimePicker();
+            this.cmbdestino = new System.Windows.Forms.ComboBox();
+            this.btningresarpro = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.gbMaterial = new System.Windows.Forms.GroupBox();
+            this.lblIdShow = new System.Windows.Forms.Label();
+            this.lblId = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.dataGridViewGamas = new System.Windows.Forms.DataGridView();
             this.btnagregarcomponentes = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtgama = new System.Windows.Forms.TextBox();
+            this.cmbprocesadorcp = new System.Windows.Forms.ComboBox();
+            this.cmbmemoriaramcp = new System.Windows.Forms.ComboBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.btnagregar = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -61,26 +74,19 @@
             this.fechaptxt = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.gbMaterial = new System.Windows.Forms.GroupBox();
-            this.gbProducto = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btningresarpro = new System.Windows.Forms.Button();
-            this.cmbdestino = new System.Windows.Forms.ComboBox();
-            this.dtpfecha = new System.Windows.Forms.DateTimePicker();
-            this.cmbdescripcion = new System.Windows.Forms.ComboBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.ingenieriatc.SuspendLayout();
             this.ingenieriaform.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgwmateriaprima)).BeginInit();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewConsumo)).BeginInit();
+            this.gbProducto.SuspendLayout();
+            this.gbMaterial.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGamas)).BeginInit();
             this.tabPage3.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
-            this.gbMaterial.SuspendLayout();
-            this.gbProducto.SuspendLayout();
             this.SuspendLayout();
             // 
             // ingenieriatc
@@ -99,6 +105,7 @@
             this.ingenieriatc.SelectedIndex = 0;
             this.ingenieriatc.Size = new System.Drawing.Size(1042, 550);
             this.ingenieriatc.TabIndex = 1;
+            this.ingenieriatc.SelectedIndexChanged += new System.EventHandler(this.ingenieriatc_SelectedIndexChanged);
             // 
             // ingenieriaform
             // 
@@ -223,11 +230,13 @@
             this.dgwmateriaprima.AllowUserToAddRows = false;
             this.dgwmateriaprima.AllowUserToDeleteRows = false;
             this.dgwmateriaprima.AllowUserToOrderColumns = true;
+            this.dgwmateriaprima.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgwmateriaprima.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgwmateriaprima.Location = new System.Drawing.Point(442, 61);
             this.dgwmateriaprima.Margin = new System.Windows.Forms.Padding(4);
             this.dgwmateriaprima.Name = "dgwmateriaprima";
             this.dgwmateriaprima.ReadOnly = true;
+            this.dgwmateriaprima.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgwmateriaprima.Size = new System.Drawing.Size(544, 336);
             this.dgwmateriaprima.TabIndex = 23;
             // 
@@ -298,9 +307,9 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.groupBox2);
             this.tabPage2.Controls.Add(this.gbProducto);
             this.tabPage2.Controls.Add(this.gbMaterial);
-            this.tabPage2.Controls.Add(this.dataGridView1);
             this.tabPage2.Location = new System.Drawing.Point(4, 27);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage2.Name = "tabPage2";
@@ -310,70 +319,190 @@
             this.tabPage2.Text = "Captura de Producto Final";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // groupBox2
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(562, 142);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(446, 224);
-            this.dataGridView1.TabIndex = 86;
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Controls.Add(this.dataGridViewConsumo);
+            this.groupBox2.Location = new System.Drawing.Point(11, 384);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(997, 128);
+            this.groupBox2.TabIndex = 89;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Consumo";
             // 
-            // txtgama
+            // dataGridViewConsumo
             // 
-            this.txtgama.Location = new System.Drawing.Point(172, 43);
-            this.txtgama.Name = "txtgama";
-            this.txtgama.Size = new System.Drawing.Size(332, 24);
-            this.txtgama.TabIndex = 83;
-            this.txtgama.TextChanged += new System.EventHandler(this.txtgama_TextChanged);
+            this.dataGridViewConsumo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewConsumo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewConsumo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewConsumo.Location = new System.Drawing.Point(6, 21);
+            this.dataGridViewConsumo.Name = "dataGridViewConsumo";
+            this.dataGridViewConsumo.Size = new System.Drawing.Size(988, 101);
+            this.dataGridViewConsumo.TabIndex = 0;
+            
             // 
-            // cmbmemoriaramcp
+            // gbProducto
             // 
-            this.cmbmemoriaramcp.FormattingEnabled = true;
-            this.cmbmemoriaramcp.Location = new System.Drawing.Point(311, 76);
-            this.cmbmemoriaramcp.Name = "cmbmemoriaramcp";
-            this.cmbmemoriaramcp.Size = new System.Drawing.Size(193, 26);
-            this.cmbmemoriaramcp.TabIndex = 74;
-            this.cmbmemoriaramcp.SelectedIndexChanged += new System.EventHandler(this.cmbmemoriaramcp_SelectedIndexChanged);
+            this.gbProducto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbProducto.Controls.Add(this.label7);
+            this.gbProducto.Controls.Add(this.label10);
+            this.gbProducto.Controls.Add(this.cmbdescripcion);
+            this.gbProducto.Controls.Add(this.dtpfecha);
+            this.gbProducto.Controls.Add(this.cmbdestino);
+            this.gbProducto.Controls.Add(this.btningresarpro);
+            this.gbProducto.Controls.Add(this.label1);
+            this.gbProducto.Location = new System.Drawing.Point(11, 27);
+            this.gbProducto.Name = "gbProducto";
+            this.gbProducto.Size = new System.Drawing.Size(997, 77);
+            this.gbProducto.TabIndex = 88;
+            this.gbProducto.TabStop = false;
+            this.gbProducto.Text = "Datos Productos";
+            this.gbProducto.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
-            // cmbprocesadorcp
+            // label7
             // 
-            this.cmbprocesadorcp.FormattingEnabled = true;
-            this.cmbprocesadorcp.Location = new System.Drawing.Point(60, 81);
-            this.cmbprocesadorcp.Name = "cmbprocesadorcp";
-            this.cmbprocesadorcp.Size = new System.Drawing.Size(140, 26);
-            this.cmbprocesadorcp.TabIndex = 73;
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(7, 33);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(87, 18);
+            this.label7.TabIndex = 57;
+            this.label7.Text = "Descripción";
             // 
-            // label11
+            // label10
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(245, 84);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(60, 18);
-            this.label11.TabIndex = 65;
-            this.label11.Text = "Material";
-            this.label11.Click += new System.EventHandler(this.label11_Click);
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(281, 33);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(49, 18);
+            this.label10.TabIndex = 59;
+            this.label10.Text = "Fecha";
             // 
-            // label5
+            // cmbdescripcion
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(17, 84);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(37, 18);
-            this.label5.TabIndex = 64;
-            this.label5.Text = "Tipo";
+            this.cmbdescripcion.FormattingEnabled = true;
+            this.cmbdescripcion.Items.AddRange(new object[] {
+            "Equipo de gama baja",
+            "Equipo de gama media",
+            "Equipo de gama alta"});
+            this.cmbdescripcion.Location = new System.Drawing.Point(98, 30);
+            this.cmbdescripcion.Name = "cmbdescripcion";
+            this.cmbdescripcion.Size = new System.Drawing.Size(176, 26);
+            this.cmbdescripcion.TabIndex = 60;
+            // 
+            // dtpfecha
+            // 
+            this.dtpfecha.Location = new System.Drawing.Point(337, 31);
+            this.dtpfecha.Name = "dtpfecha";
+            this.dtpfecha.Size = new System.Drawing.Size(200, 24);
+            this.dtpfecha.TabIndex = 85;
+            // 
+            // cmbdestino
+            // 
+            this.cmbdestino.FormattingEnabled = true;
+            this.cmbdestino.Items.AddRange(new object[] {
+            "Mexico",
+            "Estados Unidos",
+            "Canada",
+            "Siria"});
+            this.cmbdestino.Location = new System.Drawing.Point(627, 32);
+            this.cmbdestino.Name = "cmbdestino";
+            this.cmbdestino.Size = new System.Drawing.Size(164, 26);
+            this.cmbdestino.TabIndex = 61;
+            // 
+            // btningresarpro
+            // 
+            this.btningresarpro.Location = new System.Drawing.Point(810, 31);
+            this.btningresarpro.Name = "btningresarpro";
+            this.btningresarpro.Size = new System.Drawing.Size(162, 26);
+            this.btningresarpro.TabIndex = 84;
+            this.btningresarpro.Text = "Ingresar Producto";
+            this.btningresarpro.UseVisualStyleBackColor = true;
+            this.btningresarpro.Click += new System.EventHandler(this.btningresarpro_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(548, 35);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(59, 18);
+            this.label1.TabIndex = 62;
+            this.label1.Text = "Destino";
+            // 
+            // gbMaterial
+            // 
+            this.gbMaterial.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbMaterial.Controls.Add(this.lblIdShow);
+            this.gbMaterial.Controls.Add(this.lblId);
+            this.gbMaterial.Controls.Add(this.label4);
+            this.gbMaterial.Controls.Add(this.dataGridViewGamas);
+            this.gbMaterial.Controls.Add(this.btnagregarcomponentes);
+            this.gbMaterial.Controls.Add(this.label5);
+            this.gbMaterial.Controls.Add(this.label11);
+            this.gbMaterial.Controls.Add(this.txtgama);
+            this.gbMaterial.Controls.Add(this.cmbprocesadorcp);
+            this.gbMaterial.Controls.Add(this.cmbmemoriaramcp);
+            this.gbMaterial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.gbMaterial.Location = new System.Drawing.Point(11, 142);
+            this.gbMaterial.Name = "gbMaterial";
+            this.gbMaterial.Size = new System.Drawing.Size(994, 224);
+            this.gbMaterial.TabIndex = 87;
+            this.gbMaterial.TabStop = false;
+            this.gbMaterial.Text = "Material";
+            this.gbMaterial.Enter += new System.EventHandler(this.gbMaterial_Enter);
+            // 
+            // lblIdShow
+            // 
+            this.lblIdShow.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblIdShow.Location = new System.Drawing.Point(172, 37);
+            this.lblIdShow.Name = "lblIdShow";
+            this.lblIdShow.Size = new System.Drawing.Size(45, 18);
+            this.lblIdShow.TabIndex = 85;
+            // 
+            // lblId
+            // 
+            this.lblId.AutoSize = true;
+            this.lblId.Location = new System.Drawing.Point(17, 38);
+            this.lblId.Name = "lblId";
+            this.lblId.Size = new System.Drawing.Size(60, 18);
+            this.lblId.TabIndex = 84;
+            this.lblId.Text = "Id gama";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(17, 43);
+            this.label4.Location = new System.Drawing.Point(17, 70);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(149, 18);
             this.label4.TabIndex = 63;
             this.label4.Text = "Modelo / Descripcion";
             // 
+            // dataGridViewGamas
+            // 
+            this.dataGridViewGamas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewGamas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewGamas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewGamas.Location = new System.Drawing.Point(534, 17);
+            this.dataGridViewGamas.Name = "dataGridViewGamas";
+            this.dataGridViewGamas.ReadOnly = true;
+            this.dataGridViewGamas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewGamas.Size = new System.Drawing.Size(454, 201);
+            this.dataGridViewGamas.TabIndex = 86;
+            this.dataGridViewGamas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewGamas_CellClick);
+
+            // 
             // btnagregarcomponentes
             // 
-            this.btnagregarcomponentes.Location = new System.Drawing.Point(323, 147);
+            this.btnagregarcomponentes.Location = new System.Drawing.Point(172, 161);
             this.btnagregarcomponentes.Margin = new System.Windows.Forms.Padding(4);
             this.btnagregarcomponentes.Name = "btnagregarcomponentes";
             this.btnagregarcomponentes.Size = new System.Drawing.Size(176, 32);
@@ -381,6 +510,51 @@
             this.btnagregarcomponentes.Text = "Ingresar Material";
             this.btnagregarcomponentes.UseVisualStyleBackColor = true;
             this.btnagregarcomponentes.Click += new System.EventHandler(this.btnagregarcomponentes_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(17, 119);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(37, 18);
+            this.label5.TabIndex = 64;
+            this.label5.Text = "Tipo";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(245, 119);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(60, 18);
+            this.label11.TabIndex = 65;
+            this.label11.Text = "Material";
+            this.label11.Click += new System.EventHandler(this.label11_Click);
+            // 
+            // txtgama
+            // 
+            this.txtgama.Enabled = false;
+            this.txtgama.Location = new System.Drawing.Point(172, 70);
+            this.txtgama.Name = "txtgama";
+            this.txtgama.Size = new System.Drawing.Size(332, 24);
+            this.txtgama.TabIndex = 83;
+            this.txtgama.TextChanged += new System.EventHandler(this.txtgama_TextChanged);
+            // 
+            // cmbprocesadorcp
+            // 
+            this.cmbprocesadorcp.FormattingEnabled = true;
+            this.cmbprocesadorcp.Location = new System.Drawing.Point(60, 111);
+            this.cmbprocesadorcp.Name = "cmbprocesadorcp";
+            this.cmbprocesadorcp.Size = new System.Drawing.Size(140, 26);
+            this.cmbprocesadorcp.TabIndex = 73;
+            // 
+            // cmbmemoriaramcp
+            // 
+            this.cmbmemoriaramcp.FormattingEnabled = true;
+            this.cmbmemoriaramcp.Location = new System.Drawing.Point(311, 111);
+            this.cmbmemoriaramcp.Name = "cmbmemoriaramcp";
+            this.cmbmemoriaramcp.Size = new System.Drawing.Size(193, 26);
+            this.cmbmemoriaramcp.TabIndex = 74;
+            this.cmbmemoriaramcp.SelectedIndexChanged += new System.EventHandler(this.cmbmemoriaramcp_SelectedIndexChanged);
             // 
             // tabPage3
             // 
@@ -455,113 +629,6 @@
             this.dataGridView3.Size = new System.Drawing.Size(716, 314);
             this.dataGridView3.TabIndex = 0;
             // 
-            // gbMaterial
-            // 
-            this.gbMaterial.Controls.Add(this.label4);
-            this.gbMaterial.Controls.Add(this.btnagregarcomponentes);
-            this.gbMaterial.Controls.Add(this.label5);
-            this.gbMaterial.Controls.Add(this.label11);
-            this.gbMaterial.Controls.Add(this.txtgama);
-            this.gbMaterial.Controls.Add(this.cmbprocesadorcp);
-            this.gbMaterial.Controls.Add(this.cmbmemoriaramcp);
-            this.gbMaterial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.gbMaterial.Location = new System.Drawing.Point(11, 142);
-            this.gbMaterial.Name = "gbMaterial";
-            this.gbMaterial.Size = new System.Drawing.Size(523, 224);
-            this.gbMaterial.TabIndex = 87;
-            this.gbMaterial.TabStop = false;
-            this.gbMaterial.Text = "Material";
-            this.gbMaterial.Enter += new System.EventHandler(this.gbMaterial_Enter);
-            // 
-            // gbProducto
-            // 
-            this.gbProducto.Controls.Add(this.label7);
-            this.gbProducto.Controls.Add(this.label10);
-            this.gbProducto.Controls.Add(this.cmbdescripcion);
-            this.gbProducto.Controls.Add(this.dtpfecha);
-            this.gbProducto.Controls.Add(this.cmbdestino);
-            this.gbProducto.Controls.Add(this.btningresarpro);
-            this.gbProducto.Controls.Add(this.label1);
-            this.gbProducto.Location = new System.Drawing.Point(11, 27);
-            this.gbProducto.Name = "gbProducto";
-            this.gbProducto.Size = new System.Drawing.Size(997, 77);
-            this.gbProducto.TabIndex = 88;
-            this.gbProducto.TabStop = false;
-            this.gbProducto.Text = "Datos Productos";
-            this.gbProducto.Enter += new System.EventHandler(this.groupBox2_Enter);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(548, 35);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 18);
-            this.label1.TabIndex = 62;
-            this.label1.Text = "Destino";
-            // 
-            // btningresarpro
-            // 
-            this.btningresarpro.Location = new System.Drawing.Point(810, 31);
-            this.btningresarpro.Name = "btningresarpro";
-            this.btningresarpro.Size = new System.Drawing.Size(162, 26);
-            this.btningresarpro.TabIndex = 84;
-            this.btningresarpro.Text = "Ingresar Producto";
-            this.btningresarpro.UseVisualStyleBackColor = true;
-            this.btningresarpro.Click += new System.EventHandler(this.btningresarpro_Click);
-            // 
-            // cmbdestino
-            // 
-            this.cmbdestino.FormattingEnabled = true;
-            this.cmbdestino.Items.AddRange(new object[] {
-            "Mexico",
-            "Estados Unidos",
-            "Canada",
-            "Siria"});
-            this.cmbdestino.Location = new System.Drawing.Point(627, 32);
-            this.cmbdestino.Name = "cmbdestino";
-            this.cmbdestino.Size = new System.Drawing.Size(164, 26);
-            this.cmbdestino.TabIndex = 61;
-            // 
-            // dtpfecha
-            // 
-            this.dtpfecha.Location = new System.Drawing.Point(337, 31);
-            this.dtpfecha.Name = "dtpfecha";
-            this.dtpfecha.Size = new System.Drawing.Size(200, 24);
-            this.dtpfecha.TabIndex = 85;
-            // 
-            // cmbdescripcion
-            // 
-            this.cmbdescripcion.FormattingEnabled = true;
-            this.cmbdescripcion.Items.AddRange(new object[] {
-            "Equipo Gama Baja",
-            "Equipo Gama Media",
-            "Equipo Gama Alta"});
-            this.cmbdescripcion.Location = new System.Drawing.Point(98, 30);
-            this.cmbdescripcion.Name = "cmbdescripcion";
-            this.cmbdescripcion.Size = new System.Drawing.Size(176, 26);
-            this.cmbdescripcion.TabIndex = 60;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(281, 33);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(49, 18);
-            this.label10.TabIndex = 59;
-            this.label10.Text = "Fecha";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(7, 33);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(87, 18);
-            this.label7.TabIndex = 57;
-            this.label7.Text = "Descripción";
-            // 
             // Ingenieria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -584,15 +651,17 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgwmateriaprima)).EndInit();
             this.tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewConsumo)).EndInit();
+            this.gbProducto.ResumeLayout(false);
+            this.gbProducto.PerformLayout();
+            this.gbMaterial.ResumeLayout(false);
+            this.gbMaterial.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGamas)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            this.gbMaterial.ResumeLayout(false);
-            this.gbMaterial.PerformLayout();
-            this.gbProducto.ResumeLayout(false);
-            this.gbProducto.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -642,7 +711,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnagregarcomponentes;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewGamas;
         private System.Windows.Forms.GroupBox gbMaterial;
         private System.Windows.Forms.GroupBox gbProducto;
         private System.Windows.Forms.Label label7;
@@ -652,5 +721,9 @@
         private System.Windows.Forms.ComboBox cmbdestino;
         private System.Windows.Forms.Button btningresarpro;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblIdShow;
+        private System.Windows.Forms.Label lblId;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.DataGridView dataGridViewConsumo;
     }
 }

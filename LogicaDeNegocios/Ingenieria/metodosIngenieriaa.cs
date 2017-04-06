@@ -49,6 +49,17 @@ namespace LogicaDeNegocios
         {
             bd.llenarTabla("select * from MateriaPrima order by idMateria asc", materiaprima);
         }
+
+        public void llenarGridViewGamas(DataGridView gamas)
+        {
+            bd.llenarTabla("select * from Producto order by idProducto asc", gamas);
+        }
+
+        public void llenaGriedViewConsumos(DataGridView consumo)
+        {
+            bd.llenarTabla("select * from Vista_Consumos order by IdProducto asc", consumo);
+        }
+
         public bool altaconsumo(int idproducto, int idmateria, int idline, int cantidad)
         {
             if (bd.insertar("insert into Consumo(idProducto,idMateria,idLinea, Cantidad) values('" + idproducto + "', '" + idmateria + "', '" + idline + "','" + cantidad + "')"))
