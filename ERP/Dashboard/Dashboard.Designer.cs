@@ -45,11 +45,12 @@
             this.txttotaldepedidos = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtproduccionenproceso = new System.Windows.Forms.TextBox();
-            this.txtmodelomasvendido = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.txtproductofinalizado = new System.Windows.Forms.TextBox();
+            this.txtmenosvendido = new System.Windows.Forms.TextBox();
+            this.txtmasvendido = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.chartcomputadora)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
             this.SuspendLayout();
@@ -153,39 +154,23 @@
             this.txtproduccionenproceso.Size = new System.Drawing.Size(100, 20);
             this.txtproduccionenproceso.TabIndex = 8;
             // 
-            // txtmodelomasvendido
-            // 
-            this.txtmodelomasvendido.FormattingEnabled = true;
-            this.txtmodelomasvendido.Items.AddRange(new object[] {
-            "SAMSUNG",
-            "TOSHIBA",
-            "LENOVO",
-            "APPLE",
-            "ACER",
-            "DELL",
-            "HP"});
-            this.txtmodelomasvendido.Location = new System.Drawing.Point(650, 295);
-            this.txtmodelomasvendido.Name = "txtmodelomasvendido";
-            this.txtmodelomasvendido.Size = new System.Drawing.Size(121, 21);
-            this.txtmodelomasvendido.TabIndex = 9;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(647, 259);
+            this.label4.Location = new System.Drawing.Point(644, 340);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(138, 13);
+            this.label4.Size = new System.Drawing.Size(131, 13);
             this.label4.TabIndex = 10;
-            this.label4.Text = "MODELEO MAS VENDIDO";
+            this.label4.Text = "MODELO MAS VENDIDO";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(644, 279);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(155, 13);
+            this.label5.Size = new System.Drawing.Size(147, 13);
             this.label5.TabIndex = 11;
-            this.label5.Text = "/ MODELO MENOS VENDIDO";
+            this.label5.Text = "MODELO MENOS VENDIDO";
             // 
             // label6
             // 
@@ -203,17 +188,32 @@
             this.txtproductofinalizado.Size = new System.Drawing.Size(100, 20);
             this.txtproductofinalizado.TabIndex = 13;
             // 
+            // txtmenosvendido
+            // 
+            this.txtmenosvendido.Location = new System.Drawing.Point(647, 302);
+            this.txtmenosvendido.Name = "txtmenosvendido";
+            this.txtmenosvendido.Size = new System.Drawing.Size(100, 20);
+            this.txtmenosvendido.TabIndex = 14;
+            // 
+            // txtmasvendido
+            // 
+            this.txtmasvendido.Location = new System.Drawing.Point(647, 356);
+            this.txtmasvendido.Name = "txtmasvendido";
+            this.txtmasvendido.Size = new System.Drawing.Size(100, 20);
+            this.txtmasvendido.TabIndex = 15;
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(841, 610);
             this.ControlBox = false;
+            this.Controls.Add(this.txtmasvendido);
+            this.Controls.Add(this.txtmenosvendido);
             this.Controls.Add(this.txtproductofinalizado);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtmodelomasvendido);
             this.Controls.Add(this.txtproduccionenproceso);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txttotaldepedidos);
@@ -247,10 +247,11 @@
         private System.Windows.Forms.TextBox txttotaldepedidos;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtproduccionenproceso;
-        private System.Windows.Forms.ComboBox txtmodelomasvendido;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtproductofinalizado;
+        private System.Windows.Forms.TextBox txtmenosvendido;
+        private System.Windows.Forms.TextBox txtmasvendido;
     }
 }
