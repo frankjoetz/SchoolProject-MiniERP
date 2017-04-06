@@ -21,6 +21,7 @@ namespace ERP.Ingenieria
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
             MIngenieria.llenarGridViewmateriaprima(dgwmateriaprima);
+            MIngenieria.comboBox("select idLinea, descripcion from Linea","idLinea, descripcion", cmblineacp);
         }
 
         private void ingenieriaform_Click(object sender, EventArgs e)
@@ -239,7 +240,9 @@ namespace ERP.Ingenieria
 
         private void btnagregarcomponentes_Click(object sender, EventArgs e)
         {
-            //bool result = MIngenieria.altaconsumo();
+            int cantidad = Int32.Parse(nudCantidad.Value.ToString());
+
+            //bool result = MIngenieria.altaconsumo(Int32.Parse(lblIdShow.Text), cmbmemoriaramcp.Text, cmblineacp.Text, cantidad);
             //if (result)
             //{
             //    MessageBox.Show("Se inserto con exito");
@@ -306,6 +309,9 @@ namespace ERP.Ingenieria
             lblIdShow.Text = id;
             string gama = dataGridViewGamas.Rows[dataGridViewGamas.CurrentRow.Index].Cells["descripcion"].Value.ToString();
             txtgama.Text = gama;
+            cmbmemoriaramcp.Text = null;
+            cmbprocesadorcp.Text = null;
+            cmbmemoriaramcp.Items.Clear();
         }
 
         private void btneliminar_Click_1(object sender, EventArgs e)
@@ -329,8 +335,29 @@ namespace ERP.Ingenieria
 
         private void cmbprocesadorcp_SelectedIndexChanged(object sender, EventArgs e)
         {
-            cmbmemoriaramcp.Text = " ";
-            MIngenieria.comboBox("select descripcion from MateriaPrima where Tipo = '" + cmbprocesadorcp.Text + "'", "descripcion", cmbmemoriaramcp);
+            cmbmemoriaramcp.Text = null;
+            cmbmemoriaramcp.Items.Clear();
+            MIngenieria.comboBox("select descripcion from MateriaPrima where Tipo = '"+cmbprocesadorcp.Text+"'", "descripcion", cmbmemoriaramcp);
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bmblineacp_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void tabPage2_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblIdShow_Click(object sender, EventArgs e)
+        {
+
         }
 
     }

@@ -62,7 +62,7 @@ namespace LogicaDeNegocios
 
         public bool altaconsumo(int idproducto, int idmateria, int idline, int cantidad)
         {
-            if (bd.insertar("insert into Consumo(idProducto,idMateria,idLinea, Cantidad) values('" + idproducto + "', '" + idmateria + "', '" + idline + "','" + cantidad + "')"))
+            if (bd.insertar("insert into Consumo(idProducto,idMateria,idLinea,Cantidad) values('" + idproducto + "', '" + idmateria + "', '" + idline + "','" + cantidad + "')"))
                 return true;
             else
                 return false;
