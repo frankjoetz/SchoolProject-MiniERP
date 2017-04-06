@@ -160,5 +160,59 @@ namespace Datos
             }
             return valor;
         }
+
+        public string[] retornarArreglo(string consulta, string columna)
+        {
+            
+            try
+            {
+                
+                conexion.conectar();
+                comandoLocal = new MySqlCommand(consulta, conexion.conn);
+                MySqlDataReader dr2 = comandoLocal.ExecuteReader();
+                int i = 0;
+                string[] valor = new string[5];
+                while (i<5)
+                {
+                    dr2.Read();
+                    valor[i] = dr2.GetString(columna);
+                    i++;
+                }
+                conexion.Desconectar();
+                dr2.Close();
+                return valor;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public double[] retornarArregloDouble(string consulta, string columna)
+        {
+
+            try
+            {
+
+                conexion.conectar();
+                comandoLocal = new MySqlCommand(consulta, conexion.conn);
+                MySqlDataReader dr2 = comandoLocal.ExecuteReader();
+                int i = 0;
+                double[] valor = new double[5];
+                while (i < 5)
+                {
+                    dr2.Read();
+                    valor[i] = dr2.GetDouble(columna);
+                    i++;
+                }
+                conexion.Desconectar();
+                dr2.Close();
+                return valor;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }

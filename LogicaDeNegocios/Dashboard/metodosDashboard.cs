@@ -37,8 +37,33 @@ namespace LogicaDeNegocios.Dashboard
 
         public string imprimirPocoMaterial()
         {
-            string pocoMaterial = bd.retornarValor("select * from Stock_Materiales where StockActual <= StockMinimo", "idMateria");
+            string pocoMaterial = bd.retornarValor("select * from Stock_Materiales where stockActual <= stockMinimo order by stockActual asc limit 1;", "descripcion");
             return pocoMaterial;
+        }
+        
+
+        public string imprimirProdFinalizado()
+        {
+            string prod = bd.retornarValor("select count(*) as conteo from Planeacion where status = 'Finalizado'", "conteo");
+            return prod;
+        }
+
+        public string[] getFechaChart()
+        {
+            return bd.retornarArreglo("Select Fecha from Vista_PedidosPlaneacion order by Fecha desc","Fecha");
+        }
+
+        public double[] getGamaBajaChart()
+        {
+            return bd.retornarArregloDouble("Select CantGamaBaja from Vista_PedidosPlaneacion order by Fecha desc", "CantGamaBaja");
+        }
+        public double[] getGamaMediaChart()
+        {
+            return bd.retornarArregloDouble("Select CantGamaMedia from Vista_PedidosPlaneacion order by Fecha desc", "CantGamaMedia");
+        }
+        public double[] getAltaChart()
+        {
+            return bd.retornarArregloDouble("Select CantGamaAlta from Vista_PedidosPlaneacion order by Fecha desc", "CantGamaAlta");
         }
     }
 }
