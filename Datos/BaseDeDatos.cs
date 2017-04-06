@@ -163,56 +163,58 @@ namespace Datos
 
         public string[] retornarArreglo(string consulta, string columna)
         {
-            
+            string[] valor = new string[5];
             try
             {
                 
                 conexion.conectar();
                 comandoLocal = new MySqlCommand(consulta, conexion.conn);
-                MySqlDataReader dr2 = comandoLocal.ExecuteReader();
+                MySqlDataReader dr3 = comandoLocal.ExecuteReader();
                 int i = 0;
-                string[] valor = new string[5];
+                
                 while (i<5)
                 {
-                    dr2.Read();
-                    valor[i] = dr2.GetString(columna);
+                    dr3.Read();
+                    valor[i] = dr3.GetString(columna);
                     i++;
                 }
                 conexion.Desconectar();
-                dr2.Close();
-                return valor;
+                dr3.Close();
+                
             }
             catch (Exception)
             {
                 throw;
             }
+            return valor;
         }
 
         public double[] retornarArregloDouble(string consulta, string columna)
         {
-
+            double[] valor = new double[5];
             try
             {
 
                 conexion.conectar();
                 comandoLocal = new MySqlCommand(consulta, conexion.conn);
-                MySqlDataReader dr2 = comandoLocal.ExecuteReader();
+                MySqlDataReader dr4 = comandoLocal.ExecuteReader();
                 int i = 0;
-                double[] valor = new double[5];
+                
                 while (i < 5)
                 {
-                    dr2.Read();
-                    valor[i] = dr2.GetDouble(columna);
+                    dr4.Read();
+                    valor[i] = dr4.GetDouble(columna);
                     i++;
                 }
                 conexion.Desconectar();
-                dr2.Close();
-                return valor;
+                dr4.Close();
+                
             }
             catch (Exception)
             {
                 throw;
             }
+            return valor;
         }
     }
 }
