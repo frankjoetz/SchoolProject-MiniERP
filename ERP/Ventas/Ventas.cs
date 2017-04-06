@@ -13,16 +13,14 @@ namespace ERP.Ventas
     public partial class Ventas : Form
     {
         LogicaDeNegocios.Ventas.metodosVentas mV = new LogicaDeNegocios.Ventas.metodosVentas();
-        string desc;
         public Ventas()
         {
             InitializeComponent();
-            this.WindowState = FormWindowState.Maximized;
         }
 
         private void Ventas_Load(object sender, EventArgs e)
         {
-
+            this.WindowState = FormWindowState.Maximized;
         }
 
         //Load de la ventana////////////////////////////////////////////////////////////
