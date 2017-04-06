@@ -121,14 +121,8 @@
   <data name="LogoDash" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LOGO DASHBOARD.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="LogoPrincipal" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Sin título-2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="LogoVentas" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LOGO VENTAS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="SS_Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ERP SS LOGO GRIS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="iconplane" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconplane.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -151,6 +145,9 @@
   <data name="LogoPlaneacion" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LOGO PLANEACION.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="LogoHome" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Sin título-3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Alienware17R3__1_" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Alienware17R3__1_.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -160,7 +157,7 @@
   <data name="redoicon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\redoicon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="17820272_1542756185755161_1588427044_o" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\17820272_1542756185755161_1588427044_o.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="SS_LogoG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ERP SS LOGOGRIS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

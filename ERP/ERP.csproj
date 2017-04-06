@@ -248,6 +248,12 @@
   <ItemGroup>
     <None Include="Resources\17820272_1542756185755161_1588427044_o.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sin título-3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ERP SS LOGOGRIS.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
