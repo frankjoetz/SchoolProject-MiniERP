@@ -57,8 +57,7 @@
             this.strpHome.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
             this.strpHome.Location = new System.Drawing.Point(0, 0);
             this.strpHome.Name = "strpHome";
-            this.strpHome.Padding = new System.Windows.Forms.Padding(8, 3, 0, 3);
-            this.strpHome.Size = new System.Drawing.Size(160, 741);
+            this.strpHome.Size = new System.Drawing.Size(158, 459);
             this.strpHome.TabIndex = 4;
             this.strpHome.Text = "menuStrip1";
             // 
@@ -67,7 +66,7 @@
             this.inicioToolStripMenuItem.Image = global::ERP.Properties.Resources.ERP_SS_LOGO;
             this.inicioToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.inicioToolStripMenuItem.Name = "inicioToolStripMenuItem";
-            this.inicioToolStripMenuItem.Size = new System.Drawing.Size(143, 36);
+            this.inicioToolStripMenuItem.Size = new System.Drawing.Size(145, 36);
             this.inicioToolStripMenuItem.Text = "Inicio";
             this.inicioToolStripMenuItem.Click += new System.EventHandler(this.inicioToolStripMenuItem_Click);
             // 
@@ -76,7 +75,7 @@
             this.ingenieríaToolStripMenuItem.Image = global::ERP.Properties.Resources.LOGO_INGENIERIA;
             this.ingenieríaToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ingenieríaToolStripMenuItem.Name = "ingenieríaToolStripMenuItem";
-            this.ingenieríaToolStripMenuItem.Size = new System.Drawing.Size(143, 36);
+            this.ingenieríaToolStripMenuItem.Size = new System.Drawing.Size(145, 36);
             this.ingenieríaToolStripMenuItem.Text = "Ingeniería";
             this.ingenieríaToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ingenieríaToolStripMenuItem.Click += new System.EventHandler(this.ingenieríaToolStripMenuItem_Click);
@@ -86,7 +85,7 @@
             this.almacenToolStripMenuItem.Image = global::ERP.Properties.Resources.LOGO_COMPRAS;
             this.almacenToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.almacenToolStripMenuItem.Name = "almacenToolStripMenuItem";
-            this.almacenToolStripMenuItem.Size = new System.Drawing.Size(143, 36);
+            this.almacenToolStripMenuItem.Size = new System.Drawing.Size(145, 36);
             this.almacenToolStripMenuItem.Text = "Compras";
             this.almacenToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.almacenToolStripMenuItem.Click += new System.EventHandler(this.almacenToolStripMenuItem_Click);
@@ -96,7 +95,7 @@
             this.ventasToolStripMenuItem.Image = global::ERP.Properties.Resources.LOGO_VENTAS;
             this.ventasToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ventasToolStripMenuItem.Name = "ventasToolStripMenuItem";
-            this.ventasToolStripMenuItem.Size = new System.Drawing.Size(143, 36);
+            this.ventasToolStripMenuItem.Size = new System.Drawing.Size(145, 36);
             this.ventasToolStripMenuItem.Text = "Ventas";
             this.ventasToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ventasToolStripMenuItem.Click += new System.EventHandler(this.ventasToolStripMenuItem_Click);
@@ -105,16 +104,15 @@
             // 
             this.planeaciónToolStripMenuItem.Image = global::ERP.Properties.Resources.LOGO_PLANEACION;
             this.planeaciónToolStripMenuItem.Name = "planeaciónToolStripMenuItem";
-            this.planeaciónToolStripMenuItem.Size = new System.Drawing.Size(143, 36);
+            this.planeaciónToolStripMenuItem.Size = new System.Drawing.Size(145, 36);
             this.planeaciónToolStripMenuItem.Text = "Planeación";
-            this.planeaciónToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.planeaciónToolStripMenuItem.Click += new System.EventHandler(this.planeaciónToolStripMenuItem_Click);
             // 
             // producciónToolStripMenuItem
             // 
             this.producciónToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.producciónToolStripMenuItem.Name = "producciónToolStripMenuItem";
-            this.producciónToolStripMenuItem.Size = new System.Drawing.Size(143, 36);
+            this.producciónToolStripMenuItem.Size = new System.Drawing.Size(145, 36);
             this.producciónToolStripMenuItem.Text = "Producción";
             this.producciónToolStripMenuItem.Click += new System.EventHandler(this.producciónToolStripMenuItem_Click);
             // 
@@ -123,30 +121,29 @@
             this.dashboardToolStripMenuItem.Image = global::ERP.Properties.Resources.LOGO_DASHBOARD1;
             this.dashboardToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.dashboardToolStripMenuItem.Name = "dashboardToolStripMenuItem";
-            this.dashboardToolStripMenuItem.Size = new System.Drawing.Size(143, 36);
+            this.dashboardToolStripMenuItem.Size = new System.Drawing.Size(145, 36);
             this.dashboardToolStripMenuItem.Text = "Dashboard";
             this.dashboardToolStripMenuItem.Click += new System.EventHandler(this.dashboardToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(143, 4);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(145, 4);
             // 
             // Home
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(1312, 741);
+            this.ClientSize = new System.Drawing.Size(984, 459);
             this.Controls.Add(this.strpHome);
-            this.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.Location = new System.Drawing.Point(10, 10);
             this.MainMenuStrip = this.strpHome;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.MaximumSize = new System.Drawing.Size(2555, 1721);
-            this.MinimumSize = new System.Drawing.Size(1328, 726);
+            this.MaximumSize = new System.Drawing.Size(1920, 1080);
+            this.MinimumSize = new System.Drawing.Size(1000, 464);
             this.Name = "Home";
             this.Text = "ERP";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
