@@ -107,11 +107,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ReporteDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Produccion\Produccion.cs">
+    <Compile Include="Planeacion\Produccion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Produccion\Produccion.Designer.cs">
+    <Compile Include="Planeacion\Produccion.Designer.cs">
       <DependentUpon>Produccion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Produccion\reporte\DataSetProduccion.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetProduccion.xsd</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -152,9 +157,10 @@
       <DependentUpon>Planeacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Planeacion\ReportPlaneacion.rdlc" />
-    <EmbeddedResource Include="Produccion\Produccion.resx">
+    <EmbeddedResource Include="Planeacion\Produccion.resx">
       <DependentUpon>Produccion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Produccion\reporte\ReportProduccion.rdlc" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -193,6 +199,17 @@
     </None>
     <None Include="Planeacion\ReporteDataSet.xss">
       <DependentUpon>ReporteDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Produccion\reporte\DataSetProduccion.xsc">
+      <DependentUpon>DataSetProduccion.xsd</DependentUpon>
+    </None>
+    <None Include="Produccion\reporte\DataSetProduccion.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetProduccion.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Produccion\reporte\DataSetProduccion.xss">
+      <DependentUpon>DataSetProduccion.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -294,6 +311,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\HomeDash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Planeacion\ReportePlaneacion\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
