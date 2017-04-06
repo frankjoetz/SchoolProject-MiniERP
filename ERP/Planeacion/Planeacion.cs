@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using LogicaDeNegocios;
 using System.Windows.Forms.DataVisualization.Charting;
+using Microsoft.Reporting.WinForms;
+using Datos;
 
 namespace ERP.Planeacion
 {
@@ -49,6 +51,8 @@ namespace ERP.Planeacion
 
         private void Planeacion_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'ReporteDataSet.Planeacion' table. You can move, or remove it, as needed.
+            this.PlaneacionTableAdapter.Fill(this.ReporteDataSet.Planeacion);
             // metodos implementados de llenado
             planeacion.LlenarTablaVistaPedidos(GridPedidos);
             planeacion.llenarPlaneaciones(GridPlaneacionesAgregadas);
@@ -226,6 +230,14 @@ namespace ERP.Planeacion
             // metodos implementados de llenado
             planeacion.LlenarTablaVistaPedidos(GridPedidos);
             planeacion.llenarPlaneaciones(GridPlaneacionesAgregadas);
+
+            
+            
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

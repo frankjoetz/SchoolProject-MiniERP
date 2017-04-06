@@ -50,7 +50,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Ventas\metodosVentas.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Planeacion\planeaciones.rdlc" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Datos\Datos.csproj">
       <Project>{0670e448-0cb4-4610-a2c1-54b67d4db997}</Project>

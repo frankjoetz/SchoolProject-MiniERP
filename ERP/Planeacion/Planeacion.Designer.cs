@@ -28,8 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Planeacion));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.btnAlerta = new System.Windows.Forms.Button();
@@ -67,6 +69,9 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.label11 = new System.Windows.Forms.Label();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.ReporteDataSet = new ERP.Planeacion.ReporteDataSet();
+            this.PlaneacionBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.PlaneacionTableAdapter = new ERP.Planeacion.ReporteDataSetTableAdapters.PlaneacionTableAdapter();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -76,6 +81,8 @@
             this.groupBoxGridPedidos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridPedidos)).BeginInit();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ReporteDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PlaneacionBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -449,8 +456,8 @@
             // 
             // GridPedidos
             // 
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GridPedidos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GridPedidos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.GridPedidos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.GridPedidos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -489,6 +496,7 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Reportes";
             this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
             // label11
             // 
@@ -506,10 +514,31 @@
             // 
             // reportViewer1
             // 
+            this.reportViewer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            reportDataSource1.Name = "reporteTabla";
+            reportDataSource1.Value = this.PlaneacionBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "ERP.Planeacion.ReportPlaneacion.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(19, 49);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.Size = new System.Drawing.Size(1283, 615);
             this.reportViewer1.TabIndex = 18;
+            // 
+            // ReporteDataSet
+            // 
+            this.ReporteDataSet.DataSetName = "ReporteDataSet";
+            this.ReporteDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // PlaneacionBindingSource
+            // 
+            this.PlaneacionBindingSource.DataMember = "Planeacion";
+            this.PlaneacionBindingSource.DataSource = this.ReporteDataSet;
+            // 
+            // PlaneacionTableAdapter
+            // 
+            this.PlaneacionTableAdapter.ClearBeforeFill = true;
             // 
             // Planeacion
             // 
@@ -536,6 +565,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.GridPedidos)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ReporteDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PlaneacionBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -579,6 +610,9 @@
         private System.Windows.Forms.TextBox txtAlta;
         private System.Windows.Forms.DateTimePicker dtpFechaInicio;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private System.Windows.Forms.BindingSource PlaneacionBindingSource;
+        private ReporteDataSet ReporteDataSet;
+        private ReporteDataSetTableAdapters.PlaneacionTableAdapter PlaneacionTableAdapter;
 
     }
 }

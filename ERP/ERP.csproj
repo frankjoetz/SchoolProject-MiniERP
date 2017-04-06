@@ -102,6 +102,11 @@
     <Compile Include="Planeacion\Planeacion.Designer.cs">
       <DependentUpon>Planeacion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Planeacion\ReporteDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReporteDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Produccion\Produccion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,6 +151,7 @@
     <EmbeddedResource Include="Planeacion\Planeacion.resx">
       <DependentUpon>Planeacion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Planeacion\ReportPlaneacion.rdlc" />
     <EmbeddedResource Include="Produccion\Produccion.resx">
       <DependentUpon>Produccion.cs</DependentUpon>
     </EmbeddedResource>
@@ -176,6 +182,17 @@
     </None>
     <None Include="Compras\Reportes.xss">
       <DependentUpon>Reportes.xsd</DependentUpon>
+    </None>
+    <None Include="Planeacion\ReporteDataSet.xsc">
+      <DependentUpon>ReporteDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Planeacion\ReporteDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ReporteDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Planeacion\ReporteDataSet.xss">
+      <DependentUpon>ReporteDataSet.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
