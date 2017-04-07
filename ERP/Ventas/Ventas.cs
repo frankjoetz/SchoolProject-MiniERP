@@ -24,7 +24,7 @@ namespace ERP.Ventas
             //mV.comboBox("select descripcion from Producto", "descripcion", cmbGamas);
         }
 
-        //Load de la ventana////////////////////////////////////////////////////////////
+        //Load de la ventana///////////////////////////////////////////////////////////
         private void timer1_Tick(object sender, EventArgs e)
         {
             lblFH.Text = DateTime.Now.ToString("yyyy-MM-dd");
